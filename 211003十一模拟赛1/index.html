@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"1K7HVZKQJV","apiKey":"2a6d605a13b4f209ed19981005236e12","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="概述今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。 期望：$0+0+60+100&#x3D;160$，实际 $0+0+30+90&#x3D;120$。大家都爆零了所以我名次还行…">
+  <meta name="description" content="概述有点凄凉。 预测 $20+60+40&#x3D;120$，实际 $20+60+0&#x3D;80$。被各路神仙吊打了qwq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="210815图论模拟赛心态良好记">
-<meta property="og:url" content="https://luoyisu.github.io/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/index.html">
+<meta property="og:title" content="211003十一模拟赛1">
+<meta property="og:url" content="https://luoyisu.github.io/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/index.html">
 <meta property="og:site_name" content="Touma_Kazusa&#39;s Blog">
-<meta property="og:description" content="概述今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。 期望：$0+0+60+100&#x3D;160$，实际 $0+0+30+90&#x3D;120$。大家都爆零了所以我名次还行…">
+<meta property="og:description" content="概述有点凄凉。 预测 $20+60+40&#x3D;120$，实际 $20+60+0&#x3D;80$。被各路神仙吊打了qwq">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-15T14:56:56.000Z">
-<meta property="article:modified_time" content="2021-09-11T12:18:54.215Z">
+<meta property="article:published_time" content="2021-10-04T11:06:10.000Z">
+<meta property="article:modified_time" content="2021-10-05T09:25:53.937Z">
 <meta property="article:author" content="Touma_Kazusa">
 <meta property="article:tag" content="模拟赛">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://luoyisu.github.io/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/">
+<link rel="canonical" href="https://luoyisu.github.io/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>210815图论模拟赛心态良好记 | Touma_Kazusa's Blog</title>
+  <title>211003十一模拟赛1 | Touma_Kazusa's Blog</title>
   
 
 
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          210815图论模拟赛心态良好记
+          211003十一模拟赛1
         </h1>
 
         <div class="post-meta">
@@ -221,14 +221,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-08-15 22:56:56" itemprop="dateCreated datePublished" datetime="2021-08-15T22:56:56+08:00">2021-08-15</time>
+              <time title="创建时间：2021-10-04 19:06:10" itemprop="dateCreated datePublished" datetime="2021-10-04T19:06:10+08:00">2021-10-04</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-11 20:18:54" itemprop="dateModified" datetime="2021-09-11T20:18:54+08:00">2021-09-11</time>
+                <time title="修改时间：2021-10-05 17:25:53" itemprop="dateModified" datetime="2021-10-05T17:25:53+08:00">2021-10-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,29 +258,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。</p>
-<p>期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行…</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>有点凄凉。</p>
+<p>预测 $20+60+40=120$，实际 $20+60+0=80$。被各路神仙吊打了qwq</p>
 <span id="more"></span>
-<h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>一看到题目顺序不定，我就开始随缘开题了。</p>
-<p>首先看 T1，感觉是个字符串，似乎是瞎搞搞连边然后折腾，但我不会，心态良好，先去看 T2 了。</p>
-<p>再看 T2，感觉和 NOIP 有一道分监狱的题类似，用并查集维护和某个人不在同一个集合的人的集合，能判断有没有解，但具体怎么分我不知道。。。不知道和图论有什么关系。行。瞎搞了一波过了样例就溜了。</p>
-<p>看 T3、T4，其实 T3 有点思路，像这种与时间有关的询问都可以考虑离线，但我觉得搞不出来，先放着了。</p>
-<p>又去看 T4，看到一堆符号就溜了。</p>
-<p>滚回去写 T1，用 map 瞎搞了一波，过了样例但跑得贼慢，后来觉得我这个做法有点假，我也就不期望得分了。</p>
-<p>滚回去调 T2，再次瞎搞，做法好像也是假的，希望能骗到分。</p>
-<p>由于我现在已经写完两题了，现在心态十分良好，T3 也有暴力的思路了。</p>
-<p>先看了一波 T4，稍微推了一下，这TM不是大水题吗，删一些点跑最短路就完事了，20min 写完，过了样例。</p>
-<p>这时候还剩 40min，回去写 T3 的暴力，还剩 10min 的时候写完。大概能过 $60$ 分。然后开始摸鱼。</p>
-<h2 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h2><p>发现 T1、2都挂了，意料之中吧，T3 的 test $4 \sim 6$ WA 了，我也不知道怎么挂的，不应该啊。</p>
-<p>T4 发现我考虑的有点少了，做法有点假，应该把无向边转成有向再跑最短路或 BFS，不过出题人说他没想卡直接跑最短路的假做法，只卡了 $10$​​ 分，谢出题人不杀之恩！</p>
-<p>T1 是个欧拉路题，我不会，有人知道但不会写因此心态爆炸，然而我心态良好，因为我根本就不知道这玩意（</p>
-<p>T2 是个补图+二分图染色，有点意思。</p>
-<p>T3 确实是离线，然后用类似 Floyd 的方法做，有思维难度但似乎不是特别大。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>首先心态不错确实是今天一大优点（虽然爆零了两道题）</p>
-<p>图论有些知识点不能忽略，得抓紧时间补一补了。</p>
-<p>当一道题假了，是应该放弃，去做别的题，还是应该接着尝试搞？这确实是需要反复尝试，找出最优解的。</p>
-<p>明天树上问题 <code>RP++</code>。</p>
-<p>早上复习一下 LCA、直径、重心、树上DP吧。</p>
+<h2 id="赛前"><a href="#赛前" class="headerlink" title="赛前"></a>赛前</h2><p>了解到大概会是三道数学/计数/推式子题，于是没打算拿多高的分数，暴力万岁。</p>
+<h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>不知道题目难度，就都看了看。</p>
+<p>T1 完全不会，T2 有 $60$ 分我能写，T3 能写一些暴力分。</p>
+<p>于是开写 T2，写了个数位 DP，$60$ 分到手，去看 T1，还是啥都不会，去做 T3，感觉数据应该不会太强，于是就写个了跑不满的 $O(n^4)$ 做法，应该能拿到 $40$ 分。</p>
+<p>然后去 T1，爆搜了一波， $20$ 到手，没花时间看有没有什么规律。</p>
+<p>这时候还剩两个小时，我有点懒了，不想思考。</p>
+<p>T2 似乎能用矩阵优化，但我从来没搞过，不想推矩阵。。。</p>
+<p>T1 还是没懂，T3 没想出来啥优化的做法。</p>
+<p>感觉这个分数应该还可以了。。。于是就颓了好久。</p>
+<h2 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h2><p>发现大佬们都写了好多分。。。有点后悔颓废了。</p>
+<p>膜拜 shr 大佬，随手写 $200$​ 分，吊打我qwq。</p>
+<p>然后发现 T1 有 $20$ 分就是卡特兰数，我谔谔，没看出来规律。。。。。</p>
+<p>又发现人均会写矩阵，草了，又发现人均 T3 比我高。。。</p>
+<p>然后出分了，发现 T3 爆零了，然后发现自己瞎优化整挂了，数据水，本来能拿到 $60$ 分的。。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>模拟不能躺平！！！有用的知识不能不学！！！</p>
+<p>希望下次能好点qwq</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -299,12 +295,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/" rel="prev" title="210814字符串模拟赛挂分记">
-      <i class="fa fa-chevron-left"></i> 210814字符串模拟赛挂分记
+    <a href="/CSP2021-S1%20S2%E6%B8%B8%E8%AE%B0/" rel="prev" title="CSP2021-S1 S2游记">
+      <i class="fa fa-chevron-left"></i> CSP2021-S1 S2游记
     </a></div>
       <div class="post-nav-item">
-    <a href="/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/" rel="next" title="210816树上问题模拟赛">
-      210816树上问题模拟赛 <i class="fa fa-chevron-right"></i>
+    <a href="/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/" rel="next" title="211005十一模拟赛2">
+      211005十一模拟赛2 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -366,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E6%97%B6"><span class="nav-number">2.</span> <span class="nav-text">赛时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E5%90%8E"><span class="nav-number">3.</span> <span class="nav-text">赛后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E5%89%8D"><span class="nav-number">2.</span> <span class="nav-text">赛前</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E6%97%B6"><span class="nav-number">3.</span> <span class="nav-text">赛时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E5%90%8E"><span class="nav-number">4.</span> <span class="nav-text">赛后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -586,7 +582,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'LuoYisu.github.io',
       owner       : 'LuoYisu',
       admin       : ['LuoYisu'],
-      id          : '04016d5321eafd9cc06de26af158fcd7',
+      id          : 'f0f7fb37ff0dd2edab3d1c3c372a26de',
         language: 'zh-CN',
       distractionFreeMode: true
     });
