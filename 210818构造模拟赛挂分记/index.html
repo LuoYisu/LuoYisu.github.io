@@ -28,7 +28,7 @@
 <meta property="og:description" content="概述今天是构造，题似乎不是很难，然而我挂的很惨。 期望：$100+30+60+100&#x3D;290$​，实际 $0+20+0+5&#x3D;25$​。大家都挂的很惨，于是我 RK13&#x2F;23。。。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-18T14:28:09.000Z">
-<meta property="article:modified_time" content="2021-09-11T12:19:04.371Z">
+<meta property="article:modified_time" content="2021-10-14T14:49:11.195Z">
 <meta property="article:author" content="Touma_Kazusa">
 <meta property="article:tag" content="模拟赛">
 <meta name="twitter:card" content="summary">
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-11 20:19:04" itemprop="dateModified" datetime="2021-09-11T20:19:04+08:00">2021-09-11</time>
+                <time title="修改时间：2021-10-14 22:49:11" itemprop="dateModified" datetime="2021-10-14T22:49:11+08:00">2021-10-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,146 +264,18 @@
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>实际上我从来没有做过构造题，唯一的是前一天听同学口胡的一道 CF $1000+$​ 分的题，于是今天十分没底。</p>
 <h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>看到保证 T1 是最简单的题，我立马定好策略：切掉 T1 再说。（T1：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1439/problem/A2">CF1439A2</a>）</p>
 <p>于是开始想，大概想了十分钟吧，思路就已经成型了：枚举每个 $2\times 2$​​ 正方形左上角的点，从第一行扫到倒数第三行，扫的时候保证该行所有 $1$ 都已经变成 $0$，其他随意。接着横着扫倒数第二行，一直扫到倒数第三列。这个时候除了右下角 $2\times2$ 的四个数，所有数都已经变为 $0$ 了。而对于最后四个数，可能的剩余未熄灭灯数只有 $5$​​ 种。直接用打表/分类讨论之类的方法搞出来就行。</p>
-<details> <summary>Code</summary> <pre><code class="language-cpp">#include<bits/stdc++.h>
-#define mm(x) memset(x, 0, sizeof(x))
-using namespace std;
-int T, n, m, a[110][110];
-struct node
-&#123;
-    int x, y;
-&#125;;
-vector<node> p;
-void upd(int x, int y, int &q)
-&#123;
-    p.push_back((node)&#123;x, y&#125;);
-    a[x][y] = a[x][y] == 1 ? 0 : 1;
-    q--;
-&#125;
-int b[4][4];    
-void solve_1()
-&#123;    
-    int cnt = 3;
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 2; j++)
-            if (a[n - i][m - j] == 1)
-                upd(n - i, m - j, cnt);
-&#125;
-void solve_2()
-&#123;
-    mm(b);
-    int cnt = 3;
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 2; j++)
-            if (a[n - i][m - j] == 0)
-                upd(n - i, m - j, cnt), b[i][j] = 1;
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 2; j++)
-            if (!b[i][j])
-                upd(n - i, m - j, cnt);
-    solve_1();
-&#125;
-void solve_3()
-&#123;
-    mm(b);
-    int cnt = 3;
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 2; j++)
-            if (a[n - i][m - j] == 1)
-                upd(n - i, m - j, cnt), b[i][j] = 1;
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 2; j++)
-            if (!b[i][j])
-                upd(n - i, m - j, cnt), b[i][j] = 1;
-    solve_2();
-&#125;
-void solve_0()
-&#123;
-    int cnt = 3;
-    upd(n, m, cnt);
-    upd(n, m - 1, cnt);
-    upd(n - 1, m, cnt);
-    solve_3();
-&#125;
-void out_put()
-&#123;
-    cout << p.size() / 3;
-    for (int i = 0; i < p.size(); i++)
-    &#123;
-        if (i % 3 == 0)
-            cout << "\n";
-        cout << p[i].x << " " << p[i].y << " ";
-    &#125;
-    cout << "\n";
-&#125;
-int main()
-&#123;
-    freopen("bulb.in", "r", stdin);
-    freopen("bulb.out", "w", stdout);
-    ios::sync_with_stdio(false);
-    cin >> T;
-    while (T--)
-    &#123;
-        cin >> n >> m;
-        p.clear();
-        char ch;
-        int ans = 0;
-        for (int i = 1; i <= n; i++)
-            for (int j = 1; j <= m; j++)
-                cin >> ch, a[i][j] = ch == '0' ? 0 : 1;
-        for (int i = 1; i < n - 1; i++)
-            for (int j = 1; j < m; j++)
-            &#123;
-                int cnt = 3;
-                if (a[i][j] == 1)
-                    upd(i, j, cnt);
-                if (a[i][j + 1] == 1)
-                    upd(i, j + 1, cnt);
-                if (cnt == 3)
-                    continue;
-                if (cnt)
-                    upd(i + 1, j, cnt);
-                if (cnt)
-                    upd(i + 1, j + 1, cnt);
-            &#125;
-        for (int j = 1; j < m - 1; j++)
-        &#123;
-            int cnt = 3;
-            if (a[n - 1][j] == 1)
-                upd(n - 1, j, cnt);
-            if (a[n][j] == 1)
-                upd(n, j, cnt);
-            if (cnt == 3)
-                continue;
-            if (cnt)
-                upd(n - 1, j + 1, cnt);
-            if (cnt)
-                upd(n, j + 1, cnt);
-        &#125;
-        int tot = 0;
-        for (int i = 0; i < 2; i++)
-            for (int j = 0; j < 2; j++)
-            &#123;
-                tot += a[n - i][m - j];
-            &#125;
-        tot = 4 - tot;
-        if (tot == 0)
-            solve_0();
-        else if (tot == 1)
-            solve_1();
-        else if (tot == 2)
-            solve_2();
-        else if (tot == 3)
-            solve_3();
-        out_put();
-    &#125;
-    return 0;
-&#125;
-</code></pre> </details>
-
-
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Code
+    </div>
+    <div class='spoiler-content'>
+        <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mm(x) memset(x, 0, sizeof(x))</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> T, n, m, a[<span class="number">110</span>][<span class="number">110</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line">vector&lt;node&gt; p;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">upd</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> &amp;q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    p.<span class="built_in">push_back</span>((node)&#123;x, y&#125;);</span><br><span class="line">    a[x][y] = a[x][y] == <span class="number">1</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">    q--;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">4</span>][<span class="number">4</span>];	</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve_1</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">            <span class="keyword">if</span> (a[n - i][m - j] == <span class="number">1</span>)</span><br><span class="line">                <span class="built_in">upd</span>(n - i, m - j, cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve_2</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">mm</span>(b);</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">            <span class="keyword">if</span> (a[n - i][m - j] == <span class="number">0</span>)</span><br><span class="line">                <span class="built_in">upd</span>(n - i, m - j, cnt), b[i][j] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">            <span class="keyword">if</span> (!b[i][j])</span><br><span class="line">                <span class="built_in">upd</span>(n - i, m - j, cnt);</span><br><span class="line">    <span class="built_in">solve_1</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve_3</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">mm</span>(b);</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">            <span class="keyword">if</span> (a[n - i][m - j] == <span class="number">1</span>)</span><br><span class="line">                <span class="built_in">upd</span>(n - i, m - j, cnt), b[i][j] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">            <span class="keyword">if</span> (!b[i][j])</span><br><span class="line">                <span class="built_in">upd</span>(n - i, m - j, cnt), b[i][j] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">solve_2</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve_0</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line">    <span class="built_in">upd</span>(n, m, cnt);</span><br><span class="line">    <span class="built_in">upd</span>(n, m - <span class="number">1</span>, cnt);</span><br><span class="line">    <span class="built_in">upd</span>(n - <span class="number">1</span>, m, cnt);</span><br><span class="line">    <span class="built_in">solve_3</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">out_put</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; p.<span class="built_in">size</span>() / <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p.<span class="built_in">size</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i % <span class="number">3</span> == <span class="number">0</span>)</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        cout &lt;&lt; p[i].x &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; p[i].y &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;bulb.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;bulb.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span> (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        p.<span class="built_in">clear</span>();</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)</span><br><span class="line">                cin &gt;&gt; ch, a[i][j] = ch == <span class="string">&#x27;0&#x27;</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; m; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line">                <span class="keyword">if</span> (a[i][j] == <span class="number">1</span>)</span><br><span class="line">                    <span class="built_in">upd</span>(i, j, cnt);</span><br><span class="line">                <span class="keyword">if</span> (a[i][j + <span class="number">1</span>] == <span class="number">1</span>)</span><br><span class="line">                    <span class="built_in">upd</span>(i, j + <span class="number">1</span>, cnt);</span><br><span class="line">                <span class="keyword">if</span> (cnt == <span class="number">3</span>)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (cnt)</span><br><span class="line">                    <span class="built_in">upd</span>(i + <span class="number">1</span>, j, cnt);</span><br><span class="line">                <span class="keyword">if</span> (cnt)</span><br><span class="line">                    <span class="built_in">upd</span>(i + <span class="number">1</span>, j + <span class="number">1</span>, cnt);</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; m - <span class="number">1</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[n - <span class="number">1</span>][j] == <span class="number">1</span>)</span><br><span class="line">                <span class="built_in">upd</span>(n - <span class="number">1</span>, j, cnt);</span><br><span class="line">            <span class="keyword">if</span> (a[n][j] == <span class="number">1</span>)</span><br><span class="line">                <span class="built_in">upd</span>(n, j, cnt);</span><br><span class="line">            <span class="keyword">if</span> (cnt == <span class="number">3</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (cnt)</span><br><span class="line">                <span class="built_in">upd</span>(n - <span class="number">1</span>, j + <span class="number">1</span>, cnt);</span><br><span class="line">            <span class="keyword">if</span> (cnt)</span><br><span class="line">                <span class="built_in">upd</span>(n, j + <span class="number">1</span>, cnt);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span>; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                tot += a[n - i][m - j];</span><br><span class="line">            &#125;</span><br><span class="line">        tot = <span class="number">4</span> - tot;</span><br><span class="line">        <span class="keyword">if</span> (tot == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">solve_0</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (tot == <span class="number">1</span>)</span><br><span class="line">            <span class="built_in">solve_1</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (tot == <span class="number">2</span>)</span><br><span class="line">            <span class="built_in">solve_2</span>();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (tot == <span class="number">3</span>)</span><br><span class="line">            <span class="built_in">solve_3</span>();</span><br><span class="line">        <span class="built_in">out_put</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+</div>
 <p>写完 T1，按传统规矩自然是 DEBUG 了好久，确定无误之后已经过去一个半小时了，感觉自己得了 $100$ 分，<strong>一阵狂喜</strong>，赶快开下面的题。</p>
 <p>接着看后面的题，决定先打暴力。</p>
-<p>首先打了个 T3 的 $60$ 分暴力，<strong>一阵狂喜</strong>，然后去写 T4，分析了一下发现我似乎能切。于是开始写，但是调到心态爆炸，于是在剩余 $20\text{min}$​​ 的时候勉强调完了，急的一笔，快速打了个暴力，希望能得 $30$ 分。不过也没测试，草草收场了。</p>
+<p>首先打了个 T3 的 $60$ 分暴力，<strong>一阵狂喜</strong>，然后去写 T4，分析了一下发现我似乎能切。于是开始写，但是调到心态爆炸，于是在剩余 $20\text{min}$​​ 的时候勉强调完了。</p>
+<p>T2 急的一笔，快速打了个暴力，希望能得 $30$ 分。不过也没测试，草草收场了。</p>
 <p>然后快结束的时候有人告诉我 T1 的文件名写错了，我：？？？</p>
 <p>结果还真写错了，我连忙改文件名和 <code>freopen</code> 里的文件名。</p>
 <p>时间到了，我一看，我 <code>freopen</code> 里的文件名没改上，我：？？？发生什么事了？？？</p>
