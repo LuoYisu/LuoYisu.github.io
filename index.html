@@ -278,6 +278,198 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/luogu3281/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="_slb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_slb's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/luogu3281/" class="post-title-link" itemprop="url">luogu3281 [SCOI2013]数数</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-28 10:31:41 / 修改时间：17:47:30" itemprop="dateCreated datePublished" datetime="2021-10-28T10:31:41+08:00">2021-10-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Solutions/" itemprop="url" rel="index"><span itemprop="name">Solutions</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>有两个 $B$ 进制数 $L,R$，求区间 $[L,R]$ 中，将所有 $B$ 进制数看成一个字符串，所有字符串的所有连续子串对应 $B$ 进制数的和（十进制） $\bmod 20130427$。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这个数位DP实在是太毒瘤了。。。</p>
+<p>看了看题解才搞懂，于是我来记录一下这道题。</p>
+<p>为方便，下面记 一个数所有连续子串的和 为其权值，记为 $w(n)$​​；一个数所有后缀的对应数字的和为 $s(n)$​；一个数字位数为 $len(n)$​​。​</p>
+<p>首先考虑有一个数 $p$，在其后面填一个数 $q$，得到新数 $\overline{pq}$​ 的权值</p>
+<script type="math/tex; mode=display">
+w(\overline{pq})=w(p)+B\times s(p)+len(\overline{pq})\times q</script><p>这时我们发现，后半部分实际就是 $s(\overline{pq})$，那么 $w(\overline{pq})=w(p)+s(\overline{pq})$，其中  $s(\overline{pq})=B\times s(p)+len(\overline{pq})\times q$，且 $len(\overline{pq})=len(p)+1$​。</p>
+<p>上述过程都还算显然。于是我们找到了一个递推的思路。</p>
+<p>因为我们要对 $w$ 求和，如果枚举 $0\sim B-1$，直接用以上的方法递推，复杂度会达到 $O(B(n+m))$​。考虑优化：</p>
+<p>既然我们要求和，那么就直接记录答案，然后大力推式子。</p>
+<p>按照数位DP的传统思路，设 $f(i,0/1)$ 表示从高到低 $i$​ 位，否/是 紧贴上界的 $\sum{w}$​​​。</p>
+<p>你就会发现式子开始变得不那么显然了起来。</p>
+<p>记录 $sum(n,0/1)=\sum s(n,0/1)$；$sl(n,0/1)=\sum len(n,0/1)$；$a(i,0/1)$​ 为 否/是 紧贴上界时数的个数。</p>
+<p>注意，当以上的第二维取 $1$​ 时，要注意实际上在该位的取值只有一种（虽然有 $\sum$​）。</p>
+<p>下面记 $p(i)$​ 为当前的位数上的数字。我把低的位存在数组前面，所以第 $n$ 位由 $n+1$ 为转移来。</p>
+<p>那么 $f(n,1)=f(n+1,1)+sum(n,1)$​，而 $sum(n,1)=sum(n+1,1)\times B+p(n)\times sl(n,1)$，其中 $sl(n,1)=sl(n+1,1)+a(n,1)$，$a(n,1)=a(n+1,1)$。</p>
+<p>上面这些式子都还算显然，接下来的转移就有点怪了。</p>
+<script type="math/tex; mode=display">
+f(n,0)=f(n+1,0)\times B+sum(n,0)+f(n+1,1)\times p(n)</script><p>前半部分就是我们之前推的式子，解释一下 $f(n+1,1)\times p(n)$​​​：$sum(n,0)$​​ 已经包括了前 $n$​​ 位数中所有不紧贴上界的后缀和的和，这也包括了在 $n+1$​​ 位之前紧贴上界，在第 $n$​​ 位不紧贴的数。而 $f(n+1,0)$​​ 是上一位不紧贴的答案。我们发现，上一位紧贴的全部答案都不在现在的后缀和中，也就是没有被计算进去，而这种没有被计算的数恰好有 $p(n)$​​ 个（$0\sim p-1$​​）。所以有上式。</p>
+<p>接下来要求 $sum(n,0)$​​，这个式子是真的恶心。首先记 $pre(n)=\sum_0^{n-1}$​。</p>
+<p>当 $n$ 是最高位的时候 $t=0$，否则 $t=B$。</p>
+<script type="math/tex; mode=display">
+\begin{align*}
+sum(n,0)=&sum(n+1,1)\times B\times p(n)+pre(p(n))\times sl(n,1)+\\
+&sum(n+1,0)\times B\times B+pre(B)\times(sl(n+1,0)+a(n+1,0))+\\
+&pre(t)
+\end{align*}</script><p>先看第一行，</p>
+<script type="math/tex; mode=display">
+sl(n,0)=t-1+sl(n+1,1)\times p(n)+(sl(n+1,1)+a(n+1,0))\times B</script><script type="math/tex; mode=display">
+a(n,0)=t-1+a(n+1,0)\times B+a(n+1,1)\times p(n)</script><p>于是把以上式子写成代码，这题就做完了。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">20130427</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line">ll f[maxn][<span class="number">2</span>], sum[maxn][<span class="number">2</span>], sl[maxn][<span class="number">2</span>], a[maxn][<span class="number">2</span>];</span><br><span class="line">ll B, n, m;</span><br><span class="line">ll S[maxn], l[maxn], r[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">(ll *p, ll l)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(f)), <span class="built_in">memset</span>(sum, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(sum));</span><br><span class="line">    <span class="built_in">memset</span>(sl, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(sl)), <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(a));</span><br><span class="line">    a[l][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = l - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = i == l - <span class="number">1</span> ? <span class="number">0</span> : B;</span><br><span class="line">        a[i][<span class="number">1</span>] = a[i + <span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">        a[i][<span class="number">0</span>] = (t - <span class="number">1</span> + a[i + <span class="number">1</span>][<span class="number">0</span>] * B % mod + a[i + <span class="number">1</span>][<span class="number">1</span>] * p[i] % mod) % mod;</span><br><span class="line">        sl[i][<span class="number">1</span>] = sl[i + <span class="number">1</span>][<span class="number">1</span>] + a[i + <span class="number">1</span>][<span class="number">1</span>];</span><br><span class="line">        sl[i][<span class="number">0</span>] = (t - <span class="number">1</span> + sl[i][<span class="number">1</span>] * p[i] + (sl[i + <span class="number">1</span>][<span class="number">0</span>] + a[i + <span class="number">1</span>][<span class="number">0</span>]) * B % mod) % mod;</span><br><span class="line">        sum[i][<span class="number">1</span>] = (sum[i + <span class="number">1</span>][<span class="number">1</span>] * B % mod + p[i] * sl[i][<span class="number">1</span>]) % mod;</span><br><span class="line">        sum[i][<span class="number">0</span>] = (S[t] + sum[i + <span class="number">1</span>][<span class="number">1</span>] * B * p[i] + S[p[i]] * sl[i][<span class="number">1</span>] +</span><br><span class="line">                     sum[i + <span class="number">1</span>][<span class="number">0</span>] * B % mod * B % mod +</span><br><span class="line">                     S[B] * (sl[i + <span class="number">1</span>][<span class="number">0</span>] + a[i + <span class="number">1</span>][<span class="number">0</span>])) %</span><br><span class="line">                    mod;</span><br><span class="line">        f[i][<span class="number">1</span>] = (f[i + <span class="number">1</span>][<span class="number">1</span>] + sum[i][<span class="number">1</span>]) % mod;</span><br><span class="line">        f[i][<span class="number">0</span>] = (f[i + <span class="number">1</span>][<span class="number">0</span>] * B + sum[i][<span class="number">0</span>] + f[i + <span class="number">1</span>][<span class="number">1</span>] * p[i]) % mod;</span><br><span class="line">        <span class="comment">//cout &lt;&lt; a[i][1] &lt;&lt; &quot; &quot; &lt;&lt; a[i][0] &lt;&lt; &quot; &quot; &lt;&lt; sl[i][1] &lt;&lt; &quot; &quot; &lt;&lt; sl[i][0] &lt;&lt; &quot; &quot; &lt;&lt; sum[i][1] &lt;&lt; &quot; &quot; &lt;&lt; sum[i][0] &lt;&lt; &quot; &quot; &lt;&lt; f[i][1] &lt;&lt; &quot; &quot; &lt;&lt; f[i][0] &lt;&lt; endl;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (f[<span class="number">0</span>][<span class="number">1</span>] + f[<span class="number">0</span>][<span class="number">0</span>]) % mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;B);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; B; i++)</span><br><span class="line">        S[i + <span class="number">1</span>] = S[i] + i;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;l[n - i - <span class="number">1</span>]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (l[i] &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            l[i]--;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        l[i] = B - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (l[n - <span class="number">1</span>] == <span class="number">0</span>)</span><br><span class="line">        n--;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;m);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;r[m - i - <span class="number">1</span>]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, (<span class="built_in">solve</span>(r, m) - <span class="built_in">solve</span>(l, n) + mod) % mod);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="_slb">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="_slb's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/" class="post-title-link" itemprop="url">211027模拟赛爆零记</a>
+        </h2>
+
+        <div class="post-meta">
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-10-27 14:07:27 / 修改时间：14:45:45" itemprop="dateCreated datePublished" datetime="2021-10-27T14:07:27+08:00">2021-10-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Summary/" itemprop="url" rel="index"><span itemprop="name">Summary</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>估计 $100+0+0+100=200$​，实际 $0+0+0+0=0$​​。</p>
+<p>试图切题，然后挂了 $\text{inf}$ 分。</p>
+<h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>T1 样例锅了，不过感觉能做，乱搞了一个做法，过了自己造的样例，跑路了。</p>
+<p>花了不少时间。</p>
+<p>T2 不会，T3 有点思路，不过发现 T4 似乎很简单。</p>
+<p>想了一个贪心思路，能证明是对的。</p>
+<p>发现树剖能做，但我对树剖非常不熟练，于是想换个思路。</p>
+<p>然后发现虚树能做，然后尝试现场推虚树失败了。</p>
+<p>好吧，那就写树剖，于是回忆了一波树剖。</p>
+<p>开始写，非常不熟练导致写得很慢。</p>
+<p>然后写了个区间赋值，查询区间和的线段树上去。</p>
+<p>大概还剩半个多小时的时候把代码写完了，过样例之后非常害怕，写了个暴力想对拍。</p>
+<p>这暴力怎么这么难写啊！！！！！！！！！！！！</p>
+<p>等开始对拍已经就剩不到十分钟了，结果第一组就拍出来了错误。</p>
+<p>哈哈，不知道我哪里错了，草草交了代码跑路了。</p>
+<h2 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h2><p>发现实际上 T3 似乎也不是非常难。</p>
+<p>T1 <code>freopen</code> 打错了，真好玩。</p>
+<p>T4 果然爆零了，甚至因为没打头文件 CE 了。。。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>头文件和 <code>freopen</code> 这两个错误确实是有点尴尬。。。。</p>
+<p>T1 我做法似乎确实是假了。</p>
+<p>发现我 T4 树剖没写错，线段树写错了，改完就 AC 了。。。。。</p>
+<p>果然是着急了…不管写什么都必须认真。</p>
+<p>最后改完发现我考试时候的思路总共能过 $130$ 分，wtcl。</p>
+<link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/CSP2021-S2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -832,168 +1024,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/CSP2021-S1%20S2%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="_slb">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="_slb's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/CSP2021-S1%20S2%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">CSP2021-S1游记</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-19 13:56:34" itemprop="dateCreated datePublished" datetime="2021-09-19T13:56:34+08:00">2021-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-23 20:51:57" itemprop="dateModified" datetime="2021-10-23T20:51:57+08:00">2021-10-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>我愿称之为凄凉。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/CSP2021-S1%20S2%E6%B8%B8%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/210912NOIP%E6%A8%A1%E6%8B%9F%E8%B5%9B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="_slb">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="_slb's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/210912NOIP%E6%A8%A1%E6%8B%9F%E8%B5%9B/" class="post-title-link" itemprop="url">210912NOIP模拟赛</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-09-12 19:06:10 / 修改时间：19:42:31" itemprop="dateCreated datePublished" datetime="2021-09-12T19:06:10+08:00">2021-09-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Summary/" itemprop="url" rel="index"><span itemprop="name">Summary</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>题好难啊qwq。</p>
-<p>期望 $50+40+60+30=180$，实际 $10+40+30+30=110$，挂了不少。</p>
-<p>不过这次没有爆零的题，是个进步，打暴力分还是比抠正解高…水平不够啊。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/210912NOIP%E6%A8%A1%E6%8B%9F%E8%B5%9B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1065,7 +1095,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1078,7 +1108,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
