@@ -20,20 +20,21 @@
     var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"1K7HVZKQJV","apiKey":"2a6d605a13b4f209ed19981005236e12","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="概述今天是数学，本来以为会还行，结果 $0+0+30+5&#x3D;35$​，接近垫底了（ 再次被机房男女老少暴打qwq。">
+  <meta name="description" content="Description给定一个长度为 $n$​ 的序列 ${a_i}$​​，可以选择一个子序列将其反转，求能获得的最大不下降子序列。 $n\leq 50$。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="210817数学模拟赛爆零记">
-<meta property="og:url" content="https://luoyisu.github.io/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/index.html">
+<meta property="og:title" content="luogu3607 [USACO17JAN]Subsequence Reversal P">
+<meta property="og:url" content="https://luoyisu.github.io/luogu3607/index.html">
 <meta property="og:site_name" content="_slb&#39;s Blog">
-<meta property="og:description" content="概述今天是数学，本来以为会还行，结果 $0+0+30+5&#x3D;35$​，接近垫底了（ 再次被机房男女老少暴打qwq。">
+<meta property="og:description" content="Description给定一个长度为 $n$​ 的序列 ${a_i}$​​，可以选择一个子序列将其反转，求能获得的最大不下降子序列。 $n\leq 50$。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-08-17T15:10:10.000Z">
-<meta property="article:modified_time" content="2021-09-11T12:19:00.927Z">
+<meta property="article:published_time" content="2021-11-05T02:07:50.000Z">
+<meta property="article:modified_time" content="2021-11-05T02:48:24.264Z">
 <meta property="article:author" content="_slb">
-<meta property="article:tag" content="模拟赛">
+<meta property="article:tag" content="DP">
+<meta property="article:tag" content="区间DP">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://luoyisu.github.io/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/">
+<link rel="canonical" href="https://luoyisu.github.io/luogu3607/">
 
 
 <script id="page-configurations">
@@ -46,7 +47,7 @@
   };
 </script>
 
-  <title>210817数学模拟赛爆零记 | _slb's Blog</title>
+  <title>luogu3607 [USACO17JAN]Subsequence Reversal P | _slb's Blog</title>
   
 
 
@@ -196,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="https://luoyisu.github.io/luogu3607/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -209,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          210817数学模拟赛爆零记
+          luogu3607 [USACO17JAN]Subsequence Reversal P
         </h1>
 
         <div class="post-meta">
@@ -220,23 +221,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-08-17 23:10:10" itemprop="dateCreated datePublished" datetime="2021-08-17T23:10:10+08:00">2021-08-17</time>
+              <time title="创建时间：2021-11-05 10:07:50 / 修改时间：10:48:24" itemprop="dateCreated datePublished" datetime="2021-11-05T10:07:50+08:00">2021-11-05</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-11 20:19:00" itemprop="dateModified" datetime="2021-09-11T20:19:00+08:00">2021-09-11</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Summary/" itemprop="url" rel="index"><span itemprop="name">Summary</span></a>
+                  <a href="/categories/Solutions/" itemprop="url" rel="index"><span itemprop="name">Solutions</span></a>
                 </span>
             </span>
 
@@ -258,26 +253,21 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>今天是数学，本来以为会还行，结果 $0+0+30+5=35$​，接近垫底了（</p>
-<p>再次被机房男女老少暴打qwq。</p>
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>给定一个长度为 $n$​ 的序列 ${a_i}$​​，可以选择一个子序列将其反转，求能获得的最大不下降子序列。</p>
+<p>$n\leq 50$。</p>
 <span id="more"></span>
-<h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>四道题都看了看，发现 T1是个推式子，推着推着心态爆炸，瞎打了个式子就溜了。</p>
-<p>T2 暴力大概会写，但不想写，感觉不太可做。</p>
-<p>T3 是个博弈论，感觉不可做。</p>
-<p>T4 是个思维题，觉得能拿一些部分分，于是开始写。</p>
-<p>写完之后把 T2 的 $20$ 分打了，T3 找了一波规律就溜了。</p>
-<h2 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h2><p>发现 T1 是个卡特兰数？？？</p>
-<p>好家伙我完全不记得这是啥了。。。行吧，死的不冤。</p>
-<p>T2 不是很难…暴力+算斜率+数据结构优化即可。但是为什么我把 <code>freopen</code> 注释了？？？？？？？$20$ 分没了。。。</p>
-<p>T3 我想太简单了，确实是找规律，但没有那么简单，我傻了。</p>
-<p>T4 是个数论题，有点难 qwq… <a target="_blank" rel="noopener" href="https://codeforces.com/contest/493/problem/E">Link</a></p>
-<p>大概是通过一些性质算出多项式的常数项，然后降次，递归求解。挺神奇的…写了一遍…</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总之自己对数学各种奇怪的数完全不了解，发现自己推式子的能力还是不强——所以我 DP 也不行。</p>
-<p>明明想到第二题暴力，第三题多想想也许就能对，但是却没时间推了。</p>
-<p>也许，只能通过多做题提升自己码力？</p>
-<p>顺便，感觉自己确实实力不足，也许是题做少了…</p>
-<p>多总结，加大做题量…</p>
-<p><del>把 <code>freopen</code> 注释掉这个错误我不会再犯了</del></p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>观察一下反转的性质，实际上就相当于将这个子序列两边对调，且不会有交错和并列，与区间 DP 能很好地搭配——选择反转两个数，他们之间的区间可以接着反转。</p>
+<p>那么考虑 $f_{i,j}$ 表示区间 $[i,j]$ 的答案，其中只考虑是否反转 $a_i,a_j$。</p>
+<p>考虑如何由小区间得到大区间的解，回忆 LIS 的 $O(n^2)$ 做法，与值有关，那么再加两维状态：$f_{i,j,l,r}$ 表示区间 $[i,j]$，值域 $[l,r]$ 的答案。</p>
+<p>那么就可以方便的转移了。</p>
+<p>首先，大值域显然可以由小值域得来，即 $f<em>{i,j,l,r}=\max(f</em>{i,j,l+1,r},f_{i,j,l,r-1})$。</p>
+<p>为表述方便，记 $[\text{bool}]=\begin{cases}1&amp;\text{if bool = TRUE}\0&amp;\text{if bool = FALSE}\end{cases}$。</p>
+<p>当不反转 $a<em>i,a_j$ 时，$f</em>{i,j,l,r}=\max(f<em>{i+1,j,l,r}+[a_i=l],f</em>{i,j-1,l,r}+[a_j=r])$。</p>
+<p>当反转 $a<em>i,a_j$ 时，$f</em>{i,j,l,r}=f_{i+1,j-1,l,r}+[a_i=l]+[a_j=r]$。</p>
+<p>把上面的方程都取个 $\text{max}$，就得到这个状态的答案了。</p>
+<p>初始状态就把区间长度为 $1$ 的合法状态都设成 $1$ 即可。</p>
+<p>一开始把不相等的情况也考虑进去了，后来发现是错的：不相等的情况在值域扩张的时候会被考虑到，没必要再进行讨论。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">55</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn], b[maxn];</span><br><span class="line"><span class="keyword">int</span> f[maxn][maxn][maxn][maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">upd_max</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> b)</span> </span>&#123; a = std::<span class="built_in">max</span>(a, b); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">change</span><span class="params">(<span class="keyword">bool</span> x)</span> </span>&#123; <span class="keyword">return</span> x ? <span class="number">1</span> : <span class="number">0</span>; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a[i]), b[i] = a[i];</span><br><span class="line">    </span><br><span class="line">    std::<span class="built_in">sort</span>(b + <span class="number">1</span>, b + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">int</span> tot = std::<span class="built_in">unique</span>(b + <span class="number">1</span>, b + <span class="number">1</span> + n) - b - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        a[i] = std::<span class="built_in">lower_bound</span>(b + <span class="number">1</span>, b + <span class="number">1</span> + tot, a[i]) - b;</span><br><span class="line">    <span class="comment">// 其实没必要离散化。</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= a[i]; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = a[i]; k &lt;= tot; k++)</span><br><span class="line">                f[i][i][j][k] = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// DP的顺序需要考虑一下</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> len = <span class="number">2</span>; len &lt;= n; len++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = i + len - <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (j &gt; n)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> len2 = <span class="number">1</span>; len2 &lt;= tot; len2++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= tot; l++)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> r = l + len2 - <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">if</span> (r &gt; tot)</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="keyword">if</span> (l != tot)</span><br><span class="line">                        <span class="built_in">upd_max</span>(f[i][j][l][r], f[i][j][l + <span class="number">1</span>][r]);</span><br><span class="line">                    <span class="built_in">upd_max</span>(f[i][j][l][r], f[i][j][l][r - <span class="number">1</span>]);</span><br><span class="line">                    <span class="built_in">upd_max</span>(f[i][j][l][r], f[i + <span class="number">1</span>][j][l][r] + <span class="built_in">change</span>(a[i] == l));</span><br><span class="line">                    <span class="built_in">upd_max</span>(f[i][j][l][r], f[i][j - <span class="number">1</span>][l][r] + <span class="built_in">change</span>(a[j] == r));</span><br><span class="line">                    <span class="built_in">upd_max</span>(f[i][j][l][r], f[i + <span class="number">1</span>][j - <span class="number">1</span>][l][r] + <span class="built_in">change</span>(a[i] == r) + <span class="built_in">change</span>(a[j] == l));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, f[<span class="number">1</span>][n][<span class="number">1</span>][tot]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -287,7 +277,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/" rel="tag"># 模拟赛</a>
+              <a href="/tags/DP/" rel="tag"># DP</a>
+              <a href="/tags/%E5%8C%BA%E9%97%B4DP/" rel="tag"># 区间DP</a>
           </div>
 
         
@@ -296,13 +287,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/CF601D-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/" rel="prev" title="CF601D & 一道字符串模拟赛题的诡异解法">
-      <i class="fa fa-chevron-left"></i> CF601D & 一道字符串模拟赛题的诡异解法
+    <a href="/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/" rel="prev" title="211104模拟赛挂分记">
+      <i class="fa fa-chevron-left"></i> 211104模拟赛挂分记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/" rel="next" title="210818构造模拟赛挂分记">
-      210818构造模拟赛挂分记 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -363,7 +351,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E6%97%B6"><span class="nav-number">2.</span> <span class="nav-text">赛时</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%9B%E5%90%8E"><span class="nav-number">3.</span> <span class="nav-text">赛后</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">3.</span> <span class="nav-text">Code</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -583,7 +571,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'LuoYisu.github.io',
       owner       : 'LuoYisu',
       admin       : ['LuoYisu'],
-      id          : 'c9d14923941ea3fb1a7698df1ba569a6',
+      id          : '4a7fcd6b9f00bef1a71cc1fa8a045aef',
         language: 'zh-CN',
       distractionFreeMode: true
     });
