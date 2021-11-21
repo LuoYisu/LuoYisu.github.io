@@ -22,13 +22,13 @@
 
   <meta name="description" content="NOIP2021 凄凉。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="NOIP2021 游记">
+<meta property="og:title" content="NOIP2021 游记&amp;总结">
 <meta property="og:url" content="https://luoyisu.github.io/NOIP2021/index.html">
 <meta property="og:site_name" content="_slb&#39;s Blog">
 <meta property="og:description" content="NOIP2021 凄凉。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-20T07:22:38.000Z">
-<meta property="article:modified_time" content="2021-11-20T08:02:42.705Z">
+<meta property="article:modified_time" content="2021-11-21T05:54:26.703Z">
 <meta property="article:author" content="_slb">
 <meta property="article:tag" content="游记">
 <meta name="twitter:card" content="summary">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>NOIP2021 游记 | _slb's Blog</title>
+  <title>NOIP2021 游记&总结 | _slb's Blog</title>
   
 
 
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          NOIP2021 游记
+          NOIP2021 游记&总结
         </h1>
 
         <div class="post-meta">
@@ -220,10 +220,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-11-20 15:22:38 / 修改时间：16:02:42" itemprop="dateCreated datePublished" datetime="2021-11-20T15:22:38+08:00">2021-11-20</time>
+              <time title="创建时间：2021-11-20 15:22:38" itemprop="dateCreated datePublished" datetime="2021-11-20T15:22:38+08:00">2021-11-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-11-21 13:54:26" itemprop="dateModified" datetime="2021-11-21T13:54:26+08:00">2021-11-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -247,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>724</span>
+              <span>907</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -281,7 +287,7 @@
 <p>开考将近一个小时的时候过了所有样例，看了一下极限情况，没问题，溜了。</p>
 <p>开局不错。</p>
 <p>T2 是个计数，DP，感觉还得套一下什么玩意，不想思考了，溜了溜了。。。</p>
-<p>T3 似乎可做，稍微思考了一下发现不管怎么变，差值就是那些，但是接下来就不会了，把这个性质应用一下能得 <span class="math inline">\(20\)</span> 分。</p>
+<p>T3 似乎可做，稍微思考了一下发现不管怎么变，差值就是那些，操作本质就是交换差值。但是接下来就不会了，于是把这个性质应用一下能得 <span class="math inline">\(20\)</span>​ 分。</p>
 <p>T4 暴力是小模拟，然后有一些性质可以写。又思考了一下感觉有点线段树合并的感觉，又感觉可以用时光倒流+并查集水几个性质。</p>
 <p>先乱写了个 T2 的暴力，<span class="math inline">\(0\sim20\)</span> 分，又写了个 T3 暴力，<span class="math inline">\(20\)</span> 分。</p>
 <p>然后全力肝 T4，写了个 <span class="math inline">\(O(nmq)\)</span> 的暴力，然后发现跑的挺快，但是有样例过不去。。。</p>
@@ -289,8 +295,11 @@
 <p>T4 不知道能得多少分。。。<span class="math inline">\(0\sim36\)</span>，看数据强度了。</p>
 <p>按照平均来估，预计 <span class="math inline">\(100+10+20+12=142\)</span>，实际就不知道了。。。</p>
 <h2 id="总结">总结</h2>
-<p>其实潜意识里也知道 T2 不是特别难，但是我就是不想思考，这种对计数深深的恐惧我不知道是怎么回事，DP 必须要掌握啊，各种 DP 都是。。</p>
-<p>T3 不会没办法，T4 没调出来是个很大的失误。。。其实 T4 认真写暴力能拿到很多很多分。。。至少就有 <span class="math inline">\(44\)</span>，但是我挂的就很莫名其妙。。。</p>
+<p>其实潜意识里也知道 T2 不是特别难，但是我就是不想思考，这种对计数深深的恐惧我不知道是怎么回事，DP 必须要掌握啊，各种 DP 都是。。其实 T2 搞个和状压一样的东西能很轻松水 <span class="math inline">\(50\)</span>​ 分。而且真的很简单，我可能就是不想思考了。。。</p>
+<p>T3 不会没办法，T4 没调出来是个巨大的失误。。。其实 T4 认真写暴力能拿到很多很多分。。。至少就有 <span class="math inline">\(44\)</span>​，但是我挂的就很莫名其妙。。。</p>
+<p>T4 写挂肯定有运气原因（因为真不难），但当时确实就是莫名写挂了，还是太菜了。。。</p>
+<p>后来发现当时真是有点上头，T2 暴力码量肯定不大，结果去莽码量巨大的 T4 了。。。有勇无谋了属于是。</p>
+<p>其实那个 DP 真的很简单，没想出来是不是因为过于害怕 DP 了。。。</p>
 <h2 id="后话">后话</h2>
 <p>实在没忍住，到民间数据测了一下 T1，没挂，那就没事了。</p>
 <p>我放心了，安心等官方成绩。</p>
@@ -449,7 +458,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">59k</span>
+    <span title="站点总字数">60k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
