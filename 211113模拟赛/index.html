@@ -17,15 +17,15 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"1K7HVZKQJV","apiKey":"2a6d605a13b4f209ed19981005236e12","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"D6M49GOKPF","apiKey":"c871edc41059e8701c0a41080f64c20b","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="概述期望 $100+100+40+0&#x3D;240$，实际同期望，难得没有挂分。。。">
+  <meta name="description" content="概述 期望 \(100+100+40+0&#x3D;240\)，实际同期望，难得没有挂分。。。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="211113模拟赛">
 <meta property="og:url" content="https://luoyisu.github.io/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/index.html">
 <meta property="og:site_name" content="_slb&#39;s Blog">
-<meta property="og:description" content="概述期望 $100+100+40+0&#x3D;240$，实际同期望，难得没有挂分。。。">
+<meta property="og:description" content="概述 期望 \(100+100+40+0&#x3D;240\)，实际同期望，难得没有挂分。。。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-13T04:40:10.000Z">
 <meta property="article:modified_time" content="2021-11-13T05:11:18.140Z">
@@ -266,36 +266,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>期望 $100+100+40+0=240$，实际同期望，难得没有挂分。。。</p>
+        <h2 id="概述">概述</h2>
+<p>期望 <span class="math inline">\(100+100+40+0=240\)</span>，实际同期望，难得没有挂分。。。</p>
 <span id="more"></span>
-<h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>有上一次的经验，应该是按难度升序排列。</p>
+<h2 id="赛时">赛时</h2>
+<p>有上一次的经验，应该是按难度升序排列。</p>
 <p>先看 T1，这种给个字符串，然后来一堆莫名其妙的操作，再问你最后字符串的题大部分都是降智题（因为我上次就被降智了），我尝试切掉。</p>
-<p>花几分钟写了个暴力找规律，然后发现这个规律挺对的，看到数据范围 $5\times10^5$​，也不想着优化了，写了个普通快读，直接 <code>sort</code> 就完事了。</p>
+<p>花几分钟写了个暴力找规律，然后发现这个规律挺对的，看到数据范围 <span class="math inline">\(5\times10^5\)</span>​，也不想着优化了，写了个普通快读，直接 <code>sort</code> 就完事了。</p>
 <p>想对拍，然后发现自己不会生成随机字符串，有点尴尬，去看下一道题了。</p>
-<p>T2 数学题。俗话说得好：遇到数学先打表。然后我就光速用 python 打了个 $n\leq5000$ 的表。</p>
+<p>T2 数学题。俗话说得好：遇到数学先打表。然后我就光速用 python 打了个 <span class="math inline">\(n\leq5000\)</span> 的表。</p>
 <p>对着表来回折腾没看出来啥，先跳了。</p>
 <p>看 T3，不明所以的 DP+计数，去看 T4，不明所以的 DP+计数。</p>
 <p>一看到取模就头疼。</p>
 <p>回来看 T2 了。</p>
-<p>注意到对于一组解 $(x,y)(x&lt;y)$，还存在另一组解 $(y,z)(y&lt;z)$。于是考虑怎么从这组解得到下一组。</p>
-<p>还是不懂，把打表的内容增加了一列 $k$，发现这两组解的 $k$ 相同。。。</p>
+<p>注意到对于一组解 <span class="math inline">\((x,y)(x&lt;y)\)</span>，还存在另一组解 <span class="math inline">\((y,z)(y&lt;z)\)</span>。于是考虑怎么从这组解得到下一组。</p>
+<p>还是不懂，把打表的内容增加了一列 <span class="math inline">\(k\)</span>，发现这两组解的 <span class="math inline">\(k\)</span> 相同。。。</p>
 <p>于是意识到这是个二次方程的两个根。</p>
-<p>于是会做了：把解一个一个算出来，把较大数不超过 $10^{18}$ 的所有解存下来，每个询问二分查找一下就行。</p>
+<p>于是会做了：把解一个一个算出来，把较大数不超过 <span class="math inline">\(10^{18}\)</span> 的所有解存下来，每个询问二分查找一下就行。</p>
 <p>然后写了个程序，过样例之后忽然意识到爆 <code>long long</code> 的问题。</p>
 <p>我不是很懂爆 <code>long long</code> 到底会发生什么，不太放心，于是写了个 <code>__int128_t</code>。。。</p>
 <p>发现两个程序输出还真不一样，折腾了一下不知道怎么回事，就把 <code>__int128_t</code> 的程序交上去了。。。</p>
-<p>这时候才过去 $\text{1.5h}$，感觉机会很大（）</p>
+<p>这时候才过去 <span class="math inline">\(\text{1.5h}\)</span>，感觉机会很大（）</p>
 <p>去看 T3，愣是不会。。。。去看 T4，似乎要套容斥然后各种计数，不想搞。。。</p>
 <p>然后开始躺平。</p>
 <p>后来主要去想 T3 了，但还是没想出来。T4 暴力也不会。</p>
-<p>看还有半个多小时，写了 T3 的指数级 $30$ 分暴力，然后打表发现有 $10$ 分是卡特兰数，就顺便骗走了。</p>
+<p>看还有半个多小时，写了 T3 的指数级 <span class="math inline">\(30\)</span> 分暴力，然后打表发现有 <span class="math inline">\(10\)</span> 分是卡特兰数，就顺便骗走了。</p>
 <p>然后就跑路。。。</p>
-<h2 id="赛后"><a href="#赛后" class="headerlink" title="赛后"></a>赛后</h2><p>没啥可说的，和想的差不多，T4 没有输出大样例导致少了 $10$ 分，又忘记骗分了。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>没啥可说的，和想的差不多，T4 没有输出大样例导致少了 <span class="math inline">\(10\)</span> 分，又忘记骗分了。。。</p>
 <p>发现 T3 有结论，T4 还是不懂。。。</p>
-<p>看到别人 T2 $60$ 分忽然意识到表可以打得大一些，毕竟解不是很多（用C语言打，打到 $10^5$ 应该没问题），不过打小表还是 python 强。</p>
+<p>看到别人 T2 <span class="math inline">\(60\)</span> 分忽然意识到表可以打得大一些，毕竟解不是很多（用C语言打，打到 <span class="math inline">\(10^5\)</span> 应该没问题），不过打小表还是 python 强。</p>
 <p>附 python 打表代码，，，，</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5001</span>):</span><br><span class="line">	<span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">5001</span>):</span><br><span class="line">		<span class="keyword">if</span> (i * i + j * j) % (i * j + <span class="number">1</span>) == <span class="number">0</span> <span class="keyword">and</span> i &lt;= j:</span><br><span class="line">			<span class="built_in">print</span>(i, j, (i * i + j * j) / (i * j + <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>DP 实在太差了！！！尤其是计数。。。。一生之痛。。。。</p>
+<h2 id="总结">总结</h2>
+<p>DP 实在太差了！！！尤其是计数。。。。一生之痛。。。。</p>
 <p>数学题打表确实很重要。</p>
 <p>不能被降智（指奇怪的字符串题）。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
@@ -456,12 +460,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">64k</span>
+    <span title="站点总字数">65k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">58 分钟</span>
+    <span title="站点阅读时长">59 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
