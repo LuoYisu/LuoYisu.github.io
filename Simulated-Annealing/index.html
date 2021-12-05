@@ -301,8 +301,8 @@
 <p>定义当前温度 $T$，有一个已知状态，通过已知状态随机得到一个新状态，两者差为 $\Delta E$（$\Delta E \geq0$），那么发生状态转移（更新答案）的概率为：</p>
 <script type="math/tex; mode=display">
 P(\Delta E)= \begin{cases} 1&\text{新状态更优}\\ e^\frac{-\Delta E}{T}&\text{新状态更劣} \end{cases}</script><p>解释一下：显然我们需要让差越大转移的概率越低，而且温度越低转移到劣解的概率越低。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>有三个参数 $T<em>0,d,T</em>{end}$。分别为初始温度（一个较大的数），降温系数（接近 $1$ 的数），终止温度（接近 $0$ 的正数）。</p>
-<p>首先让当前温度 $T=T<em>0$，然后尝试转移一次，接着让 $T\leftarrow T\times d$，直到 $T&lt;T</em>{end}$。得到最优解。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>有三个参数 $T_0,d,T_{end}$。分别为初始温度（一个较大的数），降温系数（接近 $1$ 的数），终止温度（接近 $0$ 的正数）。</p>
+<p>首先让当前温度 $T=T_0$，然后尝试转移一次，接着让 $T\leftarrow T\times d$，直到 $T&lt;T_{end}$。得到最优解。</p>
 <p>在找到最优解之后可以再用初始很低的温度再稍微跑一跑模拟退火，可能会找到更优解。</p>
 <p>关于这三个参数，需要自己根据样例调整。（或者和暴力对拍）</p>
 <h3 id="小技巧——卡时"><a href="#小技巧——卡时" class="headerlink" title="小技巧——卡时"></a>小技巧——卡时</h3><p><code>clock()</code> 函数返回程序运行时间，于是可以这么写：</p>

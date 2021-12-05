@@ -274,10 +274,10 @@
 <p>那么考虑 $f_{i,j}$ 表示区间 $[i,j]$ 的答案，其中只考虑是否反转 $a_i,a_j$。</p>
 <p>考虑如何由小区间得到大区间的解，回忆 LIS 的 $O(n^2)$ 做法，与值有关，那么再加两维状态：$f_{i,j,l,r}$ 表示区间 $[i,j]$，值域 $[l,r]$ 的答案。</p>
 <p>那么就可以方便的转移了。</p>
-<p>首先，大值域显然可以由小值域得来，即 $f<em>{i,j,l,r}=\max(f</em>{i,j,l+1,r},f_{i,j,l,r-1})$。</p>
-<p>为表述方便，记 $[\text{bool}]=\begin{cases}1&amp;\text{if bool = TRUE} \ 0&amp;\text{if bool = FALSE}\end{cases}$​​。</p>
-<p>当不反转 $a<em>i$​​，$a_j$​​ 时，$f</em>{i,j,l,r}=\max(f<em>{i+1,j,l,r}+[a_i=l],f</em>{i,j-1,l,r}+[a_j=r])$​​。</p>
-<p>当反转 $a<em>i$，$a_j$ 时，$f</em>{i,j,l,r}=f_{i+1,j-1,l,r}+[a_i=l]+[a_j=r]$。</p>
+<p>首先，大值域显然可以由小值域得来，即 $f_{i,j,l,r}=\max(f_{i,j,l+1,r},f_{i,j,l,r-1})$。</p>
+<p>为表述方便，记 $[\text{bool}]=\begin{cases}1&amp;\text{if bool = TRUE} \\ 0&amp;\text{if bool = FALSE}\end{cases}$​​。</p>
+<p>当不反转 $a_i$​​，$a_j$​​ 时，$f_{i,j,l,r}=\max(f_{i+1,j,l,r}+[a_i=l],f_{i,j-1,l,r}+[a_j=r])$​​。</p>
+<p>当反转 $a_i$，$a_j$ 时，$f_{i,j,l,r}=f_{i+1,j-1,l,r}+[a_i=l]+[a_j=r]$。</p>
 <p>把上面的方程都取个 $\text{max}$，就得到这个状态的答案了。</p>
 <p>初始状态就把区间长度为 $1$ 的合法状态都设成 $1$ 即可。</p>
 <p>一开始把不相等的情况也考虑进去了，后来发现是错的：不相等的情况在值域扩张的时候会被考虑到，没必要再进行讨论。（其实把细节稍微改一下也能做）</p>
