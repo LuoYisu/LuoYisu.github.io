@@ -319,7 +319,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-12-11 15:29:05 / 修改时间：15:56:05" itemprop="dateCreated datePublished" datetime="2021-12-11T15:29:05+08:00">2021-12-11</time>
+              <time title="创建时间：2021-12-11 15:29:05 / 修改时间：16:27:18" itemprop="dateCreated datePublished" datetime="2021-12-11T15:29:05+08:00">2021-12-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -337,14 +337,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.8k</span>
+              <span>8.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -381,6 +381,19 @@
 <p>否则答案是 $b+1$。</p>
 <p>证明？不会！</p>
 <h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> std::cin;</span><br><span class="line"><span class="keyword">using</span> std::endl;</span><br><span class="line"><span class="keyword">using</span> std::cout;</span><br><span class="line"><span class="keyword">using</span> std::cerr;</span><br><span class="line"></span><br><span class="line">std::string a, b;</span><br><span class="line"></span><br><span class="line"><span class="function">std::string <span class="title">add</span><span class="params">(std::string x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = x.<span class="built_in">size</span>();</span><br><span class="line">    std::string res = x;</span><br><span class="line">    <span class="keyword">int</span> pos = n - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; pos &gt;= <span class="number">0</span>; pos--)</span><br><span class="line">        <span class="keyword">if</span> (res[pos] == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            res[pos] = <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    res[pos] = <span class="string">&#x27;1&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">if</span> (a[<span class="number">0</span>] != b[<span class="number">0</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            cout &lt;&lt; <span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (a == b || <span class="built_in">add</span>(a) == b || b.<span class="built_in">back</span>() == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        cout &lt;&lt; b &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        cout &lt;&lt; <span class="built_in">add</span>(b) &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="F"><a href="#F" class="headerlink" title="F"></a><a target="_blank" rel="noopener" href="https://codeforc.es/contest/1493/problem/F">F</a></h2><h3 id="Description-5"><a href="#Description-5" class="headerlink" title="Description"></a>Description</h3><p><strong>这是一道交互题</strong>。</p>
+<p>有一个 $n\times m$ 的矩阵，里面是正整数。（$n,m$ 给出）。</p>
+<p>你可以询问两个长为 $w$，宽为 $h$ 的矩形是否完全相等。要求这两个矩形不能重叠也不能越界。</p>
+<p>你需要求出所有 $(x,y)$ 的数目，满足整个矩形能用 $(1,1)-(x,y)$ 的子矩阵完全平铺出来。</p>
+<p>询问次数最多 $3\times\log(n+m)$。</p>
+<h3 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution"></a>Solution</h3><p>很显然可以对行和列分别求解，然后把答案乘起来。</p>
+<p>实际上，我们只需要求出所有循环节——枚举 $n$​ 的质因子，然后试一下它的最小质因子行不行，如果可以就除以这个最小质因子然后接着算直到 $n=1$。</p>
+<p>也就是说我们需要在 $3$ 次询问以内判断一个串是否能被分成完全相同的若干个串。</p>
+<p>我们把每个完全相同的串看成一个字符，问题就转化为询问一个字符串所有字符是否都相等。</p>
+<p>设这个字符串长度为 $L$，当 $L=2$，直接问就行。</p>
+<p>否则串长度一定为奇数（因为是质数）我们询问 $([1,\left\lfloor\dfrac{L}{2}\right\rfloor],[\left\lceil\dfrac{L}{2}\right\rceil,L-1])$，再询问 $([1,\left\lfloor\dfrac{L}{2}\right\rfloor],[\left\lceil\dfrac{L}{2}\right\rceil+1,L])$，如果两个都完全相等，那么这个串里的字符都相等（自己想想就懂了）。</p>
+<p>于是就结束了。</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><p>还没写。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
       
     </div>
@@ -1265,12 +1278,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">114k</span>
+    <span title="站点总字数">115k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:44</span>
+    <span title="站点阅读时长">1:45</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
