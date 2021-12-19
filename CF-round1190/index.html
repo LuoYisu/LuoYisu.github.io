@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://codeforces.cdn.menci.xyz/menci/espresso/com/da2aefca33f93cc613b170675755eb2a06da1a9c.png">
 <meta property="article:published_time" content="2021-12-16T07:23:16.000Z">
-<meta property="article:modified_time" content="2021-12-17T03:52:11.009Z">
+<meta property="article:modified_time" content="2021-12-19T09:16:29.582Z">
 <meta property="article:author" content="_slb">
 <meta property="article:tag" content="题解合集">
 <meta property="article:tag" content="计算几何">
@@ -233,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-12-17 11:52:11" itemprop="dateModified" datetime="2021-12-17T11:52:11+08:00">2021-12-17</time>
+                <time title="修改时间：2021-12-19 17:16:29" itemprop="dateModified" datetime="2021-12-19T17:16:29+08:00">2021-12-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>10k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -317,7 +317,7 @@
 <h3 id="Solution-5"><a href="#Solution-5" class="headerlink" title="Solution"></a>Solution</h3><p>发现这个平行 $x$​ 轴的直线可以作为突破点。</p>
 <p>首先把所有点坐标离散化一下。</p>
 <p>我们从上到下移动这条线 $y=a$​​，当它扫到一个点时，我们把所有 $y\geq a$​​ 的点的答案都算进去。这样就不会算重也不会漏。</p>
-<p>考虑这条线上只有一个点的情况，那么新的点集数就是 $cnt(1,x)\times cnt(x,x_{max})$​，其中 $cnt(l,r)$​ 表示在 $x=l$ 到 $x=r$ 这段区间内每条总共有几个横坐标不同的点（注意新扫到的点也算在内），解释就是从左面的直线有 $cnt(1,x)$ 种可以取的地方，右面同理，然后乘法原理一下。</p>
+<p>考虑这条线上只有一个点的情况，那么新的点集数就是 $cnt(1,x)\times cnt(x,x_{max})$​，其中 $cnt(l,r)$​ 表示在 $x=l$ 到 $x=r$ 这段闭区间内每条总共有几个横坐标不同的点（注意新扫到的点也算在内），解释就是从左面的直线有 $cnt(1,x)$ 种可以取的地方，右面同理，然后乘法原理一下。</p>
 <p>如果直线上有多个点呢？我们先把所有点都算进去，然后对于每个点的贡献就是 $cnt(nxt+1,x)\times cnt(x,x_{max})$​，其中 $nxt$​ 是这条直线上在当前点左面的点的横坐标。</p>
 <p>怎么维护 $cnt$？发现我们需要单点加区间求和，那么树状数组就可以胜任了。</p>
 <p>时间复杂度 $O(n\log n)$。</p>
@@ -345,7 +345,26 @@
 </ul>
 <p>如果能够找到，输出可能的选择方案，否则输出 <code>-1</code>。</p>
 <p>$1 \leq n \leq 5 \times 10^5 , 1 \leq p &lt; m \leq 10^{18}$​，保证 $m$ 是某个质数的正整数次幂。</p>
-<h3 id="Solution-7"><a href="#Solution-7" class="headerlink" title="Solution"></a>Solution</h3><p>不会，待填。</p>
+<h3 id="Solution-7"><a href="#Solution-7" class="headerlink" title="Solution"></a>Solution</h3><p>完全不会，以下是从各路题解拼凑出来的东西。</p>
+<p>明确一下题目要求，设 $S={x|x\in\Z,0\leq x&lt;m,\gcd(m,x)=1},T={p^e\bmod m|e\in N}$，我们需要从集合 $S-T$ 中找出 $n$ 个数。</p>
+<p>设 $m=q^k$。​</p>
+<p>要判断有解，我们显然需要判断 $S-T$​ 的大小。显然 $|S|=\varphi(m)=q^k-q^{k-1}=m(1-\dfrac{1}{q})$。</p>
+<p>当 $\gcd(p,m)&gt;1$，$m$ 是 $p$ 的倍数，那么 $T={p^0}={1}$。（$0$ 不合法）此时 $|S-T|=\varphi(m)-1$，判是否有解然后暴力枚举一组解就行。</p>
+<p>否则 $T\subseteq S$​，我们需要求出来 $|T|$​，集合 $T$ 肯定是循环的，其实就是求 $p$​ 的阶 $\text{order(p)}$​，这玩意是 $\varphi(m)$​ 的约数，而约数个数是不多的，我们可以用 Pollard-Rou 分解质因数然后枚举因数检查就能知道 $p$​ 的阶。那么如果 $\varphi(m)-\text{order}(p)&lt;n$​，无解。</p>
+<p>下面是构造解的过程：</p>
+<p>当 $m$​​ 存在原根 $g$​​ 时，设 $p\equiv g^u\pmod m$​​​，那么一个数 $p^e=g^{ue}\equiv g^{ue\ \bmod\ \varphi(m)}\pmod m$​​ （由欧拉定理）在 $T$​​ 中当且仅当关于 $e$ 的方程 $ue\equiv v\pmod{\varphi(m)}$​​ 有解。这个有解的充要条件是 $\gcd(u,\varphi(m))\mid v$。又由于 $(g^{u})^{\text{order}(p)}\equiv1\pmod m$，可以得出 $u=\dfrac{\varphi(m)}{\text{order}(p)}$（欧拉定理）。</p>
+<p>这样就得出了不合法的数的性质，我们从小到大暴力枚举指数，检查是否合法即可。</p>
+<p>当 $m$ 不存在原根即 $m=2^k,k\geq3$，且 $p$ 是奇数（因为要互质）。</p>
+<p>用以下做法：</p>
+<ul>
+<li><p>当 $m\leq10^7$，暴力。</p>
+</li>
+<li><p>当 $p=4x+1$，$\forall e\in\N,p^e\equiv1\pmod4$，那么我们直接在模 $4$ 余 $3$ 的数里选即可，因为数据范围很大，总能找到。</p>
+</li>
+<li><p>当 $p=4x+3$​，我们只能选模 $4$​ 余 $1$​ 的数，注意到在 $p^e$​ 中，$1$​ 和 $3$​​ 总是交替出现。那么把 $p$​ 换成 $p^2$​。还有一个事情是：在模 $2^k$​（$k\geq3$​）意义下，取一个伪原根 $g’=5$​，任意一个模 $4$​ 余 $1$​ 的数都可以用 $g’$​ 的若干次幂表示出。可以对 $k$ 用归纳法证明，我懒了。于是就用有原根的方法做即可。</p>
+</li>
+</ul>
+<h3 id="Code-6"><a href="#Code-6" class="headerlink" title="Code"></a>Code</h3><p>暂无，待填。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
@@ -434,7 +453,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Div2-A"><span class="nav-number">1.</span> <span class="nav-text">Div2 A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">1.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Div2-B"><span class="nav-number">2.</span> <span class="nav-text">Div2 B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-1"><span class="nav-number">2.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">3.</span> <span class="nav-text">A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-2"><span class="nav-number">3.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">4.</span> <span class="nav-text">B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-3"><span class="nav-number">4.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">5.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-4"><span class="nav-number">5.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-4"><span class="nav-number">5.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-3"><span class="nav-number">5.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">6.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-5"><span class="nav-number">6.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-5"><span class="nav-number">6.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-4"><span class="nav-number">6.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">7.</span> <span class="nav-text">E</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-6"><span class="nav-number">7.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-6"><span class="nav-number">7.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-5"><span class="nav-number">7.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F"><span class="nav-number">8.</span> <span class="nav-text">F</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-7"><span class="nav-number">8.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-7"><span class="nav-number">8.2.</span> <span class="nav-text">Solution</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Div2-A"><span class="nav-number">1.</span> <span class="nav-text">Div2 A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description"><span class="nav-number">1.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution"><span class="nav-number">1.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code"><span class="nav-number">1.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Div2-B"><span class="nav-number">2.</span> <span class="nav-text">Div2 B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-1"><span class="nav-number">2.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-1"><span class="nav-number">2.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-1"><span class="nav-number">2.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A"><span class="nav-number">3.</span> <span class="nav-text">A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-2"><span class="nav-number">3.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-2"><span class="nav-number">3.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-2"><span class="nav-number">3.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B"><span class="nav-number">4.</span> <span class="nav-text">B</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-3"><span class="nav-number">4.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-3"><span class="nav-number">4.2.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C"><span class="nav-number">5.</span> <span class="nav-text">C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-4"><span class="nav-number">5.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-4"><span class="nav-number">5.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-3"><span class="nav-number">5.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#D"><span class="nav-number">6.</span> <span class="nav-text">D</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-5"><span class="nav-number">6.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-5"><span class="nav-number">6.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-4"><span class="nav-number">6.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E"><span class="nav-number">7.</span> <span class="nav-text">E</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-6"><span class="nav-number">7.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-6"><span class="nav-number">7.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-5"><span class="nav-number">7.3.</span> <span class="nav-text">Code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#F"><span class="nav-number">8.</span> <span class="nav-text">F</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Description-7"><span class="nav-number">8.1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solution-7"><span class="nav-number">8.2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Code-6"><span class="nav-number">8.3.</span> <span class="nav-text">Code</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -507,12 +526,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">153k</span>
+    <span title="站点总字数">154k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:19</span>
+    <span title="站点阅读时长">2:20</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
