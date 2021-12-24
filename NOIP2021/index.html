@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"D6M49GOKPF","apiKey":"ca8302c5987c681313d4baedfe8d6234","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="NOIP2021凄凉。">
+  <meta name="description" content="NOIP2021 凄凉。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NOIP2021 游记&amp;总结">
 <meta property="og:url" content="https://luoyisu.github.io/NOIP2021/index.html">
 <meta property="og:site_name" content="_slb&#39;s Blog">
-<meta property="og:description" content="NOIP2021凄凉。">
+<meta property="og:description" content="NOIP2021 凄凉。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-20T07:22:38.000Z">
 <meta property="article:modified_time" content="2021-11-21T05:54:26.703Z">
@@ -253,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>891</span>
+              <span>907</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,10 +272,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="NOIP2021"><a href="#NOIP2021" class="headerlink" title="NOIP2021"></a>NOIP2021</h1><p>凄凉。</p>
+        <h1 id="noip2021">NOIP2021</h1>
+<p>凄凉。</p>
 <span id="more"></span>
-<h2 id="Day-1"><a href="#Day-1" class="headerlink" title="Day -1"></a>Day -1</h2><p>没干啥，写了几个板子，本来想写个平衡树和扫描线的，但是懒得写了。。</p>
-<h2 id="Day-1-1"><a href="#Day-1-1" class="headerlink" title="Day 1"></a>Day 1</h2><p>早上有点冷，还有点困。。。也许是因为最近几天都很疲惫。</p>
+<h2 id="day--1">Day -1</h2>
+<p>没干啥，写了几个板子，本来想写个平衡树和扫描线的，但是懒得写了。。</p>
+<h2 id="day-1">Day 1</h2>
+<p>早上有点冷，还有点困。。。也许是因为最近几天都很疲惫。</p>
 <p>考试前愉快假人，很欢乐。</p>
 <p>进考场之后打了打头文件，写了个快读，建了文件夹和源代码。</p>
 <p>然后就开始了。</p>
@@ -284,19 +287,21 @@
 <p>开考将近一个小时的时候过了所有样例，看了一下极限情况，没问题，溜了。</p>
 <p>开局不错。</p>
 <p>T2 是个计数，DP，感觉还得套一下什么玩意，不想思考了，溜了溜了。。。</p>
-<p>T3 似乎可做，稍微思考了一下发现不管怎么变，差值就是那些，操作本质就是交换差值。但是接下来就不会了，于是把这个性质应用一下能得 $20$​ 分。</p>
+<p>T3 似乎可做，稍微思考了一下发现不管怎么变，差值就是那些，操作本质就是交换差值。但是接下来就不会了，于是把这个性质应用一下能得 <span class="math inline">\(20\)</span>​ 分。</p>
 <p>T4 暴力是小模拟，然后有一些性质可以写。又思考了一下感觉有点线段树合并的感觉，又感觉可以用时光倒流+并查集水几个性质。</p>
-<p>先乱写了个 T2 的暴力，$0\sim20$ 分，又写了个 T3 暴力，$20$ 分。</p>
-<p>然后全力肝 T4，写了个 $O(nmq)$ 的暴力，然后发现跑的挺快，但是有样例过不去。。。</p>
+<p>先乱写了个 T2 的暴力，<span class="math inline">\(0\sim20\)</span> 分，又写了个 T3 暴力，<span class="math inline">\(20\)</span> 分。</p>
+<p>然后全力肝 T4，写了个 <span class="math inline">\(O(nmq)\)</span> 的暴力，然后发现跑的挺快，但是有样例过不去。。。</p>
 <p>调了半天无果，最后几分钟又写了一个性质。。。</p>
-<p>T4 不知道能得多少分。。。$0\sim36$，看数据强度了。</p>
-<p>按照平均来估，预计 $100+10+20+12=142$，实际就不知道了。。。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实潜意识里也知道 T2 不是特别难，但是我就是不想思考，这种对计数深深的恐惧我不知道是怎么回事，DP 必须要掌握啊，各种 DP 都是。。其实 T2 搞个和状压一样的东西能很轻松水 $50$​ 分。而且真的很简单，我可能就是不想思考了。。。</p>
-<p>T3 不会没办法，T4 没调出来是个巨大的失误。。。其实 T4 认真写暴力能拿到很多很多分。。。至少就有 $44$​，但是我挂的就很莫名其妙。。。</p>
+<p>T4 不知道能得多少分。。。<span class="math inline">\(0\sim36\)</span>，看数据强度了。</p>
+<p>按照平均来估，预计 <span class="math inline">\(100+10+20+12=142\)</span>，实际就不知道了。。。</p>
+<h2 id="总结">总结</h2>
+<p>其实潜意识里也知道 T2 不是特别难，但是我就是不想思考，这种对计数深深的恐惧我不知道是怎么回事，DP 必须要掌握啊，各种 DP 都是。。其实 T2 搞个和状压一样的东西能很轻松水 <span class="math inline">\(50\)</span>​ 分。而且真的很简单，我可能就是不想思考了。。。</p>
+<p>T3 不会没办法，T4 没调出来是个巨大的失误。。。其实 T4 认真写暴力能拿到很多很多分。。。至少就有 <span class="math inline">\(44\)</span>​，但是我挂的就很莫名其妙。。。</p>
 <p>T4 写挂肯定有运气原因（因为真不难），但当时确实就是莫名写挂了，还是太菜了。。。</p>
 <p>后来发现当时真是有点上头，T2 暴力码量肯定不大，结果去莽码量巨大的 T4 了。。。有勇无谋了属于是。</p>
 <p>其实那个 DP 真的很简单，没想出来是不是因为过于害怕 DP 了。。。</p>
-<h2 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h2><p>实在没忍住，到民间数据测了一下 T1，没挂，那就没事了。</p>
+<h2 id="后话">后话</h2>
+<p>实在没忍住，到民间数据测了一下 T1，没挂，那就没事了。</p>
 <p>我放心了，安心等官方成绩。</p>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
@@ -383,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#NOIP2021"><span class="nav-number">1.</span> <span class="nav-text">NOIP2021</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">1.1.</span> <span class="nav-text">Day -1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1-1"><span class="nav-number">1.2.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AF%9D"><span class="nav-number">1.4.</span> <span class="nav-text">后话</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#noip2021"><span class="nav-number">1.</span> <span class="nav-text">NOIP2021</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#day--1"><span class="nav-number">1.1.</span> <span class="nav-text">Day -1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#day-1"><span class="nav-number">1.2.</span> <span class="nav-text">Day 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AF%9D"><span class="nav-number">1.4.</span> <span class="nav-text">后话</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -399,7 +404,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -456,12 +461,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">194k</span>
+    <span title="站点总字数">204k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">3:05</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>

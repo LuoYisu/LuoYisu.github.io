@@ -248,7 +248,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>484</span>
+              <span>502</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -269,9 +269,9 @@
       
         <p>看到 <strong>OI Wiki</strong> 上有关 KMP 的一个不算惊为天人但也有点意思的做法，水一水。</p>
 <span id="more"></span>
-<p>众所周知 KMP 是为了解决字符串匹配问题的，有一个长度为 $n$ 的模式串 $t$ 和一个文本串 $s$。</p>
-<p>我们构造一个字符串 $t+\#+s$​​​​，其中 $\#$​​​​ 是既不在 $t$​​​​ 中也不在 $s$​​​​ 中的一个字符。</p>
-<p>求这个字符串的前缀数组（即 $nxt$ 函数），那么在该字符串中 $nxt[i]=n$​ 的位置就是一个匹配。</p>
+<p>众所周知 KMP 是为了解决字符串匹配问题的，有一个长度为 <span class="math inline">\(n\)</span> 的模式串 <span class="math inline">\(t\)</span> 和一个文本串 <span class="math inline">\(s\)</span>。</p>
+<p>我们构造一个字符串 <span class="math inline">\(t+\#+s\)</span>​​​​，其中 <span class="math inline">\(\#\)</span>​​​​ 是既不在 <span class="math inline">\(t\)</span>​​​​ 中也不在 <span class="math inline">\(s\)</span>​​​​ 中的一个字符。</p>
+<p>求这个字符串的前缀数组（即 <span class="math inline">\(nxt\)</span> 函数），那么在该字符串中 <span class="math inline">\(nxt[i]=n\)</span>​ 的位置就是一个匹配。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[maxn]; <span class="comment">// 字符串从 1 开始</span></span><br><span class="line"><span class="keyword">char</span> b[maxn];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> nxt[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n + <span class="number">1</span> + m; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; a[i] != a[j + <span class="number">1</span>])</span><br><span class="line">            j = nxt[j];</span><br><span class="line">        <span class="keyword">if</span> (a[i] == a[j + <span class="number">1</span>])</span><br><span class="line">            j++;</span><br><span class="line">        nxt[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n + <span class="number">2</span>; i &lt;= n + <span class="number">1</span> + m; i++)</span><br><span class="line">        <span class="keyword">if</span> (nxt[i] == n)</span><br><span class="line">            cout &lt;&lt; i - <span class="number">2</span> * n &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/spoiler.css" type="text/css"><script src="/js/spoiler.js" type="text/javascript" async></script>
     </div>
@@ -374,7 +374,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-count">57</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -431,12 +431,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">194k</span>
+    <span title="站点总字数">204k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:57</span>
+    <span title="站点阅读时长">3:05</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
