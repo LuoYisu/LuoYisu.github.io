@@ -253,7 +253,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
+              <span>3.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -274,29 +274,25 @@
       
         <p>懒得写那么多题解，于是就有了这个文章。</p>
 <span id="more"></span>
-<h2 id="难度评级">难度评级</h2>
-<p>D：很简单，也没怎么调。很可能不会出现在这个文章里。</p>
+<h2 id="难度评级"><a href="#难度评级" class="headerlink" title="难度评级"></a>难度评级</h2><p>D：很简单，也没怎么调。很可能不会出现在这个文章里。</p>
 <p>C：会做，但是出了一些不是特别傻的 bug。</p>
 <p>B：勉强会做 / 写代码是遇到了问题。</p>
 <p>A：不会，看了题解很容易就弄懂了。</p>
 <p>S：完全不会，反复看题解和代码才懂。</p>
 <p>可能用加减号来更细化一些，+表示难，-表示简单。</p>
-<h2 id="chapter-1-递推">Chapter 1 递推</h2>
-<h3 id="e-练习1-划分数列">E 练习1 划分数列</h3>
-<p>给定一个长度为 <span class="math inline">\(n\)</span> 的数列，要求划分最少的段数，使得每一段要么单调不降，要么单调不升。</p>
+<h2 id="Chapter-1-递推"><a href="#Chapter-1-递推" class="headerlink" title="Chapter 1 递推"></a>Chapter 1 递推</h2><h3 id="E-练习1-划分数列"><a href="#E-练习1-划分数列" class="headerlink" title="E 练习1 划分数列"></a>E 练习1 划分数列</h3><p>给定一个长度为 $n$ 的数列，要求划分最少的段数，使得每一段要么单调不降，要么单调不升。</p>
 <p>难度：D+</p>
 <p>有点贪心的感觉，可以发现如果能接上肯定比不接好，和每一段越长越好。</p>
-<p>预处理 <span class="math inline">\(up_i,down_i\)</span>​ 表示以 <span class="math inline">\(i\)</span>​ 为结尾的最长不降/不升段的开始位置，然后答案 <span class="math inline">\(f_i=\min(f_{up_i-1},f_{down_i-1})+1\)</span>​。</p>
-<h3 id="g-练习2-无限序列">G 练习2 无限序列</h3>
-<p>我们按以下方式产生序列：</p>
-<ol type="1">
+<p>预处理 $up_i,down_i$​ 表示以 $i$​ 为结尾的最长不降/不升段的开始位置，然后答案 $f_i=\min(f_{up_i-1},f_{down_i-1})+1$​。</p>
+<h3 id="G-练习2-无限序列"><a href="#G-练习2-无限序列" class="headerlink" title="G 练习2 无限序列"></a>G 练习2 无限序列</h3><p>我们按以下方式产生序列：</p>
+<ol>
 <li>开始时序列是： <code>1</code> ；</li>
 <li>每一次变化把序列中的 <code>1</code> 变成 <code>10</code> ，<code>0</code> 变成 <code>1</code>。</li>
 </ol>
 <p>经过无限次变化，我们得到序列 <code>1011010110110101101...</code>。</p>
-<p>总共有 <span class="math inline">\(Q\)</span> 个询问（ <span class="math inline">\(Q\leq5000\)</span>） ，要回答在区间 <span class="math inline">\([a,b]\)</span>​ 间有多少个<code>1</code>（<span class="math inline">\(1\leq a\leq b\leq2^{63}\)</span>​）。</p>
+<p>总共有 $Q$ 个询问（ $Q\leq5000$） ，要回答在区间 $[a,b]$​ 间有多少个<code>1</code>（$1\leq a\leq b\leq2^{63}$​）。</p>
 <p>难度：D+</p>
-<p>手玩发现第 <span class="math inline">\(i\)</span> 次变化后得到的序列是 <span class="math inline">\(i-1\)</span> 次变化后的序列 + <span class="math inline">\(i-2\)</span> 次变化后的序列，于是这就是个斐波那契。</p>
+<p>手玩发现第 $i$ 次变化后得到的序列是 $i-1$ 次变化后的序列 + $i-2$ 次变化后的序列，于是这就是个斐波那契。</p>
 <p>对于每个询问，转换成前缀和，然后不停二分即可。要注意二分时要找到第一个不大于它的，所以用 <code>std::lower_bound()</code> 时要注意。</p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
@@ -307,30 +303,24 @@
 
     </div>
 </div>
-<h2 id="chapter-2-二分">Chapter 2 二分</h2>
-<h3 id="f-练习3-攻击法坛">F 练习3 攻击法坛</h3>
-<p><a target="_blank" rel="noopener" href="https://www.ybtoj.com.cn/contest/131/problem/6">题面</a></p>
+<h2 id="Chapter-2-二分"><a href="#Chapter-2-二分" class="headerlink" title="Chapter 2 二分"></a>Chapter 2 二分</h2><h3 id="F-练习3-攻击法坛"><a href="#F-练习3-攻击法坛" class="headerlink" title="F 练习3 攻击法坛"></a>F 练习3 攻击法坛</h3><p><a target="_blank" rel="noopener" href="https://www.ybtoj.com.cn/contest/131/problem/6">题面</a></p>
 <p>难度：C</p>
-<p>二分 <span class="math inline">\(L\)</span>，然后用 DP 来 check，<span class="math inline">\(f(i,j)=\max(nxt1_{f(i-1,j)+1},nxt2_{f(i,j-1)+1})\)</span>。其中 <span class="math inline">\(f(i,j)\)</span> 表示用 <span class="math inline">\(i\)</span> 个第一种法杖和 <span class="math inline">\(j\)</span>​ 个第二种法杖能覆盖的最远的法坛，<span class="math inline">\(nxt1_i,nxt2_i\)</span>​ 分别表示在第 <span class="math inline">\(i\)</span> 个祭坛处用第一种/第二种法杖能覆盖的最远的法坛。特别地，<span class="math inline">\(nxt1_{n+1}=nxt2_{n+1}=n\)</span>。注意使用次数限制需要和 <span class="math inline">\(n\)</span>​ 取一个最小值。</p>
-<h2 id="chapter-19-倍增">Chapter 19 倍增</h2>
-<h3 id="h-练习3-图上查询">H 练习3 图上查询</h3>
-<p>一个 <span class="math inline">\(n\)</span> 个点 <span class="math inline">\(n\)</span> 条边的 <strong>有向图</strong>，对每个点求出从它出发经过 <span class="math inline">\(k\)</span> 条边，这些边的权值和以及这些边的权值最小值。</p>
+<p>二分 $L$，然后用 DP 来 check，$f(i,j)=\max(nxt1_{f(i-1,j)+1},nxt2_{f(i,j-1)+1})$。其中 $f(i,j)$ 表示用 $i$ 个第一种法杖和 $j$​ 个第二种法杖能覆盖的最远的法坛，$nxt1_i,nxt2_i$​ 分别表示在第 $i$ 个祭坛处用第一种/第二种法杖能覆盖的最远的法坛。特别地，$nxt1_{n+1}=nxt2_{n+1}=n$。注意使用次数限制需要和 $n$​ 取一个最小值。</p>
+<h2 id="Chapter-19-倍增"><a href="#Chapter-19-倍增" class="headerlink" title="Chapter 19 倍增"></a>Chapter 19 倍增</h2><h3 id="H-练习3-图上查询"><a href="#H-练习3-图上查询" class="headerlink" title="H 练习3 图上查询"></a>H 练习3 图上查询</h3><p>一个 $n$ 个点 $n$ 条边的 <strong>有向图</strong>，对每个点求出从它出发经过 $k$ 条边，这些边的权值和以及这些边的权值最小值。</p>
 <p>难度：D+</p>
 <p>一开始没看到有向图，就纳闷了，这玩意基环树？？？然后越想越不对劲，感觉是有向图这个题就不对了啊。</p>
-<p>看了题解发现是有向图。。。。。。。然后这个有向图每个点的出度都是 <span class="math inline">\(1\)</span>，那么倍增一下就行。</p>
+<p>看了题解发现是有向图。。。。。。。然后这个有向图每个点的出度都是 $1$，那么倍增一下就行。</p>
 <p>然后写着写着又忘记这个有向图有环了，可以无限走下去，于是挂了好几遍。。。</p>
 <p>确实要注意一下。</p>
-<h2 id="chapter-22-数位dp">Chapter 22 数位DP</h2>
-<h3 id="c-例题3-数字计数-zjoi2010">C 例题3 数字计数 [ZJOI2010]</h3>
-<p>给定两个正整数 <span class="math inline">\(l\)</span> 和 <span class="math inline">\(r\)</span>，求在 <span class="math inline">\([l,r]\)</span> 中的所有整数中，每个数码各出现了多少次。</p>
+<h2 id="Chapter-22-数位DP"><a href="#Chapter-22-数位DP" class="headerlink" title="Chapter 22 数位DP"></a>Chapter 22 数位DP</h2><h3 id="C-例题3-数字计数-ZJOI2010"><a href="#C-例题3-数字计数-ZJOI2010" class="headerlink" title="C 例题3 数字计数 [ZJOI2010]"></a>C 例题3 数字计数 [ZJOI2010]</h3><p>给定两个正整数 $l$ 和 $r$，求在 $[l,r]$ 中的所有整数中，每个数码各出现了多少次。</p>
 <p>难度：B+</p>
-<p>第一道自己做的数位DP...</p>
+<p>第一道自己做的数位DP…</p>
 <p>虽说是数位DP，但我似乎并不是正统数位DP，更像是一种推式子的递推。</p>
 <p>做每道推式子的计数都很费劲啊。。。实际上这题并不难。</p>
-<p>设 <span class="math inline">\(f(i,1/0)\)</span>​ 表示从低到高第 <span class="math inline">\(i\)</span>​​ 位，是/否紧贴上界，当前数码出现总次数。<span class="math inline">\(cnt(i,1/0)\)</span>​ 表示由低到高 <span class="math inline">\(i\)</span>​​ 位，是/否紧贴上界，总共有几个数。<span class="math inline">\(p_i\)</span> 表示从低到高第 <span class="math inline">\(i\)</span> 位数。</p>
-<p>对于数码 <span class="math inline">\(1\sim9\)</span> 显然有 <span class="math inline">\(cnt(i,0)=cnt(i+1,0)\times10+p_i\)</span>，<span class="math inline">\(cnt(i,1)=cnt(i+1,1)\)</span>，<span class="math inline">\(f(i,1)=f(i+1,1)+[p_i=x]\)</span>​。其中 <span class="math inline">\(x\)</span> 为当前要算的数码。</p>
-<p>考虑 <span class="math inline">\(f(i,0)\)</span>​，先给出来式子：<span class="math inline">\(f(i,0)=f(i+1,0)\times10+cnt(i+1,0)+f(i+1,1)\times p_i+[p_i&gt;x]\)</span>。</p>
-<p>解释一下：上一位所有含当前数码的数在这一位可以随便填一个数，所以乘一个 <span class="math inline">\(10\)</span>；之前所有数后面都可以填一个当前数码，所以要加上 <span class="math inline">\(cnt(i+1,0)\)</span>；之前紧贴上界的数可以填一个小于 <span class="math inline">\(p_i\)</span> 的数，如果当前数码比 <span class="math inline">\(p_i\)</span> 小，那么在刚刚填的时候还会填进去一个当前数码，要算进去。</p>
+<p>设 $f(i,1/0)$​ 表示从低到高第 $i$​​ 位，是/否紧贴上界，当前数码出现总次数。$cnt(i,1/0)$​ 表示由低到高 $i$​​ 位，是/否紧贴上界，总共有几个数。$p_i$ 表示从低到高第 $i$ 位数。</p>
+<p>对于数码 $1\sim9$ 显然有 $cnt(i,0)=cnt(i+1,0)\times10+p_i$，$cnt(i,1)=cnt(i+1,1)$，$f(i,1)=f(i+1,1)+[p_i=x]$​。其中 $x$ 为当前要算的数码。</p>
+<p>考虑 $f(i,0)$​，先给出来式子：$f(i,0)=f(i+1,0)\times10+cnt(i+1,0)+f(i+1,1)\times p_i+[p_i&gt;x]$。</p>
+<p>解释一下：上一位所有含当前数码的数在这一位可以随便填一个数，所以乘一个 $10$；之前所有数后面都可以填一个当前数码，所以要加上 $cnt(i+1,0)$；之前紧贴上界的数可以填一个小于 $p_i$ 的数，如果当前数码比 $p_i$ 小，那么在刚刚填的时候还会填进去一个当前数码，要算进去。</p>
 <div class='spoiler collapsed'>
     <div class='spoiler-title'>
         Code
@@ -426,7 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%BE%E5%BA%A6%E8%AF%84%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">难度评级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-1-%E9%80%92%E6%8E%A8"><span class="nav-number">2.</span> <span class="nav-text">Chapter 1 递推</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#e-%E7%BB%83%E4%B9%A01-%E5%88%92%E5%88%86%E6%95%B0%E5%88%97"><span class="nav-number">2.1.</span> <span class="nav-text">E 练习1 划分数列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#g-%E7%BB%83%E4%B9%A02-%E6%97%A0%E9%99%90%E5%BA%8F%E5%88%97"><span class="nav-number">2.2.</span> <span class="nav-text">G 练习2 无限序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-2-%E4%BA%8C%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">Chapter 2 二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#f-%E7%BB%83%E4%B9%A03-%E6%94%BB%E5%87%BB%E6%B3%95%E5%9D%9B"><span class="nav-number">3.1.</span> <span class="nav-text">F 练习3 攻击法坛</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-19-%E5%80%8D%E5%A2%9E"><span class="nav-number">4.</span> <span class="nav-text">Chapter 19 倍增</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#h-%E7%BB%83%E4%B9%A03-%E5%9B%BE%E4%B8%8A%E6%9F%A5%E8%AF%A2"><span class="nav-number">4.1.</span> <span class="nav-text">H 练习3 图上查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-22-%E6%95%B0%E4%BD%8Ddp"><span class="nav-number">5.</span> <span class="nav-text">Chapter 22 数位DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#c-%E4%BE%8B%E9%A2%983-%E6%95%B0%E5%AD%97%E8%AE%A1%E6%95%B0-zjoi2010"><span class="nav-number">5.1.</span> <span class="nav-text">C 例题3 数字计数 [ZJOI2010]</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%BE%E5%BA%A6%E8%AF%84%E7%BA%A7"><span class="nav-number">1.</span> <span class="nav-text">难度评级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-1-%E9%80%92%E6%8E%A8"><span class="nav-number">2.</span> <span class="nav-text">Chapter 1 递推</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#E-%E7%BB%83%E4%B9%A01-%E5%88%92%E5%88%86%E6%95%B0%E5%88%97"><span class="nav-number">2.1.</span> <span class="nav-text">E 练习1 划分数列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#G-%E7%BB%83%E4%B9%A02-%E6%97%A0%E9%99%90%E5%BA%8F%E5%88%97"><span class="nav-number">2.2.</span> <span class="nav-text">G 练习2 无限序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-2-%E4%BA%8C%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">Chapter 2 二分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#F-%E7%BB%83%E4%B9%A03-%E6%94%BB%E5%87%BB%E6%B3%95%E5%9D%9B"><span class="nav-number">3.1.</span> <span class="nav-text">F 练习3 攻击法坛</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-19-%E5%80%8D%E5%A2%9E"><span class="nav-number">4.</span> <span class="nav-text">Chapter 19 倍增</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#H-%E7%BB%83%E4%B9%A03-%E5%9B%BE%E4%B8%8A%E6%9F%A5%E8%AF%A2"><span class="nav-number">4.1.</span> <span class="nav-text">H 练习3 图上查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter-22-%E6%95%B0%E4%BD%8DDP"><span class="nav-number">5.</span> <span class="nav-text">Chapter 22 数位DP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-%E4%BE%8B%E9%A2%983-%E6%95%B0%E5%AD%97%E8%AE%A1%E6%95%B0-ZJOI2010"><span class="nav-number">5.1.</span> <span class="nav-text">C 例题3 数字计数 [ZJOI2010]</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -442,7 +432,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -455,7 +445,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -499,12 +489,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">204k</span>
+    <span title="站点总字数">205k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:05</span>
+    <span title="站点阅读时长">3:07</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>

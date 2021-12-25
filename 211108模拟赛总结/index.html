@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"D6M49GOKPF","apiKey":"ca8302c5987c681313d4baedfe8d6234","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="概述 不说了，非常凄凉。。。 感觉今天可以被认为是个小转折点，于是多写点（（（（（">
+  <meta name="description" content="概述不说了，非常凄凉。。。 感觉今天可以被认为是个小转折点，于是多写点（（（（（">
 <meta property="og:type" content="article">
 <meta property="og:title" content="211108模拟赛总结">
 <meta property="og:url" content="https://luoyisu.github.io/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="_slb&#39;s Blog">
-<meta property="og:description" content="概述 不说了，非常凄凉。。。 感觉今天可以被认为是个小转折点，于是多写点（（（（（">
+<meta property="og:description" content="概述不说了，非常凄凉。。。 感觉今天可以被认为是个小转折点，于是多写点（（（（（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-11-08T06:27:55.000Z">
 <meta property="article:modified_time" content="2021-11-08T07:40:36.199Z">
@@ -266,34 +266,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="概述">概述</h2>
-<p>不说了，非常凄凉。。。</p>
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>不说了，非常凄凉。。。</p>
 <p>感觉今天可以被认为是个小转折点，于是多写点（（（（（</p>
 <span id="more"></span>
-<h2 id="赛时">赛时</h2>
-<p>T1 不会，T2 有点感觉，T3 能写暴力，T4 不是很懂。</p>
+<h2 id="赛时"><a href="#赛时" class="headerlink" title="赛时"></a>赛时</h2><p>T1 不会，T2 有点感觉，T3 能写暴力，T4 不是很懂。</p>
 <p>写了个 T3 暴力背包DP，感觉能优化，稍微想了想无果，于是扔了。</p>
-<p>转过头看 T2，发现有个 <span class="math inline">\(O(n^2)\)</span> 暴力 DP 很好写，但是我想到了一个很假的贪心，就直接去莽了，结果花费了大量的时间。</p>
+<p>转过头看 T2，发现有个 $O(n^2)$ 暴力 DP 很好写，但是我想到了一个很假的贪心，就直接去莽了，结果花费了大量的时间。</p>
 <p>去看 T4，有点心烦意乱没法好好分析它的程序，随手写了个暴力走人。</p>
-<p>又去 T1，乱搞能搞出来 <span class="math inline">\(30\)</span> 分暴力，不过不怎么好写，就去想正解了。</p>
+<p>又去 T1，乱搞能搞出来 $30$ 分暴力，不过不怎么好写，就去想正解了。</p>
 <p>觉得就是找空盘搞 DP，就开始思考正解，但我实在是不擅长这种题，不会啊啊啊啊啊。</p>
-<p>发现没有时间了，转手写了个 <span class="math inline">\(10\)</span> 分暴力跑路。</p>
+<p>发现没有时间了，转手写了个 $10$ 分暴力跑路。</p>
 <p>然后发现时间严重不足，T2 的暴力没时间写了。。。</p>
 <p>就这么很悲凉地结束了。</p>
-<h2 id="总结">总结</h2>
-<p>暴力该写还是得写，比如 T2。。。尤其是不花费什么时间的时候——我已经调完了哈希判回文串，只需要套个 DP 上去就能改造成 <span class="math inline">\(O(n^2)\)</span> 暴力水过去 <span class="math inline">\(60\)</span> 分。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>暴力该写还是得写，比如 T2。。。尤其是不花费什么时间的时候——我已经调完了哈希判回文串，只需要套个 DP 上去就能改造成 $O(n^2)$ 暴力水过去 $60$ 分。</p>
 <p>实际上 T2 比较偏结论，我往这方面思考过，但是没有发现真正的性质，还是不够深入啊。</p>
 <p>T3 暴力写的也有点慢了。。。思考深度不够，其实正解思路不是特别复杂。仍然是 DP 状态的转化。平均值转为和优化为平均值转为与平均值的差。</p>
-<p>T4 把题目理解错了，以为每次修改之后会恢复到原序列，导致完全不需要动脑的 <span class="math inline">\(30\)</span> 分暴力没了。</p>
+<p>T4 把题目理解错了，以为每次修改之后会恢复到原序列，导致完全不需要动脑的 $30$ 分暴力没了。</p>
 <p>同时通过这道题也可以看出，我对这种给定代码判断它在干啥的题很不擅长，也许需要好好总结一下到底应该怎么做。。。</p>
 <p>然后这道题考试时候都没怎么思考，，，连数据范围给的提示都忽略了。。。</p>
 <p>T1 暴力还写挂了，实在是悲剧。。。随手写的，确实是有点心急。事实上 T1 确实是个 DP 类计数，我一看到”方案数“和”取模“就头疼。。。。</p>
-<hr />
+<hr>
 <p>下面再稍微说一下心理吧。</p>
 <p>今天 T3 T2 都有点上头，以为有所谓的“感觉”就上头想切掉，结果 T3 还好，拿到了应有的暴力，T2 就是真没了。。。</p>
 <p>想着切题也许是好的，但实在不能太过于上头，如果同时想到了暴力以及“正解”，尤其是像今天这种二者分歧不是特别大的时候，还是应该先写暴力！两个都写了然后对拍不香吗？？？为什么我总是直接去莽正解了。。。。</p>
 <p>然后是对于题目难度的判断，其实今天 T1 反而是在我的水平看来是比较难的题，我没有判断出来，导致以为自己被“降智”，其实真就是不会。（也没有非常多时间思考）</p>
-<p>按理来说面对不会的题应该写个暴力跑路，但是因为 T1 <span class="math inline">\(30\)</span> 分的暴力不是非常好写，我想到离散化等等，还不一定能过，就去思考正解了，这其实是个错误，遇到这种题也许先混暴力比较好，也能更专心思考。</p>
+<p>按理来说面对不会的题应该写个暴力跑路，但是因为 T1 $30$ 分的暴力不是非常好写，我想到离散化等等，还不一定能过，就去思考正解了，这其实是个错误，遇到这种题也许先混暴力比较好，也能更专心思考。</p>
 <p>有关 T4，得认真分析，数据范围也不能忽略，其实不是那么难。</p>
 <p>每次模拟赛都感觉时间不够，打字慢显然是因素之一——我打字指法一直是完全错误的。。</p>
 <p>再就是对一些基础的东西不熟练吧，比如今天的哈希判回文串，我其实是会的，思想也很好地掌握了，但是打的时候愣是出 bug 了，虽然顺利调出来了但终究是浪费了时间。</p>
@@ -401,7 +398,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">57</span>
+          <span class="site-state-item-count">58</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -414,7 +411,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">51</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -458,12 +455,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">204k</span>
+    <span title="站点总字数">205k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:05</span>
+    <span title="站点阅读时长">3:07</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
