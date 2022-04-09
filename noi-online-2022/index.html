@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"luoyisu.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"D6M49GOKPF","apiKey":"ca8302c5987c681313d4baedfe8d6234","indexName":"Search","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="概述 很炸裂。 赛时 三个传统题好耶！ 大概看了一眼三个题，还是决定按照顺序做。 T1 一开始想的有点歪，然后脑子转的有点慢，后来过了 20min 才意识到只需要求出来每个元素加进栈时候上一个元素的位置，询问的时候看区间里的会不会被删空就好了，迅速写了一发暴力验证了正确性。 按理来说已经该切掉了，但是我接下来进行了一波脑溢血操作——把题意转化为区间加区间小于等于  个数。 一开始">
+  <meta name="description" content="概述 很炸裂。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="noi-online-2022">
 <meta property="og:url" content="https://luoyisu.github.io/noi-online-2022/index.html">
 <meta property="og:site_name" content="_slb&#39;s Blog">
-<meta property="og:description" content="概述 很炸裂。 赛时 三个传统题好耶！ 大概看了一眼三个题，还是决定按照顺序做。 T1 一开始想的有点歪，然后脑子转的有点慢，后来过了 20min 才意识到只需要求出来每个元素加进栈时候上一个元素的位置，询问的时候看区间里的会不会被删空就好了，迅速写了一发暴力验证了正确性。 按理来说已经该切掉了，但是我接下来进行了一波脑溢血操作——把题意转化为区间加区间小于等于  个数。 一开始">
+<meta property="og:description" content="概述 很炸裂。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-03-27T03:02:32.000Z">
-<meta property="article:modified_time" content="2022-03-27T03:22:45.865Z">
+<meta property="article:modified_time" content="2022-03-28T13:11:12.426Z">
 <meta property="article:author" content="_slb">
 <meta property="article:tag" content="游记">
 <meta name="twitter:card" content="summary">
@@ -332,10 +332,16 @@ mjx-container[display="true"] + br {
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-03-27 11:02:32 / 修改时间：11:22:45" itemprop="dateCreated datePublished" datetime="2022-03-27T11:02:32+08:00">2022-03-27</time>
+              <time title="创建时间：2022-03-27 11:02:32" itemprop="dateCreated datePublished" datetime="2022-03-27T11:02:32+08:00">2022-03-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-28 21:11:12" itemprop="dateModified" datetime="2022-03-28T21:11:12+08:00">2022-03-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -380,6 +386,7 @@ mjx-container[display="true"] + br {
       
         <h2 id="概述">概述</h2>
 <p>很炸裂。</p>
+<span id="more"></span>
 <h2 id="赛时">赛时</h2>
 <p>三个传统题好耶！</p>
 <p>大概看了一眼三个题，还是决定按照顺序做。</p>
@@ -436,10 +443,13 @@ T3,。</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/220324-contest/" rel="prev" title="220324线上模拟赛">
-      <i class="fa fa-chevron-left"></i> 220324线上模拟赛
+    <a href="/220326-contest-with-dut/" rel="prev" title="220326 和大连理工大学线上 PK 记">
+      <i class="fa fa-chevron-left"></i> 220326 和大连理工大学线上 PK 记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/220328-contest/" rel="next" title="220328线上模拟赛">
+      220328线上模拟赛 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -516,7 +526,7 @@ T3,。</p>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-count">76</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -573,12 +583,12 @@ T3,。</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">280k</span>
+    <span title="站点总字数">287k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:14</span>
+    <span title="站点阅读时长">4:21</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
