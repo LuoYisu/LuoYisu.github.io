@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Note on _slb 的博客</title>
-    <link>http://example.org/categories/note/</link>
+    <link>https://luoyisu.github.io/categories/note/</link>
     <description>Recent content in Note on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Oct 2022 23:16:58 +0000</lastBuildDate><atom:link href="http://example.org/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 23:16:58 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>初级字符串算法合集</title>
-      <link>http://example.org/posts/string-algorithm-primary/</link>
+      <link>https://luoyisu.github.io/posts/string-algorithm-primary/</link>
       <pubDate>Sun, 30 Oct 2022 23:16:58 +0000</pubDate>
       
-      <guid>http://example.org/posts/string-algorithm-primary/</guid>
+      <guid>https://luoyisu.github.io/posts/string-algorithm-primary/</guid>
       <description>&lt;p&gt;初级字符串算法合集，预计内容包括：哈希、trie、kmp、manacher、z函数。&lt;/p&gt;
 &lt;p&gt;缓慢填坑。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>初级字符串算法合集，预计内容包括：哈希、trie、kmp、manacher、z函数。</p>
@@ -46,10 +46,10 @@
     
     <item>
       <title>基于状压的 O(n)-O(1) rmq</title>
-      <link>http://example.org/posts/linear-rmq/</link>
+      <link>https://luoyisu.github.io/posts/linear-rmq/</link>
       <pubDate>Sun, 28 Aug 2022 19:03:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/linear-rmq/</guid>
+      <guid>https://luoyisu.github.io/posts/linear-rmq/</guid>
       <description>&lt;p&gt;一个很简单的“禁术”。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>一个很简单的“禁术”。</p>
 <h2 id="rmq">RMQ</h2>
@@ -166,10 +166,10 @@
     
     <item>
       <title>杜教筛简单学习笔记</title>
-      <link>http://example.org/posts/du/</link>
+      <link>https://luoyisu.github.io/posts/du/</link>
       <pubDate>Tue, 15 Mar 2022 20:58:33 +0000</pubDate>
       
-      <guid>http://example.org/posts/du/</guid>
+      <guid>https://luoyisu.github.io/posts/du/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;想感受一下敲公式的快感，于是有了这篇文章。&lt;/p&gt;
 &lt;p&gt;只有一些最简单的应用。&lt;/p&gt;</description>
@@ -402,10 +402,10 @@ $$
     
     <item>
       <title>后缀数组学习笔记</title>
-      <link>http://example.org/posts/suffix-array/</link>
+      <link>https://luoyisu.github.io/posts/suffix-array/</link>
       <pubDate>Tue, 11 Jan 2022 22:06:21 +0000</pubDate>
       
-      <guid>http://example.org/posts/suffix-array/</guid>
+      <guid>https://luoyisu.github.io/posts/suffix-array/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;不能完全不管字符串，就硬着头皮学一学。&lt;/p&gt;
 &lt;p&gt;完全未完工。&lt;/p&gt;</description>
@@ -555,10 +555,10 @@ $$
     
     <item>
       <title>KMP 的一个不常见做法</title>
-      <link>http://example.org/posts/kmp-explore/</link>
+      <link>https://luoyisu.github.io/posts/kmp-explore/</link>
       <pubDate>Sun, 05 Dec 2021 20:36:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/kmp-explore/</guid>
+      <guid>https://luoyisu.github.io/posts/kmp-explore/</guid>
       <description>&lt;p&gt;看到 &lt;strong&gt;OI Wiki&lt;/strong&gt; 上有关 KMP 的一个不算惊为天人但也有点意思的做法，水一水。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>看到 <strong>OI Wiki</strong> 上有关 KMP 的一个不算惊为天人但也有点意思的做法，水一水。</p>
 <p>众所周知 KMP 是为了解决字符串匹配问题的，有一个长度为 $n$ 的模式串 $t$ 和一个文本串 $s$。</p>
@@ -588,10 +588,10 @@ $$
     
     <item>
       <title>模拟退火学习笔记</title>
-      <link>http://example.org/posts/simulated-annealing/</link>
+      <link>https://luoyisu.github.io/posts/simulated-annealing/</link>
       <pubDate>Mon, 22 Nov 2021 22:14:42 +0000</pubDate>
       
-      <guid>http://example.org/posts/simulated-annealing/</guid>
+      <guid>https://luoyisu.github.io/posts/simulated-annealing/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;为什么我去学了模拟退火呢？&lt;/p&gt;
 &lt;p&gt;因为 CSP2021T1 和 NOIP2021T3 都能用模拟退火得到很高的分数，但是我却只打了最简单的暴力。失去了很多分数。&lt;/p&gt;
@@ -718,10 +718,10 @@ $$
     
     <item>
       <title>可并堆学习笔记</title>
-      <link>http://example.org/posts/mergeable-heap/</link>
+      <link>https://luoyisu.github.io/posts/mergeable-heap/</link>
       <pubDate>Mon, 15 Nov 2021 16:19:28 +0000</pubDate>
       
-      <guid>http://example.org/posts/mergeable-heap/</guid>
+      <guid>https://luoyisu.github.io/posts/mergeable-heap/</guid>
       <description>&lt;p&gt;所谓可并堆，就是可以合并的堆。&lt;/p&gt;
 &lt;p&gt;本文介绍配对堆和左偏树。&lt;/p&gt;
 &lt;p&gt;未完工。&lt;/p&gt;</description>

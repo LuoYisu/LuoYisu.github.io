@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Summary on _slb 的博客</title>
-    <link>http://example.org/categories/summary/</link>
+    <link>https://luoyisu.github.io/categories/summary/</link>
     <description>Recent content in Summary on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 May 2022 07:01:46 +0000</lastBuildDate><atom:link href="http://example.org/categories/summary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 07:01:46 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/summary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LNOI2022</title>
-      <link>http://example.org/posts/lnoi2022/</link>
+      <link>https://luoyisu.github.io/posts/lnoi2022/</link>
       <pubDate>Thu, 26 May 2022 07:01:46 +0000</pubDate>
       
-      <guid>http://example.org/posts/lnoi2022/</guid>
+      <guid>https://luoyisu.github.io/posts/lnoi2022/</guid>
       <description>&lt;h1 id=&#34;lnoi2022&#34;&gt;LNOI2022&lt;/h1&gt;
 &lt;p&gt;单看省选成绩是第七名，算上 NOIP 就是第十名左右，翻盘失败。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="lnoi2022">LNOI2022</h1>
@@ -46,10 +46,10 @@
     
     <item>
       <title>noi-online-2022</title>
-      <link>http://example.org/posts/noi-online-2022/</link>
+      <link>https://luoyisu.github.io/posts/noi-online-2022/</link>
       <pubDate>Sun, 27 Mar 2022 11:02:32 +0000</pubDate>
       
-      <guid>http://example.org/posts/noi-online-2022/</guid>
+      <guid>https://luoyisu.github.io/posts/noi-online-2022/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;很炸裂。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -87,10 +87,10 @@
     
     <item>
       <title>220324线上模拟赛</title>
-      <link>http://example.org/posts/220324-contest/</link>
+      <link>https://luoyisu.github.io/posts/220324-contest/</link>
       <pubDate>Thu, 24 Mar 2022 14:41:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/220324-contest/</guid>
+      <guid>https://luoyisu.github.io/posts/220324-contest/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;预计 $100+100+4=204$，实际 $100+100+0=200$，和想的差不多。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -134,10 +134,10 @@
     
     <item>
       <title>220319 和大连理工大学线上 PK 记</title>
-      <link>http://example.org/posts/220319-contest-with-dut/</link>
+      <link>https://luoyisu.github.io/posts/220319-contest-with-dut/</link>
       <pubDate>Sun, 20 Mar 2022 12:41:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/220319-contest-with-dut/</guid>
+      <guid>https://luoyisu.github.io/posts/220319-contest-with-dut/</guid>
       <description>&lt;p&gt;虽说是和大工 PK，但感觉他们好像做了一会题就走了，主要是我们校内在比（&lt;/p&gt;
 &lt;p&gt;实际上水这么一篇博客的目的就是摆烂。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>虽说是和大工 PK，但感觉他们好像做了一会题就走了，主要是我们校内在比（</p>
@@ -178,10 +178,10 @@
     
     <item>
       <title>220222 和大连理工大学线上 PK 记</title>
-      <link>http://example.org/posts/220222-contest-with-dut/</link>
+      <link>https://luoyisu.github.io/posts/220222-contest-with-dut/</link>
       <pubDate>Tue, 22 Feb 2022 19:43:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/220222-contest-with-dut/</guid>
+      <guid>https://luoyisu.github.io/posts/220222-contest-with-dut/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;我和杜大佬一队，各做了 $4$ 道题，但总体来说我还是被他带飞了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -228,10 +228,10 @@
     
     <item>
       <title>220120摆烂模拟赛</title>
-      <link>http://example.org/posts/220120-contest/</link>
+      <link>https://luoyisu.github.io/posts/220120-contest/</link>
       <pubDate>Thu, 20 Jan 2022 17:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/220120-contest/</guid>
+      <guid>https://luoyisu.github.io/posts/220120-contest/</guid>
       <description>&lt;p&gt;好久没写总结了，于是来写一发。&lt;/p&gt;
 &lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $0+100+100=200$，实际 $0+0(100)+0=0(100)$。&lt;/p&gt;
@@ -266,10 +266,10 @@
     
     <item>
       <title>211116模拟赛</title>
-      <link>http://example.org/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Tue, 16 Nov 2021 15:41:05 +0000</pubDate>
       
-      <guid>http://example.org/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;啥都不会，滚出。&lt;/p&gt;
 &lt;p&gt;期望 $0+100+0+20=120$，实际 $0+20+0+20=40$​。至于为什么挂了这么多，看下文。&lt;/p&gt;</description>
@@ -428,10 +428,10 @@
     
     <item>
       <title>211114模拟赛</title>
-      <link>http://example.org/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sun, 14 Nov 2021 18:20:38 +0000</pubDate>
       
-      <guid>http://example.org/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;啥都不会。&lt;/p&gt;
 &lt;p&gt;期望 $0+0+20+20=40$​，实际没挂分。&lt;/p&gt;</description>
@@ -462,10 +462,10 @@
     
     <item>
       <title>211113模拟赛</title>
-      <link>http://example.org/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sat, 13 Nov 2021 12:40:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $100+100+40+0=240$，实际同期望，难得没有挂分。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -510,10 +510,10 @@
     
     <item>
       <title>211109模拟赛</title>
-      <link>http://example.org/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Tue, 09 Nov 2021 14:14:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $100+100+100+20=320$，实际 $100+100+80+20=300$。没怎么挂。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -554,10 +554,10 @@
     
     <item>
       <title>211108模拟赛总结</title>
-      <link>http://example.org/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</link>
+      <link>https://luoyisu.github.io/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 08 Nov 2021 14:27:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://luoyisu.github.io/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不说了，非常凄凉。。。&lt;/p&gt;
 &lt;p&gt;感觉今天可以被认为是个小转折点，于是多写点（（（（（&lt;/p&gt;</description>
@@ -598,10 +598,10 @@
     
     <item>
       <title>211104模拟赛挂分记</title>
-      <link>http://example.org/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
       <pubDate>Thu, 04 Nov 2021 13:32:27 +0000</pubDate>
       
-      <guid>http://example.org/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;预计 $100+100+0+20=220$，实际 $50+0+0+0=50$，挂成傻逼了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -624,10 +624,10 @@
     
     <item>
       <title>211031模拟赛</title>
-      <link>http://example.org/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sun, 31 Oct 2021 14:25:27 +0000</pubDate>
       
-      <guid>http://example.org/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $0+100+0+70=170$，实际 $0+100+0+50=150$。还可以。&lt;/p&gt;
 &lt;p&gt;被 SHR 神吊打了qwq。&lt;/p&gt;</description>
@@ -652,10 +652,10 @@
     
     <item>
       <title>211028模拟赛</title>
-      <link>http://example.org/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Thu, 28 Oct 2021 18:53:02 +0000</pubDate>
       
-      <guid>http://example.org/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;本校出题。&lt;/p&gt;
 &lt;p&gt;期望 $100+100+0+0=200$，实际 $100+0+0+0=100$​。&lt;/p&gt;</description>
@@ -677,10 +677,10 @@
     
     <item>
       <title>211027模拟赛爆零记</title>
-      <link>http://example.org/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
       <pubDate>Wed, 27 Oct 2021 14:07:27 +0000</pubDate>
       
-      <guid>http://example.org/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;估计 $100+0+0+100=200$​，实际 $0+0+0+0=0$​​。&lt;/p&gt;
 &lt;p&gt;试图切题，然后挂了 $\text{inf}$ 分。&lt;/p&gt;</description>
@@ -715,10 +715,10 @@
     
     <item>
       <title>211017模拟赛</title>
-      <link>http://example.org/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Mon, 18 Oct 2021 07:19:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;啥都不会，只会暴力。&lt;/p&gt;
 &lt;p&gt;估计 $60+60+20+0=140$，实际 $60+60+20+0=140$​。。。。。。&lt;/p&gt;</description>
@@ -743,10 +743,10 @@
     
     <item>
       <title>211016模拟赛</title>
-      <link>http://example.org/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sat, 16 Oct 2021 14:10:30 +0000</pubDate>
       
-      <guid>http://example.org/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天的模拟赛还行。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;期望&lt;/strong&gt; $100+0+40+52=192$，实际 $100+0+20+52=172$​。还算可以。&lt;/p&gt;</description>
@@ -768,10 +768,10 @@
     
     <item>
       <title>211015模拟赛</title>
-      <link>http://example.org/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Fri, 15 Oct 2021 16:10:51 +0000</pubDate>
       
-      <guid>http://example.org/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天实惨，估计 $0+72+100+100=272$，实际 $0+0+0+100=100$​。&lt;/p&gt;
 &lt;p&gt;被吊打了qwq。&lt;/p&gt;</description>
@@ -794,10 +794,10 @@
     
     <item>
       <title>211005十一模拟赛2</title>
-      <link>http://example.org/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</link>
+      <link>https://luoyisu.github.io/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</link>
       <pubDate>Tue, 05 Oct 2021 17:23:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</guid>
+      <guid>https://luoyisu.github.io/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天的题体感好一些，没有太强的无力感。&lt;/p&gt;
 &lt;p&gt;估计 $30+80+65=175$，实际 $30+70+15=115$，真惨。&lt;/p&gt;
@@ -840,10 +840,10 @@
     
     <item>
       <title>211003十一模拟赛1</title>
-      <link>http://example.org/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</link>
+      <link>https://luoyisu.github.io/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</link>
       <pubDate>Mon, 04 Oct 2021 19:06:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</guid>
+      <guid>https://luoyisu.github.io/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;有点凄凉。&lt;/p&gt;
 &lt;p&gt;预测 $20+60+40=120$，实际 $20+60+0=80$。被各路神仙吊打了qwq&lt;/p&gt;</description>
@@ -874,10 +874,10 @@
     
     <item>
       <title>210912NOIP模拟赛</title>
-      <link>http://example.org/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sun, 12 Sep 2021 19:06:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;题好难啊qwq。&lt;/p&gt;
 &lt;p&gt;期望 $50+40+60+30=180$，实际 $10+40+30+30=110$，挂了不少。&lt;/p&gt;
@@ -915,10 +915,10 @@
     
     <item>
       <title>210911NOIP信心赛问号记</title>
-      <link>http://example.org/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</link>
       <pubDate>Sat, 11 Sep 2021 20:34:12 +0000</pubDate>
       
-      <guid>http://example.org/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;首先看到三道名字是乱码的题，一道叫“Extra”的构造题，又一看叫“信心赛”，又看到“题目较简单。AK选手不要大声喧哗”，再仔细一看，“题目不按照难度顺序排序”，我就知道来者不善。我直呼好家伙！&lt;/p&gt;
 &lt;p&gt;教练让我们多写暴力拿分，在前十分钟我还是想贯彻这个思想的，结果后来有点上头。&lt;/p&gt;
@@ -952,10 +952,10 @@
     
     <item>
       <title>210818构造模拟赛挂分记</title>
-      <link>http://example.org/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
       <pubDate>Wed, 18 Aug 2021 22:28:09 +0000</pubDate>
       
-      <guid>http://example.org/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是构造，题似乎不是很难，然而我挂的很惨。&lt;/p&gt;
 &lt;p&gt;期望：$100+30+60+100=290$​，实际 $0+20+0+5=25$​。大家都挂的很惨，于是我 RK13/23。。。&lt;/p&gt;</description>
@@ -1129,10 +1129,10 @@
     
     <item>
       <title>210817数学模拟赛爆零记</title>
-      <link>http://example.org/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
       <pubDate>Tue, 17 Aug 2021 23:10:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是数学，本来以为会还行，结果 $0+0+30+5=35$​，接近垫底了（&lt;/p&gt;
 &lt;p&gt;再次被机房男女老少暴打qwq。&lt;/p&gt;</description>
@@ -1163,10 +1163,10 @@
     
     <item>
       <title>210816树上问题模拟赛</title>
-      <link>http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Mon, 16 Aug 2021 21:39:32 +0000</pubDate>
       
-      <guid>http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;因为打疫苗只打了将近两个小时。期望 $0+20+30+0=50$，实际 $0+0+60+0=60$。&lt;/p&gt;
 &lt;p&gt;还行吧，今天题是真的难。&lt;/p&gt;</description>
@@ -1190,10 +1190,10 @@
     
     <item>
       <title>210815图论模拟赛心态良好记</title>
-      <link>http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</link>
       <pubDate>Sun, 15 Aug 2021 22:56:56 +0000</pubDate>
       
-      <guid>http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。&lt;/p&gt;
 &lt;p&gt;期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行&amp;hellip;&lt;/p&gt;</description>
@@ -1227,10 +1227,10 @@
     
     <item>
       <title>210814字符串模拟赛挂分记</title>
-      <link>http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
       <pubDate>Sat, 14 Aug 2021 21:26:03 +0000</pubDate>
       
-      <guid>http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是字符串，然而字符串有关算法我基本就会 Trie 树和 Hash，KMP 到现在都不太会。。。&lt;/p&gt;
 &lt;p&gt;期望 $100+20+100+0=220$，实际 $0+50+30+0=80$，rank 14/23&lt;/p&gt;
@@ -1257,10 +1257,10 @@
     
     <item>
       <title>210813杂项模拟赛乱改记</title>
-      <link>http://example.org/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</link>
       <pubDate>Fri, 13 Aug 2021 21:54:41 +0000</pubDate>
       
-      <guid>http://example.org/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</guid>
       <description>概述 期望 $100+30+70+20=220$，实际 $100+0+10+10=120$，rk6，有点神奇，不过机房神仙们连切三题太神了！
 赛时 首先看到今天是个杂项：分治二分倍增快速幂，又看到难度是递增的，尝试多拿分、切题。
 首先看到T1，就差把分治写脸上了，快速打了个大框然后写分治的递归函数。

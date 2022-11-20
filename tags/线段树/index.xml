@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>线段树 on _slb 的博客</title>
-    <link>http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+    <link>https://luoyisu.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
     <description>Recent content in 线段树 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Dec 2021 13:32:13 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 13:32:13 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codeforces Round 337 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest610/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest610/</link>
       <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest610/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest610/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;虽说是 Div2，但也不是特别简单，E 还是不太裸的。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -375,10 +375,10 @@
     
     <item>
       <title>Codeforces Round 495 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1004/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1004/</link>
       <pubDate>Tue, 14 Dec 2021 13:38:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1004/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1004/</guid>
       <description>&lt;p&gt;还行吧，但我实在太菜了，水题都不会做&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还行吧，但我实在太菜了，水题都不会做</p>
 <h2 id="ahttpscodeforcescomcontest1004problema"><a href="https://codeforces.com/contest/1004/problem/A">A</a></h2>
@@ -877,10 +877,10 @@
     
     <item>
       <title>洛谷P3605 [USACO17JAN]Promotion Counting P</title>
-      <link>http://example.org/posts/luogu3605/</link>
+      <link>https://luoyisu.github.io/posts/luogu3605/</link>
       <pubDate>Thu, 18 Nov 2021 09:19:15 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3605/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3605/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一棵树，每个点有一个权值，求每个点所有后代中权值比它大的点的个数。&lt;/p&gt;
 &lt;p&gt;$n\leq10^5$&lt;/p&gt;</description>

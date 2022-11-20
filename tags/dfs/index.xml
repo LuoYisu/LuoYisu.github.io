@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DFS on _slb 的博客</title>
-    <link>http://example.org/tags/dfs/</link>
+    <link>https://luoyisu.github.io/tags/dfs/</link>
     <description>Recent content in DFS on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 12 Nov 2021 17:19:03 +0000</lastBuildDate><atom:link href="http://example.org/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 Nov 2021 17:19:03 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/dfs/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CF453C</title>
-      <link>http://example.org/posts/cf453c/</link>
+      <link>https://luoyisu.github.io/posts/cf453c/</link>
       <pubDate>Fri, 12 Nov 2021 17:19:03 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf453c/</guid>
+      <guid>https://luoyisu.github.io/posts/cf453c/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给一个无向图，$n$​​​ 个点 $m$​​ 条边，给定一个 01 序列，如果 $a_i=1$​，要求走到这个点奇数次，否则，要求走到这个点偶数次，请你任选起点，输出满足要求的经过点的序列和序列长度，序列长度不能超过 $4n$。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>

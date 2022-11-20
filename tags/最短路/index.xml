@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>最短路 on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
+    <link>https://luoyisu.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
     <description>Recent content in 最短路 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 19 Mar 2022 19:00:20 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 19:00:20 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>统一省选2021 A卷 题解</title>
-      <link>http://example.org/posts/shengxuan-2021/</link>
+      <link>https://luoyisu.github.io/posts/shengxuan-2021/</link>
       <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/shengxuan-2021/</guid>
+      <guid>https://luoyisu.github.io/posts/shengxuan-2021/</guid>
       <description>&lt;p&gt;目前只有 Day1 的题目。&lt;/p&gt;
 &lt;p&gt;感觉 Day1 的三道题很 CF。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>目前只有 Day1 的题目。</p>
@@ -337,10 +337,10 @@
     
     <item>
       <title>CF718E</title>
-      <link>http://example.org/posts/cf718e/</link>
+      <link>https://luoyisu.github.io/posts/cf718e/</link>
       <pubDate>Wed, 17 Nov 2021 13:18:31 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf718e/</guid>
+      <guid>https://luoyisu.github.io/posts/cf718e/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一个仅包含 &lt;code&gt;a&lt;/code&gt;~&lt;code&gt;h&lt;/code&gt; 的字符串。&lt;/p&gt;
 &lt;p&gt;有一个 $n$​​​​ 个结点的无向图，编号为 $0$​​​​​ 到 $n−1$​​​​​​ 结点 $i$​​​ 与结点 $j$​​ 间有边相连当且仅当 $|i-j|=1$​ 或 $S_i=S_j$。&lt;/p&gt;

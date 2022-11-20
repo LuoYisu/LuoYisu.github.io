@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数位DP on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%95%B0%E4%BD%8Ddp/</link>
+    <link>https://luoyisu.github.io/tags/%E6%95%B0%E4%BD%8Ddp/</link>
     <description>Recent content in 数位DP on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 May 2022 22:24:35 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%95%B0%E4%BD%8Ddp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 May 2022 22:24:35 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%95%B0%E4%BD%8Ddp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数位统计问题练习记录</title>
-      <link>http://example.org/posts/number-dp/</link>
+      <link>https://luoyisu.github.io/posts/number-dp/</link>
       <pubDate>Wed, 11 May 2022 22:24:35 +0000</pubDate>
       
-      <guid>http://example.org/posts/number-dp/</guid>
+      <guid>https://luoyisu.github.io/posts/number-dp/</guid>
       <description>&lt;p&gt;不给出题目链接了，网上可以找到（推荐vjudge）。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>不给出题目链接了，网上可以找到（推荐vjudge）。</p>
 <h2 id="bzoj4292-rownanie">BZOJ4292 Rownanie</h2>
@@ -49,10 +49,10 @@
     
     <item>
       <title>luogu3281 [SCOI2013]数数</title>
-      <link>http://example.org/posts/luogu3281/</link>
+      <link>https://luoyisu.github.io/posts/luogu3281/</link>
       <pubDate>Thu, 28 Oct 2021 10:31:41 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3281/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3281/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;有两个 $B$ 进制数 $L,R$，求区间 $[L,R]$ 中，将所有 $B$ 进制数看成一个字符串，所有字符串的所有连续子串对应 $B$ 进制数的和（十进制） $\bmod 20130427$​。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>

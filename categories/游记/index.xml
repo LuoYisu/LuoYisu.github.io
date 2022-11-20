@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>游记 on _slb 的博客</title>
-    <link>http://example.org/categories/%E6%B8%B8%E8%AE%B0/</link>
+    <link>https://luoyisu.github.io/categories/%E6%B8%B8%E8%AE%B0/</link>
     <description>Recent content in 游记 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Sep 2022 06:51:20 +0000</lastBuildDate><atom:link href="http://example.org/categories/%E6%B8%B8%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 19 Sep 2022 06:51:20 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/%E6%B8%B8%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSP-S2022</title>
-      <link>http://example.org/posts/csp-s2022/</link>
+      <link>https://luoyisu.github.io/posts/csp-s2022/</link>
       <pubDate>Mon, 19 Sep 2022 06:51:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/csp-s2022/</guid>
+      <guid>https://luoyisu.github.io/posts/csp-s2022/</guid>
       <description>&lt;p&gt;希望比去年强。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>希望比去年强。</p>
 <h2 id="初赛">初赛</h2>
@@ -36,10 +36,10 @@
     
     <item>
       <title>NOI2022 游记</title>
-      <link>http://example.org/posts/noi2022/</link>
+      <link>https://luoyisu.github.io/posts/noi2022/</link>
       <pubDate>Fri, 26 Aug 2022 20:36:54 +0000</pubDate>
       
-      <guid>http://example.org/posts/noi2022/</guid>
+      <guid>https://luoyisu.github.io/posts/noi2022/</guid>
       <description>&lt;p&gt;D类选手，因为一些原因打铁了。&lt;/p&gt;
 &lt;p&gt;只写一些和比赛关系比较大的事情，乱七八糟的就不写了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>D类选手，因为一些原因打铁了。</p>
@@ -97,10 +97,10 @@
     
     <item>
       <title>WC2022线上(摆烂)测试总结</title>
-      <link>http://example.org/posts/wc2022/</link>
+      <link>https://luoyisu.github.io/posts/wc2022/</link>
       <pubDate>Fri, 28 Jan 2022 18:18:45 +0000</pubDate>
       
-      <guid>http://example.org/posts/wc2022/</guid>
+      <guid>https://luoyisu.github.io/posts/wc2022/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;因为过于摆烂，所以记录一下警醒自己。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="前言">前言</h2>
@@ -146,10 +146,10 @@
     
     <item>
       <title>NOIP2021 游记&amp;总结</title>
-      <link>http://example.org/posts/noip2021/</link>
+      <link>https://luoyisu.github.io/posts/noip2021/</link>
       <pubDate>Sat, 20 Nov 2021 15:22:38 +0000</pubDate>
       
-      <guid>http://example.org/posts/noip2021/</guid>
+      <guid>https://luoyisu.github.io/posts/noip2021/</guid>
       <description>&lt;h1 id=&#34;noip2021&#34;&gt;NOIP2021&lt;/h1&gt;
 &lt;p&gt;凄凉。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="noip2021">NOIP2021</h1>
@@ -186,10 +186,10 @@
     
     <item>
       <title>CSP2021-S2游记</title>
-      <link>http://example.org/posts/csp2021-s2/</link>
+      <link>https://luoyisu.github.io/posts/csp2021-s2/</link>
       <pubDate>Sat, 23 Oct 2021 20:52:12 +0000</pubDate>
       
-      <guid>http://example.org/posts/csp2021-s2/</guid>
+      <guid>https://luoyisu.github.io/posts/csp2021-s2/</guid>
       <description>&lt;h1 id=&#34;csp2021-s2&#34;&gt;CSP2021-S2&lt;/h1&gt;
 &lt;p&gt;没有大模拟我其实是很失望的。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="csp2021-s2">CSP2021-S2</h1>
@@ -259,10 +259,10 @@
     
     <item>
       <title>CSP2021-S1游记</title>
-      <link>http://example.org/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</link>
       <pubDate>Sun, 19 Sep 2021 13:56:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</guid>
       <description>&lt;p&gt;我愿称之为凄凉。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>我愿称之为凄凉。</p>
 <h2 id="第一轮">第一轮</h2>

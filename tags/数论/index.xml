@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>数论 on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%95%B0%E8%AE%BA/</link>
+    <link>https://luoyisu.github.io/tags/%E6%95%B0%E8%AE%BA/</link>
     <description>Recent content in 数论 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 15 Mar 2022 20:58:33 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 20:58:33 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>杜教筛简单学习笔记</title>
-      <link>http://example.org/posts/du/</link>
+      <link>https://luoyisu.github.io/posts/du/</link>
       <pubDate>Tue, 15 Mar 2022 20:58:33 +0000</pubDate>
       
-      <guid>http://example.org/posts/du/</guid>
+      <guid>https://luoyisu.github.io/posts/du/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;想感受一下敲公式的快感，于是有了这篇文章。&lt;/p&gt;
 &lt;p&gt;只有一些最简单的应用。&lt;/p&gt;</description>
@@ -245,10 +245,10 @@ $$
     
     <item>
       <title>loj3050 「十二省联考 2019」 骗分过样例</title>
-      <link>http://example.org/posts/loj3050/</link>
+      <link>https://luoyisu.github.io/posts/loj3050/</link>
       <pubDate>Mon, 10 Jan 2022 21:14:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj3050/</guid>
+      <guid>https://luoyisu.github.io/posts/loj3050/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给出一些测试点的输入文件和输出文件以及每个测试点要实现的功能编号，你需要写一个程序通过这些给出的测试点。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://loj.ac/p/3050&#34;&gt;链接&lt;/a&gt;，这个题在 loj 上体验很好，洛谷上虽然也有这个题但容易被卡常。&lt;/p&gt;</description>

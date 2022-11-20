@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>_slb 的博客</title>
-    <link>http://example.org/</link>
+    <link>https://luoyisu.github.io/</link>
     <description>Recent content on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 30 Oct 2022 23:16:58 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Oct 2022 23:16:58 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>初级字符串算法合集</title>
-      <link>http://example.org/posts/string-algorithm-primary/</link>
+      <link>https://luoyisu.github.io/posts/string-algorithm-primary/</link>
       <pubDate>Sun, 30 Oct 2022 23:16:58 +0000</pubDate>
       
-      <guid>http://example.org/posts/string-algorithm-primary/</guid>
+      <guid>https://luoyisu.github.io/posts/string-algorithm-primary/</guid>
       <description>&lt;p&gt;初级字符串算法合集，预计内容包括：哈希、trie、kmp、manacher、z函数。&lt;/p&gt;
 &lt;p&gt;缓慢填坑。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>初级字符串算法合集，预计内容包括：哈希、trie、kmp、manacher、z函数。</p>
@@ -46,10 +46,10 @@
     
     <item>
       <title>CSP-S2022</title>
-      <link>http://example.org/posts/csp-s2022/</link>
+      <link>https://luoyisu.github.io/posts/csp-s2022/</link>
       <pubDate>Mon, 19 Sep 2022 06:51:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/csp-s2022/</guid>
+      <guid>https://luoyisu.github.io/posts/csp-s2022/</guid>
       <description>&lt;p&gt;希望比去年强。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>希望比去年强。</p>
 <h2 id="初赛">初赛</h2>
@@ -73,10 +73,10 @@
     
     <item>
       <title>基于状压的 O(n)-O(1) rmq</title>
-      <link>http://example.org/posts/linear-rmq/</link>
+      <link>https://luoyisu.github.io/posts/linear-rmq/</link>
       <pubDate>Sun, 28 Aug 2022 19:03:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/linear-rmq/</guid>
+      <guid>https://luoyisu.github.io/posts/linear-rmq/</guid>
       <description>&lt;p&gt;一个很简单的“禁术”。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>一个很简单的“禁术”。</p>
 <h2 id="rmq">RMQ</h2>
@@ -193,10 +193,10 @@
     
     <item>
       <title>NOI2022 游记</title>
-      <link>http://example.org/posts/noi2022/</link>
+      <link>https://luoyisu.github.io/posts/noi2022/</link>
       <pubDate>Fri, 26 Aug 2022 20:36:54 +0000</pubDate>
       
-      <guid>http://example.org/posts/noi2022/</guid>
+      <guid>https://luoyisu.github.io/posts/noi2022/</guid>
       <description>&lt;p&gt;D类选手，因为一些原因打铁了。&lt;/p&gt;
 &lt;p&gt;只写一些和比赛关系比较大的事情，乱七八糟的就不写了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>D类选手，因为一些原因打铁了。</p>
@@ -254,10 +254,10 @@
     
     <item>
       <title>LNOI2022-solution</title>
-      <link>http://example.org/posts/lnoi2022-solution/</link>
+      <link>https://luoyisu.github.io/posts/lnoi2022-solution/</link>
       <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/lnoi2022-solution/</guid>
+      <guid>https://luoyisu.github.io/posts/lnoi2022-solution/</guid>
       <description>&lt;p&gt;填完了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>填完了。</p>
 <h2 id="t1-food">T1 food</h2>
@@ -735,10 +735,10 @@ $$
     
     <item>
       <title>LNOI2022</title>
-      <link>http://example.org/posts/lnoi2022/</link>
+      <link>https://luoyisu.github.io/posts/lnoi2022/</link>
       <pubDate>Thu, 26 May 2022 07:01:46 +0000</pubDate>
       
-      <guid>http://example.org/posts/lnoi2022/</guid>
+      <guid>https://luoyisu.github.io/posts/lnoi2022/</guid>
       <description>&lt;h1 id=&#34;lnoi2022&#34;&gt;LNOI2022&lt;/h1&gt;
 &lt;p&gt;单看省选成绩是第七名，算上 NOIP 就是第十名左右，翻盘失败。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="lnoi2022">LNOI2022</h1>
@@ -772,10 +772,10 @@ $$
     
     <item>
       <title>数位统计问题练习记录</title>
-      <link>http://example.org/posts/number-dp/</link>
+      <link>https://luoyisu.github.io/posts/number-dp/</link>
       <pubDate>Wed, 11 May 2022 22:24:35 +0000</pubDate>
       
-      <guid>http://example.org/posts/number-dp/</guid>
+      <guid>https://luoyisu.github.io/posts/number-dp/</guid>
       <description>&lt;p&gt;不给出题目链接了，网上可以找到（推荐vjudge）。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>不给出题目链接了，网上可以找到（推荐vjudge）。</p>
 <h2 id="bzoj4292-rownanie">BZOJ4292 Rownanie</h2>
@@ -812,10 +812,10 @@ $$
     
     <item>
       <title>loj3049 「十二省联考 2019」字符串问题</title>
-      <link>http://example.org/posts/loj3049/</link>
+      <link>https://luoyisu.github.io/posts/loj3049/</link>
       <pubDate>Sat, 07 May 2022 09:07:28 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj3049/</guid>
+      <guid>https://luoyisu.github.io/posts/loj3049/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;有一个字符串 $S$，有 $n_a$ 个 A 类串是其子串，有 $n_b$ 个 B 类串是其子串，另外有 $m$ 个支配关系，表示第 $x$ 个 A 类串支配第 $y$ 个 B 类串。&lt;/p&gt;
 &lt;p&gt;求一个长度最大的字符串 $T$，需要满足两个条件：&lt;/p&gt;
@@ -1046,10 +1046,10 @@ $$
     
     <item>
       <title>loj3702 「联合省选 2022」学术社区</title>
-      <link>http://example.org/posts/loj3702/</link>
+      <link>https://luoyisu.github.io/posts/loj3702/</link>
       <pubDate>Wed, 20 Apr 2022 19:59:46 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj3702/</guid>
+      <guid>https://luoyisu.github.io/posts/loj3702/</guid>
       <description>&lt;p&gt;参考：&lt;a href=&#34;https://www.luogu.com.cn/blog/pengSiJin/lian-ge-xing-xuan-2022-xue-shu-she-ou-analysis&#34;&gt;出题人 Itst 的题解&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;确实是神仙，不好想。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>参考：<a href="https://www.luogu.com.cn/blog/pengSiJin/lian-ge-xing-xuan-2022-xue-shu-she-ou-analysis">出题人 Itst 的题解</a>。</p>
@@ -1348,10 +1348,10 @@ B A louxia
     
     <item>
       <title>uoj123 NOI2013 小Q的修炼</title>
-      <link>http://example.org/posts/uoj123/</link>
+      <link>https://luoyisu.github.io/posts/uoj123/</link>
       <pubDate>Sun, 17 Apr 2022 12:42:59 +0000</pubDate>
       
-      <guid>http://example.org/posts/uoj123/</guid>
+      <guid>https://luoyisu.github.io/posts/uoj123/</guid>
       <description>&lt;p&gt;这个提答还算小清新，不用跑很久，主要是观察数据性质。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>这个提答还算小清新，不用跑很久，主要是观察数据性质。</p>
 <h2 id="description">Description</h2>
@@ -1664,10 +1664,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>loj 2084 「NOI2016」网格</title>
-      <link>http://example.org/posts/loj2084/</link>
+      <link>https://luoyisu.github.io/posts/loj2084/</link>
       <pubDate>Sun, 17 Apr 2022 11:25:29 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj2084/</guid>
+      <guid>https://luoyisu.github.io/posts/loj2084/</guid>
       <description>&lt;p&gt;很多分类讨论的题，不对拍很容易被卡正确性。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>很多分类讨论的题，不对拍很容易被卡正确性。</p>
 <h2 id="description">Description</h2>
@@ -1943,10 +1943,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>noi-online-2022</title>
-      <link>http://example.org/posts/noi-online-2022/</link>
+      <link>https://luoyisu.github.io/posts/noi-online-2022/</link>
       <pubDate>Sun, 27 Mar 2022 11:02:32 +0000</pubDate>
       
-      <guid>http://example.org/posts/noi-online-2022/</guid>
+      <guid>https://luoyisu.github.io/posts/noi-online-2022/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;很炸裂。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1984,10 +1984,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>220326 和大连理工大学线上 PK 记</title>
-      <link>http://example.org/posts/220326-contest-with-dut/</link>
+      <link>https://luoyisu.github.io/posts/220326-contest-with-dut/</link>
       <pubDate>Sat, 26 Mar 2022 19:25:58 +0000</pubDate>
       
-      <guid>http://example.org/posts/220326-contest-with-dut/</guid>
+      <guid>https://luoyisu.github.io/posts/220326-contest-with-dut/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;虽说是和大工 PK，但感觉他们好像做了一会题就走了，主要是我们校内在做这些题。&lt;/p&gt;
 &lt;p&gt;实际上水这么一篇博客的目的就是摆烂。。。&lt;/p&gt;</description>
@@ -2028,10 +2028,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>220324线上模拟赛</title>
-      <link>http://example.org/posts/220324-contest/</link>
+      <link>https://luoyisu.github.io/posts/220324-contest/</link>
       <pubDate>Thu, 24 Mar 2022 14:41:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/220324-contest/</guid>
+      <guid>https://luoyisu.github.io/posts/220324-contest/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;预计 $100+100+4=204$，实际 $100+100+0=200$，和想的差不多。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -2075,10 +2075,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>220319 和大连理工大学线上 PK 记</title>
-      <link>http://example.org/posts/220319-contest-with-dut/</link>
+      <link>https://luoyisu.github.io/posts/220319-contest-with-dut/</link>
       <pubDate>Sun, 20 Mar 2022 12:41:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/220319-contest-with-dut/</guid>
+      <guid>https://luoyisu.github.io/posts/220319-contest-with-dut/</guid>
       <description>&lt;p&gt;虽说是和大工 PK，但感觉他们好像做了一会题就走了，主要是我们校内在比（&lt;/p&gt;
 &lt;p&gt;实际上水这么一篇博客的目的就是摆烂。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>虽说是和大工 PK，但感觉他们好像做了一会题就走了，主要是我们校内在比（</p>
@@ -2119,10 +2119,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>统一省选2021 A卷 题解</title>
-      <link>http://example.org/posts/shengxuan-2021/</link>
+      <link>https://luoyisu.github.io/posts/shengxuan-2021/</link>
       <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/shengxuan-2021/</guid>
+      <guid>https://luoyisu.github.io/posts/shengxuan-2021/</guid>
       <description>&lt;p&gt;目前只有 Day1 的题目。&lt;/p&gt;
 &lt;p&gt;感觉 Day1 的三道题很 CF。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>目前只有 Day1 的题目。</p>
@@ -2447,10 +2447,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>luogu1852 跳跳棋</title>
-      <link>http://example.org/posts/luogu1852/</link>
+      <link>https://luoyisu.github.io/posts/luogu1852/</link>
       <pubDate>Fri, 18 Mar 2022 13:48:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu1852/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu1852/</guid>
       <description>&lt;p&gt;一个奇妙的建模题。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>一个奇妙的建模题。</p>
 <h2 id="description">Description</h2>
@@ -2542,10 +2542,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>杜教筛简单学习笔记</title>
-      <link>http://example.org/posts/du/</link>
+      <link>https://luoyisu.github.io/posts/du/</link>
       <pubDate>Tue, 15 Mar 2022 20:58:33 +0000</pubDate>
       
-      <guid>http://example.org/posts/du/</guid>
+      <guid>https://luoyisu.github.io/posts/du/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;想感受一下敲公式的快感，于是有了这篇文章。&lt;/p&gt;
 &lt;p&gt;只有一些最简单的应用。&lt;/p&gt;</description>
@@ -2778,10 +2778,10 @@ $$
     
     <item>
       <title>220222 和大连理工大学线上 PK 记</title>
-      <link>http://example.org/posts/220222-contest-with-dut/</link>
+      <link>https://luoyisu.github.io/posts/220222-contest-with-dut/</link>
       <pubDate>Tue, 22 Feb 2022 19:43:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/220222-contest-with-dut/</guid>
+      <guid>https://luoyisu.github.io/posts/220222-contest-with-dut/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;我和杜大佬一队，各做了 $4$ 道题，但总体来说我还是被他带飞了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -2828,10 +2828,10 @@ $$
     
     <item>
       <title>WC2022线上(摆烂)测试总结</title>
-      <link>http://example.org/posts/wc2022/</link>
+      <link>https://luoyisu.github.io/posts/wc2022/</link>
       <pubDate>Fri, 28 Jan 2022 18:18:45 +0000</pubDate>
       
-      <guid>http://example.org/posts/wc2022/</guid>
+      <guid>https://luoyisu.github.io/posts/wc2022/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;因为过于摆烂，所以记录一下警醒自己。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="前言">前言</h2>
@@ -2877,10 +2877,10 @@ $$
     
     <item>
       <title>220120摆烂模拟赛</title>
-      <link>http://example.org/posts/220120-contest/</link>
+      <link>https://luoyisu.github.io/posts/220120-contest/</link>
       <pubDate>Thu, 20 Jan 2022 17:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/220120-contest/</guid>
+      <guid>https://luoyisu.github.io/posts/220120-contest/</guid>
       <description>&lt;p&gt;好久没写总结了，于是来写一发。&lt;/p&gt;
 &lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $0+100+100=200$，实际 $0+0(100)+0=0(100)$。&lt;/p&gt;
@@ -2915,10 +2915,10 @@ $$
     
     <item>
       <title>uoj55 紫荆花之恋</title>
-      <link>http://example.org/posts/uoj55/</link>
+      <link>https://luoyisu.github.io/posts/uoj55/</link>
       <pubDate>Mon, 17 Jan 2022 07:22:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/uoj55/</guid>
+      <guid>https://luoyisu.github.io/posts/uoj55/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;有一棵初始为空的树，每次新给出一个点的父亲和它连向父亲边的权值以及这个点的权值，每次加点之后询问有多少点满足 $dis(i,j)\leq val_i+val_j$，强制在线。&lt;/p&gt;
 &lt;p&gt;$n\leq10^5$。&lt;/p&gt;</description>
@@ -3175,10 +3175,10 @@ $$
     
     <item>
       <title>后缀数组学习笔记</title>
-      <link>http://example.org/posts/suffix-array/</link>
+      <link>https://luoyisu.github.io/posts/suffix-array/</link>
       <pubDate>Tue, 11 Jan 2022 22:06:21 +0000</pubDate>
       
-      <guid>http://example.org/posts/suffix-array/</guid>
+      <guid>https://luoyisu.github.io/posts/suffix-array/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;不能完全不管字符串，就硬着头皮学一学。&lt;/p&gt;
 &lt;p&gt;完全未完工。&lt;/p&gt;</description>
@@ -3328,10 +3328,10 @@ $$
     
     <item>
       <title>loj3050 「十二省联考 2019」 骗分过样例</title>
-      <link>http://example.org/posts/loj3050/</link>
+      <link>https://luoyisu.github.io/posts/loj3050/</link>
       <pubDate>Mon, 10 Jan 2022 21:14:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj3050/</guid>
+      <guid>https://luoyisu.github.io/posts/loj3050/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给出一些测试点的输入文件和输出文件以及每个测试点要实现的功能编号，你需要写一个程序通过这些给出的测试点。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://loj.ac/p/3050&#34;&gt;链接&lt;/a&gt;，这个题在 loj 上体验很好，洛谷上虽然也有这个题但容易被卡常。&lt;/p&gt;</description>
@@ -4025,10 +4025,10 @@ $$
     
     <item>
       <title>luogu1829 Crash的数字表格 / JZPTAB</title>
-      <link>http://example.org/posts/luogu1829/</link>
+      <link>https://luoyisu.github.io/posts/luogu1829/</link>
       <pubDate>Wed, 05 Jan 2022 19:20:38 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu1829/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu1829/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;求
 $$
@@ -4181,10 +4181,10 @@ $$
     
     <item>
       <title>Codeforces Round 646 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1363/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1363/</link>
       <pubDate>Fri, 31 Dec 2021 09:46:26 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1363/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1363/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不是特别难，F 倒不简单。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -4592,10 +4592,10 @@ $$
     
     <item>
       <title>Codeforces Round 337 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest610/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest610/</link>
       <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest610/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest610/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;虽说是 Div2，但也不是特别简单，E 还是不太裸的。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -4958,10 +4958,10 @@ $$
     
     <item>
       <title>Codeforces Round 544 (Div. 3)</title>
-      <link>http://example.org/posts/cf-contest1133/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1133/</link>
       <pubDate>Mon, 27 Dec 2021 09:19:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1133/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1133/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;很水的一场比赛，快来做前几场比赛的小清新题！！&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -5357,10 +5357,10 @@ $$
     
     <item>
       <title>Codeforces Testing Round 5</title>
-      <link>http://example.org/posts/cf-contest267/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest267/</link>
       <pubDate>Sat, 25 Dec 2021 11:22:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest267/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest267/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;C 可以一做。&lt;/p&gt;
 &lt;p&gt;别问为什么就三道题。&lt;/p&gt;</description>
@@ -5620,10 +5620,10 @@ $$
     
     <item>
       <title>Codeforces Round 214 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest366/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest366/</link>
       <pubDate>Fri, 24 Dec 2021 10:36:36 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest366/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest366/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;没啥难题，也没有什么特别推荐的题。（快来做前几天的题！！）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -5917,10 +5917,10 @@ $$
     
     <item>
       <title>Codeforces Round 668 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1404/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1404/</link>
       <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1404/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1404/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不简单，但也不算特别难。&lt;/p&gt;
 &lt;p&gt;Div1 的 BCDE 都值得一做。&lt;/p&gt;
@@ -6487,10 +6487,10 @@ $$
     
     <item>
       <title>Codeforces Round 542 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1129/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1129/</link>
       <pubDate>Tue, 21 Dec 2021 14:36:53 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1129/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1129/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;Div1 的 B、C、D、E 都值得一做。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -7062,10 +7062,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 345 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest650/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest650/</link>
       <pubDate>Mon, 20 Dec 2021 16:21:07 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest650/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest650/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;除了 Div2 的两道题，其他题都挺好的，建议做（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -7575,10 +7575,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 525 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1088/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1088/</link>
       <pubDate>Fri, 17 Dec 2021 16:02:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1088/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1088/</guid>
       <description>&lt;p&gt;还可以。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还可以。</p>
 <h2 id="ahttpscodeforcescontest1088problema"><a href="https://codeforc.es/contest/1088/problem/A">A</a></h2>
@@ -7904,10 +7904,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 573 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1190/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1190/</link>
       <pubDate>Thu, 16 Dec 2021 15:23:16 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1190/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1190/</guid>
       <description>&lt;p&gt;挺难的，但没有 DP 好评（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>挺难的，但没有 DP 好评（）</p>
 <h2 id="div2-ahttpscodeforcescontest1191problema"><a href="https://codeforc.es/contest/1191/problem/A">Div2 A</a></h2>
@@ -8735,10 +8735,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 495 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1004/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1004/</link>
       <pubDate>Tue, 14 Dec 2021 13:38:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1004/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1004/</guid>
       <description>&lt;p&gt;还行吧，但我实在太菜了，水题都不会做&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还行吧，但我实在太菜了，水题都不会做</p>
 <h2 id="ahttpscodeforcescomcontest1004problema"><a href="https://codeforces.com/contest/1004/problem/A">A</a></h2>
@@ -9237,10 +9237,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 524 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1080/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1080/</link>
       <pubDate>Mon, 13 Dec 2021 14:16:04 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1080/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1080/</guid>
       <description>&lt;p&gt;似乎仍然不是很难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>似乎仍然不是很难。</p>
 <h2 id="ahttpscodeforcescontest1080problema"><a href="https://codeforc.es/contest/1080/problem/A">A</a></h2>
@@ -9594,10 +9594,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 705 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1493/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1493/</link>
       <pubDate>Sat, 11 Dec 2021 15:29:05 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1493/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1493/</guid>
       <description>&lt;p&gt;似乎不是很难，但似乎又很难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>似乎不是很难，但似乎又很难。</p>
 <h2 id="ahttpscodeforcescontest1493problema"><a href="https://codeforc.es/contest/1493/problem/A">A</a></h2>
@@ -10155,10 +10155,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 344 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest631/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest631/</link>
       <pubDate>Fri, 10 Dec 2021 15:01:44 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest631/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest631/</guid>
       <description>&lt;p&gt;还算良心的比赛。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还算良心的比赛。</p>
 <h2 id="ahttpscodeforcescontest631problema"><a href="https://codeforc.es/contest/631/problem/A">A</a></h2>
@@ -10489,10 +10489,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 519</title>
-      <link>http://example.org/posts/cf-contest1043/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1043/</link>
       <pubDate>Thu, 09 Dec 2021 13:21:40 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1043/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1043/</guid>
       <description>&lt;p&gt;好像又是没有数据结构和数学题的一天。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像又是没有数据结构和数学题的一天。</p>
 <h2 id="ahttpscodeforcescontest1043problema"><a href="https://codeforc.es/contest/1043/problem/A">A</a></h2>
@@ -10847,10 +10847,10 @@ $$</p>
     
     <item>
       <title>luogu3203</title>
-      <link>http://example.org/posts/luogu3203/</link>
+      <link>https://luoyisu.github.io/posts/luogu3203/</link>
       <pubDate>Wed, 08 Dec 2021 22:18:33 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3203/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3203/</guid>
       <description>&lt;p&gt;一个 LCT&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>一个 LCT</p>
 <h2 id="description">Description</h2>
@@ -11106,10 +11106,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 380 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest738/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest738/</link>
       <pubDate>Wed, 08 Dec 2021 11:49:18 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest738/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest738/</guid>
       <description>&lt;p&gt;好像不是非常难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像不是非常难。</p>
 <h2 id="ahttpscodeforcescontest738problema"><a href="https://codeforc.es/contest/738/problem/A">A</a></h2>
@@ -11442,10 +11442,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 709 (div2)</title>
-      <link>http://example.org/posts/cf-contest1484/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1484/</link>
       <pubDate>Tue, 07 Dec 2021 15:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1484/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1484/</guid>
       <description>&lt;p&gt;时间比较近的比赛果然难度大一些。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>时间比较近的比赛果然难度大一些。。。</p>
 <h2 id="ahttpscodeforcescontest1484problema"><a href="https://codeforc.es/contest/1484/problem/A">A</a></h2>
@@ -11842,10 +11842,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 120 (Div. 2) 题解</title>
-      <link>http://example.org/posts/cf-contest120/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest120/</link>
       <pubDate>Mon, 06 Dec 2021 12:54:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest120/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest120/</guid>
       <description>&lt;p&gt;因为是久远的比赛，没有什么特别难的题。&lt;/p&gt;
 &lt;p&gt;没有 DP 好评（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>因为是久远的比赛，没有什么特别难的题。</p>
@@ -12206,10 +12206,10 @@ $$</p>
     
     <item>
       <title>KMP 的一个不常见做法</title>
-      <link>http://example.org/posts/kmp-explore/</link>
+      <link>https://luoyisu.github.io/posts/kmp-explore/</link>
       <pubDate>Sun, 05 Dec 2021 20:36:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/kmp-explore/</guid>
+      <guid>https://luoyisu.github.io/posts/kmp-explore/</guid>
       <description>&lt;p&gt;看到 &lt;strong&gt;OI Wiki&lt;/strong&gt; 上有关 KMP 的一个不算惊为天人但也有点意思的做法，水一水。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>看到 <strong>OI Wiki</strong> 上有关 KMP 的一个不算惊为天人但也有点意思的做法，水一水。</p>
 <p>众所周知 KMP 是为了解决字符串匹配问题的，有一个长度为 $n$ 的模式串 $t$ 和一个文本串 $s$。</p>
@@ -12239,10 +12239,10 @@ $$</p>
     
     <item>
       <title>YbtOJ 简要题解合集</title>
-      <link>http://example.org/posts/ybtoj-simple-solutions/</link>
+      <link>https://luoyisu.github.io/posts/ybtoj-simple-solutions/</link>
       <pubDate>Wed, 24 Nov 2021 08:22:14 +0000</pubDate>
       
-      <guid>http://example.org/posts/ybtoj-simple-solutions/</guid>
+      <guid>https://luoyisu.github.io/posts/ybtoj-simple-solutions/</guid>
       <description>&lt;p&gt;懒得写那么多题解，于是就有了这个文章。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>懒得写那么多题解，于是就有了这个文章。</p>
 <h2 id="难度评级">难度评级</h2>
@@ -12414,10 +12414,10 @@ $$</p>
     
     <item>
       <title>模拟退火学习笔记</title>
-      <link>http://example.org/posts/simulated-annealing/</link>
+      <link>https://luoyisu.github.io/posts/simulated-annealing/</link>
       <pubDate>Mon, 22 Nov 2021 22:14:42 +0000</pubDate>
       
-      <guid>http://example.org/posts/simulated-annealing/</guid>
+      <guid>https://luoyisu.github.io/posts/simulated-annealing/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;为什么我去学了模拟退火呢？&lt;/p&gt;
 &lt;p&gt;因为 CSP2021T1 和 NOIP2021T3 都能用模拟退火得到很高的分数，但是我却只打了最简单的暴力。失去了很多分数。&lt;/p&gt;
@@ -12544,10 +12544,10 @@ $$
     
     <item>
       <title>NOIP2021 游记&amp;总结</title>
-      <link>http://example.org/posts/noip2021/</link>
+      <link>https://luoyisu.github.io/posts/noip2021/</link>
       <pubDate>Sat, 20 Nov 2021 15:22:38 +0000</pubDate>
       
-      <guid>http://example.org/posts/noip2021/</guid>
+      <guid>https://luoyisu.github.io/posts/noip2021/</guid>
       <description>&lt;h1 id=&#34;noip2021&#34;&gt;NOIP2021&lt;/h1&gt;
 &lt;p&gt;凄凉。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="noip2021">NOIP2021</h1>
@@ -12584,10 +12584,10 @@ $$
     
     <item>
       <title>洛谷P3605 [USACO17JAN]Promotion Counting P</title>
-      <link>http://example.org/posts/luogu3605/</link>
+      <link>https://luoyisu.github.io/posts/luogu3605/</link>
       <pubDate>Thu, 18 Nov 2021 09:19:15 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3605/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3605/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一棵树，每个点有一个权值，求每个点所有后代中权值比它大的点的个数。&lt;/p&gt;
 &lt;p&gt;$n\leq10^5$&lt;/p&gt;</description>
@@ -12769,10 +12769,10 @@ $$
     
     <item>
       <title>CF718E</title>
-      <link>http://example.org/posts/cf718e/</link>
+      <link>https://luoyisu.github.io/posts/cf718e/</link>
       <pubDate>Wed, 17 Nov 2021 13:18:31 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf718e/</guid>
+      <guid>https://luoyisu.github.io/posts/cf718e/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一个仅包含 &lt;code&gt;a&lt;/code&gt;~&lt;code&gt;h&lt;/code&gt; 的字符串。&lt;/p&gt;
 &lt;p&gt;有一个 $n$​​​​ 个结点的无向图，编号为 $0$​​​​​ 到 $n−1$​​​​​​ 结点 $i$​​​ 与结点 $j$​​ 间有边相连当且仅当 $|i-j|=1$​ 或 $S_i=S_j$。&lt;/p&gt;
@@ -12908,10 +12908,10 @@ $$
     
     <item>
       <title>211116模拟赛</title>
-      <link>http://example.org/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Tue, 16 Nov 2021 15:41:05 +0000</pubDate>
       
-      <guid>http://example.org/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;啥都不会，滚出。&lt;/p&gt;
 &lt;p&gt;期望 $0+100+0+20=120$，实际 $0+20+0+20=40$​。至于为什么挂了这么多，看下文。&lt;/p&gt;</description>
@@ -13070,10 +13070,10 @@ $$
     
     <item>
       <title>可并堆学习笔记</title>
-      <link>http://example.org/posts/mergeable-heap/</link>
+      <link>https://luoyisu.github.io/posts/mergeable-heap/</link>
       <pubDate>Mon, 15 Nov 2021 16:19:28 +0000</pubDate>
       
-      <guid>http://example.org/posts/mergeable-heap/</guid>
+      <guid>https://luoyisu.github.io/posts/mergeable-heap/</guid>
       <description>&lt;p&gt;所谓可并堆，就是可以合并的堆。&lt;/p&gt;
 &lt;p&gt;本文介绍配对堆和左偏树。&lt;/p&gt;
 &lt;p&gt;未完工。&lt;/p&gt;</description>
@@ -13146,10 +13146,10 @@ $$
     
     <item>
       <title>211114模拟赛</title>
-      <link>http://example.org/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sun, 14 Nov 2021 18:20:38 +0000</pubDate>
       
-      <guid>http://example.org/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;啥都不会。&lt;/p&gt;
 &lt;p&gt;期望 $0+0+20+20=40$​，实际没挂分。&lt;/p&gt;</description>
@@ -13180,10 +13180,10 @@ $$
     
     <item>
       <title>211113模拟赛</title>
-      <link>http://example.org/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sat, 13 Nov 2021 12:40:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $100+100+40+0=240$，实际同期望，难得没有挂分。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -13228,10 +13228,10 @@ $$
     
     <item>
       <title>CF453C</title>
-      <link>http://example.org/posts/cf453c/</link>
+      <link>https://luoyisu.github.io/posts/cf453c/</link>
       <pubDate>Fri, 12 Nov 2021 17:19:03 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf453c/</guid>
+      <guid>https://luoyisu.github.io/posts/cf453c/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给一个无向图，$n$​​​ 个点 $m$​​ 条边，给定一个 01 序列，如果 $a_i=1$​，要求走到这个点奇数次，否则，要求走到这个点偶数次，请你任选起点，输出满足要求的经过点的序列和序列长度，序列长度不能超过 $4n$。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -13312,10 +13312,10 @@ $$
     
     <item>
       <title>CF850D</title>
-      <link>http://example.org/posts/cf850d/</link>
+      <link>https://luoyisu.github.io/posts/cf850d/</link>
       <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf850d/</guid>
+      <guid>https://luoyisu.github.io/posts/cf850d/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;一个竞赛图的度数集合是由该竞赛图中每个点的出度所构成的集合。 现给定一个 $m$ 个元素的集合，第 $i$ 个元素是 $a_i$。判断其是否是一个竞赛图的度数集合,如果是，找到点数最小的满足条件的竞赛图。&lt;/p&gt;
 &lt;p&gt;$1\le m\le 31$，$0\le a_i\le 30$，$a_i$ 互不相同。&lt;/p&gt;</description>
@@ -13416,10 +13416,10 @@ $$
     
     <item>
       <title>CF483C&amp;CF508D</title>
-      <link>http://example.org/posts/cf483ccf508d/</link>
+      <link>https://luoyisu.github.io/posts/cf483ccf508d/</link>
       <pubDate>Wed, 10 Nov 2021 09:24:15 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf483ccf508d/</guid>
+      <guid>https://luoyisu.github.io/posts/cf483ccf508d/</guid>
       <description>&lt;p&gt;两道CF题。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>两道CF题。</p>
 <h2 id="cf483c">CF483C</h2>
@@ -13585,10 +13585,10 @@ $$
     
     <item>
       <title>211109模拟赛</title>
-      <link>http://example.org/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Tue, 09 Nov 2021 14:14:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $100+100+100+20=320$，实际 $100+100+80+20=300$。没怎么挂。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -13629,10 +13629,10 @@ $$
     
     <item>
       <title>211108模拟赛总结</title>
-      <link>http://example.org/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</link>
+      <link>https://luoyisu.github.io/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</link>
       <pubDate>Mon, 08 Nov 2021 14:27:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</guid>
+      <guid>https://luoyisu.github.io/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不说了，非常凄凉。。。&lt;/p&gt;
 &lt;p&gt;感觉今天可以被认为是个小转折点，于是多写点（（（（（&lt;/p&gt;</description>
@@ -13673,10 +13673,10 @@ $$
     
     <item>
       <title>luogu3607 [USACO17JAN]Subsequence Reversal P</title>
-      <link>http://example.org/posts/luogu3607/</link>
+      <link>https://luoyisu.github.io/posts/luogu3607/</link>
       <pubDate>Fri, 05 Nov 2021 10:07:50 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3607/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3607/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一个长度为 $n$ 的序列 $\{a_i\}$，可以选择一个子序列将其反转，求能获得的最大不下降子序列。&lt;/p&gt;
 &lt;p&gt;$n\leq 50$。&lt;/p&gt;</description>
@@ -13757,10 +13757,10 @@ $$
     
     <item>
       <title>211104模拟赛挂分记</title>
-      <link>http://example.org/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
       <pubDate>Thu, 04 Nov 2021 13:32:27 +0000</pubDate>
       
-      <guid>http://example.org/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;预计 $100+100+0+20=220$，实际 $50+0+0+0=50$，挂成傻逼了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -13783,10 +13783,10 @@ $$
     
     <item>
       <title>211031模拟赛</title>
-      <link>http://example.org/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sun, 31 Oct 2021 14:25:27 +0000</pubDate>
       
-      <guid>http://example.org/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;期望 $0+100+0+70=170$，实际 $0+100+0+50=150$。还可以。&lt;/p&gt;
 &lt;p&gt;被 SHR 神吊打了qwq。&lt;/p&gt;</description>
@@ -13811,10 +13811,10 @@ $$
     
     <item>
       <title>211028模拟赛</title>
-      <link>http://example.org/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Thu, 28 Oct 2021 18:53:02 +0000</pubDate>
       
-      <guid>http://example.org/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;本校出题。&lt;/p&gt;
 &lt;p&gt;期望 $100+100+0+0=200$，实际 $100+0+0+0=100$​。&lt;/p&gt;</description>
@@ -13836,10 +13836,10 @@ $$
     
     <item>
       <title>luogu3281 [SCOI2013]数数</title>
-      <link>http://example.org/posts/luogu3281/</link>
+      <link>https://luoyisu.github.io/posts/luogu3281/</link>
       <pubDate>Thu, 28 Oct 2021 10:31:41 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3281/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3281/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;有两个 $B$ 进制数 $L,R$，求区间 $[L,R]$ 中，将所有 $B$ 进制数看成一个字符串，所有字符串的所有连续子串对应 $B$ 进制数的和（十进制） $\bmod 20130427$​。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -13961,10 +13961,10 @@ $$</p>
     
     <item>
       <title>211027模拟赛爆零记</title>
-      <link>http://example.org/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
       <pubDate>Wed, 27 Oct 2021 14:07:27 +0000</pubDate>
       
-      <guid>http://example.org/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;估计 $100+0+0+100=200$​，实际 $0+0+0+0=0$​​。&lt;/p&gt;
 &lt;p&gt;试图切题，然后挂了 $\text{inf}$ 分。&lt;/p&gt;</description>
@@ -13999,10 +13999,10 @@ $$</p>
     
     <item>
       <title>CSP2021-S2游记</title>
-      <link>http://example.org/posts/csp2021-s2/</link>
+      <link>https://luoyisu.github.io/posts/csp2021-s2/</link>
       <pubDate>Sat, 23 Oct 2021 20:52:12 +0000</pubDate>
       
-      <guid>http://example.org/posts/csp2021-s2/</guid>
+      <guid>https://luoyisu.github.io/posts/csp2021-s2/</guid>
       <description>&lt;h1 id=&#34;csp2021-s2&#34;&gt;CSP2021-S2&lt;/h1&gt;
 &lt;p&gt;没有大模拟我其实是很失望的。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h1 id="csp2021-s2">CSP2021-S2</h1>
@@ -14072,10 +14072,10 @@ $$</p>
     
     <item>
       <title>loj10224 [HNOI2008] GT考试</title>
-      <link>http://example.org/posts/loj10224/</link>
+      <link>https://luoyisu.github.io/posts/loj10224/</link>
       <pubDate>Fri, 22 Oct 2021 07:22:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj10224/</guid>
+      <guid>https://luoyisu.github.io/posts/loj10224/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;阿申准备报名参加 GT 考试，准考证号为 $N$ 位数 $X_1,X_2…X_n(0\le X_i\le9)$，他不希望准考证号上出现不吉利的数字。 他的不吉利数字 $A_1,A_2…A_m(0\le A_i\le 9)A_1,A_2…A_m(0≤A_i≤9)$ 有 $M$ 位，不出现是指 $X_1,X_2…X_n$ 中没有恰好一段等于 $A_1,A_2…A_m$，$A_1$ 和 $X_1$ 可以为 $0$。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -14198,10 +14198,10 @@ $$</p>
     
     <item>
       <title>211017模拟赛</title>
-      <link>http://example.org/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Mon, 18 Oct 2021 07:19:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;啥都不会，只会暴力。&lt;/p&gt;
 &lt;p&gt;估计 $60+60+20+0=140$，实际 $60+60+20+0=140$​。。。。。。&lt;/p&gt;</description>
@@ -14226,10 +14226,10 @@ $$</p>
     
     <item>
       <title>211016模拟赛</title>
-      <link>http://example.org/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sat, 16 Oct 2021 14:10:30 +0000</pubDate>
       
-      <guid>http://example.org/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天的模拟赛还行。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;期望&lt;/strong&gt; $100+0+40+52=192$，实际 $100+0+20+52=172$​。还算可以。&lt;/p&gt;</description>
@@ -14251,10 +14251,10 @@ $$</p>
     
     <item>
       <title>211015模拟赛</title>
-      <link>http://example.org/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Fri, 15 Oct 2021 16:10:51 +0000</pubDate>
       
-      <guid>http://example.org/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天实惨，估计 $0+72+100+100=272$，实际 $0+0+0+100=100$​。&lt;/p&gt;
 &lt;p&gt;被吊打了qwq。&lt;/p&gt;</description>
@@ -14277,10 +14277,10 @@ $$</p>
     
     <item>
       <title>_slb&#39;s Code Style</title>
-      <link>http://example.org/posts/code-style/</link>
+      <link>https://luoyisu.github.io/posts/code-style/</link>
       <pubDate>Thu, 14 Oct 2021 16:52:02 +0000</pubDate>
       
-      <guid>http://example.org/posts/code-style/</guid>
+      <guid>https://luoyisu.github.io/posts/code-style/</guid>
       <description>&lt;p&gt;本文介绍 _slb 的代码规范。关于我的代码规范，她非常地正经、非常地合理。&lt;/p&gt;
 &lt;p&gt;基本参考了 &lt;a href=&#34;https://rqy.moe/uncategorized/rqy-s-Code-Style-for-OI/&#34;&gt;_rqy&lt;/a&gt; 的风格。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>本文介绍 _slb 的代码规范。关于我的代码规范，她非常地正经、非常地合理。</p>
@@ -14687,10 +14687,10 @@ $$</p>
     
     <item>
       <title>211005十一模拟赛2</title>
-      <link>http://example.org/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</link>
+      <link>https://luoyisu.github.io/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</link>
       <pubDate>Tue, 05 Oct 2021 17:23:55 +0000</pubDate>
       
-      <guid>http://example.org/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</guid>
+      <guid>https://luoyisu.github.io/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天的题体感好一些，没有太强的无力感。&lt;/p&gt;
 &lt;p&gt;估计 $30+80+65=175$，实际 $30+70+15=115$，真惨。&lt;/p&gt;
@@ -14733,10 +14733,10 @@ $$</p>
     
     <item>
       <title>211003十一模拟赛1</title>
-      <link>http://example.org/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</link>
+      <link>https://luoyisu.github.io/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</link>
       <pubDate>Mon, 04 Oct 2021 19:06:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</guid>
+      <guid>https://luoyisu.github.io/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;有点凄凉。&lt;/p&gt;
 &lt;p&gt;预测 $20+60+40=120$，实际 $20+60+0=80$。被各路神仙吊打了qwq&lt;/p&gt;</description>
@@ -14767,10 +14767,10 @@ $$</p>
     
     <item>
       <title>CSP2021-S1游记</title>
-      <link>http://example.org/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</link>
       <pubDate>Sun, 19 Sep 2021 13:56:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/csp2021-s1-s2%E6%B8%B8%E8%AE%B0/</guid>
       <description>&lt;p&gt;我愿称之为凄凉。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>我愿称之为凄凉。</p>
 <h2 id="第一轮">第一轮</h2>
@@ -14799,10 +14799,10 @@ $$</p>
     
     <item>
       <title>210912NOIP模拟赛</title>
-      <link>http://example.org/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Sun, 12 Sep 2021 19:06:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;题好难啊qwq。&lt;/p&gt;
 &lt;p&gt;期望 $50+40+60+30=180$，实际 $10+40+30+30=110$，挂了不少。&lt;/p&gt;
@@ -14840,10 +14840,10 @@ $$</p>
     
     <item>
       <title>210911NOIP信心赛问号记</title>
-      <link>http://example.org/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</link>
       <pubDate>Sat, 11 Sep 2021 20:34:12 +0000</pubDate>
       
-      <guid>http://example.org/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;首先看到三道名字是乱码的题，一道叫“Extra”的构造题，又一看叫“信心赛”，又看到“题目较简单。AK选手不要大声喧哗”，再仔细一看，“题目不按照难度顺序排序”，我就知道来者不善。我直呼好家伙！&lt;/p&gt;
 &lt;p&gt;教练让我们多写暴力拿分，在前十分钟我还是想贯彻这个思想的，结果后来有点上头。&lt;/p&gt;
@@ -14877,10 +14877,10 @@ $$</p>
     
     <item>
       <title>CF13B</title>
-      <link>http://example.org/posts/cf13b/</link>
+      <link>https://luoyisu.github.io/posts/cf13b/</link>
       <pubDate>Sun, 29 Aug 2021 09:57:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf13b/</guid>
+      <guid>https://luoyisu.github.io/posts/cf13b/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定三条线段，判断能否构成 A，即是否满足以下条件：&lt;/p&gt;
 &lt;ol&gt;
@@ -15026,10 +15026,10 @@ $$</p>
     
     <item>
       <title>YbtOJ 生日欢唱</title>
-      <link>http://example.org/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</link>
+      <link>https://luoyisu.github.io/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</link>
       <pubDate>Sun, 22 Aug 2021 16:36:57 +0000</pubDate>
       
-      <guid>http://example.org/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</guid>
+      <guid>https://luoyisu.github.io/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;生日演唱会采用一男一女合唱的形式，每个男生和女生都有一个演唱水平值，两个水平值分别为 $a$ 和 $b$ 的同学演唱将会给大家带来 $a\times b$ 的愉悦度。演唱会开始时，$a$ 名男生和 $b$​ 名女生各排成一列。&lt;/p&gt;
 &lt;p&gt;我将会从两列的第一位同学开始，分别挑选一名男生和一名女生。如果觉得某位同学不适合登台，我就会请他回到座位，直到挑选到一位满意的同学为止。若最后有一位男生或女生找不到搭档，我只好请剩下的所有人(包括那名同学)回到座位。如果连续的一些女生或者男生没有登台演唱会损失她(他)们水平值之和的平方的愉悦度。请求出大家能获得最大的愉悦值。（回去了就不能再上来）。&lt;/p&gt;
@@ -15102,10 +15102,10 @@ $$</p>
     
     <item>
       <title>210818构造模拟赛挂分记</title>
-      <link>http://example.org/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
       <pubDate>Wed, 18 Aug 2021 22:28:09 +0000</pubDate>
       
-      <guid>http://example.org/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是构造，题似乎不是很难，然而我挂的很惨。&lt;/p&gt;
 &lt;p&gt;期望：$100+30+60+100=290$​，实际 $0+20+0+5=25$​。大家都挂的很惨，于是我 RK13/23。。。&lt;/p&gt;</description>
@@ -15279,10 +15279,10 @@ $$</p>
     
     <item>
       <title>210817数学模拟赛爆零记</title>
-      <link>http://example.org/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
       <pubDate>Tue, 17 Aug 2021 23:10:10 +0000</pubDate>
       
-      <guid>http://example.org/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是数学，本来以为会还行，结果 $0+0+30+5=35$​，接近垫底了（&lt;/p&gt;
 &lt;p&gt;再次被机房男女老少暴打qwq。&lt;/p&gt;</description>
@@ -15313,10 +15313,10 @@ $$</p>
     
     <item>
       <title>CF601D &amp; 一道字符串模拟赛题的诡异解法</title>
-      <link>http://example.org/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</link>
+      <link>https://luoyisu.github.io/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</link>
       <pubDate>Mon, 16 Aug 2021 23:00:44 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</guid>
+      <guid>https://luoyisu.github.io/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;最近字符串模拟赛中遇到了一道诡异的题，std 的方法是启发式合并 Trie 树，但我写了个更简单（？）的 BFS＋Trie树+LCA 做法。&lt;/p&gt;
 &lt;p&gt;后来得知是 CF 的题，就上来交一波，结果确实 AC 了。&lt;/p&gt;
@@ -15454,10 +15454,10 @@ $$</p>
     
     <item>
       <title>210816树上问题模拟赛</title>
-      <link>http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <link>https://luoyisu.github.io/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
       <pubDate>Mon, 16 Aug 2021 21:39:32 +0000</pubDate>
       
-      <guid>http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <guid>https://luoyisu.github.io/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;因为打疫苗只打了将近两个小时。期望 $0+20+30+0=50$，实际 $0+0+60+0=60$。&lt;/p&gt;
 &lt;p&gt;还行吧，今天题是真的难。&lt;/p&gt;</description>
@@ -15481,10 +15481,10 @@ $$</p>
     
     <item>
       <title>210815图论模拟赛心态良好记</title>
-      <link>http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</link>
       <pubDate>Sun, 15 Aug 2021 22:56:56 +0000</pubDate>
       
-      <guid>http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。&lt;/p&gt;
 &lt;p&gt;期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行&amp;hellip;&lt;/p&gt;</description>
@@ -15518,10 +15518,10 @@ $$</p>
     
     <item>
       <title>210814字符串模拟赛挂分记</title>
-      <link>http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
       <pubDate>Sat, 14 Aug 2021 21:26:03 +0000</pubDate>
       
-      <guid>http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;今天是字符串，然而字符串有关算法我基本就会 Trie 树和 Hash，KMP 到现在都不太会。。。&lt;/p&gt;
 &lt;p&gt;期望 $100+20+100+0=220$，实际 $0+50+30+0=80$，rank 14/23&lt;/p&gt;
@@ -15548,10 +15548,10 @@ $$</p>
     
     <item>
       <title>210813杂项模拟赛乱改记</title>
-      <link>http://example.org/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</link>
+      <link>https://luoyisu.github.io/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</link>
       <pubDate>Fri, 13 Aug 2021 21:54:41 +0000</pubDate>
       
-      <guid>http://example.org/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</guid>
+      <guid>https://luoyisu.github.io/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</guid>
       <description>概述 期望 $100+30+70+20=220$，实际 $100+0+10+10=120$，rk6，有点神奇，不过机房神仙们连切三题太神了！
 赛时 首先看到今天是个杂项：分治二分倍增快速幂，又看到难度是递增的，尝试多拿分、切题。
 首先看到T1，就差把分治写脸上了，快速打了个大框然后写分治的递归函数。

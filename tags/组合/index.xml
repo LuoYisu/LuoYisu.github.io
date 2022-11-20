@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>组合 on _slb 的博客</title>
-    <link>http://example.org/tags/%E7%BB%84%E5%90%88/</link>
+    <link>https://luoyisu.github.io/tags/%E7%BB%84%E5%90%88/</link>
     <description>Recent content in 组合 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 May 2022 09:46:01 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E7%BB%84%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 09:46:01 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E7%BB%84%E5%90%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LNOI2022-solution</title>
-      <link>http://example.org/posts/lnoi2022-solution/</link>
+      <link>https://luoyisu.github.io/posts/lnoi2022-solution/</link>
       <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/lnoi2022-solution/</guid>
+      <guid>https://luoyisu.github.io/posts/lnoi2022-solution/</guid>
       <description>&lt;p&gt;填完了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>填完了。</p>
 <h2 id="t1-food">T1 food</h2>

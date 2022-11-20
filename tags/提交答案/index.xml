@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>提交答案 on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/</link>
+    <link>https://luoyisu.github.io/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/</link>
     <description>Recent content in 提交答案 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 17 Apr 2022 12:42:59 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Apr 2022 12:42:59 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>uoj123 NOI2013 小Q的修炼</title>
-      <link>http://example.org/posts/uoj123/</link>
+      <link>https://luoyisu.github.io/posts/uoj123/</link>
       <pubDate>Sun, 17 Apr 2022 12:42:59 +0000</pubDate>
       
-      <guid>http://example.org/posts/uoj123/</guid>
+      <guid>https://luoyisu.github.io/posts/uoj123/</guid>
       <description>&lt;p&gt;这个提答还算小清新，不用跑很久，主要是观察数据性质。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>这个提答还算小清新，不用跑很久，主要是观察数据性质。</p>
 <h2 id="description">Description</h2>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DP on _slb 的博客</title>
-    <link>http://example.org/tags/dp/</link>
+    <link>https://luoyisu.github.io/tags/dp/</link>
     <description>Recent content in DP on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 May 2022 09:46:01 +0000</lastBuildDate><atom:link href="http://example.org/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 09:46:01 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LNOI2022-solution</title>
-      <link>http://example.org/posts/lnoi2022-solution/</link>
+      <link>https://luoyisu.github.io/posts/lnoi2022-solution/</link>
       <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/lnoi2022-solution/</guid>
+      <guid>https://luoyisu.github.io/posts/lnoi2022-solution/</guid>
       <description>&lt;p&gt;填完了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>填完了。</p>
 <h2 id="t1-food">T1 food</h2>
@@ -490,10 +490,10 @@ $$
     
     <item>
       <title>数位统计问题练习记录</title>
-      <link>http://example.org/posts/number-dp/</link>
+      <link>https://luoyisu.github.io/posts/number-dp/</link>
       <pubDate>Wed, 11 May 2022 22:24:35 +0000</pubDate>
       
-      <guid>http://example.org/posts/number-dp/</guid>
+      <guid>https://luoyisu.github.io/posts/number-dp/</guid>
       <description>&lt;p&gt;不给出题目链接了，网上可以找到（推荐vjudge）。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>不给出题目链接了，网上可以找到（推荐vjudge）。</p>
 <h2 id="bzoj4292-rownanie">BZOJ4292 Rownanie</h2>
@@ -530,10 +530,10 @@ $$
     
     <item>
       <title>uoj123 NOI2013 小Q的修炼</title>
-      <link>http://example.org/posts/uoj123/</link>
+      <link>https://luoyisu.github.io/posts/uoj123/</link>
       <pubDate>Sun, 17 Apr 2022 12:42:59 +0000</pubDate>
       
-      <guid>http://example.org/posts/uoj123/</guid>
+      <guid>https://luoyisu.github.io/posts/uoj123/</guid>
       <description>&lt;p&gt;这个提答还算小清新，不用跑很久，主要是观察数据性质。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>这个提答还算小清新，不用跑很久，主要是观察数据性质。</p>
 <h2 id="description">Description</h2>
@@ -846,10 +846,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>Codeforces Round 646 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1363/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1363/</link>
       <pubDate>Fri, 31 Dec 2021 09:46:26 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1363/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1363/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不是特别难，F 倒不简单。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1257,10 +1257,10 @@ i c 0 c 1 8 0
     
     <item>
       <title>Codeforces Round 544 (Div. 3)</title>
-      <link>http://example.org/posts/cf-contest1133/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1133/</link>
       <pubDate>Mon, 27 Dec 2021 09:19:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1133/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1133/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;很水的一场比赛，快来做前几场比赛的小清新题！！&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1656,10 +1656,10 @@ $$
     
     <item>
       <title>Codeforces Round 214 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest366/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest366/</link>
       <pubDate>Fri, 24 Dec 2021 10:36:36 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest366/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest366/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;没啥难题，也没有什么特别推荐的题。（快来做前几天的题！！）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1953,10 +1953,10 @@ $$
     
     <item>
       <title>Codeforces Round 525 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1088/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1088/</link>
       <pubDate>Fri, 17 Dec 2021 16:02:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1088/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1088/</guid>
       <description>&lt;p&gt;还可以。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还可以。</p>
 <h2 id="ahttpscodeforcescontest1088problema"><a href="https://codeforc.es/contest/1088/problem/A">A</a></h2>
@@ -2282,10 +2282,10 @@ $$
     
     <item>
       <title>Codeforces Round 344 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest631/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest631/</link>
       <pubDate>Fri, 10 Dec 2021 15:01:44 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest631/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest631/</guid>
       <description>&lt;p&gt;还算良心的比赛。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还算良心的比赛。</p>
 <h2 id="ahttpscodeforcescontest631problema"><a href="https://codeforc.es/contest/631/problem/A">A</a></h2>
@@ -2616,10 +2616,10 @@ $$
     
     <item>
       <title>Codeforces Round 519</title>
-      <link>http://example.org/posts/cf-contest1043/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1043/</link>
       <pubDate>Thu, 09 Dec 2021 13:21:40 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1043/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1043/</guid>
       <description>&lt;p&gt;好像又是没有数据结构和数学题的一天。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像又是没有数据结构和数学题的一天。</p>
 <h2 id="ahttpscodeforcescontest1043problema"><a href="https://codeforc.es/contest/1043/problem/A">A</a></h2>
@@ -2974,10 +2974,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 380 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest738/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest738/</link>
       <pubDate>Wed, 08 Dec 2021 11:49:18 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest738/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest738/</guid>
       <description>&lt;p&gt;好像不是非常难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像不是非常难。</p>
 <h2 id="ahttpscodeforcescontest738problema"><a href="https://codeforc.es/contest/738/problem/A">A</a></h2>
@@ -3310,10 +3310,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 709 (div2)</title>
-      <link>http://example.org/posts/cf-contest1484/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1484/</link>
       <pubDate>Tue, 07 Dec 2021 15:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1484/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1484/</guid>
       <description>&lt;p&gt;时间比较近的比赛果然难度大一些。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>时间比较近的比赛果然难度大一些。。。</p>
 <h2 id="ahttpscodeforcescontest1484problema"><a href="https://codeforc.es/contest/1484/problem/A">A</a></h2>
@@ -3710,10 +3710,10 @@ $$</p>
     
     <item>
       <title>CF850D</title>
-      <link>http://example.org/posts/cf850d/</link>
+      <link>https://luoyisu.github.io/posts/cf850d/</link>
       <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf850d/</guid>
+      <guid>https://luoyisu.github.io/posts/cf850d/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;一个竞赛图的度数集合是由该竞赛图中每个点的出度所构成的集合。 现给定一个 $m$ 个元素的集合，第 $i$ 个元素是 $a_i$。判断其是否是一个竞赛图的度数集合,如果是，找到点数最小的满足条件的竞赛图。&lt;/p&gt;
 &lt;p&gt;$1\le m\le 31$，$0\le a_i\le 30$，$a_i$ 互不相同。&lt;/p&gt;</description>
@@ -3814,10 +3814,10 @@ $$</p>
     
     <item>
       <title>luogu3607 [USACO17JAN]Subsequence Reversal P</title>
-      <link>http://example.org/posts/luogu3607/</link>
+      <link>https://luoyisu.github.io/posts/luogu3607/</link>
       <pubDate>Fri, 05 Nov 2021 10:07:50 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3607/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3607/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一个长度为 $n$ 的序列 $\{a_i\}$，可以选择一个子序列将其反转，求能获得的最大不下降子序列。&lt;/p&gt;
 &lt;p&gt;$n\leq 50$。&lt;/p&gt;</description>
@@ -3898,10 +3898,10 @@ $$</p>
     
     <item>
       <title>luogu3281 [SCOI2013]数数</title>
-      <link>http://example.org/posts/luogu3281/</link>
+      <link>https://luoyisu.github.io/posts/luogu3281/</link>
       <pubDate>Thu, 28 Oct 2021 10:31:41 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3281/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3281/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;有两个 $B$ 进制数 $L,R$，求区间 $[L,R]$ 中，将所有 $B$ 进制数看成一个字符串，所有字符串的所有连续子串对应 $B$ 进制数的和（十进制） $\bmod 20130427$​。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -4023,10 +4023,10 @@ $$</p>
     
     <item>
       <title>loj10224 [HNOI2008] GT考试</title>
-      <link>http://example.org/posts/loj10224/</link>
+      <link>https://luoyisu.github.io/posts/loj10224/</link>
       <pubDate>Fri, 22 Oct 2021 07:22:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj10224/</guid>
+      <guid>https://luoyisu.github.io/posts/loj10224/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;阿申准备报名参加 GT 考试，准考证号为 $N$ 位数 $X_1,X_2…X_n(0\le X_i\le9)$，他不希望准考证号上出现不吉利的数字。 他的不吉利数字 $A_1,A_2…A_m(0\le A_i\le 9)A_1,A_2…A_m(0≤A_i≤9)$ 有 $M$ 位，不出现是指 $X_1,X_2…X_n$ 中没有恰好一段等于 $A_1,A_2…A_m$，$A_1$ 和 $X_1$ 可以为 $0$。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -4149,10 +4149,10 @@ $$</p>
     
     <item>
       <title>YbtOJ 生日欢唱</title>
-      <link>http://example.org/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</link>
+      <link>https://luoyisu.github.io/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</link>
       <pubDate>Sun, 22 Aug 2021 16:36:57 +0000</pubDate>
       
-      <guid>http://example.org/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</guid>
+      <guid>https://luoyisu.github.io/posts/ybtoj-%E7%94%9F%E6%97%A5%E6%AC%A2%E5%94%B1/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;生日演唱会采用一男一女合唱的形式，每个男生和女生都有一个演唱水平值，两个水平值分别为 $a$ 和 $b$ 的同学演唱将会给大家带来 $a\times b$ 的愉悦度。演唱会开始时，$a$ 名男生和 $b$​ 名女生各排成一列。&lt;/p&gt;
 &lt;p&gt;我将会从两列的第一位同学开始，分别挑选一名男生和一名女生。如果觉得某位同学不适合登台，我就会请他回到座位，直到挑选到一位满意的同学为止。若最后有一位男生或女生找不到搭档，我只好请剩下的所有人(包括那名同学)回到座位。如果连续的一些女生或者男生没有登台演唱会损失她(他)们水平值之和的平方的愉悦度。请求出大家能获得最大的愉悦值。（回去了就不能再上来）。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LCT on _slb 的博客</title>
-    <link>http://example.org/tags/lct/</link>
+    <link>https://luoyisu.github.io/tags/lct/</link>
     <description>Recent content in LCT on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 08 Dec 2021 22:18:33 +0000</lastBuildDate><atom:link href="http://example.org/tags/lct/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Dec 2021 22:18:33 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/lct/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>luogu3203</title>
-      <link>http://example.org/posts/luogu3203/</link>
+      <link>https://luoyisu.github.io/posts/luogu3203/</link>
       <pubDate>Wed, 08 Dec 2021 22:18:33 +0000</pubDate>
       
-      <guid>http://example.org/posts/luogu3203/</guid>
+      <guid>https://luoyisu.github.io/posts/luogu3203/</guid>
       <description>&lt;p&gt;一个 LCT&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>一个 LCT</p>
 <h2 id="description">Description</h2>

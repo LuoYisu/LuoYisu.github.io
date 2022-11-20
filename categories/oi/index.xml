@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>OI on _slb 的博客</title>
-    <link>http://example.org/categories/oi/</link>
+    <link>https://luoyisu.github.io/categories/oi/</link>
     <description>Recent content in OI on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 14 Oct 2021 16:52:02 +0000</lastBuildDate><atom:link href="http://example.org/categories/oi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Oct 2021 16:52:02 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/oi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>_slb&#39;s Code Style</title>
-      <link>http://example.org/posts/code-style/</link>
+      <link>https://luoyisu.github.io/posts/code-style/</link>
       <pubDate>Thu, 14 Oct 2021 16:52:02 +0000</pubDate>
       
-      <guid>http://example.org/posts/code-style/</guid>
+      <guid>https://luoyisu.github.io/posts/code-style/</guid>
       <description>&lt;p&gt;本文介绍 _slb 的代码规范。关于我的代码规范，她非常地正经、非常地合理。&lt;/p&gt;
 &lt;p&gt;基本参考了 &lt;a href=&#34;https://rqy.moe/uncategorized/rqy-s-Code-Style-for-OI/&#34;&gt;_rqy&lt;/a&gt; 的风格。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>本文介绍 _slb 的代码规范。关于我的代码规范，她非常地正经、非常地合理。</p>

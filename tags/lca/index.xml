@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>LCA on _slb 的博客</title>
-    <link>http://example.org/tags/lca/</link>
+    <link>https://luoyisu.github.io/tags/lca/</link>
     <description>Recent content in LCA on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 16 Aug 2021 23:00:44 +0000</lastBuildDate><atom:link href="http://example.org/tags/lca/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 23:00:44 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/lca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CF601D &amp; 一道字符串模拟赛题的诡异解法</title>
-      <link>http://example.org/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</link>
+      <link>https://luoyisu.github.io/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</link>
       <pubDate>Mon, 16 Aug 2021 23:00:44 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</guid>
+      <guid>https://luoyisu.github.io/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;最近字符串模拟赛中遇到了一道诡异的题，std 的方法是启发式合并 Trie 树，但我写了个更简单（？）的 BFS＋Trie树+LCA 做法。&lt;/p&gt;
 &lt;p&gt;后来得知是 CF 的题，就上来交一波，结果确实 AC 了。&lt;/p&gt;

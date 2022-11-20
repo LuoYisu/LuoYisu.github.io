@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>生成树 on _slb 的博客</title>
-    <link>http://example.org/tags/%E7%94%9F%E6%88%90%E6%A0%91/</link>
+    <link>https://luoyisu.github.io/tags/%E7%94%9F%E6%88%90%E6%A0%91/</link>
     <description>Recent content in 生成树 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 27 Dec 2021 09:19:11 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E7%94%9F%E6%88%90%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Dec 2021 09:19:11 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E7%94%9F%E6%88%90%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codeforces Round 544 (Div. 3)</title>
-      <link>http://example.org/posts/cf-contest1133/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1133/</link>
       <pubDate>Mon, 27 Dec 2021 09:19:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1133/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1133/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;很水的一场比赛，快来做前几场比赛的小清新题！！&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>

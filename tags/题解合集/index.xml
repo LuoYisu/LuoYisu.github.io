@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>题解合集 on _slb 的博客</title>
-    <link>http://example.org/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</link>
+    <link>https://luoyisu.github.io/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</link>
     <description>Recent content in 题解合集 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 26 May 2022 09:46:01 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 09:46:01 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LNOI2022-solution</title>
-      <link>http://example.org/posts/lnoi2022-solution/</link>
+      <link>https://luoyisu.github.io/posts/lnoi2022-solution/</link>
       <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/lnoi2022-solution/</guid>
+      <guid>https://luoyisu.github.io/posts/lnoi2022-solution/</guid>
       <description>&lt;p&gt;填完了。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>填完了。</p>
 <h2 id="t1-food">T1 food</h2>
@@ -490,10 +490,10 @@ $$
     
     <item>
       <title>数位统计问题练习记录</title>
-      <link>http://example.org/posts/number-dp/</link>
+      <link>https://luoyisu.github.io/posts/number-dp/</link>
       <pubDate>Wed, 11 May 2022 22:24:35 +0000</pubDate>
       
-      <guid>http://example.org/posts/number-dp/</guid>
+      <guid>https://luoyisu.github.io/posts/number-dp/</guid>
       <description>&lt;p&gt;不给出题目链接了，网上可以找到（推荐vjudge）。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>不给出题目链接了，网上可以找到（推荐vjudge）。</p>
 <h2 id="bzoj4292-rownanie">BZOJ4292 Rownanie</h2>
@@ -530,10 +530,10 @@ $$
     
     <item>
       <title>统一省选2021 A卷 题解</title>
-      <link>http://example.org/posts/shengxuan-2021/</link>
+      <link>https://luoyisu.github.io/posts/shengxuan-2021/</link>
       <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/shengxuan-2021/</guid>
+      <guid>https://luoyisu.github.io/posts/shengxuan-2021/</guid>
       <description>&lt;p&gt;目前只有 Day1 的题目。&lt;/p&gt;
 &lt;p&gt;感觉 Day1 的三道题很 CF。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>目前只有 Day1 的题目。</p>
@@ -858,10 +858,10 @@ $$
     
     <item>
       <title>Codeforces Round 646 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1363/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1363/</link>
       <pubDate>Fri, 31 Dec 2021 09:46:26 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1363/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1363/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不是特别难，F 倒不简单。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1269,10 +1269,10 @@ $$
     
     <item>
       <title>Codeforces Round 337 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest610/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest610/</link>
       <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest610/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest610/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;虽说是 Div2，但也不是特别简单，E 还是不太裸的。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1635,10 +1635,10 @@ $$
     
     <item>
       <title>Codeforces Round 544 (Div. 3)</title>
-      <link>http://example.org/posts/cf-contest1133/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1133/</link>
       <pubDate>Mon, 27 Dec 2021 09:19:11 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1133/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1133/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;很水的一场比赛，快来做前几场比赛的小清新题！！&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -2034,10 +2034,10 @@ $$
     
     <item>
       <title>Codeforces Testing Round 5</title>
-      <link>http://example.org/posts/cf-contest267/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest267/</link>
       <pubDate>Sat, 25 Dec 2021 11:22:20 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest267/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest267/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;C 可以一做。&lt;/p&gt;
 &lt;p&gt;别问为什么就三道题。&lt;/p&gt;</description>
@@ -2297,10 +2297,10 @@ $$
     
     <item>
       <title>Codeforces Round 214 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest366/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest366/</link>
       <pubDate>Fri, 24 Dec 2021 10:36:36 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest366/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest366/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;没啥难题，也没有什么特别推荐的题。（快来做前几天的题！！）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -2594,10 +2594,10 @@ $$
     
     <item>
       <title>Codeforces Round 668 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1404/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1404/</link>
       <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1404/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1404/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不简单，但也不算特别难。&lt;/p&gt;
 &lt;p&gt;Div1 的 BCDE 都值得一做。&lt;/p&gt;
@@ -3164,10 +3164,10 @@ $$
     
     <item>
       <title>Codeforces Round 542 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1129/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1129/</link>
       <pubDate>Tue, 21 Dec 2021 14:36:53 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1129/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1129/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;Div1 的 B、C、D、E 都值得一做。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -3739,10 +3739,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 345 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest650/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest650/</link>
       <pubDate>Mon, 20 Dec 2021 16:21:07 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest650/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest650/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;除了 Div2 的两道题，其他题都挺好的，建议做（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -4252,10 +4252,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 525 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1088/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1088/</link>
       <pubDate>Fri, 17 Dec 2021 16:02:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1088/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1088/</guid>
       <description>&lt;p&gt;还可以。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还可以。</p>
 <h2 id="ahttpscodeforcescontest1088problema"><a href="https://codeforc.es/contest/1088/problem/A">A</a></h2>
@@ -4581,10 +4581,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 573 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1190/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1190/</link>
       <pubDate>Thu, 16 Dec 2021 15:23:16 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1190/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1190/</guid>
       <description>&lt;p&gt;挺难的，但没有 DP 好评（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>挺难的，但没有 DP 好评（）</p>
 <h2 id="div2-ahttpscodeforcescontest1191problema"><a href="https://codeforc.es/contest/1191/problem/A">Div2 A</a></h2>
@@ -5412,10 +5412,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 495 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1004/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1004/</link>
       <pubDate>Tue, 14 Dec 2021 13:38:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1004/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1004/</guid>
       <description>&lt;p&gt;还行吧，但我实在太菜了，水题都不会做&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还行吧，但我实在太菜了，水题都不会做</p>
 <h2 id="ahttpscodeforcescomcontest1004problema"><a href="https://codeforces.com/contest/1004/problem/A">A</a></h2>
@@ -5914,10 +5914,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 524 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1080/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1080/</link>
       <pubDate>Mon, 13 Dec 2021 14:16:04 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1080/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1080/</guid>
       <description>&lt;p&gt;似乎仍然不是很难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>似乎仍然不是很难。</p>
 <h2 id="ahttpscodeforcescontest1080problema"><a href="https://codeforc.es/contest/1080/problem/A">A</a></h2>
@@ -6271,10 +6271,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 705 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1493/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1493/</link>
       <pubDate>Sat, 11 Dec 2021 15:29:05 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1493/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1493/</guid>
       <description>&lt;p&gt;似乎不是很难，但似乎又很难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>似乎不是很难，但似乎又很难。</p>
 <h2 id="ahttpscodeforcescontest1493problema"><a href="https://codeforc.es/contest/1493/problem/A">A</a></h2>
@@ -6832,10 +6832,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 344 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest631/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest631/</link>
       <pubDate>Fri, 10 Dec 2021 15:01:44 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest631/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest631/</guid>
       <description>&lt;p&gt;还算良心的比赛。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还算良心的比赛。</p>
 <h2 id="ahttpscodeforcescontest631problema"><a href="https://codeforc.es/contest/631/problem/A">A</a></h2>
@@ -7166,10 +7166,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 519</title>
-      <link>http://example.org/posts/cf-contest1043/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1043/</link>
       <pubDate>Thu, 09 Dec 2021 13:21:40 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1043/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1043/</guid>
       <description>&lt;p&gt;好像又是没有数据结构和数学题的一天。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像又是没有数据结构和数学题的一天。</p>
 <h2 id="ahttpscodeforcescontest1043problema"><a href="https://codeforc.es/contest/1043/problem/A">A</a></h2>
@@ -7524,10 +7524,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 380 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest738/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest738/</link>
       <pubDate>Wed, 08 Dec 2021 11:49:18 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest738/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest738/</guid>
       <description>&lt;p&gt;好像不是非常难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像不是非常难。</p>
 <h2 id="ahttpscodeforcescontest738problema"><a href="https://codeforc.es/contest/738/problem/A">A</a></h2>
@@ -7860,10 +7860,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 709 (div2)</title>
-      <link>http://example.org/posts/cf-contest1484/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1484/</link>
       <pubDate>Tue, 07 Dec 2021 15:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1484/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1484/</guid>
       <description>&lt;p&gt;时间比较近的比赛果然难度大一些。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>时间比较近的比赛果然难度大一些。。。</p>
 <h2 id="ahttpscodeforcescontest1484problema"><a href="https://codeforc.es/contest/1484/problem/A">A</a></h2>
@@ -8260,10 +8260,10 @@ $$</p>
     
     <item>
       <title>Codeforces Round 120 (Div. 2) 题解</title>
-      <link>http://example.org/posts/cf-contest120/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest120/</link>
       <pubDate>Mon, 06 Dec 2021 12:54:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest120/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest120/</guid>
       <description>&lt;p&gt;因为是久远的比赛，没有什么特别难的题。&lt;/p&gt;
 &lt;p&gt;没有 DP 好评（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>因为是久远的比赛，没有什么特别难的题。</p>
@@ -8624,10 +8624,10 @@ $$</p>
     
     <item>
       <title>YbtOJ 简要题解合集</title>
-      <link>http://example.org/posts/ybtoj-simple-solutions/</link>
+      <link>https://luoyisu.github.io/posts/ybtoj-simple-solutions/</link>
       <pubDate>Wed, 24 Nov 2021 08:22:14 +0000</pubDate>
       
-      <guid>http://example.org/posts/ybtoj-simple-solutions/</guid>
+      <guid>https://luoyisu.github.io/posts/ybtoj-simple-solutions/</guid>
       <description>&lt;p&gt;懒得写那么多题解，于是就有了这个文章。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>懒得写那么多题解，于是就有了这个文章。</p>
 <h2 id="难度评级">难度评级</h2>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>图论 on _slb 的博客</title>
-    <link>http://example.org/tags/%E5%9B%BE%E8%AE%BA/</link>
+    <link>https://luoyisu.github.io/tags/%E5%9B%BE%E8%AE%BA/</link>
     <description>Recent content in 图论 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 20 Apr 2022 19:59:46 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Apr 2022 19:59:46 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E5%9B%BE%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>loj3702 「联合省选 2022」学术社区</title>
-      <link>http://example.org/posts/loj3702/</link>
+      <link>https://luoyisu.github.io/posts/loj3702/</link>
       <pubDate>Wed, 20 Apr 2022 19:59:46 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj3702/</guid>
+      <guid>https://luoyisu.github.io/posts/loj3702/</guid>
       <description>&lt;p&gt;参考：&lt;a href=&#34;https://www.luogu.com.cn/blog/pengSiJin/lian-ge-xing-xuan-2022-xue-shu-she-ou-analysis&#34;&gt;出题人 Itst 的题解&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;确实是神仙，不好想。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>参考：<a href="https://www.luogu.com.cn/blog/pengSiJin/lian-ge-xing-xuan-2022-xue-shu-she-ou-analysis">出题人 Itst 的题解</a>。</p>
@@ -311,10 +311,10 @@ B A louxia
     
     <item>
       <title>loj 2084 「NOI2016」网格</title>
-      <link>http://example.org/posts/loj2084/</link>
+      <link>https://luoyisu.github.io/posts/loj2084/</link>
       <pubDate>Sun, 17 Apr 2022 11:25:29 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj2084/</guid>
+      <guid>https://luoyisu.github.io/posts/loj2084/</guid>
       <description>&lt;p&gt;很多分类讨论的题，不对拍很容易被卡正确性。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>很多分类讨论的题，不对拍很容易被卡正确性。</p>
 <h2 id="description">Description</h2>
@@ -590,10 +590,10 @@ B A louxia
     
     <item>
       <title>Codeforces Round 525 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1088/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1088/</link>
       <pubDate>Fri, 17 Dec 2021 16:02:24 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1088/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1088/</guid>
       <description>&lt;p&gt;还可以。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还可以。</p>
 <h2 id="ahttpscodeforcescontest1088problema"><a href="https://codeforc.es/contest/1088/problem/A">A</a></h2>
@@ -919,10 +919,10 @@ B A louxia
     
     <item>
       <title>Codeforces Round 495 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1004/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1004/</link>
       <pubDate>Tue, 14 Dec 2021 13:38:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1004/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1004/</guid>
       <description>&lt;p&gt;还行吧，但我实在太菜了，水题都不会做&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还行吧，但我实在太菜了，水题都不会做</p>
 <h2 id="ahttpscodeforcescomcontest1004problema"><a href="https://codeforces.com/contest/1004/problem/A">A</a></h2>
@@ -1421,10 +1421,10 @@ B A louxia
     
     <item>
       <title>Codeforces Round 709 (div2)</title>
-      <link>http://example.org/posts/cf-contest1484/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1484/</link>
       <pubDate>Tue, 07 Dec 2021 15:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1484/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1484/</guid>
       <description>&lt;p&gt;时间比较近的比赛果然难度大一些。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>时间比较近的比赛果然难度大一些。。。</p>
 <h2 id="ahttpscodeforcescontest1484problema"><a href="https://codeforc.es/contest/1484/problem/A">A</a></h2>
@@ -1821,10 +1821,10 @@ B A louxia
     
     <item>
       <title>Codeforces Round 120 (Div. 2) 题解</title>
-      <link>http://example.org/posts/cf-contest120/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest120/</link>
       <pubDate>Mon, 06 Dec 2021 12:54:17 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest120/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest120/</guid>
       <description>&lt;p&gt;因为是久远的比赛，没有什么特别难的题。&lt;/p&gt;
 &lt;p&gt;没有 DP 好评（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>因为是久远的比赛，没有什么特别难的题。</p>
@@ -2185,10 +2185,10 @@ B A louxia
     
     <item>
       <title>CF718E</title>
-      <link>http://example.org/posts/cf718e/</link>
+      <link>https://luoyisu.github.io/posts/cf718e/</link>
       <pubDate>Wed, 17 Nov 2021 13:18:31 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf718e/</guid>
+      <guid>https://luoyisu.github.io/posts/cf718e/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给定一个仅包含 &lt;code&gt;a&lt;/code&gt;~&lt;code&gt;h&lt;/code&gt; 的字符串。&lt;/p&gt;
 &lt;p&gt;有一个 $n$​​​​ 个结点的无向图，编号为 $0$​​​​​ 到 $n−1$​​​​​​ 结点 $i$​​​ 与结点 $j$​​ 间有边相连当且仅当 $|i-j|=1$​ 或 $S_i=S_j$。&lt;/p&gt;
@@ -2324,10 +2324,10 @@ B A louxia
     
     <item>
       <title>CF453C</title>
-      <link>http://example.org/posts/cf453c/</link>
+      <link>https://luoyisu.github.io/posts/cf453c/</link>
       <pubDate>Fri, 12 Nov 2021 17:19:03 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf453c/</guid>
+      <guid>https://luoyisu.github.io/posts/cf453c/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给一个无向图，$n$​​​ 个点 $m$​​ 条边，给定一个 01 序列，如果 $a_i=1$​，要求走到这个点奇数次，否则，要求走到这个点偶数次，请你任选起点，输出满足要求的经过点的序列和序列长度，序列长度不能超过 $4n$。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -2408,10 +2408,10 @@ B A louxia
     
     <item>
       <title>CF850D</title>
-      <link>http://example.org/posts/cf850d/</link>
+      <link>https://luoyisu.github.io/posts/cf850d/</link>
       <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf850d/</guid>
+      <guid>https://luoyisu.github.io/posts/cf850d/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;一个竞赛图的度数集合是由该竞赛图中每个点的出度所构成的集合。 现给定一个 $m$ 个元素的集合，第 $i$ 个元素是 $a_i$。判断其是否是一个竞赛图的度数集合,如果是，找到点数最小的满足条件的竞赛图。&lt;/p&gt;
 &lt;p&gt;$1\le m\le 31$，$0\le a_i\le 30$，$a_i$ 互不相同。&lt;/p&gt;</description>

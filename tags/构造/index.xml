@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>构造 on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%9E%84%E9%80%A0/</link>
+    <link>https://luoyisu.github.io/tags/%E6%9E%84%E9%80%A0/</link>
     <description>Recent content in 构造 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 28 Dec 2021 13:32:13 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%9E%84%E9%80%A0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Dec 2021 13:32:13 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%9E%84%E9%80%A0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codeforces Round 337 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest610/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest610/</link>
       <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest610/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest610/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;虽说是 Div2，但也不是特别简单，E 还是不太裸的。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -375,10 +375,10 @@
     
     <item>
       <title>Codeforces Round 668 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1404/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1404/</link>
       <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1404/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1404/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不简单，但也不算特别难。&lt;/p&gt;
 &lt;p&gt;Div1 的 BCDE 都值得一做。&lt;/p&gt;
@@ -945,10 +945,10 @@
     
     <item>
       <title>Codeforces Round 542 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1129/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1129/</link>
       <pubDate>Tue, 21 Dec 2021 14:36:53 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1129/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1129/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;Div1 的 B、C、D、E 都值得一做。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -1520,10 +1520,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 345 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest650/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest650/</link>
       <pubDate>Mon, 20 Dec 2021 16:21:07 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest650/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest650/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;除了 Div2 的两道题，其他题都挺好的，建议做（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>
@@ -2033,10 +2033,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 495 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1004/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1004/</link>
       <pubDate>Tue, 14 Dec 2021 13:38:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1004/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1004/</guid>
       <description>&lt;p&gt;还行吧，但我实在太菜了，水题都不会做&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>还行吧，但我实在太菜了，水题都不会做</p>
 <h2 id="ahttpscodeforcescomcontest1004problema"><a href="https://codeforces.com/contest/1004/problem/A">A</a></h2>
@@ -2535,10 +2535,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 524 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest1080/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1080/</link>
       <pubDate>Mon, 13 Dec 2021 14:16:04 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1080/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1080/</guid>
       <description>&lt;p&gt;似乎仍然不是很难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>似乎仍然不是很难。</p>
 <h2 id="ahttpscodeforcescontest1080problema"><a href="https://codeforc.es/contest/1080/problem/A">A</a></h2>
@@ -2892,10 +2892,10 @@ function find_answer(n, a)
     
     <item>
       <title>Codeforces Round 380 (Div. 2)</title>
-      <link>http://example.org/posts/cf-contest738/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest738/</link>
       <pubDate>Wed, 08 Dec 2021 11:49:18 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest738/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest738/</guid>
       <description>&lt;p&gt;好像不是非常难。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>好像不是非常难。</p>
 <h2 id="ahttpscodeforcescontest738problema"><a href="https://codeforc.es/contest/738/problem/A">A</a></h2>
@@ -3228,10 +3228,10 @@ function find_answer(n, a)
     
     <item>
       <title>CF453C</title>
-      <link>http://example.org/posts/cf453c/</link>
+      <link>https://luoyisu.github.io/posts/cf453c/</link>
       <pubDate>Fri, 12 Nov 2021 17:19:03 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf453c/</guid>
+      <guid>https://luoyisu.github.io/posts/cf453c/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给一个无向图，$n$​​​ 个点 $m$​​ 条边，给定一个 01 序列，如果 $a_i=1$​，要求走到这个点奇数次，否则，要求走到这个点偶数次，请你任选起点，输出满足要求的经过点的序列和序列长度，序列长度不能超过 $4n$。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="description">Description</h2>
@@ -3312,10 +3312,10 @@ function find_answer(n, a)
     
     <item>
       <title>CF850D</title>
-      <link>http://example.org/posts/cf850d/</link>
+      <link>https://luoyisu.github.io/posts/cf850d/</link>
       <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf850d/</guid>
+      <guid>https://luoyisu.github.io/posts/cf850d/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;一个竞赛图的度数集合是由该竞赛图中每个点的出度所构成的集合。 现给定一个 $m$ 个元素的集合，第 $i$ 个元素是 $a_i$。判断其是否是一个竞赛图的度数集合,如果是，找到点数最小的满足条件的竞赛图。&lt;/p&gt;
 &lt;p&gt;$1\le m\le 31$，$0\le a_i\le 30$，$a_i$ 互不相同。&lt;/p&gt;</description>
@@ -3416,10 +3416,10 @@ function find_answer(n, a)
     
     <item>
       <title>CF483C&amp;CF508D</title>
-      <link>http://example.org/posts/cf483ccf508d/</link>
+      <link>https://luoyisu.github.io/posts/cf483ccf508d/</link>
       <pubDate>Wed, 10 Nov 2021 09:24:15 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf483ccf508d/</guid>
+      <guid>https://luoyisu.github.io/posts/cf483ccf508d/</guid>
       <description>&lt;p&gt;两道CF题。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>两道CF题。</p>
 <h2 id="cf483c">CF483C</h2>

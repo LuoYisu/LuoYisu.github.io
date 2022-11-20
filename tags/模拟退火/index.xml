@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>模拟退火 on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/</link>
+    <link>https://luoyisu.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/</link>
     <description>Recent content in 模拟退火 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 22 Nov 2021 22:14:42 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 Nov 2021 22:14:42 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>模拟退火学习笔记</title>
-      <link>http://example.org/posts/simulated-annealing/</link>
+      <link>https://luoyisu.github.io/posts/simulated-annealing/</link>
       <pubDate>Mon, 22 Nov 2021 22:14:42 +0000</pubDate>
       
-      <guid>http://example.org/posts/simulated-annealing/</guid>
+      <guid>https://luoyisu.github.io/posts/simulated-annealing/</guid>
       <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
 &lt;p&gt;为什么我去学了模拟退火呢？&lt;/p&gt;
 &lt;p&gt;因为 CSP2021T1 和 NOIP2021T3 都能用模拟退火得到很高的分数，但是我却只打了最简单的暴力。失去了很多分数。&lt;/p&gt;

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>树状数组 on _slb 的博客</title>
-    <link>http://example.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+    <link>https://luoyisu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
     <description>Recent content in 树状数组 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 23 Dec 2021 21:15:48 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Dec 2021 21:15:48 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codeforces Round 668 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1404/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1404/</link>
       <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1404/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1404/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;不简单，但也不算特别难。&lt;/p&gt;
 &lt;p&gt;Div1 的 BCDE 都值得一做。&lt;/p&gt;
@@ -579,10 +579,10 @@
     
     <item>
       <title>Codeforces Round 345 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest650/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest650/</link>
       <pubDate>Mon, 20 Dec 2021 16:21:07 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest650/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest650/</guid>
       <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
 &lt;p&gt;除了 Div2 的两道题，其他题都挺好的，建议做（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<h2 id="概述">概述</h2>

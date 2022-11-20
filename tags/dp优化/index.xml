@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>DP优化 on _slb 的博客</title>
-    <link>http://example.org/tags/dp%E4%BC%98%E5%8C%96/</link>
+    <link>https://luoyisu.github.io/tags/dp%E4%BC%98%E5%8C%96/</link>
     <description>Recent content in DP优化 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 07 Dec 2021 15:32:19 +0000</lastBuildDate><atom:link href="http://example.org/tags/dp%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Dec 2021 15:32:19 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/dp%E4%BC%98%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codeforces Round 709 (div2)</title>
-      <link>http://example.org/posts/cf-contest1484/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1484/</link>
       <pubDate>Tue, 07 Dec 2021 15:32:19 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1484/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1484/</guid>
       <description>&lt;p&gt;时间比较近的比赛果然难度大一些。。。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>时间比较近的比赛果然难度大一些。。。</p>
 <h2 id="ahttpscodeforcescontest1484problema"><a href="https://codeforc.es/contest/1484/problem/A">A</a></h2>

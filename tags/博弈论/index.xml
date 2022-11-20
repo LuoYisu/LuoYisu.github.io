@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>博弈论 on _slb 的博客</title>
-    <link>http://example.org/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+    <link>https://luoyisu.github.io/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
     <description>Recent content in 博弈论 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 16 Dec 2021 15:23:16 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Dec 2021 15:23:16 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Codeforces Round 573 (Div. 1&amp;2)</title>
-      <link>http://example.org/posts/cf-contest1190/</link>
+      <link>https://luoyisu.github.io/posts/cf-contest1190/</link>
       <pubDate>Thu, 16 Dec 2021 15:23:16 +0000</pubDate>
       
-      <guid>http://example.org/posts/cf-contest1190/</guid>
+      <guid>https://luoyisu.github.io/posts/cf-contest1190/</guid>
       <description>&lt;p&gt;挺难的，但没有 DP 好评（）&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>挺难的，但没有 DP 好评（）</p>
 <h2 id="div2-ahttpscodeforcescontest1191problema"><a href="https://codeforc.es/contest/1191/problem/A">Div2 A</a></h2>

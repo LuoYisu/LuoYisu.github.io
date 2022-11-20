@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>点分树 on _slb 的博客</title>
-    <link>http://example.org/tags/%E7%82%B9%E5%88%86%E6%A0%91/</link>
+    <link>https://luoyisu.github.io/tags/%E7%82%B9%E5%88%86%E6%A0%91/</link>
     <description>Recent content in 点分树 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 17 Jan 2022 07:22:01 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E7%82%B9%E5%88%86%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 17 Jan 2022 07:22:01 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E7%82%B9%E5%88%86%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>uoj55 紫荆花之恋</title>
-      <link>http://example.org/posts/uoj55/</link>
+      <link>https://luoyisu.github.io/posts/uoj55/</link>
       <pubDate>Mon, 17 Jan 2022 07:22:01 +0000</pubDate>
       
-      <guid>http://example.org/posts/uoj55/</guid>
+      <guid>https://luoyisu.github.io/posts/uoj55/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;有一棵初始为空的树，每次新给出一个点的父亲和它连向父亲边的权值以及这个点的权值，每次加点之后询问有多少点满足 $dis(i,j)\leq val_i+val_j$，强制在线。&lt;/p&gt;
 &lt;p&gt;$n\leq10^5$。&lt;/p&gt;</description>

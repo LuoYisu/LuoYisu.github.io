@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>原根 on _slb 的博客</title>
-    <link>http://example.org/tags/%E5%8E%9F%E6%A0%B9/</link>
+    <link>https://luoyisu.github.io/tags/%E5%8E%9F%E6%A0%B9/</link>
     <description>Recent content in 原根 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 10 Jan 2022 21:14:13 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E5%8E%9F%E6%A0%B9/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jan 2022 21:14:13 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E5%8E%9F%E6%A0%B9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>loj3050 「十二省联考 2019」 骗分过样例</title>
-      <link>http://example.org/posts/loj3050/</link>
+      <link>https://luoyisu.github.io/posts/loj3050/</link>
       <pubDate>Mon, 10 Jan 2022 21:14:13 +0000</pubDate>
       
-      <guid>http://example.org/posts/loj3050/</guid>
+      <guid>https://luoyisu.github.io/posts/loj3050/</guid>
       <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
 &lt;p&gt;给出一些测试点的输入文件和输出文件以及每个测试点要实现的功能编号，你需要写一个程序通过这些给出的测试点。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://loj.ac/p/3050&#34;&gt;链接&lt;/a&gt;，这个题在 loj 上体验很好，洛谷上虽然也有这个题但容易被卡常。&lt;/p&gt;</description>
