@@ -149,7 +149,7 @@
 </span></span><span style="display:flex;"><span>        {
 </span></span><span style="display:flex;"><span>            <span style="color:#a90d91">int</span> <span style="color:#000">l</span>, <span style="color:#000">r</span>;
 </span></span><span style="display:flex;"><span>            <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">l</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">r</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">query</span>(<span style="color:#000">l</span>, <span style="color:#000">r</span>) <span style="color:#000">&lt;&lt;</span> <span style="color:#000">&#39;\\</span><span style="color:#000">n</span><span style="color:#000">&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">query</span>(<span style="color:#000">l</span>, <span style="color:#000">r</span>) <span style="color:#000">&lt;&lt;</span> <span style="color:#2300ce">&#39;\n&#39;</span>;
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
@@ -162,6 +162,22 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#000">solve</span><span style="color:#000">::</span><span style="color:#000">main</span>();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>no title</title>
+      <link>https://luoyisu.github.io/posts/220503-note/</link>
+      <pubDate>Tue, 03 May 2022 16:53:17 +0000</pubDate>
+      
+      <guid>https://luoyisu.github.io/posts/220503-note/</guid>
+      <description>随便写几句 一个人的奋斗果然要考虑到历史的进程。
+也许我与OI该回归本来的样子了。
+这会是个新的开始。</description>
+      <content:encoded><![CDATA[<h1 id="随便写几句">随便写几句</h1>
+<p>一个人的奋斗果然要考虑到历史的进程。</p>
+<p>也许我与OI该回归本来的样子了。</p>
+<p>这会是个新的开始。</p>
+]]></content:encoded>
     </item>
     
     <item>

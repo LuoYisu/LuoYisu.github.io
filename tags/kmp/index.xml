@@ -495,7 +495,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#177500">//ans.print();
 </span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">m</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
 </span></span><span style="display:flex;"><span>        <span style="color:#000">res</span> <span style="color:#000">+=</span> <span style="color:#000">ans</span>.<span style="color:#000">a</span>[<span style="color:#1c01ce">1</span>][<span style="color:#000">i</span>], <span style="color:#000">res</span> <span style="color:#000">%=</span> <span style="color:#000">mod</span>;
-</span></span><span style="display:flex;"><span>    <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%lld</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>, <span style="color:#000">res</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%lld</span><span style="color:#c41a16">\n</span><span style="color:#c41a16">&#34;</span>, <span style="color:#000">res</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>]]></content:encoded>
     </item>

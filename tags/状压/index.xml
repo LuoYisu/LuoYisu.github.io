@@ -140,7 +140,7 @@
 </span></span><span style="display:flex;"><span>            }
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%d %lld</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>, <span style="color:#000">ans</span>, <span style="color:#000">tot</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%d %lld</span><span style="color:#c41a16">\n</span><span style="color:#c41a16">&#34;</span>, <span style="color:#000">ans</span>, <span style="color:#000">tot</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h2 id="一点闲话">一点闲话</h2>
 <p>谁知道如何能想到这个 $g$ 啊，我想不到这个点。。</p>]]></content:encoded>

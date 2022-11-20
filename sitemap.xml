@@ -2,16 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://luoyisu.github.io/posts/code-style/</loc>
+    <lastmod>2021-10-14T16:52:02+00:00</lastmod>
+  </url><url>
     <loc>https://luoyisu.github.io/</loc>
-    <lastmod>2022-10-30T23:16:58+00:00</lastmod>
+    <lastmod>2022-11-19T22:06:17+08:00</lastmod>
+  </url><url>
+    <loc>https://luoyisu.github.io/posts/hello-hugo-world/</loc>
+    <lastmod>2022-11-19T22:06:17+08:00</lastmod>
+  </url><url>
+    <loc>https://luoyisu.github.io/posts/</loc>
+    <lastmod>2022-11-19T22:06:17+08:00</lastmod>
   </url><url>
     <loc>https://luoyisu.github.io/categories/</loc>
     <lastmod>2022-10-30T23:16:58+00:00</lastmod>
   </url><url>
     <loc>https://luoyisu.github.io/categories/note/</loc>
-    <lastmod>2022-10-30T23:16:58+00:00</lastmod>
-  </url><url>
-    <loc>https://luoyisu.github.io/posts/</loc>
     <lastmod>2022-10-30T23:16:58+00:00</lastmod>
   </url><url>
     <loc>https://luoyisu.github.io/posts/string-algorithm-primary/</loc>
@@ -82,6 +88,12 @@
   </url><url>
     <loc>https://luoyisu.github.io/tags/%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/</loc>
     <lastmod>2022-05-07T09:07:28+00:00</lastmod>
+  </url><url>
+    <loc>https://luoyisu.github.io/posts/220503-note/</loc>
+    <lastmod>2022-05-03T16:53:17+00:00</lastmod>
+  </url><url>
+    <loc>https://luoyisu.github.io/tags/others/</loc>
+    <lastmod>2022-05-03T16:53:17+00:00</lastmod>
   </url><url>
     <loc>https://luoyisu.github.io/posts/loj3702/</loc>
     <lastmod>2022-04-20T19:59:46+00:00</lastmod>
@@ -437,9 +449,6 @@
     <loc>https://luoyisu.github.io/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</loc>
     <lastmod>2021-10-15T16:10:51+00:00</lastmod>
   </url><url>
-    <loc>https://luoyisu.github.io/posts/code-style/</loc>
-    <lastmod>2021-10-14T16:52:02+00:00</lastmod>
-  </url><url>
     <loc>https://luoyisu.github.io/tags/oi/</loc>
     <lastmod>2021-10-14T16:52:02+00:00</lastmod>
   </url><url>
@@ -499,6 +508,12 @@
   </url><url>
     <loc>https://luoyisu.github.io/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</loc>
     <lastmod>2021-08-13T21:54:41+00:00</lastmod>
+  </url><url>
+    <loc>https://luoyisu.github.io/posts/2021%E5%A4%A7%E8%BF%9E%E4%B8%AD%E8%80%83/</loc>
+    <lastmod>2021-06-30T22:59:59+00:00</lastmod>
+  </url><url>
+    <loc>https://luoyisu.github.io/categories/others/</loc>
+    <lastmod>2021-06-30T22:59:59+00:00</lastmod>
   </url><url>
     <loc>https://luoyisu.github.io/archives/</loc>
   </url><url>

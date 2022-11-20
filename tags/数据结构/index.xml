@@ -112,7 +112,7 @@
 </span></span><span style="display:flex;"><span>        {
 </span></span><span style="display:flex;"><span>            <span style="color:#a90d91">int</span> <span style="color:#000">l</span>, <span style="color:#000">r</span>;
 </span></span><span style="display:flex;"><span>            <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">l</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">r</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">query</span>(<span style="color:#000">l</span>, <span style="color:#000">r</span>) <span style="color:#000">&lt;&lt;</span> <span style="color:#000">&#39;\\</span><span style="color:#000">n</span><span style="color:#000">&#39;</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">query</span>(<span style="color:#000">l</span>, <span style="color:#000">r</span>) <span style="color:#000">&lt;&lt;</span> <span style="color:#2300ce">&#39;\n&#39;</span>;
 </span></span><span style="display:flex;"><span>        }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>}
