@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Tags | _slb 的博客</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="http://example.org/tags/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.50186c5f00667894caec5120c9bf6fdd794f30be21c26fd0f275eaebdfde2158.css" integrity="sha256-UBhsXwBmeJTK7FEgyb9v3XlPML4hwm/Q8nXq69/eIVg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://example.org/favicon.ico">
+<link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png">
+<link rel="alternate" type="application/rss+xml" href="http://example.org/tags/index.xml">
+
+<meta name="twitter:title" content="Tags | _slb 的博客" />
+<meta name="twitter:description" content="" />
+<meta property="og:title" content="Tags | _slb 的博客" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/tags/" />
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary-bg: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list-page {
+                background: var(--theme);
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+</head>
+
+<body class="list-page type-tags kind-taxonomy layout-" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'auto';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://example.org/" accesskey="h" title="_slb 的博客 (Alt + H)">_slb 的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://example.org/categories/" title="分类"
+                >分类
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/tags/" title="标签" class="active"
+                >标签
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/archives/" title="归档"
+                >归档
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/friends/" title="友链"
+                >友链
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/about/" title="关于"
+                >关于
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/search/" title="搜索 (Alt &#43; /)"data-no-instant accesskey=/
+                >搜索
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+<header class="page-header">
+    <h1>Tags</h1>
+</header>
+
+<ul class="terms-tags">
+    <li>
+        <a href="http://example.org/tags/dfs/">DFS <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/dp/">DP <sup><strong><sup>16</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/dp%E4%BC%98%E5%8C%96/">DP优化 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/floyd/">floyd <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/kmp/">KMP <sup><strong><sup>3</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/lca/">LCA <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/lct/">LCT <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/manacher/">Manacher <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/miller-rabin/">Miller Rabin <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/note/">Note <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/oi/">OI <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/st%E8%A1%A8/">ST表 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/tarjan/">tarjan <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/trie%E6%A0%91/">Trie树 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E8%83%8C%E5%8C%85/">背包 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%80%8D%E5%A2%9E/">倍增 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/">差分约束 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%82%B9%E5%88%86%E6%A0%91/">点分树 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E4%BA%8C%E5%88%86/">二分 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/">二分图 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/">二进制 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%88%86%E5%9D%97/">分块 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/">高斯消元 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%89%B2%E7%82%B9/">割点 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%9E%84%E9%80%A0/">构造 <sup><strong><sup>10</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%93%88%E5%B8%8C/">哈希 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%90%8E%E7%BC%80%E6%A0%91/">后缀树 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/">计算几何 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E4%BA%A4%E4%BA%92%E9%A2%98/">交互题 <sup><strong><sup>4</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%AB%9E%E8%B5%9B%E5%9B%BE/">竞赛图 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%9F%A9%E9%98%B5/">矩阵 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%A6%BB%E7%BA%BF/">离线 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛 <sup><strong><sup>24</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/">模拟退火 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/">莫比乌斯反演 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0/">莫比乌斯函数 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/">欧拉回路 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF/">欧拉路 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/">平衡树 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/">启发式合并 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%8C%BA%E9%97%B4dp/">区间DP <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/">扫描线 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%94%9F%E6%88%90%E6%A0%91/">生成树 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%A0%91/">树 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/">树状数组 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%95%B0%E8%AE%BA/">数论 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%95%B0%E4%BD%8Ddp/">数位DP <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%95%B0%E5%AD%A6/">数学 <sup><strong><sup>4</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">双指针 <sup><strong><sup>4</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E8%B4%AA%E5%BF%83/">贪心 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/">提交答案 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/">题解合集 <sup><strong><sup>22</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%9B%BE%E8%AE%BA/">图论 <sup><strong><sup>9</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%AE%8C%E5%85%A8%E5%9B%BE/">完全图 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/">网络流 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/">线段树 <sup><strong><sup>3</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6/">线段树合并 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/">斜率优化 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/">优化建图 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%B8%B8%E8%AE%B0/">游记 <sup><strong><sup>10</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%8E%9F%E6%A0%B9/">原根 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/">主席树 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%8A%B6%E5%8E%8B/">状压 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串 <sup><strong><sup>4</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E7%BB%84%E5%90%88/">组合 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/">最大流 <sup><strong><sup>1</sup></strong></sup> </a>
+    </li>
+    <li>
+        <a href="http://example.org/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路 <sup><strong><sup>2</sup></strong></sup> </a>
+    </li>
+</ul>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2022 <a href="http://example.org/">_slb 的博客</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+</body>
+
+</html>

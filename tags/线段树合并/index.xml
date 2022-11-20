@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>线段树合并 on _slb 的博客</title>
+    <link>http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6/</link>
+    <description>Recent content in 线段树合并 on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 18 Nov 2021 09:19:15 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>洛谷P3605 [USACO17JAN]Promotion Counting P</title>
+      <link>http://example.org/posts/luogu3605/</link>
+      <pubDate>Thu, 18 Nov 2021 09:19:15 +0000</pubDate>
+      
+      <guid>http://example.org/posts/luogu3605/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;给定一棵树，每个点有一个权值，求每个点所有后代中权值比它大的点的个数。&lt;/p&gt;
+&lt;p&gt;$n\leq10^5$&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="description">Description</h2>
+<p>给定一棵树，每个点有一个权值，求每个点所有后代中权值比它大的点的个数。</p>
+<p>$n\leq10^5$</p>
+<p>不怎么难，就是看对数据结构的掌握程度。。</p>
+<h2 id="算法一">算法一</h2>
+<p>对每个点维护一个权值线段树，从下往上合并，每次合并该结点所有儿子即可。$O(n\log n)$​​，时间空间常数都很大。</p>
+<h3 id="code">Code</h3>
+<p>我觉得指针比数组清晰一些，虽然也伴随着一点小风险（访问空指针）。</p>
+<p>代码还是很清晰的，不难写。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;algorithm&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;vector&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">cout</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e5</span> <span style="color:#000">+</span> <span style="color:#1c01ce">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">struct</span> <span style="color:#3f6e75">Node</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">sum</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">ls</span>, <span style="color:#000">*</span><span style="color:#000">rs</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">Node</span>() <span style="color:#000">:</span> <span style="color:#000">sum</span>(<span style="color:#1c01ce">0</span>), <span style="color:#000">ls</span>(<span style="color:#a90d91">nullptr</span>), <span style="color:#000">rs</span>(<span style="color:#a90d91">nullptr</span>) {}
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">void</span> <span style="color:#000">push_up</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">sum</span> <span style="color:#000">=</span> (<span style="color:#000">ls</span> <span style="color:#000">==</span> <span style="color:#a90d91">nullptr</span> <span style="color:#000">?</span> <span style="color:#1c01ce">0</span> <span style="color:#000">:</span> <span style="color:#000">ls</span><span style="color:#000">-&gt;</span><span style="color:#000">sum</span>) <span style="color:#000">+</span> (<span style="color:#000">rs</span> <span style="color:#000">==</span> <span style="color:#a90d91">nullptr</span> <span style="color:#000">?</span> <span style="color:#1c01ce">0</span> <span style="color:#000">:</span> <span style="color:#000">rs</span><span style="color:#000">-&gt;</span><span style="color:#000">sum</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>} <span style="color:#000">a</span>[<span style="color:#000">maxn</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#1c01ce">5</span>], <span style="color:#000">*</span><span style="color:#000">root</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">tot</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">modify</span>(<span style="color:#a90d91">int</span> <span style="color:#000">l</span>, <span style="color:#a90d91">int</span> <span style="color:#000">r</span>, <span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">p</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">p</span> <span style="color:#000">==</span> <span style="color:#a90d91">nullptr</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p</span> <span style="color:#000">=</span> <span style="color:#000">&amp;</span><span style="color:#000">a</span>[<span style="color:#000">++</span><span style="color:#000">tot</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">l</span> <span style="color:#000">==</span> <span style="color:#000">r</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        (<span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">sum</span>)<span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">p</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">mid</span> <span style="color:#000">=</span> (<span style="color:#000">l</span> <span style="color:#000">+</span> <span style="color:#000">r</span>) <span style="color:#000">/</span> <span style="color:#1c01ce">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">x</span> <span style="color:#000">&lt;=</span> <span style="color:#000">mid</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">ls</span> <span style="color:#000">=</span> <span style="color:#000">modify</span>(<span style="color:#000">l</span>, <span style="color:#000">mid</span>, <span style="color:#000">x</span>, <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">ls</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">else</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">rs</span> <span style="color:#000">=</span> <span style="color:#000">modify</span>(<span style="color:#000">mid</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">r</span>, <span style="color:#000">x</span>, <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">rs</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">push_up</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">p</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">query</span>(<span style="color:#a90d91">int</span> <span style="color:#000">l</span>, <span style="color:#a90d91">int</span> <span style="color:#000">r</span>, <span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>, <span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">p</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">p</span> <span style="color:#000">==</span> <span style="color:#a90d91">nullptr</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">l</span> <span style="color:#000">&gt;=</span> <span style="color:#000">x</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">r</span> <span style="color:#000">&lt;=</span> <span style="color:#000">y</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">sum</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">mid</span> <span style="color:#000">=</span> (<span style="color:#000">l</span> <span style="color:#000">+</span> <span style="color:#000">r</span>) <span style="color:#000">/</span> <span style="color:#1c01ce">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">x</span> <span style="color:#000">&lt;=</span> <span style="color:#000">mid</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">res</span> <span style="color:#000">+=</span> <span style="color:#000">query</span>(<span style="color:#000">l</span>, <span style="color:#000">mid</span>, <span style="color:#000">x</span>, <span style="color:#000">y</span>, <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">ls</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">y</span> <span style="color:#000">&gt;</span> <span style="color:#000">mid</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">res</span> <span style="color:#000">+=</span> <span style="color:#000">query</span>(<span style="color:#000">mid</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">r</span>, <span style="color:#000">x</span>, <span style="color:#000">y</span>, <span style="color:#000">p</span><span style="color:#000">-&gt;</span><span style="color:#000">rs</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">merge</span>(<span style="color:#a90d91">int</span> <span style="color:#000">l</span>, <span style="color:#a90d91">int</span> <span style="color:#000">r</span>, <span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">a</span>, <span style="color:#000">Node</span> <span style="color:#000">*</span><span style="color:#000">b</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">a</span> <span style="color:#000">==</span> <span style="color:#a90d91">nullptr</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">b</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">b</span> <span style="color:#000">==</span> <span style="color:#a90d91">nullptr</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">a</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">l</span> <span style="color:#000">==</span> <span style="color:#000">r</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">a</span><span style="color:#000">-&gt;</span><span style="color:#000">sum</span> <span style="color:#000">+=</span> <span style="color:#000">b</span><span style="color:#000">-&gt;</span><span style="color:#000">sum</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">a</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">mid</span> <span style="color:#000">=</span> (<span style="color:#000">l</span> <span style="color:#000">+</span> <span style="color:#000">r</span>) <span style="color:#000">/</span> <span style="color:#1c01ce">2</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">a</span><span style="color:#000">-&gt;</span><span style="color:#000">ls</span> <span style="color:#000">=</span> <span style="color:#000">merge</span>(<span style="color:#000">l</span>, <span style="color:#000">mid</span>, <span style="color:#000">a</span><span style="color:#000">-&gt;</span><span style="color:#000">ls</span>, <span style="color:#000">b</span><span style="color:#000">-&gt;</span><span style="color:#000">ls</span>), <span style="color:#000">a</span><span style="color:#000">-&gt;</span><span style="color:#000">rs</span> <span style="color:#000">=</span> <span style="color:#000">merge</span>(<span style="color:#000">mid</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">r</span>, <span style="color:#000">a</span><span style="color:#000">-&gt;</span><span style="color:#000">rs</span>, <span style="color:#000">b</span><span style="color:#000">-&gt;</span><span style="color:#000">rs</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">a</span><span style="color:#000">-&gt;</span><span style="color:#000">push_up</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">a</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">ans</span>[<span style="color:#000">maxn</span>], <span style="color:#000">val</span>[<span style="color:#000">maxn</span>], <span style="color:#000">b</span>[<span style="color:#000">maxn</span>], <span style="color:#000">n</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">vector</span><span style="color:#000">&lt;</span><span style="color:#a90d91">int</span><span style="color:#000">&gt;</span> <span style="color:#000">e</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">inline</span> <span style="color:#a90d91">void</span> <span style="color:#000">add</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>) { <span style="color:#000">e</span>[<span style="color:#000">x</span>].<span style="color:#000">push_back</span>(<span style="color:#000">y</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">dfs</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">v</span> : <span style="color:#000">e</span>[<span style="color:#000">x</span>])
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">dfs</span>(<span style="color:#000">v</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#000">root</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#000">merge</span>(<span style="color:#1c01ce">1</span>, <span style="color:#000">n</span>, <span style="color:#000">root</span>[<span style="color:#000">x</span>], <span style="color:#000">root</span>[<span style="color:#000">v</span>]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ans</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#000">query</span>(<span style="color:#1c01ce">1</span>, <span style="color:#000">n</span>, <span style="color:#000">val</span>[<span style="color:#000">x</span>] <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">n</span>, <span style="color:#000">root</span>[<span style="color:#000">x</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">root</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#000">modify</span>(<span style="color:#1c01ce">1</span>, <span style="color:#000">n</span>, <span style="color:#000">val</span>[<span style="color:#000">x</span>], <span style="color:#000">root</span>[<span style="color:#000">x</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">n</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">val</span>[<span style="color:#000">i</span>]), <span style="color:#000">b</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">val</span>[<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>, <span style="color:#000">x</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">x</span>), <span style="color:#000">add</span>(<span style="color:#000">x</span>, <span style="color:#000">i</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">sort</span>(<span style="color:#000">b</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">b</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span> <span style="color:#000">+</span> <span style="color:#000">n</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">root</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">&amp;</span><span style="color:#000">a</span>[<span style="color:#000">++</span><span style="color:#000">tot</span>], <span style="color:#000">val</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">lower_bound</span>(<span style="color:#000">b</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">b</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span> <span style="color:#000">+</span> <span style="color:#000">n</span>, <span style="color:#000">val</span>[<span style="color:#000">i</span>]) <span style="color:#000">-</span> <span style="color:#000">b</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">dfs</span>(<span style="color:#1c01ce">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%d</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>, <span style="color:#000">ans</span>[<span style="color:#000">i</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="算法二">算法二</h2>
+<p>对每个点维护一个平衡树，然后从下向上启发式合并，对每个点查询排名，减一下就是答案。$O(n\log^2n)$​​，虽然复杂度比较高但常数很小，实际上比上面的线段树合并快 $\text{70ms}$​。空间没啥常数。</p>
+<h3 id="code-1">Code</h3>
+<p>忽然想起 <code>pb_ds</code>，稍微学了点写了一些。不得不说是真省事，而且红黑树也是真快。（我估计比不少手写 splay/treap 的快）</p>
+<p>这代码就更清晰了（）</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;algorithm&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;ext/pb_ds/assoc_container.hpp&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;ext/pb_ds/tree_policy.hpp&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;set&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">cout</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2e5</span> <span style="color:#000">+</span> <span style="color:#1c01ce">10</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">inline</span> <span style="color:#a90d91">bool</span> <span style="color:#000">cmp</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>) { <span style="color:#a90d91">return</span> <span style="color:#000">x</span> <span style="color:#000">&lt;</span> <span style="color:#000">y</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">__gnu_pbds</span><span style="color:#000">::</span><span style="color:#000">tree</span><span style="color:#000">&lt;</span><span style="color:#a90d91">int</span>, <span style="color:#000">__gnu_pbds</span><span style="color:#000">::</span><span style="color:#000">null_type</span>, <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">less</span><span style="color:#000">&lt;</span><span style="color:#a90d91">int</span><span style="color:#000">&gt;</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#000">__gnu_pbds</span><span style="color:#000">::</span><span style="color:#000">rb_tree_tag</span>,
+</span></span><span style="display:flex;"><span>                 <span style="color:#000">__gnu_pbds</span><span style="color:#000">::</span><span style="color:#000">tree_order_statistics_node_update</span><span style="color:#000">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">S</span>[<span style="color:#000">maxn</span>], <span style="color:#000">*</span><span style="color:#000">root</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">vector</span><span style="color:#000">&lt;</span><span style="color:#a90d91">int</span><span style="color:#000">&gt;</span> <span style="color:#000">e</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">inline</span> <span style="color:#a90d91">void</span> <span style="color:#000">add</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>) { <span style="color:#000">e</span>[<span style="color:#000">x</span>].<span style="color:#000">push_back</span>(<span style="color:#000">y</span>); }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">n</span>, <span style="color:#000">a</span>[<span style="color:#000">maxn</span>], <span style="color:#000">ans</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">dfs</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">auto</span> <span style="color:#000">mx</span> <span style="color:#000">=</span> <span style="color:#000">root</span>[<span style="color:#000">x</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">v</span> : <span style="color:#000">e</span>[<span style="color:#000">x</span>])
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">dfs</span>(<span style="color:#000">v</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">root</span>[<span style="color:#000">v</span>]<span style="color:#000">-&gt;</span><span style="color:#000">size</span>() <span style="color:#000">&gt;</span> <span style="color:#000">mx</span><span style="color:#000">-&gt;</span><span style="color:#000">size</span>())
+</span></span><span style="display:flex;"><span>            <span style="color:#000">mx</span> <span style="color:#000">=</span> <span style="color:#000">root</span>[<span style="color:#000">v</span>];
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">root</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#000">mx</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">v</span> : <span style="color:#000">e</span>[<span style="color:#000">x</span>])
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">root</span>[<span style="color:#000">v</span>] <span style="color:#000">!=</span> <span style="color:#000">root</span>[<span style="color:#000">x</span>])
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">it</span> : <span style="color:#000">*</span><span style="color:#000">root</span>[<span style="color:#000">v</span>])
+</span></span><span style="display:flex;"><span>                <span style="color:#000">root</span>[<span style="color:#000">x</span>]<span style="color:#000">-&gt;</span><span style="color:#000">insert</span>(<span style="color:#000">it</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#000">root</span>[<span style="color:#000">v</span>]<span style="color:#000">-&gt;</span><span style="color:#000">clear</span>();
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ans</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#000">root</span>[<span style="color:#000">x</span>]<span style="color:#000">-&gt;</span><span style="color:#000">size</span>() <span style="color:#000">-</span> <span style="color:#000">root</span>[<span style="color:#000">x</span>]<span style="color:#000">-&gt;</span><span style="color:#000">order_of_key</span>(<span style="color:#000">a</span>[<span style="color:#000">x</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">root</span>[<span style="color:#000">x</span>]<span style="color:#000">-&gt;</span><span style="color:#000">insert</span>(<span style="color:#000">a</span>[<span style="color:#000">x</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">n</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">a</span>[<span style="color:#000">i</span>]), <span style="color:#000">root</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">&amp;</span><span style="color:#000">S</span>[<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>, <span style="color:#000">x</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">x</span>), <span style="color:#000">add</span>(<span style="color:#000">x</span>, <span style="color:#000">i</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">dfs</span>(<span style="color:#1c01ce">1</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%d</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>, <span style="color:#000">ans</span>[<span style="color:#000">i</span>]);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="算法三">算法三</h2>
+<p>搞个 dfs 序出来，然后就变成序列题目，可以用类似逆序对的方法做，树状数组常数很小。</p>
+<p>或者分块，我还看到有主席树的qwq。</p>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

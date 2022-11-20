@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>莫比乌斯反演 on _slb 的博客</title>
+    <link>http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</link>
+    <description>Recent content in 莫比乌斯反演 on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 05 Jan 2022 19:20:38 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>luogu1829 Crash的数字表格 / JZPTAB</title>
+      <link>http://example.org/posts/luogu1829/</link>
+      <pubDate>Wed, 05 Jan 2022 19:20:38 +0000</pubDate>
+      
+      <guid>http://example.org/posts/luogu1829/</guid>
+      <description>&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;
+&lt;p&gt;求
+$$
+\sum\limits_{i=1}^n\sum\limits_{j=1}^m\operatorname{lcm}(i,j)
+$$
+$n,m\leq10^7$​。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="description">Description</h2>
+<p>求
+$$
+\sum\limits_{i=1}^n\sum\limits_{j=1}^m\operatorname{lcm}(i,j)
+$$
+$n,m\leq10^7$​。</p>
+<h2 id="solution">Solution</h2>
+<p>这道题算是一道比较有代表性的题目了，综合了各种 trick。</p>
+<p>trick1：lcm 转化为 gcd：
+$$
+\sum\limits_{i=1}^n\sum\limits_{j=1}^m\operatorname{lcm}(i,j)=\sum\limits_{i=1}^n\sum\limits_{j=1}^m\frac{i\times j}{\gcd(i,j)}
+$$
+trick2：枚举分母：
+$$
+ans=\sum\limits_{d=1}^{\min(n,m)}\sum\limits_{i=1}^n\sum\limits_{j=1}^m\frac{i\times j}{d}[\gcd(i,j)=d]
+$$
+trick3：把 $[\gcd(i,j)=d]$​​ 转化为 $[\gcd(\dfrac{i}{d},\dfrac{j}{d})=1]$​​，同时改变枚举的 $i,j$​（$i$ 变为 $i/d$，$j$ 同理）。
+$$
+\begin{aligned}
+ans&amp;=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{i=1}^n\sum\limits_{j=1}^m\frac{i\times j}{d\times d}[\gcd(\frac{i}{d},\frac{j}{d})=1]\\
+&amp;=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{i=1}^{\lfloor \frac{n}{d}\rfloor}\sum\limits_{j=1}^{\lfloor\frac{m}{d}\rfloor}i\times j[\gcd(i,j)=1]
+\end{aligned}
+$$
+trick4：$[n=1]$ 用一个结论转化为莫比乌斯函数的形式：$\sum_{d\mid n}\mu(d)=[n=1]$​（证明不讲了）。
+$$
+ans=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum\limits_{j=1}^{\lfloor\frac{m}{d}\rfloor}i\times j\sum\limits_{k\mid\gcd(i,j)}\mu(k)
+$$
+trick5：优先枚举因数，然后把枚举因数转化成枚举倍数放到后面的限制条件里。
+$$
+\begin{aligned}
+ans&amp;=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{k\mid\gcd(i,j)}\mu(k)\sum\limits_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum\limits_{j=1}^{\lfloor\frac{m}{d}\rfloor}i\times j\\
+&amp;=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{k=1}^{\lfloor\min(n,m)/d\rfloor}\mu(k)\sum\limits_{i=1,k\mid i}^{\lfloor\frac{n}{d}\rfloor}\sum\limits_{j=1,k\mid j}^{\lfloor\frac{m}{d}\rfloor}i\times j
+\end{aligned}
+$$
+trick6：$1\sim n$​ 中 $x$​ 的倍数有 $\lfloor\dfrac{n}{x}\rfloor$​ 个，那么有 $\sum_{i=1,x\mid i}^nt=\sum_{i=1}^{\lfloor n/x\rfloor}tx$​​​（不一定完全一样，但可以用这个方法化简）。​
+$$
+\begin{aligned}
+ans&amp;=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{k=1}^{\lfloor\min(n,m)/d\rfloor}\mu(k)\times k^2\sum\limits_{i=1,k\mid i}^{\lfloor\frac{n}{d}\rfloor}\sum\limits_{j=1,k\mid j}^{\lfloor\frac{m}{d}\rfloor}\frac{i\times j}{k\times k}\\
+&amp;=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{k=1}^{\lfloor\min(n,m)/d\rfloor}\mu(k)\times k^2\sum\limits_{i=1}^{\lfloor\frac{n}{dk}\rfloor}i\sum\limits_{j=1}^{\lfloor\frac{m}{dk}\rfloor}j
+\end{aligned}
+$$
+到这一步，$k^2$ 后面的两个东西是等差数列求和的形式，可以 $O(1)$ 得出，然后看到除法+下取整，而且 $\mu(k)\times k^2$ 的前缀和可以预处理得出，那么这玩意就是个数论分块：</p>
+<p>设
+$$
+sum(n)=\sum\limits_{i=1}^ni
+$$
+$$
+f(x,y)=\sum\limits_{k=1}^{\lfloor\min(n,m)\rfloor}\mu(k)\times k^2\times sum(\lfloor\frac{n}{k}\rfloor)\times sum(\lfloor\frac{m}{k}\rfloor)
+$$
+那么
+$$
+ans=\sum\limits_{d=1}^{\min(n,m)}d\times f(\lfloor\frac{n}{d}\rfloor,\lfloor\frac{m}{d}\rfloor)
+$$
+诶，这又是个数论分块的形式？？？</p>
+<p>那这就做完了。</p>
+<p>时间复杂度似乎应该是 $O(n^{0.75}+n)$​​​​（后面是预处理的复杂度）。</p>
+<p>不过我们的式子是可以接着往下推的，还有 trick 可以讲。</p>
+<p>可以发现我们上面的式子中有 $k,d,dk$ 三个未知数，我们可以枚举其中一个来消去一个未知数。</p>
+<p>trick7：枚举一个未知数来达到减小未知数的目的（这个好像比较灵活，我讲不太明白）。</p>
+<p>设 $s=dk$。
+$$
+ans=\sum\limits_{d=1}^{\min(n,m)}d\sum\limits_{s=1,d\mid s}^{\min(n,m)}\mu(\frac{s}{d})\times(\frac{s}{d})^2\times sum(\frac{n}{s})\times sum(\frac{m}{s})
+$$
+trick8：这个算是很通用的 trick 了，换枚举顺序，同时换枚举的限制，让式子更舒服（？）。
+$$
+\begin{aligned}
+ans&amp;=\sum\limits_{s=1}^{\min(n,m)}sum(\frac{n}{s})\times sum(\frac{m}{s})\sum\limits_{d=1,d\mid s}d\times\mu(\frac{s}{d})\times(\frac{s}{d})^2\\
+&amp;=\sum\limits_{s=1}^{\min(n,m)}s\times sum(\frac{n}{s})\times sum(\frac{m}{s})\sum\limits_{d=1,d\mid s}\mu(\frac{s}{d})\times\frac{s}{d}
+\end{aligned}
+$$
+trick9：当枚举的是所有因数的时候，枚举 $\dfrac{n}{d}$ 和 $d$ 是一样的。
+$$
+ans=\sum\limits_{s=1}^{\min(n,m)}s\times sum(\frac{n}{s})\times sum(\frac{m}{s})\sum\limits_{d=1,d\mid s}\mu(d)\times d
+$$
+后面的求和似乎是个积性函数，可以筛出来然后求前缀和。然后同样整除分块。</p>
+<h2 id="code">Code</h2>
+<p>写的是两个整除分块的做法。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;algorithm&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstring&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">cin</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">cout</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e7</span> <span style="color:#000">+</span> <span style="color:#1c01ce">10</span>, <span style="color:#000">mod</span> <span style="color:#000">=</span> <span style="color:#1c01ce">20101009</span>, <span style="color:#000">inv_2</span> <span style="color:#000">=</span> <span style="color:#1c01ce">10050505</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">typedef</span> <span style="color:#a90d91">long</span> <span style="color:#a90d91">long</span> <span style="color:#000">ll</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">inline</span> <span style="color:#a90d91">void</span> <span style="color:#000">upd</span>(<span style="color:#000">ll</span> <span style="color:#000">&amp;</span><span style="color:#000">x</span>, <span style="color:#000">ll</span> <span style="color:#000">y</span>) { <span style="color:#000">x</span> <span style="color:#000">+=</span> <span style="color:#000">y</span>, <span style="color:#000">x</span> <span style="color:#000">%=</span> <span style="color:#000">mod</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">pri</span>[<span style="color:#000">maxn</span>], <span style="color:#000">mu</span>[<span style="color:#000">maxn</span>], <span style="color:#000">tot</span>, <span style="color:#000">vis</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span><span style="color:#000">ll</span> <span style="color:#000">f</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">init</span>(<span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e7</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mu</span>[<span style="color:#1c01ce">1</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">!</span><span style="color:#000">vis</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#000">pri</span>[<span style="color:#000">++</span><span style="color:#000">tot</span>] <span style="color:#000">=</span> <span style="color:#000">i</span>, <span style="color:#000">mu</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">-</span><span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">tot</span> <span style="color:#000">&amp;&amp;</span> (<span style="color:#000">ll</span>)<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#000">vis</span>[<span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">*</span> <span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#000">mu</span>[<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>]] <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#000">mu</span>[<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>]] <span style="color:#000">=</span> <span style="color:#000">-</span><span style="color:#000">mu</span>[<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">f</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">f</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>], <span style="color:#000">upd</span>(<span style="color:#000">f</span>[<span style="color:#000">i</span>], <span style="color:#1c01ce">1ll</span> <span style="color:#000">*</span> <span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> (<span style="color:#000">mu</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">mod</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ll</span> <span style="color:#000">S</span>(<span style="color:#000">ll</span> <span style="color:#000">x</span>) { <span style="color:#a90d91">return</span> <span style="color:#000">x</span> <span style="color:#000">*</span> (<span style="color:#000">x</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">/</span> <span style="color:#1c01ce">2</span> <span style="color:#000">%</span> <span style="color:#000">mod</span>; }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ll</span> <span style="color:#000">solve</span>(<span style="color:#a90d91">int</span> <span style="color:#000">n</span>, <span style="color:#a90d91">int</span> <span style="color:#000">m</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ll</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">j</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">min</span>(<span style="color:#000">n</span>, <span style="color:#000">m</span>); <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">min</span>(<span style="color:#000">n</span> <span style="color:#000">/</span> (<span style="color:#000">n</span> <span style="color:#000">/</span> <span style="color:#000">i</span>), <span style="color:#000">m</span> <span style="color:#000">/</span> (<span style="color:#000">m</span> <span style="color:#000">/</span> <span style="color:#000">i</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#000">upd</span>(<span style="color:#000">res</span>, (<span style="color:#000">f</span>[<span style="color:#000">j</span>] <span style="color:#000">-</span> <span style="color:#000">f</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">+</span> <span style="color:#000">mod</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">S</span>(<span style="color:#000">n</span> <span style="color:#000">/</span> <span style="color:#000">i</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">S</span>(<span style="color:#000">m</span> <span style="color:#000">/</span> <span style="color:#000">i</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">n</span>, <span style="color:#000">m</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">n</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">m</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ll</span> <span style="color:#000">ans</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">init</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">j</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">min</span>(<span style="color:#000">n</span>, <span style="color:#000">m</span>); <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">min</span>(<span style="color:#000">n</span> <span style="color:#000">/</span> (<span style="color:#000">n</span> <span style="color:#000">/</span> <span style="color:#000">i</span>), <span style="color:#000">m</span> <span style="color:#000">/</span> (<span style="color:#000">m</span> <span style="color:#000">/</span> <span style="color:#000">i</span>));
+</span></span><span style="display:flex;"><span>        <span style="color:#000">upd</span>(<span style="color:#000">ans</span>, <span style="color:#000">solve</span>(<span style="color:#000">n</span> <span style="color:#000">/</span> <span style="color:#000">i</span>, <span style="color:#000">m</span> <span style="color:#000">/</span> <span style="color:#000">i</span>) <span style="color:#000">*</span> (<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#000">j</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">inv_2</span> <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> (<span style="color:#000">j</span> <span style="color:#000">-</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">ans</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>LCA on _slb 的博客</title>
+    <link>http://example.org/tags/lca/</link>
+    <description>Recent content in LCA on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 16 Aug 2021 23:00:44 +0000</lastBuildDate><atom:link href="http://example.org/tags/lca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CF601D &amp; 一道字符串模拟赛题的诡异解法</title>
+      <link>http://example.org/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</link>
+      <pubDate>Mon, 16 Aug 2021 23:00:44 +0000</pubDate>
+      
+      <guid>http://example.org/posts/cf601d-%E4%B8%80%E9%81%93%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E9%A2%98%E7%9A%84%E8%AF%A1%E5%BC%82%E8%A7%A3%E6%B3%95/</guid>
+      <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;最近字符串模拟赛中遇到了一道诡异的题，std 的方法是启发式合并 Trie 树，但我写了个更简单（？）的 BFS＋Trie树+LCA 做法。&lt;/p&gt;
+&lt;p&gt;后来得知是 CF 的题，就上来交一波，结果确实 AC 了。&lt;/p&gt;
+&lt;p&gt;这做法大概是对的，但是似乎有点慢（还难写）&amp;hellip;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="前言">前言</h2>
+<p>最近字符串模拟赛中遇到了一道诡异的题，std 的方法是启发式合并 Trie 树，但我写了个更简单（？）的 BFS＋Trie树+LCA 做法。</p>
+<p>后来得知是 CF 的题，就上来交一波，结果确实 AC 了。</p>
+<p>这做法大概是对的，但是似乎有点慢（还难写）&hellip;</p>
+<h2 id="题意">题意</h2>
+<p>有一棵以结点 $1$ 为根的树，每个结点上都有一个小写字母，对于以每个结点，从该结点出发向其子树中走，路上经过的点能形成一个字符串。求以每个结点为根的子树中能用此方法走出的不同的字符串数量。</p>
+<p><a href="https://codeforces.com/contest/601/problem/D">链接</a></p>
+<p>CF上原题还有一些奇怪的操作就不说了，对上述答案做一下简单的处理就行了。</p>
+<h2 id="solution">Solution</h2>
+<p>显然这道题和 Trie 树有关。</p>
+<p>对每个点 $i$ 记录一个 $mus[i]$，表示以 $i$ 为根的子树中有多少个重复的字符串。<del>（mus的意思大概是minus，即“减”）</del></p>
+<p>考虑 BFS 原树，将遍历到的点插入到 Trie 树中，BFS 时候记录一下 Trie 树上每个点对应的在原树上的点数组 $trie$，如果插入的时候发现这个字符串已经被插入到 Trie 树中，说明有一个重复的字符串，将这个点和 Trie 树上的点对应在原树上点的 LCA 的 $mus$ 数组 $+1$，更新上面的 $trie$ 数组。</p>
+<p>最后跑一遍 DFS 统计答案即可。</p>
+<p>值得一提的是可以发现如果字符串相同，那么他们在原树上深度必定相同，所以所以求 LCA 的时候不用跳到深度相同了。</p>
+<p>至于为什么在 LCA 上打标记，大概是因为打标记的时候要走到两个结点相同的，最早出现有至少两个儿子的字符相同的结点，在这里打标记，才会不重不漏。可以画画图理解。</p>
+<p>时间复杂度 $O(n\log n)$，足以通过本题。</p>
+<h2 id="code">Code</h2>
+<p>我这代码常数贼大，别人最慢也跑 $30s$，我直接干到 $50s$。</p>
+<p>还好这题时限开得也大（</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;bits/stdc++.h&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#a90d91">namespace</span> <span style="color:#000">std</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">300010</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">ch</span>[<span style="color:#000">maxn</span>][<span style="color:#1c01ce">28</span>], <span style="color:#000">tot</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">trie</span>[<span style="color:#000">maxn</span>]; <span style="color:#177500">// ch 是 Trie 树
+</span></span></span><span style="display:flex;"><span><span style="color:#177500">// trie[i] 代表在 Trie 树上编号为 i 的结点对应在原树上的结点编号。
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span><span style="color:#000">vector</span><span style="color:#000">&lt;</span><span style="color:#a90d91">int</span><span style="color:#000">&gt;</span> <span style="color:#000">e</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">add</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>) { <span style="color:#000">e</span>[<span style="color:#000">x</span>].<span style="color:#000">push_back</span>(<span style="color:#000">y</span>), <span style="color:#000">e</span>[<span style="color:#000">y</span>].<span style="color:#000">push_back</span>(<span style="color:#000">x</span>); }
+</span></span><span style="display:flex;"><span><span style="color:#000">string</span> <span style="color:#000">s</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">mus</span>[<span style="color:#000">maxn</span>], <span style="color:#000">siz</span>[<span style="color:#000">maxn</span>], <span style="color:#000">ans</span>[<span style="color:#000">maxn</span>], <span style="color:#000">v</span>[<span style="color:#000">maxn</span>], <span style="color:#000">a</span>[<span style="color:#000">maxn</span>], <span style="color:#000">n</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">f</span>[<span style="color:#000">maxn</span>][<span style="color:#1c01ce">32</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">struct</span> <span style="color:#3f6e75">node</span> <span style="color:#177500">// BFS 用结构体
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">fa</span>, <span style="color:#000">x</span>, <span style="color:#000">tfa</span>; <span style="color:#177500">// fa，x 代表在原树中该结点父亲、该结点编号。
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">// tfa 代表在 Trie 树上该结点的父亲
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>};
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">dfs_lca</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">fa</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">f</span>[<span style="color:#000">x</span>][<span style="color:#1c01ce">0</span>] <span style="color:#000">=</span> <span style="color:#000">fa</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#1c01ce">31</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">f</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">f</span>[<span style="color:#000">f</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>]][<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">e</span>[<span style="color:#000">x</span>].<span style="color:#000">size</span>(); <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">e</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>] <span style="color:#000">!=</span> <span style="color:#000">fa</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">dfs_lca</span>(<span style="color:#000">e</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>], <span style="color:#000">x</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">LCA</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">x</span> <span style="color:#000">==</span> <span style="color:#000">y</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">x</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">31</span>; <span style="color:#000">i</span> <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">f</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>] <span style="color:#000">!=</span> <span style="color:#000">f</span>[<span style="color:#000">y</span>][<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">f</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>], <span style="color:#000">y</span> <span style="color:#000">=</span> <span style="color:#000">f</span>[<span style="color:#000">y</span>][<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">f</span>[<span style="color:#000">x</span>][<span style="color:#1c01ce">0</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">init</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">n</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">s</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">s</span> <span style="color:#000">=</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">+</span> <span style="color:#000">s</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#000">y</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">x</span>, <span style="color:#000">&amp;</span><span style="color:#000">y</span>), <span style="color:#000">add</span>(<span style="color:#000">x</span>, <span style="color:#000">y</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">dfs_lca</span>(<span style="color:#1c01ce">1</span>, <span style="color:#1c01ce">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">bfs</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">queue</span><span style="color:#000">&lt;</span><span style="color:#000">node</span><span style="color:#000">&gt;</span> <span style="color:#000">q</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">q</span>.<span style="color:#000">push</span>((<span style="color:#000">node</span>){<span style="color:#1c01ce">0</span>, <span style="color:#1c01ce">1</span>, <span style="color:#1c01ce">1</span>});
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">while</span> (<span style="color:#000">!</span><span style="color:#000">q</span>.<span style="color:#000">empty</span>())
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">node</span> <span style="color:#000">now</span> <span style="color:#000">=</span> <span style="color:#000">q</span>.<span style="color:#000">front</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#000">q</span>.<span style="color:#000">pop</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#177500">//now.P();
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>        <span style="color:#a90d91">if</span> (<span style="color:#000">v</span>[<span style="color:#000">now</span>.<span style="color:#000">x</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">continue</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">v</span>[<span style="color:#000">now</span>.<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">int</span> <span style="color:#000">c</span> <span style="color:#000">=</span> <span style="color:#000">s</span>[<span style="color:#000">now</span>.<span style="color:#000">x</span>] <span style="color:#000">-</span> <span style="color:#2300ce">&#39;a&#39;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">ch</span>[<span style="color:#000">now</span>.<span style="color:#000">tfa</span>][<span style="color:#000">c</span>]) <span style="color:#177500">// 如果当前结点对应字符串已经被插入到 Trie 树中
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            <span style="color:#000">mus</span>[<span style="color:#000">LCA</span>(<span style="color:#000">now</span>.<span style="color:#000">x</span>, <span style="color:#000">trie</span>[<span style="color:#000">ch</span>[<span style="color:#000">now</span>.<span style="color:#000">tfa</span>][<span style="color:#000">c</span>]])]<span style="color:#000">++</span>, <span style="color:#000">trie</span>[<span style="color:#000">ch</span>[<span style="color:#000">now</span>.<span style="color:#000">tfa</span>][<span style="color:#000">c</span>]] <span style="color:#000">=</span> <span style="color:#000">now</span>.<span style="color:#000">x</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#177500">// 在两点 LCA 上打标记，并将 Trie 树上该点对应原树上结点更新
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>        <span style="color:#a90d91">else</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000">ch</span>[<span style="color:#000">now</span>.<span style="color:#000">tfa</span>][<span style="color:#000">c</span>] <span style="color:#000">=</span> <span style="color:#000">++</span><span style="color:#000">tot</span>, <span style="color:#000">trie</span>[<span style="color:#000">ch</span>[<span style="color:#000">now</span>.<span style="color:#000">tfa</span>][<span style="color:#000">c</span>]] <span style="color:#000">=</span> <span style="color:#000">now</span>.<span style="color:#000">x</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#177500">// 没被插入就新开个点，并更新 trie 数组
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">e</span>[<span style="color:#000">now</span>.<span style="color:#000">x</span>].<span style="color:#000">size</span>(); <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">q</span>.<span style="color:#000">push</span>((<span style="color:#000">node</span>){<span style="color:#000">now</span>.<span style="color:#000">x</span>, <span style="color:#000">e</span>[<span style="color:#000">now</span>.<span style="color:#000">x</span>][<span style="color:#000">i</span>], <span style="color:#000">ch</span>[<span style="color:#000">now</span>.<span style="color:#000">tfa</span>][<span style="color:#000">c</span>]});
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">dfs</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">fa</span>) <span style="color:#177500">// DFS 统计答案
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">siz</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">e</span>[<span style="color:#000">x</span>].<span style="color:#000">size</span>(); <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">e</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>] <span style="color:#000">!=</span> <span style="color:#000">fa</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#000">dfs</span>(<span style="color:#000">e</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>], <span style="color:#000">x</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#000">siz</span>[<span style="color:#000">x</span>] <span style="color:#000">+=</span> <span style="color:#000">siz</span>[<span style="color:#000">e</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>]];
+</span></span><span style="display:flex;"><span>            <span style="color:#000">mus</span>[<span style="color:#000">x</span>] <span style="color:#000">+=</span> <span style="color:#000">mus</span>[<span style="color:#000">e</span>[<span style="color:#000">x</span>][<span style="color:#000">i</span>]];
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ans</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#000">siz</span>[<span style="color:#000">x</span>] <span style="color:#000">-</span> <span style="color:#000">mus</span>[<span style="color:#000">x</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">out_put</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">mx</span> <span style="color:#000">=</span> <span style="color:#000">-</span><span style="color:#1c01ce">1</span>, <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">mx</span> <span style="color:#000">==</span> <span style="color:#000">ans</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cnt</span><span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">else</span> <span style="color:#a90d91">if</span> (<span style="color:#000">ans</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>] <span style="color:#000">&gt;</span> <span style="color:#000">mx</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">mx</span> <span style="color:#000">=</span> <span style="color:#000">ans</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>], <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">mx</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">endl</span>
+</span></span><span style="display:flex;"><span>         <span style="color:#000">&lt;&lt;</span> <span style="color:#000">cnt</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">solve</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">bfs</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#000">memset</span>(<span style="color:#000">v</span>, <span style="color:#1c01ce">0</span>, <span style="color:#a90d91">sizeof</span>(<span style="color:#000">v</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#000">dfs</span>(<span style="color:#1c01ce">1</span>, <span style="color:#1c01ce">0</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">init</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#000">solve</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#000">out_put</span>();
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

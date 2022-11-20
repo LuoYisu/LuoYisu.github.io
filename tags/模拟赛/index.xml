@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>模拟赛 on _slb 的博客</title>
+    <link>http://example.org/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+    <description>Recent content in 模拟赛 on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 24 Mar 2022 14:41:17 +0000</lastBuildDate><atom:link href="http://example.org/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>220324线上模拟赛</title>
+      <link>http://example.org/posts/220324-contest/</link>
+      <pubDate>Thu, 24 Mar 2022 14:41:17 +0000</pubDate>
+      
+      <guid>http://example.org/posts/220324-contest/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;预计 $100+100+4=204$，实际 $100+100+0=200$，和想的差不多。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>预计 $100+100+4=204$，实际 $100+100+0=200$，和想的差不多。</p>
+<h2 id="赛时">赛时</h2>
+<p>拿到 pdf，看到 T1，构造，再看两眼，画个图，哦我会了。只要构造一个长度为 $2$ 的菊花，然后剩下的再连一个链出去就好了。</p>
+<p>于是直接开始写，写了五分钟吧。。然后又花 30min 写+调 checker，哈哈。。。。。</p>
+<p>反正把所有数据都测了一遍，没问题。。</p>
+<p>于是看 T2，字符串题。。等会再说。</p>
+<p>看 T3，计数，DP，看到本质不同子序列忽然想到一个叫子序列自动机的玩意。。。不可做！（大雾）</p>
+<p>于是看 T2，退火没前途，二分没前途，高斯消元好像挺对的，但也没啥前途（没细想）。</p>
+<p>毕竟是后缀的 lcp，能用到的东西也不怎么多。开始枚举知识点！</p>
+<p>于是用一些后缀数据结构往上套，主要套后缀数组和后缀树。。</p>
+<p>然后玩了好几个数据（aab，aabaa，aaba，abaa 等）。</p>
+<p>aab 比较有启发啊，然后在后缀树上模拟了一波好像明白了。</p>
+<p>就是设 $f_i$ 表示已经把这个子树上分好了的答案，我们对于每个点只考虑它与它父亲多出来的长度的贡献。</p>
+<p>对于直接就是原串后缀的点，贡献就是多出来的长度；如果不是原串后缀，那么就是多出来长度加上把儿子分一下。</p>
+<p>这个分儿子的过程，具体来说，设儿子的 $f$ 值为 $f_1,f_2,f_3\dots f_m$，然后你需要构造 $k_1,k_2,k_3\dots k_m$，使 $\sum k=1$ 且 $\max(f_ik_i)$ 最小。</p>
+<p>然后想一想，所有 $f_ik_i$ 都相等肯定是最优的（否则可以调整成相等使更优），然后再随便推一推，$\max(f_ik_i)=\dfrac{1}{\sum_{j=1}^m\dfrac{1}{f_j}}$。</p>
+<p>（我也讲不清楚了，可以看代码）</p>
+<p>（其实好像不是多出来长度贡献，而是一个类似区间 DP 的思想？或者说选父亲就不选儿子？）</p>
+<p>（实际上上述过程花了很长很长很长时间，主要是对于只考虑多出来长度这部分想了很久才勉强想清楚）</p>
+<p>于是写完了，又发现被卡空间了，卡了一阵子，卡完之后也不剩什么时间了，急忙开 T3。。</p>
+<p>我会 $O(nq)$ 暴力DP！</p>
+<p>写写写，怎么过不去样例啊。。。。。</p>
+<p>好吧好像是错的，哦好像可以改成 $O(nmq)$，也是有分的，写写写。。。</p>
+<p>好家伙没时间了，结果没调出来。。。那就这样吧。。</p>
+<h2 id="赛后">赛后</h2>
+<p>T2 数据错了，题面 $n=10^6$，结果数据 $n=10^4$？？？</p>
+<p>因为数组开小 T3 白送的 $4$ 分好像也没拿到，悲剧。。。</p>
+<p>怎么说呢，T2 冥思苦想也不会的时候，也许应该先开 T3 打一打暴力。。。</p>
+<p>枚举知识点实在是过于耗费时间了。。。</p>
+<p>然后看了别人的代码和题解意识到我 T3 当时想的那个 $O(nq)$ 确实错了，但是 $O(nmq)$ 的做法是对的&hellip;总之 DP 这个东西还是要仔细想一下，硬莽好像不是很对。</p>
+<h2 id="总结">总结</h2>
+<p>反正今天这个 T2 和 T3 真不好说。。</p>
+<p>T3 其实也不是特别难，如果花时间想还是能得一些分数的，正解可能想不太到，但暴力有希望能多拿几十分。</p>
+<p>主要是 $m\leq200$，就让人遐想&hellip;</p>
+<p>但是这个 T2 实在是有点让人上头，主要是要用后缀数据结构有点明显了，然后就一直想往上套。。</p>
+<p>std 的分治做法也得学一学，我现在 SA 水平真的是很差。。。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>220120摆烂模拟赛</title>
+      <link>http://example.org/posts/220120-contest/</link>
+      <pubDate>Thu, 20 Jan 2022 17:32:19 +0000</pubDate>
+      
+      <guid>http://example.org/posts/220120-contest/</guid>
+      <description>&lt;p&gt;好久没写总结了，于是来写一发。&lt;/p&gt;
+&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;期望 $0+100+100=200$，实际 $0+0(100)+0=0(100)$。&lt;/p&gt;
+&lt;p&gt;摆大烂，挂大分。&lt;/p&gt;
+&lt;p&gt;还是太菜了，码力不够，思维也不够。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>好久没写总结了，于是来写一发。</p>
+<h2 id="概述">概述</h2>
+<p>期望 $0+100+100=200$，实际 $0+0(100)+0=0(100)$。</p>
+<p>摆大烂，挂大分。</p>
+<p>还是太菜了，码力不够，思维也不够。</p>
+<h2 id="赛时">赛时</h2>
+<p>首先看到 T1 是一个期望什么玩意，直接不想看，跑了。（摆烂 x1）</p>
+<p>然后看到 T2 是一个什么莫名其妙的像是计算几何的题，溜了。（摆烂 x2）</p>
+<p>又发现 T3 是一个很怪的像是模拟题的鬼东西，不想看，再见。（摆烂 x3）</p>
+<p>于是发现 T2 $n\leq8$，我当场选择用模拟退火摆烂。</p>
+<p>开始码码码，大概过了一个小时才码完，但是因为没有大样例，没法调参。。。</p>
+<p>后来手造数据试图调参。。。</p>
+<p>然后想了想 T3 发现是大模拟+2-SAT，我直接码码码。</p>
+<p>码到一半回去把退火完善了一下，改成随温度降低调整幅度减小，感觉稳多了。</p>
+<p>然后一直在码 T3，其实也不是特别长，但我还是太菜了。。。</p>
+<p>后来还有一个多小时的时候过了样例，我也不想管了，直接开摆。</p>
+<p>然后不想看 T1 了，开摆！！</p>
+<h2 id="赛后">赛后</h2>
+<p>哈哈我爆零了。</p>
+<p>哈哈我 T2 因为没有 <code>include &lt;ctime&gt;</code> CE了。</p>
+<p>哈哈我 T3 不知道为什么 WA 了。</p>
+<p>摆烂了。</p>
+<p>讲评的时候发现 T1 确实不是那么难，也许自己在 DP 上还是较弱。</p>
+<h2 id="总结">总结</h2>
+<p>别摆烂了！！！</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211116模拟赛</title>
+      <link>http://example.org/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Tue, 16 Nov 2021 15:41:05 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211116%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;啥都不会，滚出。&lt;/p&gt;
+&lt;p&gt;期望 $0+100+0+20=120$，实际 $0+20+0+20=40$​。至于为什么挂了这么多，看下文。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>啥都不会，滚出。</p>
+<p>期望 $0+100+0+20=120$，实际 $0+20+0+20=40$​。至于为什么挂了这么多，看下文。</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 概率+博弈论，再见吧。。。</p>
+<p>T2 看着也不简单。</p>
+<p>T3 计算几何？？？？？</p>
+<p>T4 又是个什么鬼玩意？？？？？？</p>
+<p>稍微思考了一下除了 T2 以外的题，似乎都不可做。</p>
+<p>那没啥说的，做 4h T2吧。</p>
+<p>于是开始做。</p>
+<p>分类呗，6个木条正方形，1122 或者 1113。</p>
+<p>1122 很快就搞出来了，双指针随便算一下就行。</p>
+<p>这个 1113 就很离谱。。。。</p>
+<p>随便搞了搞之后发现会算重复。。。。</p>
+<p>想了很久，忽然意识到去重不是容斥原理干的事吗。。。</p>
+<p>于是开始往死里容斥。</p>
+<p>想了很久可算是搞出来了，过了几组手造小数据。也不想对拍了，随便吧。。。</p>
+<p>又发现 T4 有 $20$ 分是个斐波那契，给写了。</p>
+<p>T3 其实也能写点暴力，但我不想思考也不想打代码了，就这样吧。。。</p>
+<p>感觉四道全是数学题。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>我吐了，我 T2 忘记自己拷贝的一个数组没有排序了。。。导致 $90$ 挂成了 $20$​，再在两个地方开 <code>long long</code> 就 $100$ 了。。。</p>
+<p>结果我挂成了和最暴力的暴力一个分，我吐了。。。</p>
+<h2 id="总结">总结</h2>
+<p>没啥好总结的，也许 T3 暴力还是应该想想怎么做。。。。</p>
+<p>emmmm，其实 T1 不是那么难——遇到最大最小值可以考虑转化成函数然后三分。但我确实不会。。。</p>
+<p>T3、4 都是我不懂的知识，告辞。</p>
+<p>还是应该对拍，手造数据不靠谱（我手造的数据都是排好序的。。。）</p>
+<p>附专治低血压代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;algorithm&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;map&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">cout</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">using</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">5010</span>, <span style="color:#000">maxi</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e7</span> <span style="color:#000">+</span> <span style="color:#1c01ce">10</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">typedef</span> <span style="color:#a90d91">long</span> <span style="color:#a90d91">long</span> <span style="color:#000">ll</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">a</span>[<span style="color:#000">maxn</span>], <span style="color:#000">b</span>[<span style="color:#000">maxi</span>], <span style="color:#000">n</span>, <span style="color:#000">m</span>, <span style="color:#000">t</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ll</span> <span style="color:#000">C</span>(<span style="color:#000">ll</span> <span style="color:#000">n</span>, <span style="color:#000">ll</span> <span style="color:#000">m</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">m</span> <span style="color:#000">&gt;</span> <span style="color:#000">n</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ll</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span> <span style="color:#000">&gt;=</span> <span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">m</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">res</span> <span style="color:#000">*=</span> <span style="color:#000">i</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#000">m</span>; <span style="color:#000">i</span> <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">res</span> <span style="color:#000">/=</span> <span style="color:#000">i</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#177500">//cout &lt;&lt; n &lt;&lt; &#34; &#34; &lt;&lt; m &lt;&lt; &#34; &#34; &lt;&lt; res &lt;&lt; endl;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">bool</span> <span style="color:#000">ok</span>[<span style="color:#000">maxi</span> <span style="color:#000">*</span> <span style="color:#1c01ce">2</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ll</span> <span style="color:#000">work1</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ll</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">m</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>]] <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">2</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#000">ll</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">tot</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#177500">// cnt 对数；tot 总数
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">l</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">r</span> <span style="color:#000">=</span> <span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">l</span> <span style="color:#000">&lt;=</span> <span style="color:#000">r</span>; <span style="color:#000">r</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">while</span> (<span style="color:#000">l</span> <span style="color:#000">&lt;=</span> <span style="color:#000">r</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">a</span>[<span style="color:#000">r</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">l</span>] <span style="color:#000">&lt;</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">l</span><span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">l</span> <span style="color:#000">&gt;</span> <span style="color:#000">r</span> <span style="color:#000">||</span> <span style="color:#000">a</span>[<span style="color:#000">l</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">r</span>] <span style="color:#000">!=</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">continue</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">l</span> <span style="color:#000">==</span> <span style="color:#000">r</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">tot</span> <span style="color:#000">+=</span> <span style="color:#000">C</span>(<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">l</span>]], <span style="color:#1c01ce">4</span>);
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">tot</span> <span style="color:#000">+=</span> <span style="color:#000">C</span>(<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">l</span>]], <span style="color:#1c01ce">2</span>) <span style="color:#000">*</span> <span style="color:#000">cnt</span>;
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">break</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">l</span>]] <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">2</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">r</span>]] <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">2</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">tot</span> <span style="color:#000">+=</span> <span style="color:#000">C</span>(<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">l</span>]], <span style="color:#1c01ce">2</span>) <span style="color:#000">*</span> <span style="color:#000">C</span>(<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">r</span>]], <span style="color:#1c01ce">2</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#000">tot</span> <span style="color:#000">+=</span> <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">l</span>]] <span style="color:#000">*</span> <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">r</span>]] <span style="color:#000">*</span> <span style="color:#000">cnt</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#000">cnt</span> <span style="color:#000">+=</span> <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">l</span>]] <span style="color:#000">*</span> <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">r</span>]];
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#177500">//if (tot != 0)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            <span style="color:#177500">//cout &lt;&lt; i &lt;&lt; &#34; &#34; &lt;&lt; a[i] &lt;&lt; &#34; &#34; &lt;&lt; cnt &lt;&lt; &#34; &#34; &lt;&lt; tot &lt;&lt; endl;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            <span style="color:#000">res</span> <span style="color:#000">+=</span> <span style="color:#000">C</span>(<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>]], <span style="color:#1c01ce">2</span>) <span style="color:#000">*</span> <span style="color:#000">tot</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">mp</span>[<span style="color:#000">maxi</span> <span style="color:#000">+</span> <span style="color:#1c01ce">50</span>];
+</span></span><span style="display:flex;"><span><span style="color:#177500">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#177500">
+</span></span></span><span style="display:flex;"><span><span style="color:#177500">1 2 3 得到 6 -&gt; 重复计算 3 次
+</span></span></span><span style="display:flex;"><span><span style="color:#177500">total = 全部 - 有两个相同 + 三个相同(1)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500">
+</span></span></span><span style="display:flex;"><span><span style="color:#177500">*/</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">ll</span> <span style="color:#000">work2</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#177500">//for (int i = 1; i &lt; m; i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//    for (int j = i + 1; j &lt;= m; j++)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//        if (a[i] + a[j] &lt; maxi)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//            cout &lt;&lt; a[i] &lt;&lt; &#34; &#34; &lt;&lt; a[j] &lt;&lt; &#34; &#34; &lt;&lt; b[a[i]] &lt;&lt; &#34; &#34; &lt;&lt; b[a[j]] &lt;&lt; endl, mp[a[i] + a[j]] += b[a[i]] * b[a[j]], ok[a[i] + a[j]] = 1;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//for (int i = 1; i &lt;= 6; i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//    cout &lt;&lt; mp[i] &lt;&lt; endl;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#000">ll</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">m</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>]] <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">3</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">int</span> <span style="color:#000">tot</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#177500">//  1
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">t</span>[<span style="color:#000">j</span>] <span style="color:#000">&gt;</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">break</span>; <span style="color:#177500">// 把此处 break 改为 continue 可获得 90 分
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>                <span style="color:#a90d91">int</span> <span style="color:#000">d</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#177500">// 2
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>                <span style="color:#a90d91">if</span> (<span style="color:#000">t</span>[<span style="color:#000">j</span>] <span style="color:#000">*</span> <span style="color:#1c01ce">2</span> <span style="color:#000">&lt;=</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">d</span> <span style="color:#000">=</span> <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>] <span style="color:#000">-</span> <span style="color:#000">t</span>[<span style="color:#000">j</span>] <span style="color:#000">*</span> <span style="color:#1c01ce">2</span>];
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">if</span> (<span style="color:#000">t</span>[<span style="color:#000">j</span>] <span style="color:#000">*</span> <span style="color:#1c01ce">3</span> <span style="color:#000">==</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>                        <span style="color:#000">d</span><span style="color:#000">--</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>                <span style="color:#000">tot</span> <span style="color:#000">+=</span> <span style="color:#000">mp</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>] <span style="color:#000">-</span> <span style="color:#000">t</span>[<span style="color:#000">j</span>]] <span style="color:#000">-</span> <span style="color:#000">d</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#177500">// 再把上方 1 2 都改为 long long 可获得 100 分
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            <span style="color:#000">res</span> <span style="color:#000">+=</span> <span style="color:#000">tot</span> <span style="color:#000">/</span> <span style="color:#1c01ce">3</span> <span style="color:#000">*</span> <span style="color:#000">C</span>(<span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>]], <span style="color:#1c01ce">3</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">freopen</span>(<span style="color:#c41a16">&#34;stick.in&#34;</span>, <span style="color:#c41a16">&#34;r&#34;</span>, <span style="color:#000">stdin</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">freopen</span>(<span style="color:#c41a16">&#34;stick.out&#34;</span>, <span style="color:#c41a16">&#34;w&#34;</span>, <span style="color:#000">stdout</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">n</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">scanf</span>(<span style="color:#c41a16">&#34;%d&#34;</span>, <span style="color:#000">&amp;</span><span style="color:#000">a</span>[<span style="color:#000">i</span>]), <span style="color:#000">b</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>]]<span style="color:#000">++</span>, <span style="color:#000">t</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>]; <span style="color:#177500">// 写这个代码的人，数组 t 你没排序啊！！！
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">j</span>] <span style="color:#000">&lt;</span> <span style="color:#000">maxi</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">mp</span>[<span style="color:#000">a</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">a</span>[<span style="color:#000">j</span>]]<span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">sort</span>(<span style="color:#000">a</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">a</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span> <span style="color:#000">+</span> <span style="color:#000">n</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">m</span> <span style="color:#000">=</span> <span style="color:#000">std</span><span style="color:#000">::</span><span style="color:#000">unique</span>(<span style="color:#000">a</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">a</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span> <span style="color:#000">+</span> <span style="color:#000">n</span>) <span style="color:#000">-</span> <span style="color:#000">a</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#177500">//for (int i = 1; i &lt;= m; i++)
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//    cout &lt;&lt; a[i] &lt;&lt; &#34; &#34; &lt;&lt; b[a[i]] &lt;&lt; endl;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#177500">//cout &lt;&lt; endl;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#000">printf</span>(<span style="color:#c41a16">&#34;%lld</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>, <span style="color:#000">work1</span>() <span style="color:#000">+</span> <span style="color:#000">work2</span>());
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211114模拟赛</title>
+      <link>http://example.org/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Sun, 14 Nov 2021 18:20:38 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211114%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;啥都不会。&lt;/p&gt;
+&lt;p&gt;期望 $0+0+20+20=40$​，实际没挂分。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>啥都不会。</p>
+<p>期望 $0+0+20+20=40$​，实际没挂分。</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 数学题，推了推并打表无果，跳（我居然根据打的表能回忆起来平方和公式？？？）；</p>
+<p>T2 不知道是什么题，像是乱搞题，但没搞出来，跳；</p>
+<p>T3 又是个计数的DP，似乎有点结论之类的，不太懂，跳；</p>
+<p>T4 根本不懂，跳。</p>
+<p>然后发现啥都不会，试图做 T1，无果。</p>
+<p>发现 T3 有 $20$ 分全排列暴力，写了；</p>
+<p>又发现 T4 乱搞能得 $20$ 分，也写了。</p>
+<p>尝试做 T2，不太懂，乱写了份代码交上去。</p>
+<p>接着去做 T1，还是不懂。</p>
+<p>直接跑路。。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现 T1 真是个数学题，，，，不会就是不会。。。</p>
+<p>T2 确实是个乱搞，没想出来其实亏了（可能是被这题得分取所有测试点最小值打压了积极性）。</p>
+<p>T3 题解看起来比我想的简单一点，但还是不会。</p>
+<p>T4 不会，做题的时候想到题解的第一步（查分约束之前）就想不下去了。</p>
+<h2 id="总结">总结</h2>
+<p>面对啥都不会的比赛，首先心态要好（）</p>
+<p>默念我不会大家也不会（虽然这很可能是错觉）</p>
+<p>然后把简单的暴力写完之后可以冲着最可做的题一直莽下去，感觉也只能这么办了（比如今天 T2，如果往死里想未必就想不出来）</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211113模拟赛</title>
+      <link>http://example.org/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Sat, 13 Nov 2021 12:40:10 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211113%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;期望 $100+100+40+0=240$，实际同期望，难得没有挂分。。。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>期望 $100+100+40+0=240$，实际同期望，难得没有挂分。。。</p>
+<h2 id="赛时">赛时</h2>
+<p>有上一次的经验，应该是按难度升序排列。</p>
+<p>先看 T1，这种给个字符串，然后来一堆莫名其妙的操作，再问你最后字符串的题大部分都是降智题（因为我上次就被降智了），我尝试切掉。</p>
+<p>花几分钟写了个暴力找规律，然后发现这个规律挺对的，看到数据范围 $5\times10^5$​，也不想着优化了，写了个普通快读，直接 <code>sort</code> 就完事了。</p>
+<p>想对拍，然后发现自己不会生成随机字符串，有点尴尬，去看下一道题了。</p>
+<p>T2 数学题。俗话说得好：遇到数学先打表。然后我就光速用 python 打了个 $n\leq5000$ 的表。</p>
+<p>对着表来回折腾没看出来啥，先跳了。</p>
+<p>看 T3，不明所以的 DP+计数，去看 T4，不明所以的 DP+计数。</p>
+<p>一看到取模就头疼。</p>
+<p>回来看 T2 了。</p>
+<p>注意到对于一组解 $(x,y)(x&lt;y)$，还存在另一组解 $(y,z)(y&lt;z)$。于是考虑怎么从这组解得到下一组。</p>
+<p>还是不懂，把打表的内容增加了一列 $k$，发现这两组解的 $k$ 相同。。。</p>
+<p>于是意识到这是个二次方程的两个根。</p>
+<p>于是会做了：把解一个一个算出来，把较大数不超过 $10^{18}$ 的所有解存下来，每个询问二分查找一下就行。</p>
+<p>然后写了个程序，过样例之后忽然意识到爆 <code>long long</code> 的问题。</p>
+<p>我不是很懂爆 <code>long long</code> 到底会发生什么，不太放心，于是写了个 <code>__int128_t</code>。。。</p>
+<p>发现两个程序输出还真不一样，折腾了一下不知道怎么回事，就把 <code>__int128_t</code> 的程序交上去了。。。</p>
+<p>这时候才过去 $\text{1.5h}$，感觉机会很大（）</p>
+<p>去看 T3，愣是不会。。。。去看 T4，似乎要套容斥然后各种计数，不想搞。。。</p>
+<p>然后开始躺平。</p>
+<p>后来主要去想 T3 了，但还是没想出来。T4 暴力也不会。</p>
+<p>看还有半个多小时，写了 T3 的指数级 $30$ 分暴力，然后打表发现有 $10$ 分是卡特兰数，就顺便骗走了。</p>
+<p>然后就跑路。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>没啥可说的，和想的差不多，T4 没有输出大样例导致少了 $10$ 分，又忘记骗分了。。。</p>
+<p>发现 T3 有结论，T4 还是不懂。。。</p>
+<p>看到别人 T2 $60$ 分忽然意识到表可以打得大一些，毕竟解不是很多（用C语言打，打到 $10^5$ 应该没问题），不过打小表还是 python 强。</p>
+<p>附 python 打表代码，，，，</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a90d91">for</span> <span style="color:#000">i</span> <span style="color:#000">in</span> <span style="color:#a90d91">range</span>(<span style="color:#1c01ce">1</span>, <span style="color:#1c01ce">5001</span>):
+</span></span><span style="display:flex;"><span>	<span style="color:#a90d91">for</span> <span style="color:#000">j</span> <span style="color:#000">in</span> <span style="color:#a90d91">range</span>(<span style="color:#1c01ce">1</span>, <span style="color:#1c01ce">5001</span>):
+</span></span><span style="display:flex;"><span>		<span style="color:#a90d91">if</span> (<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#000">j</span> <span style="color:#000">*</span> <span style="color:#000">j</span>) <span style="color:#000">%</span> (<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">==</span> <span style="color:#1c01ce">0</span> <span style="color:#000">and</span> <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">j</span>:
+</span></span><span style="display:flex;"><span>			<span style="color:#a90d91">print</span>(<span style="color:#000">i</span>, <span style="color:#000">j</span>, (<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#000">j</span> <span style="color:#000">*</span> <span style="color:#000">j</span>) <span style="color:#000">/</span> (<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>))
+</span></span></code></pre></div><h2 id="总结">总结</h2>
+<p>DP 实在太差了！！！尤其是计数。。。。一生之痛。。。。</p>
+<p>数学题打表确实很重要。</p>
+<p>不能被降智（指奇怪的字符串题）。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211109模拟赛</title>
+      <link>http://example.org/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Tue, 09 Nov 2021 14:14:55 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211109%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;期望 $100+100+100+20=320$，实际 $100+100+80+20=300$。没怎么挂。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>期望 $100+100+100+20=320$，实际 $100+100+80+20=300$。没怎么挂。</p>
+<h2 id="赛时">赛时</h2>
+<p>按照计划，打算把每道题都想一想。</p>
+<p>于是看到 T1，是个数学题，尝试乱推无果，注意到 $n\leq 10^{18}$，那就有趣了，往矩阵快速幂上靠（（（</p>
+<p>然后稍微一推发现是个带水题，直接开写。</p>
+<p>然后矩阵板子写挂了，然后发现是构造函数没 <code>memset</code>，改完就过样例了。时间还有，写了个线性递推来对拍。差不多在开始考试将近一个小时时搞好了。</p>
+<p>去看 T2，完全图三元环，正着乱搞无果，于是考虑转化，用所有减去不合法。</p>
+<p>所有的三元环随便就推+找规律蒙出来了，然后不合法的乱推了一下找找规律似乎也找出来了。快速写完，然后写了个 $O(n^3)$​ 暴力对拍。没拍出来错误，放心了（</p>
+<p>然后发现 T1 拍出来问题了，仔细一看是正解的特判 $n=1$ 和 $n=2$ 的情况写反了，我谔谔，赶忙改过来，然后接着拍 $n=1\sim5$，没啥问题，放心了（</p>
+<p>这时候才过去两个小时，感觉优势很大（（（</p>
+<p>T3 不是很好做，T4 更不懂，都没读懂题更别说暴力了。</p>
+<p>先莽 T3，想了很久，找规律发现实际上只需要选择 $n+m-1$ 个点，然后想到了一个大概是 $O(nm(n+m)\log (nm))$ 的纯粹乱搞做法，这个能过 $50$​ 分。</p>
+<p>看时间很充裕，接着想正解（（（</p>
+<p>瓶颈在找点上，再优化一下，想了一个莫名其妙的做法：直接把所有点都加到堆里，然后取出来看这一行和这一列有没有必要选，可以 $O(nm\log(nm))$​​，想过有点悬，然后发现这个做法取出来判断不是很好实现，又画了画图发现选一个点实际上就是在行和列之间加边。。。</p>
+<p>那不如直接枚举行和列，就能搞到 $O((n+m)^2)$​。。。。</p>
+<p>写完之后也不想写暴力了，分数应该还算可以，想莽一下 T4。</p>
+<p>然后思考许久发现我是真不会。。。。。</p>
+<p>注意到有 $20$ 分是 $n\leq8$，于是花了 $20\text{min}$ 手算了一波跑路了。。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>T3 MLE 挂了 $20$​ 分，看来 <code>long long</code> 不能随便用啊= =，还好没爆零，这必须得注意。。</p>
+<p>然后发现会TLE，需要稍微卡卡常（取模，<code>long long</code>）</p>
+<p>发现 T4 大数据中有一个是样例，我没输出，于是没拿到这 $10$​ 分。。。</p>
+<p>发现 T3 是个最小生成树，第二次遇到这种题了，得注意对这种怪异题目的图论建模+套算法。</p>
+<p>T4 真不会，不冤。。。</p>
+<h2 id="总结">总结</h2>
+<p>该骗分还是得骗分，不骗白不骗。。。</p>
+<p>空间得算准了。。。。。。。。</p>
+<p>这次没爆零还算可以，但是要是有一天因为 MLE 爆零，那我估计就得难受死了。。。。。</p>
+<p>换句话说，对于空间复杂度和时间复杂度都是 $O(n^2)$​ 的算法，要注意空间的问题，毕竟此类题目一般 $n=5000$​​，很容易 MLE。。。</p>
+<p>要注意 <code>vector</code> 的空间常数，存完全图时不如邻接矩阵。</p>
+<p>当复杂度逼近 $10^8$ 时要注意常数。如果可能，减少取模以及 <code>long long</code> 的使用。</p>
+<p>今天因为想正解比较顺利，没有怎么写暴力，不过看来对拍还是很重要的。。。</p>
+<p>莫名其妙题目的图论建模！不管是转化为图论模型还是补集转化，总之转化思想很重要。。。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211108模拟赛总结</title>
+      <link>http://example.org/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Mon, 08 Nov 2021 14:27:55 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211108%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%80%BB%E7%BB%93/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;不说了，非常凄凉。。。&lt;/p&gt;
+&lt;p&gt;感觉今天可以被认为是个小转折点，于是多写点（（（（（&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>不说了，非常凄凉。。。</p>
+<p>感觉今天可以被认为是个小转折点，于是多写点（（（（（</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 不会，T2 有点感觉，T3 能写暴力，T4 不是很懂。</p>
+<p>写了个 T3 暴力背包DP，感觉能优化，稍微想了想无果，于是扔了。</p>
+<p>转过头看 T2，发现有个 $O(n^2)$ 暴力 DP 很好写，但是我想到了一个很假的贪心，就直接去莽了，结果花费了大量的时间。</p>
+<p>去看 T4，有点心烦意乱没法好好分析它的程序，随手写了个暴力走人。</p>
+<p>又去 T1，乱搞能搞出来 $30$ 分暴力，不过不怎么好写，就去想正解了。</p>
+<p>觉得就是找空盘搞 DP，就开始思考正解，但我实在是不擅长这种题，不会啊啊啊啊啊。</p>
+<p>发现没有时间了，转手写了个 $10$ 分暴力跑路。</p>
+<p>然后发现时间严重不足，T2 的暴力没时间写了。。。</p>
+<p>就这么很悲凉地结束了。</p>
+<h2 id="总结">总结</h2>
+<p>暴力该写还是得写，比如 T2。。。尤其是不花费什么时间的时候——我已经调完了哈希判回文串，只需要套个 DP 上去就能改造成 $O(n^2)$ 暴力水过去 $60$ 分。</p>
+<p>实际上 T2 比较偏结论，我往这方面思考过，但是没有发现真正的性质，还是不够深入啊。</p>
+<p>T3 暴力写的也有点慢了。。。思考深度不够，其实正解思路不是特别复杂。仍然是 DP 状态的转化。平均值转为和优化为平均值转为与平均值的差。</p>
+<p>T4 把题目理解错了，以为每次修改之后会恢复到原序列，导致完全不需要动脑的 $30$ 分暴力没了。</p>
+<p>同时通过这道题也可以看出，我对这种给定代码判断它在干啥的题很不擅长，也许需要好好总结一下到底应该怎么做。。。</p>
+<p>然后这道题考试时候都没怎么思考，，，连数据范围给的提示都忽略了。。。</p>
+<p>T1 暴力还写挂了，实在是悲剧。。。随手写的，确实是有点心急。事实上 T1 确实是个 DP 类计数，我一看到”方案数“和”取模“就头疼。。。。</p>
+<hr>
+<p>下面再稍微说一下心理吧。</p>
+<p>今天 T3 T2 都有点上头，以为有所谓的“感觉”就上头想切掉，结果 T3 还好，拿到了应有的暴力，T2 就是真没了。。。</p>
+<p>想着切题也许是好的，但实在不能太过于上头，如果同时想到了暴力以及“正解”，尤其是像今天这种二者分歧不是特别大的时候，还是应该先写暴力！两个都写了然后对拍不香吗？？？为什么我总是直接去莽正解了。。。。</p>
+<p>然后是对于题目难度的判断，其实今天 T1 反而是在我的水平看来是比较难的题，我没有判断出来，导致以为自己被“降智”，其实真就是不会。（也没有非常多时间思考）</p>
+<p>按理来说面对不会的题应该写个暴力跑路，但是因为 T1 $30$ 分的暴力不是非常好写，我想到离散化等等，还不一定能过，就去思考正解了，这其实是个错误，遇到这种题也许先混暴力比较好，也能更专心思考。</p>
+<p>有关 T4，得认真分析，数据范围也不能忽略，其实不是那么难。</p>
+<p>每次模拟赛都感觉时间不够，打字慢显然是因素之一——我打字指法一直是完全错误的。。</p>
+<p>再就是对一些基础的东西不熟练吧，比如今天的哈希判回文串，我其实是会的，思想也很好地掌握了，但是打的时候愣是出 bug 了，虽然顺利调出来了但终究是浪费了时间。</p>
+<p>再深挖一下，我暴力和正解很难都写，也许很大的一个原因就是因为自己代码能力差，导致没有时间。。。</p>
+<p>以后的比赛必须在暴力和正解之间找一个平衡，比如说一道题分配一些时间，时间到了之后就去写当时能想到的最高分，如果想了正解就很有必要打暴力对拍；或者说除了考虑最高分，还考虑时间的性价比，先写性价比高的分数。以前的模拟赛都没有完全量化时间和分数来写题，感觉以后量化一下也许是个可取的策略。</p>
+<p>至于这个时间具体是多少也许得反复尝试了，平时做题也可以试试？</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211104模拟赛挂分记</title>
+      <link>http://example.org/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <pubDate>Thu, 04 Nov 2021 13:32:27 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211104%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;预计 $100+100+0+20=220$，实际 $50+0+0+0=50$，挂成傻逼了。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>预计 $100+100+0+20=220$，实际 $50+0+0+0=50$，挂成傻逼了。</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 傻逼题，几分钟就切了。</p>
+<p>T2 一眼想了个貌似能过的做法，写完跑路了。</p>
+<p>T3 不懂。</p>
+<p>T4 能想一个 $O(n^3k)$ 的做法，不是很想写了&hellip;</p>
+<p>状态太差了，于是就这么躺平了（（（</p>
+<h2 id="赛后">赛后</h2>
+<p>T1 写挂了，实在是惨，因为题目过于水有点大意了。。。</p>
+<p>T2 发现我复杂度分析错了以为能拿 $100$ 分，于是因为数组开大光荣由 $80\rightarrow0$。。。</p>
+<p>T4 <code>CE</code> 了。</p>
+<h2 id="总结">总结</h2>
+<p>虽然是老生常谈了，没有足够强的大样例时还是应该自己造数据/对拍。</p>
+<p>分析复杂度一定要准确，不能一边梦游一边分析，更不能因此开大数组爆零！！</p>
+<p>写完代码一定要编译！！！！</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211031模拟赛</title>
+      <link>http://example.org/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Sun, 31 Oct 2021 14:25:27 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211031%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;期望 $0+100+0+70=170$，实际 $0+100+0+50=150$。还可以。&lt;/p&gt;
+&lt;p&gt;被 SHR 神吊打了qwq。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>期望 $0+100+0+70=170$，实际 $0+100+0+50=150$。还可以。</p>
+<p>被 SHR 神吊打了qwq。</p>
+<h2 id="赛时">赛时</h2>
+<p>试图做 T1 发现不会，像个 DP，果然我 DP 不行。</p>
+<p>T2 似乎是个傻逼题，但是我又不会，于是打了个 $O(n^4)$ 暴力，然后造了几组 $n=500$ 的极限数据，发现跑的时间只需要 $\text{0.03s}$，想了想不知道怎么卡掉，觉得似乎能玄学 AC？</p>
+<p>T3 不会，感觉是个 DP。</p>
+<p>T4 想了想贪心，写了个暴力，但是挂成傻逼了，调了很久。</p>
+<p>然后试图套个数据结构优化成正解，套失败了。。。</p>
+<p>然后 T1 的 $20$ 分阶乘暴力也没写。</p>
+<p>跑路跑路跑路。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现 T2 我暴力碾标算，太离谱了，不会分析复杂度（（（（（</p>
+<p>于是发现 T3 是个二分+模拟，没发现可太惨了（（（（（</p>
+<p>T4 调不动了（（（</p>
+<h2 id="总结">总结</h2>
+<p>不能被降智啊啊啊，不会的题还是快速写个暴力比较好。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211028模拟赛</title>
+      <link>http://example.org/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Thu, 28 Oct 2021 18:53:02 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211028%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;本校出题。&lt;/p&gt;
+&lt;p&gt;期望 $100+100+0+0=200$，实际 $100+0+0+0=100$​。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>本校出题。</p>
+<p>期望 $100+100+0+0=200$，实际 $100+0+0+0=100$​。</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 看了好久才懂，T2 是个分层图次短路，赶快写完跑路了。</p>
+<p>T3 很怪的 DP，不会，有点神仙。</p>
+<p>T4 只会暴力，不太想写。</p>
+<p>发现 T1 实际上的问题是比较简明的，是个推式子题。</p>
+<p>打完 T2，大力找了 T1 的规律，然后也没证明就跑路了。（还好规律简单）</p>
+<h2 id="总结">总结</h2>
+<p>T2 爆零了，果然还是不会次短路和分层图，学习ing。</p>
+<p>T4 是个结论题，学习了。</p>
+<p>T3 这种难度的 DP 我还是做不出来，DP 好难啊qwq。</p>
+<p>不过 T1 打表猜结论是好的，如果我会证明就更好了（</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211027模拟赛爆零记</title>
+      <link>http://example.org/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
+      <pubDate>Wed, 27 Oct 2021 14:07:27 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211027%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;估计 $100+0+0+100=200$​，实际 $0+0+0+0=0$​​。&lt;/p&gt;
+&lt;p&gt;试图切题，然后挂了 $\text{inf}$ 分。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>估计 $100+0+0+100=200$​，实际 $0+0+0+0=0$​​。</p>
+<p>试图切题，然后挂了 $\text{inf}$ 分。</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 样例锅了，不过感觉能做，乱搞了一个做法，过了自己造的样例，跑路了。</p>
+<p>花了不少时间。</p>
+<p>T2 不会，T3 有点思路，不过发现 T4 似乎很简单。</p>
+<p>想了一个贪心思路，能证明是对的。</p>
+<p>发现树剖能做，但我对树剖非常不熟练，于是想换个思路。</p>
+<p>然后发现虚树能做，然后尝试现场推虚树失败了。</p>
+<p>好吧，那就写树剖，于是回忆了一波树剖。</p>
+<p>开始写，非常不熟练导致写得很慢。</p>
+<p>然后写了个区间赋值，查询区间和的线段树上去。</p>
+<p>大概还剩半个多小时的时候把代码写完了，过样例之后非常害怕，写了个暴力想对拍。</p>
+<p>这暴力怎么这么难写啊！！！！！！！！！！！！</p>
+<p>等开始对拍已经就剩不到十分钟了，结果第一组就拍出来了错误。</p>
+<p>哈哈，不知道我哪里错了，草草交了代码跑路了。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现实际上 T3 似乎也不是非常难。</p>
+<p>T1 <code>freopen</code> 打错了，真好玩。</p>
+<p>T4 果然爆零了，甚至因为没打头文件 CE 了。。。</p>
+<h2 id="总结">总结</h2>
+<p>头文件和 <code>freopen</code> 这两个错误确实是有点尴尬。。。。</p>
+<p>T1 我做法似乎确实是假了。</p>
+<p>发现我 T4 树剖没写错，线段树写错了，改完就 AC 了。。。。。</p>
+<p>果然是着急了&hellip;不管写什么都必须认真。</p>
+<p>最后改完发现我考试时候的思路总共能过 $130$ 分，wtcl。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211017模拟赛</title>
+      <link>http://example.org/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Mon, 18 Oct 2021 07:19:17 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211017%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;啥都不会，只会暴力。&lt;/p&gt;
+&lt;p&gt;估计 $60+60+20+0=140$，实际 $60+60+20+0=140$​。。。。。。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>啥都不会，只会暴力。</p>
+<p>估计 $60+60+20+0=140$，实际 $60+60+20+0=140$​。。。。。。</p>
+<h2 id="赛时">赛时</h2>
+<p>T1 似乎是个傻逼题，但我被降智了，不会；</p>
+<p>T2 似乎不难，暴力也能拿很多分数；</p>
+<p>T3 是个推式子题，暴力只有 $20$ 分；</p>
+<p>T4 是个期望题，要是会期望就能拿很多暴力分数。</p>
+<p>然后有 $\text{2h}$ 的时间不知道在干什么，想了 T1 的一个贪心不过假了。</p>
+<p>发现不行了就赶忙打了三个暴力跑路了。。。。。。</p>
+<p>算了算 T4，发现我不会期望。。。。</p>
+<p>最后半个小时发现 T1 就是个枚举题。于是一阵写，但没写完。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现 T2 也是降智题，哈哈。</p>
+<h2 id="总结">总结</h2>
+<p>不知道总结啥，考试要调整好状态，注意隐藏的数据范围。</p>
+<p>不能被降智了！！！！！</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211016模拟赛</title>
+      <link>http://example.org/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Sat, 16 Oct 2021 14:10:30 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211016%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天的模拟赛还行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;期望&lt;/strong&gt; $100+0+40+52=192$，实际 $100+0+20+52=172$​。还算可以。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天的模拟赛还行。</p>
+<p><strong>期望</strong> $100+0+40+52=192$，实际 $100+0+20+52=172$​。还算可以。</p>
+<h2 id="赛时">赛时</h2>
+<p>发现 T1、T3 都是<strong>期望</strong>，T2 看不懂，T4 是个树论。</p>
+<p>手玩 T1 样例，发现了一些规律，写了个 $O(n^2)$ 暴力，然后写了个 $O(n\log n)$ 的线段树优化。</p>
+<p>$n=10^6$，我意识到线段树常数有点大，但是我又不会树状数组。于是我卡了卡常，发现在我的机子上开 <code>O2</code> 要跑 $600\text{ms}$​，感觉能过，又快速写了个数据生成器对拍。没拍出来啥问题，好评。</p>
+<p>去做 T4，有 $32$ 分比较白给，然后想了一个多小时搞出来了 $20$​​​​ 的部分分。发现我还是不会写树状数组，于是又搞了个线段树上去。写完之后发现数据非常好造，于是快乐对拍，把 bug 都搞掉了。</p>
+<p>快结束了，T2 还是看不懂，快速推了 T3 $n=1$ 的式子，写完调完就溜了。最后几分钟又乱搞了 $20$ 分，不过似乎假了。</p>
+<h2 id="总结">总结</h2>
+<p>对拍是非常有必要的。</p>
+<p>一些简单的卡常技巧需要学会。</p>
+<p>不能什么都线段树，树状数组也是有用的。</p>
+<p>发现我不会期望，推式子能力也挺差的，老暴力选手了。。。。。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211015模拟赛</title>
+      <link>http://example.org/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Fri, 15 Oct 2021 16:10:51 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211015%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天实惨，估计 $0+72+100+100=272$，实际 $0+0+0+100=100$​。&lt;/p&gt;
+&lt;p&gt;被吊打了qwq。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天实惨，估计 $0+72+100+100=272$，实际 $0+0+0+100=100$​。</p>
+<p>被吊打了qwq。</p>
+<h2 id="赛时">赛时</h2>
+<p>发现 T4 做过，$20\text{min}$ 切了，这是好的。</p>
+<p>去做 T2，一个多小时写了个 $72$ 分的状压 DP，过了样例就溜了。</p>
+<p>去做 T3，瞎推了推式子发现一个贪心，瞎搞了个最小生成树上去。感觉切了，不过样例实在太水，感觉自己应该会挂。</p>
+<p>去做 T1，发现自己不会暴力，去看链的情况，发现有重边，我不会了。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现自己 T2、T3 全挂成了 $0$ 分。</p>
+<p>然后发现我 T3 做法和题解一样，甚至式子也一样，但因为各种细节处理挂了。行吧。</p>
+<h2 id="总结">总结</h2>
+<p>代码能力不够。</p>
+<p>样例过水的时候需要对拍，代码想好之后再写。</p>
+<p>不知道代码能力怎么提升，也许是写的题太少了？</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211005十一模拟赛2</title>
+      <link>http://example.org/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</link>
+      <pubDate>Tue, 05 Oct 2021 17:23:55 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211005%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B2/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天的题体感好一些，没有太强的无力感。&lt;/p&gt;
+&lt;p&gt;估计 $30+80+65=175$，实际 $30+70+15=115$，真惨。&lt;/p&gt;
+&lt;p&gt;膜拜 shr 大佬爆切 T3，$190pts$​ 并列 $\text{Rank}1$​！！&lt;/p&gt;
+&lt;p&gt;今天又是被 shr 和 樱雪 吊打的一天qwq&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天的题体感好一些，没有太强的无力感。</p>
+<p>估计 $30+80+65=175$，实际 $30+70+15=115$，真惨。</p>
+<p>膜拜 shr 大佬爆切 T3，$190pts$​ 并列 $\text{Rank}1$​！！</p>
+<p>今天又是被 shr 和 樱雪 吊打的一天qwq</p>
+<h2 id="赛时">赛时</h2>
+<p>一看 T1，似乎有点复杂，不太懂；又看 T2，能写 $50$ 分 DP；接着看 T3，没懂。</p>
+<p>看了看之后就去写 T2 了，$50\text{min}$​​​ 写完+调完。感觉能用矩阵优化到 $80$ 分，剩下那 $20$ 分的通项公式不太敢想&hellip;</p>
+<p>还是去写 T3 了，快速写了个高达 $0$​ 分的暴力找规律，发现了一个类似杨辉三角的东西，于是线推式子求组合数乱搞了 $50$ 分，然后觉得似乎能切，于是写起了正解。写完一个区间加单点查询的线段树之后，我忽然意识到这样并不能得 $100$ 分，想了想也不知道用到底怎么用数据结构维护。于是转去写了个 $k=1$ 的部分分。总共期望能得 $65$​​​ 分。</p>
+<p>写着写着忽然发现前 $50$ 分复杂度不是很对，有 TLE 的风险，但转念一想常数很小，应该没啥问题。</p>
+<p>然后想了想能不能递推组合数，然后发现会 MLE。</p>
+<p>感觉问题不大，写完 <code>freopen</code> 溜了。</p>
+<p>此时只剩一个小时左右了。</p>
+<p>去看 T1，快速写了个最简单的 $30$ 分，剩下 $30$ 的部分分似乎不是特别简单，放弃了，打算那剩下的时间推 T2 的矩阵。</p>
+<p>快速写了个矩阵的板子，然后想了想意识到怎么构造矩阵了，没多想就上手写了。</p>
+<p>写+调，最后剩 $5\text{min}$ 的时候调完了。没时间多想了，赶快开始检查三道题有没有 SB 错误。</p>
+<h2 id="赛后">赛后</h2>
+<p>听说苏大佬 T3 切了，我：？？？那玩意不简单的啊？？？</p>
+<p>于是发现人均 T1 写了 $60$​，感觉我又要垫底了。</p>
+<p>然后开始评测了，我 T3 前面的暴力全 TLE 了，哈哈哈，复杂度不对果然过不了。。</p>
+<p>然后发现 T2 TLE 了一个点，也有点怪。</p>
+<p>检查之后意识到 T3 可以线性求逆元，复杂度就不会挂。。。<strong>啊，我真是傻逼。</strong></p>
+<p>又意识到 T2 的初试矩阵我是暴力求的，于是复杂度从 $k^3\log n$ 变成了 $k^4$，而 $k\leq100$，我就挂了。。。**啊，我真是傻逼。**明明利用这个矩阵的一些奇妙性质就能优化，甚至打个表也行啊！！（考虑到没时间了也确实没啥办法）</p>
+<p>然后发现 T3 由于出题人的疏忽，导致 shr 用暴力水过去了！貌似出题人没想到这种暴力。。。</p>
+<p>苏大佬太强了！！！！！</p>
+<h2 id="总结">总结</h2>
+<p>首先意识到我代码能力太差了，写代码慢，调试也慢，思考也慢。。。</p>
+<p>shr 大佬睡一个小时觉都比我高qwq</p>
+<p>然后就是，对于 T1 这种简单的暴力，一定要拿满。。。</p>
+<p>也要检查复杂度，要是有把握的题，复杂度必须要控制好，不能挂。</p>
+<p>接下来就是不断的刷题增强代码能力了。</p>
+<p>通项公式依然不会求，不过也许可以靠打表来“大胆猜想，从不求证”。</p>
+<p>同时要注意，小常数 $10^8$ 是能跑过的，不能总是分析渐进复杂度，也要考虑究竟进行了几次计算。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>211003十一模拟赛1</title>
+      <link>http://example.org/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</link>
+      <pubDate>Mon, 04 Oct 2021 19:06:10 +0000</pubDate>
+      
+      <guid>http://example.org/posts/211003%E5%8D%81%E4%B8%80%E6%A8%A1%E6%8B%9F%E8%B5%9B1/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;有点凄凉。&lt;/p&gt;
+&lt;p&gt;预测 $20+60+40=120$，实际 $20+60+0=80$。被各路神仙吊打了qwq&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>有点凄凉。</p>
+<p>预测 $20+60+40=120$，实际 $20+60+0=80$。被各路神仙吊打了qwq</p>
+<h2 id="赛前">赛前</h2>
+<p>了解到大概会是三道数学/计数/推式子题，于是没打算拿多高的分数，暴力万岁。</p>
+<h2 id="赛时">赛时</h2>
+<p>不知道题目难度，就都看了看。</p>
+<p>T1 完全不会，T2 有 $60$ 分我能写，T3 能写一些暴力分。</p>
+<p>于是开写 T2，写了个数位 DP，$60$ 分到手，去看 T1，还是啥都不会，去做 T3，感觉数据应该不会太强，于是就写个了跑不满的 $O(n^4)$ 做法，应该能拿到 $40$ 分。</p>
+<p>然后去 T1，爆搜了一波， $20$ 到手，没花时间看有没有什么规律。</p>
+<p>这时候还剩两个小时，我有点懒了，不想思考。</p>
+<p>T2 似乎能用矩阵优化，但我从来没搞过，不想推矩阵。。。</p>
+<p>T1 还是没懂，T3 没想出来啥优化的做法。</p>
+<p>感觉这个分数应该还可以了。。。于是就颓了好久。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现大佬们都写了好多分。。。有点后悔颓废了。</p>
+<p>膜拜 shr 大佬，随手写 $200$​ 分，吊打我qwq。</p>
+<p>然后发现 T1 有 $20$ 分就是卡特兰数，我谔谔，没看出来规律。。。。。</p>
+<p>又发现人均会写矩阵，草了，又发现人均 T3 比我高。。。</p>
+<p>然后出分了，发现 T3 爆零了，然后发现自己瞎优化整挂了，数据水，本来能拿到 $60$ 分的。。</p>
+<h2 id="总结">总结</h2>
+<p>模拟不能躺平！！！有用的知识不能不学！！！</p>
+<p>希望下次能好点qwq</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210912NOIP模拟赛</title>
+      <link>http://example.org/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Sun, 12 Sep 2021 19:06:10 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210912noip%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;题好难啊qwq。&lt;/p&gt;
+&lt;p&gt;期望 $50+40+60+30=180$，实际 $10+40+30+30=110$，挂了不少。&lt;/p&gt;
+&lt;p&gt;不过这次没有爆零的题，是个进步，打暴力分还是比抠正解高&amp;hellip;水平不够啊。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>题好难啊qwq。</p>
+<p>期望 $50+40+60+30=180$，实际 $10+40+30+30=110$，挂了不少。</p>
+<p>不过这次没有爆零的题，是个进步，打暴力分还是比抠正解高&hellip;水平不够啊。</p>
+<h2 id="赛时">赛时</h2>
+<p>没想太多，直接看 T1，感觉我似乎会。乱搞一通，做法假了，想了想不会，溜了。纯暴力 $20$ 分，性价比有点低，接着看下面的题吧。</p>
+<p>于是去看 T2，乍一看以为是个数学题，似乎没啥规律，看了看这题纯暴力才 $20$​ 分，太少了，先看看别的题。</p>
+<p>此时已经过去一个小时。</p>
+<p>看 T3，我会 $60$​ 分，又去看 T4，感觉很难，于是写了个 $30$ 分暴力，回去写 T3 写了一个多小时差不多搞定了，告辞。</p>
+<p>看到 T4 有一个部分分，想到用树状数组维护，结果发现复杂度是 $O(maxa\log maxa\times n)$，这会爆。有点疑惑，这思路应该没啥问题啊。</p>
+<p>不管了，回去看 T1、T2，发现我 T1 还是不会，于是写了个 $O(n^2\log n)$ 的暴力，似乎能过 $50$ 分，但是我总感觉自己做法有点假（</p>
+<p>然后写 T2，写了个全排列的 $20$ 分，然后推了推式子发现可以做到 $O(n^2)$ 递推，写了写调了调过了，然后思考如何优化，没思考出来。</p>
+<p>还剩半个小时，去推了推 T1，无果，在最后十分钟意识到 T4 没有修改操作，直接用前缀和维护就行了，我怕是个傻子。</p>
+<p>然后疯狂写，结果还是挂了，好吧不亏。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现自己 T1 挂成 $10$​ 分，明明思路是对的，就是枚举公差然后判断，不过挂也是意料之中，然后发现根本看不懂题解。T3 挂了 $30$​​ 分，有点懵。</p>
+<p>然后发现 T2 的正解和那个递推完全没关系，行吧。T4 是个数据结构题，看不懂.jpg。</p>
+<p>发现大家似乎都不是很会正解的样子&hellip;好吧，暴力实在是太爽了。</p>
+<p>发现 T3 的那 $30$​ 分似乎没有人过了，于是开始对拍 T3 找错，拍出来之后发现是 std 挂了？？？？？后来发现题解似乎也有问题、、、</p>
+<p>我谔谔，请给全机房加上 $30$ 分。</p>
+<p>发现范神居然切了一题，太强了。（据他说是打的暴力，数据水所以过了，但还是太强了）</p>
+<p>然后去调 T4 了，未果。</p>
+<h2 id="总结">总结</h2>
+<p>暴力永远的神。</p>
+<p>发现自己不管是从码力还是思维上还是远远不足，写暴力都得调半天。</p>
+<p>可能还是需要积累。模拟赛不就是为这个目标服务的吗？</p>
+<p>这场比赛还是打得挺开心的，没有特别强的无力感，拿到暴力分就挺满足的了（</p>
+<hr>
+<p>关于暴力的具体做法可以看 <a href="https://www.luogu.com.cn/blog/113833/post-20210912-post">某大佬的博客</a>，思路和我都差不多。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210911NOIP信心赛问号记</title>
+      <link>http://example.org/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</link>
+      <pubDate>Sat, 11 Sep 2021 20:34:12 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210911noip%E4%BF%A1%E5%BF%83%E8%B5%9B%E9%97%AE%E5%8F%B7%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;首先看到三道名字是乱码的题，一道叫“Extra”的构造题，又一看叫“信心赛”，又看到“题目较简单。AK选手不要大声喧哗”，再仔细一看，“题目不按照难度顺序排序”，我就知道来者不善。我直呼好家伙！&lt;/p&gt;
+&lt;p&gt;教练让我们多写暴力拿分，在前十分钟我还是想贯彻这个思想的，结果后来有点上头。&lt;/p&gt;
+&lt;p&gt;预计 $0+0+10+100=110$，实际 $0+0+0+60=60$​，信心十足. jpg。&lt;/p&gt;
+&lt;p&gt;以上都是借口，题不是特别难，我实力不足罢了。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>首先看到三道名字是乱码的题，一道叫“Extra”的构造题，又一看叫“信心赛”，又看到“题目较简单。AK选手不要大声喧哗”，再仔细一看，“题目不按照难度顺序排序”，我就知道来者不善。我直呼好家伙！</p>
+<p>教练让我们多写暴力拿分，在前十分钟我还是想贯彻这个思想的，结果后来有点上头。</p>
+<p>预计 $0+0+10+100=110$，实际 $0+0+0+60=60$​，信心十足. jpg。</p>
+<p>以上都是借口，题不是特别难，我实力不足罢了。</p>
+<h2 id="赛时">赛时</h2>
+<p>随缘开题，先看了 T1，理解题意搞了半天，于是感觉似乎不是很难，然后写的时候发现我不会写，复杂度似乎也不太对。想了半天毛都没写，溜了溜了。</p>
+<p>又看 T2，行吧，暴力能搞 $30$ 分，但似乎也不是特别难（后来发现是错觉）。</p>
+<p>又去看 T3，感觉自己似乎能拿到 $50$ 分，后来先写了个 $10$ 分，然后发现有 $20$ 分似乎拿不到，有发现 $20$ 分暴力似乎也不是那么好写，溜了溜了。</p>
+<p>接着去看 T4，似乎有 $40$ 分随手就能拿，于是写了，然后就溜了。</p>
+<p>这时候已经过去两个多小时了（我效率为啥这么低）。</p>
+<p>想了想，似乎 T123 的暴力都不咋好写，于是我爬了，感觉 T1 似乎能写，于是开始写。</p>
+<p>然后写着写着发现不会写，于是去看了 T4，把所有情况都给写了，顺便修了个 bug。但是我一个都不会证，就当我切了吧233。</p>
+<p>于是滚回去写 T1，写着写着就到点了，心情平静。</p>
+<h2 id="赛后">赛后</h2>
+<p>忽然发现我 T3 CE了，问号。</p>
+<p>又发现 T4 有两个做法似乎是假的，不要紧（</p>
+<h2 id="总结">总结</h2>
+<p>还是水平太低。</p>
+<p>T1 想到了正解的部分思路，但没完全想到，思维水平不够。也许这个能力只能靠多做题多研究题解了。</p>
+<p>T2 完全不会，是转化成染色。。不过没打暴力确实是个错误。</p>
+<p>T3 也不懂，好难啊，不过确实应该写暴力的。</p>
+<p>T4 有点神仙，不过混了 $60$ 分我很满足了。</p>
+<p>水平不够，而且还是要多打暴力，也要思考思考暴力怎么写快。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210818构造模拟赛挂分记</title>
+      <link>http://example.org/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <pubDate>Wed, 18 Aug 2021 22:28:09 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210818%E6%9E%84%E9%80%A0%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天是构造，题似乎不是很难，然而我挂的很惨。&lt;/p&gt;
+&lt;p&gt;期望：$100+30+60+100=290$​，实际 $0+20+0+5=25$​。大家都挂的很惨，于是我 RK13/23。。。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天是构造，题似乎不是很难，然而我挂的很惨。</p>
+<p>期望：$100+30+60+100=290$​，实际 $0+20+0+5=25$​。大家都挂的很惨，于是我 RK13/23。。。</p>
+<h2 id="前言">前言</h2>
+<p>实际上我从来没有做过构造题，唯一的是前一天听同学口胡的一道 CF $1000+$​ 分的题，于是今天十分没底。</p>
+<h2 id="赛时">赛时</h2>
+<p>看到保证 T1 是最简单的题，我立马定好策略：切掉 T1 再说。（T1：<a href="https://codeforces.com/contest/1439/problem/A2">CF1439A2</a>）</p>
+<p>于是开始想，大概想了十分钟吧，思路就已经成型了：枚举每个 $2\times 2$​​ 正方形左上角的点，从第一行扫到倒数第三行，扫的时候保证该行所有 $1$ 都已经变成 $0$，其他随意。接着横着扫倒数第二行，一直扫到倒数第三列。这个时候除了右下角 $2\times2$ 的四个数，所有数都已经变为 $0$ 了。而对于最后四个数，可能的剩余未熄灭灯数只有 $5$​​ 种。直接用打表/分类讨论之类的方法搞出来就行。</p>
+<p>{% spoiler Code %}</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span><span style="color:#633820">&lt;bits/stdc++.h&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#define mm(x) memset(x, 0, sizeof(x))
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#a90d91">namespace</span> <span style="color:#000">std</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">T</span>, <span style="color:#000">n</span>, <span style="color:#000">m</span>, <span style="color:#000">a</span>[<span style="color:#1c01ce">110</span>][<span style="color:#1c01ce">110</span>];
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">struct</span> <span style="color:#3f6e75">node</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#000">y</span>;
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#000">vector</span><span style="color:#000">&lt;</span><span style="color:#000">node</span><span style="color:#000">&gt;</span> <span style="color:#000">p</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">upd</span>(<span style="color:#a90d91">int</span> <span style="color:#000">x</span>, <span style="color:#a90d91">int</span> <span style="color:#000">y</span>, <span style="color:#a90d91">int</span> <span style="color:#000">&amp;</span><span style="color:#000">q</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">p</span>.<span style="color:#000">push_back</span>((<span style="color:#000">node</span>){<span style="color:#000">x</span>, <span style="color:#000">y</span>});
+</span></span><span style="display:flex;"><span>    <span style="color:#000">a</span>[<span style="color:#000">x</span>][<span style="color:#000">y</span>] <span style="color:#000">=</span> <span style="color:#000">a</span>[<span style="color:#000">x</span>][<span style="color:#000">y</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span> <span style="color:#000">?</span> <span style="color:#1c01ce">0</span> <span style="color:#000">:</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">q</span><span style="color:#000">--</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">b</span>[<span style="color:#1c01ce">4</span>][<span style="color:#1c01ce">4</span>];	
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">solve_1</span>()
+</span></span><span style="display:flex;"><span>{	
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>][<span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>, <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">solve_2</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mm</span>(<span style="color:#000">b</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>][<span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>, <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>, <span style="color:#000">cnt</span>), <span style="color:#000">b</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">!</span><span style="color:#000">b</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>])
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>, <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">solve_1</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">solve_3</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">mm</span>(<span style="color:#000">b</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>][<span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>, <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>, <span style="color:#000">cnt</span>), <span style="color:#000">b</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">!</span><span style="color:#000">b</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>])
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>, <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>, <span style="color:#000">cnt</span>), <span style="color:#000">b</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">solve_2</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">solve_0</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000">upd</span>(<span style="color:#000">n</span>, <span style="color:#000">m</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">upd</span>(<span style="color:#000">n</span>, <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">m</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">solve_3</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">out_put</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">p</span>.<span style="color:#000">size</span>() <span style="color:#000">/</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">p</span>.<span style="color:#000">size</span>(); <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#1c01ce">3</span> <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#c41a16">&#34;</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">p</span>[<span style="color:#000">i</span>].<span style="color:#000">x</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#c41a16">&#34; &#34;</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">p</span>[<span style="color:#000">i</span>].<span style="color:#000">y</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#c41a16">&#34; &#34;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#c41a16">&#34;</span><span style="color:#c41a16">\\</span><span style="color:#c41a16">n&#34;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">freopen</span>(<span style="color:#c41a16">&#34;bulb.in&#34;</span>, <span style="color:#c41a16">&#34;r&#34;</span>, <span style="color:#000">stdin</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">freopen</span>(<span style="color:#c41a16">&#34;bulb.out&#34;</span>, <span style="color:#c41a16">&#34;w&#34;</span>, <span style="color:#000">stdout</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ios</span><span style="color:#000">::</span><span style="color:#000">sync_with_stdio</span>(<span style="color:#a90d91">false</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">T</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">while</span> (<span style="color:#000">T</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">n</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">m</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">p</span>.<span style="color:#000">clear</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">char</span> <span style="color:#000">ch</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">int</span> <span style="color:#000">ans</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">m</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">ch</span>, <span style="color:#000">a</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>] <span style="color:#000">=</span> <span style="color:#000">ch</span> <span style="color:#000">==</span> <span style="color:#2300ce">&#39;0&#39;</span> <span style="color:#000">?</span> <span style="color:#1c01ce">0</span> <span style="color:#000">:</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#000">m</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">int</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">upd</span>(<span style="color:#000">i</span>, <span style="color:#000">j</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">upd</span>(<span style="color:#000">i</span>, <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">cnt</span> <span style="color:#000">==</span> <span style="color:#1c01ce">3</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">continue</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">cnt</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">upd</span>(<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">j</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">cnt</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#000">upd</span>(<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">int</span> <span style="color:#000">cnt</span> <span style="color:#000">=</span> <span style="color:#1c01ce">3</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>][<span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">j</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">a</span>[<span style="color:#000">n</span>][<span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span>, <span style="color:#000">j</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">cnt</span> <span style="color:#000">==</span> <span style="color:#1c01ce">3</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">continue</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">cnt</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">cnt</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">upd</span>(<span style="color:#000">n</span>, <span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">cnt</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">int</span> <span style="color:#000">tot</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#000">tot</span> <span style="color:#000">+=</span> <span style="color:#000">a</span>[<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>][<span style="color:#000">m</span> <span style="color:#000">-</span> <span style="color:#000">j</span>];
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        <span style="color:#000">tot</span> <span style="color:#000">=</span> <span style="color:#1c01ce">4</span> <span style="color:#000">-</span> <span style="color:#000">tot</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">tot</span> <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">solve_0</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">else</span> <span style="color:#a90d91">if</span> (<span style="color:#000">tot</span> <span style="color:#000">==</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">solve_1</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">else</span> <span style="color:#a90d91">if</span> (<span style="color:#000">tot</span> <span style="color:#000">==</span> <span style="color:#1c01ce">2</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">solve_2</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">else</span> <span style="color:#a90d91">if</span> (<span style="color:#000">tot</span> <span style="color:#000">==</span> <span style="color:#1c01ce">3</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">solve_3</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#000">out_put</span>();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">return</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>{% endspoiler %}</p>
+<p>写完 T1，按传统规矩自然是 DEBUG 了好久，确定无误之后已经过去一个半小时了，感觉自己得了 $100$ 分，<strong>一阵狂喜</strong>，赶快开下面的题。</p>
+<p>接着看后面的题，决定先打暴力。</p>
+<p>首先打了个 T3 的 $60$ 分暴力，<strong>一阵狂喜</strong>，然后去写 T4，分析了一下发现我似乎能切。于是开始写，但是调到心态爆炸，于是在剩余 $20\text{min}$​​ 的时候勉强调完了。</p>
+<p>T2 急的一笔，快速打了个暴力，希望能得 $30$ 分。不过也没测试，草草收场了。</p>
+<p>然后快结束的时候有人告诉我 T1 的文件名写错了，我：？？？</p>
+<p>结果还真写错了，我连忙改文件名和 <code>freopen</code> 里的文件名。</p>
+<p>时间到了，我一看，我 <code>freopen</code> 里的文件名没改上，我：？？？发生什么事了？？？</p>
+<p>行吧， $100$ 分没了。</p>
+<h2 id="赛后">赛后</h2>
+<p>我一看分数就傻眼了。</p>
+<p>再一看：T3 File Error：“未找到选手输出文件”</p>
+<p>哦，仔细一看，我把一个 <code>freopen</code> 的文件名写错了，好家伙，这又少了 $60$ 分。</p>
+<p>T4 果然挂了，不出所料，不过我和 Solution 的思路是差不多的，但是实现似乎有点问题。</p>
+<p>又在 OJ 上交了一发，好家伙，T1 直接 AC 了，T3 $60$ 分了。</p>
+<p>忽然意识到，我因为 <code>freopen</code> 痛失了 $100+60=160$ 分。太伤了，加上这些分我似乎能进 Rank 5。</p>
+<p>题目都不是很难，T2 其实是个分类讨论题，感觉再来点时间也能想出来，倒是 T3 似乎思维难度最大，有点类似染色（</p>
+<h2 id="总结">总结</h2>
+<p>狂喜把自己狂喜没了，这次在做题上还算是比较完美的，不过下一次必须认真比对文件名之后（或者直接复制）再去搞下一道题。</p>
+<p>这次太着急了，所以出了一堆错误。</p>
+<p>T1 明明几分钟就想出来正解了，结果后面又否定自己，最后又发现自己是对的，也浪费了大量时间。</p>
+<p>代码实现的时候也浪费了时间。</p>
+<p>只能说码力还是不够，正解和暴力都写得太慢了，结果没有时间支持我深入思考每道题，相信随着刷题数的增多我这个能力能增强的。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210817数学模拟赛爆零记</title>
+      <link>http://example.org/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</link>
+      <pubDate>Tue, 17 Aug 2021 23:10:10 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210817%E6%95%B0%E5%AD%A6%E6%A8%A1%E6%8B%9F%E8%B5%9B%E7%88%86%E9%9B%B6%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天是数学，本来以为会还行，结果 $0+0+30+5=35$​，接近垫底了（&lt;/p&gt;
+&lt;p&gt;再次被机房男女老少暴打qwq。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天是数学，本来以为会还行，结果 $0+0+30+5=35$​，接近垫底了（</p>
+<p>再次被机房男女老少暴打qwq。</p>
+<h2 id="赛时">赛时</h2>
+<p>四道题都看了看，发现 T1是个推式子，推着推着心态爆炸，瞎打了个式子就溜了。</p>
+<p>T2 暴力大概会写，但不想写，感觉不太可做。</p>
+<p>T3 是个博弈论，感觉不可做。</p>
+<p>T4 是个思维题，觉得能拿一些部分分，于是开始写。</p>
+<p>写完之后把 T2 的 $20$ 分打了，T3 找了一波规律就溜了。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现 T1 是个卡特兰数？？？</p>
+<p>好家伙我完全不记得这是啥了。。。行吧，死的不冤。</p>
+<p>T2 不是很难&hellip;暴力+算斜率+数据结构优化即可。但是为什么我把 <code>freopen</code> 注释了？？？？？？？$20$ 分没了。。。</p>
+<p>T3 我想太简单了，确实是找规律，但没有那么简单，我傻了。</p>
+<p>T4 是个数论题，有点难 qwq&hellip; <a href="https://codeforces.com/contest/493/problem/E">Link</a></p>
+<p>大概是通过一些性质算出多项式的常数项，然后降次，递归求解。挺神奇的&hellip;写了一遍&hellip;</p>
+<h2 id="总结">总结</h2>
+<p>总之自己对数学各种奇怪的数完全不了解，发现自己推式子的能力还是不强——所以我 DP 也不行。</p>
+<p>明明想到第二题暴力，第三题多想想也许就能对，但是却没时间推了。</p>
+<p>也许，只能通过多做题提升自己码力？</p>
+<p>顺便，感觉自己确实实力不足，也许是题做少了&hellip;</p>
+<p>多总结，加大做题量&hellip;</p>
+<p><del>把 <code>freopen</code> 注释掉这个错误我不会再犯了</del></p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210816树上问题模拟赛</title>
+      <link>http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Mon, 16 Aug 2021 21:39:32 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;因为打疫苗只打了将近两个小时。期望 $0+20+30+0=50$，实际 $0+0+60+0=60$。&lt;/p&gt;
+&lt;p&gt;还行吧，今天题是真的难。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>因为打疫苗只打了将近两个小时。期望 $0+20+30+0=50$，实际 $0+0+60+0=60$。</p>
+<p>还行吧，今天题是真的难。</p>
+<h2 id="赛时">赛时</h2>
+<p>因为回来晚了就不想着暴力了，试图切题，然后发现四道题都难的一逼。</p>
+<p>一直想到剩余一小时，然后发现爆零太难看了，于是开始写暴力。</p>
+<p>T1、4 完全没思路，暴力似乎也不是特别好写，于是就打了 T2、3 的暴力，不知道能搞多少分。</p>
+<p>就这样，没啥好说的。。。</p>
+<h2 id="赛后">赛后</h2>
+<p>看了 Solution，发现是四道思维题，甚至基环树？&hellip;&hellip;</p>
+<p>好家伙我直呼好家伙</p>
+<p>最后 T2 挂了，不知道为什么，但 T3 倒是得了 $60$ 分，大概是常数小吧，我那个做法可以被卡到 $O(n^3)$ 的。</p>
+<h2 id="总结">总结</h2>
+<p>然后我忽然意识到了，是不是应该先打暴力？</p>
+<p>先打暴力再推正解&hellip;</p>
+<p>很难说，也许比赛确实应该先打暴力&hellip;？</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210815图论模拟赛心态良好记</title>
+      <link>http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</link>
+      <pubDate>Sun, 15 Aug 2021 22:56:56 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。&lt;/p&gt;
+&lt;p&gt;期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行&amp;hellip;&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。</p>
+<p>期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行&hellip;</p>
+<h2 id="赛时">赛时</h2>
+<p>一看到题目顺序不定，我就开始随缘开题了。</p>
+<p>首先看 T1，感觉是个字符串，似乎是瞎搞搞连边然后折腾，但我不会，心态良好，先去看 T2 了。</p>
+<p>再看 T2，感觉和 NOIP 有一道分监狱的题类似，用并查集维护和某个人不在同一个集合的人的集合，能判断有没有解，但具体怎么分我不知道。。。不知道和图论有什么关系。行。瞎搞了一波过了样例就溜了。</p>
+<p>看 T3、T4，其实 T3 有点思路，像这种与时间有关的询问都可以考虑离线，但我觉得搞不出来，先放着了。</p>
+<p>又去看 T4，看到一堆符号就溜了。</p>
+<p>滚回去写 T1，用 map 瞎搞了一波，过了样例但跑得贼慢，后来觉得我这个做法有点假，我也就不期望得分了。</p>
+<p>滚回去调 T2，再次瞎搞，做法好像也是假的，希望能骗到分。</p>
+<p>由于我现在已经写完两题了，现在心态十分良好，T3 也有暴力的思路了。</p>
+<p>先看了一波 T4，稍微推了一下，这TM不是大水题吗，删一些点跑最短路就完事了，20min 写完，过了样例。</p>
+<p>这时候还剩 40min，回去写 T3 的暴力，还剩 10min 的时候写完。大概能过 $60$ 分。然后开始摸鱼。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现 T1、2都挂了，意料之中吧，T3 的 test $4 \sim 6$ WA 了，我也不知道怎么挂的，不应该啊。</p>
+<p>T4 发现我考虑的有点少了，做法有点假，应该把无向边转成有向再跑最短路或 BFS，不过出题人说他没想卡直接跑最短路的假做法，只卡了 $10$​​ 分，谢出题人不杀之恩！</p>
+<p>T1 是个欧拉路题，我不会，有人知道但不会写因此心态爆炸，然而我心态良好，因为我根本就不知道这玩意（</p>
+<p>T2 是个补图+二分图染色，有点意思。</p>
+<p>T3 确实是离线，然后用类似 Floyd 的方法做，有思维难度但似乎不是特别大。</p>
+<h2 id="总结">总结</h2>
+<p>首先心态不错确实是今天一大优点（虽然爆零了两道题）</p>
+<p>图论有些知识点不能忽略，得抓紧时间补一补了。</p>
+<p>当一道题假了，是应该放弃，去做别的题，还是应该接着尝试搞？这确实是需要反复尝试，找出最优解的。</p>
+<p>明天树上问题 <code>RP++</code>。</p>
+<p>早上复习一下 LCA、直径、重心、树上DP吧。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210814字符串模拟赛挂分记</title>
+      <link>http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</link>
+      <pubDate>Sat, 14 Aug 2021 21:26:03 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/</guid>
+      <description>&lt;h2 id=&#34;概述&#34;&gt;概述&lt;/h2&gt;
+&lt;p&gt;今天是字符串，然而字符串有关算法我基本就会 Trie 树和 Hash，KMP 到现在都不太会。。。&lt;/p&gt;
+&lt;p&gt;期望 $100+20+100+0=220$，实际 $0+50+30+0=80$，rank 14/23&lt;/p&gt;
+&lt;p&gt;Orz KH AK！！！&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>今天是字符串，然而字符串有关算法我基本就会 Trie 树和 Hash，KMP 到现在都不太会。。。</p>
+<p>期望 $100+20+100+0=220$，实际 $0+50+30+0=80$，rank 14/23</p>
+<p>Orz KH AK！！！</p>
+<h2 id="赛时">赛时</h2>
+<p>按顺序开题，发现 T1 是个 trie 树题，我一阵狂喜，这玩意我会啊，搞正反插 trie 树就成。</p>
+<p>结果写了半天没搞出来，调来调去心态爆炸，过了样例之后就扔了。</p>
+<p>T2是个 KMP，我会口胡但不会写，先放着。</p>
+<p>T3感觉是个 Trie 树，想了一个诡异的做法，看着挺对，就写了，调了调过样例了，感觉自己切了。</p>
+<p>T4没时间想了，没写。</p>
+<p>回去写 T2 暴力，写了个最暴力的 $O(n^3)$ 算法，然后就溜了。</p>
+<h2 id="赛后">赛后</h2>
+<p>发现我T1、3都挂了，都是意料之中，我虽然觉得能切但写挂了也很可能。</p>
+<p>T3我做法疑似是假的，怀疑人生。</p>
+<p>T2居然多卡过去了 $30$ 分，太神奇了，看来我这个暴力常数贼小。</p>
+<h2 id="总结">总结</h2>
+<p>KMP 不会是硬伤，而且我对字符串所有算法都不熟练，包括 Hash 等等，KMP还是得弄懂。</p>
+<p>感觉今天策略没啥问题，就是 T1 写太久了，最后还挂了。导致没时间调试T1、3。还是不熟练的问题，题做的太少了。</p>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>210813杂项模拟赛乱改记</title>
+      <link>http://example.org/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</link>
+      <pubDate>Fri, 13 Aug 2021 21:54:41 +0000</pubDate>
+      
+      <guid>http://example.org/posts/210813%E6%9D%82%E9%A1%B9%E6%A8%A1%E6%8B%9F%E8%B5%9B%E4%B9%B1%E6%94%B9%E8%AE%B0/</guid>
+      <description>概述 期望 $100+30+70+20=220$，实际 $100+0+10+10=120$，rk6，有点神奇，不过机房神仙们连切三题太神了！
+赛时 首先看到今天是个杂项：分治二分倍增快速幂，又看到难度是递增的，尝试多拿分、切题。
+首先看到T1，就差把分治写脸上了，快速打了个大框然后写分治的递归函数。
+打完之后一阵狂喜，然后测样例的时候发现我做法假了，把这题想太简单了。
+一阵思考发现情况太多了。。。
+本来打算列出所有情况打表进行分治的，结果写一半发现实在是太难了，遂放弃，尝试之前旋转的思路（我之前没证明，不是很敢写）。
+这时候一个多小时已经过去了，我一分没拿，属实心态爆炸。
+稍微看了看T234，感觉全都不大能做，还是滚回来写T1。
+这次用旋转的规律做了一波，样例过了，自己测了几组数据没问题，就过了。
+这个时候已经两个多小时了，我至少切了一题，心态有所好转。
+接下来看后面的题，首先发现T4除了前 $20$ 分我都不会，赶快打了个暴力放弃T4了。
+回来看T2、3，感觉T2有点二分的意思，不过没怎么推出来，只能瞎搞了个 $30$ 分暴力，我当时也没细想，觉得能过前面的数据。。。
+还剩半个多小时，看了看T3，写了个 DFS 爆搜，样例过了，瞎造了一组数据也过了，感觉 $70$ 分应该可以了。
+赛后 结果T1 AC只有 $7$ 人，老师也说这低于他预期，我觉得T1确实有毒。。。
+T234全挂了，后来发现挂的不冤，还是太着急了，暴力也没认真写。
+看了 Solution，发现T4是个矩阵快速幂的优化递推，好家伙，我连矩阵怎么算都快忘了。。。
+T2确实是二分，有点神仙，T3是个倍增，考试时候有点感觉，但没时间也没能力写&amp;hellip;
+还是要很扎实地掌握基础知识点和基础题，才能熟练运用啊。。。
+明天字符串，我要裂开了。。。</description>
+      <content:encoded><![CDATA[<h2 id="概述">概述</h2>
+<p>期望 $100+30+70+20=220$，实际 $100+0+10+10=120$，rk6，有点神奇，不过机房神仙们连切三题太神了！</p>
+<!-- more -->
+<h2 id="赛时">赛时</h2>
+<p>首先看到今天是个杂项：分治二分倍增快速幂，又看到难度是递增的，尝试多拿分、切题。</p>
+<p>首先看到T1，就差把分治写脸上了，快速打了个大框然后写分治的递归函数。</p>
+<p>打完之后一阵狂喜，然后测样例的时候发现我做法假了，把这题想太简单了。</p>
+<p>一阵思考发现情况太多了。。。</p>
+<p>本来打算列出所有情况打表进行分治的，结果写一半发现实在是太难了，遂放弃，尝试之前旋转的思路（我之前没证明，不是很敢写）。</p>
+<p>这时候一个多小时已经过去了，我一分没拿，属实心态爆炸。</p>
+<p>稍微看了看T234，感觉全都不大能做，还是滚回来写T1。</p>
+<p>这次用旋转的规律做了一波，样例过了，自己测了几组数据没问题，就过了。</p>
+<p>这个时候已经两个多小时了，我至少切了一题，心态有所好转。</p>
+<p>接下来看后面的题，首先发现T4除了前 $20$ 分我都不会，赶快打了个暴力放弃T4了。</p>
+<p>回来看T2、3，感觉T2有点二分的意思，不过没怎么推出来，只能瞎搞了个 $30$ 分暴力，我当时也没细想，觉得能过前面的数据。。。</p>
+<p>还剩半个多小时，看了看T3，写了个 DFS 爆搜，样例过了，瞎造了一组数据也过了，感觉 $70$ 分应该可以了。</p>
+<h2 id="赛后">赛后</h2>
+<p>结果T1 AC只有 $7$ 人，老师也说这低于他预期，我觉得T1确实有毒。。。</p>
+<p>T234全挂了，后来发现挂的不冤，还是太着急了，暴力也没认真写。</p>
+<p>看了 Solution，发现T4是个矩阵快速幂的优化递推，好家伙，我连矩阵怎么算都快忘了。。。</p>
+<p>T2确实是二分，有点神仙，T3是个倍增，考试时候有点感觉，但没时间也没能力写&hellip;</p>
+<p>还是要很扎实地掌握基础知识点和基础题，才能熟练运用啊。。。</p>
+<p>明天字符串，我要裂开了。。。</p>
+]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

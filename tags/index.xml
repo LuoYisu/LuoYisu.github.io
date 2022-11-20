@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on _slb 的博客</title>
+    <link>http://example.org/tags/</link>
+    <description>Recent content in Tags on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Mon, 19 Sep 2022 06:51:20 +0000</lastBuildDate><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>游记</title>
+      <link>http://example.org/tags/%E6%B8%B8%E8%AE%B0/</link>
+      <pubDate>Mon, 19 Sep 2022 06:51:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%B8%B8%E8%AE%B0/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>数据结构</title>
+      <link>http://example.org/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 28 Aug 2022 19:03:24 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>DP</title>
+      <link>http://example.org/tags/dp/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/dp/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>数学</title>
+      <link>http://example.org/tags/%E6%95%B0%E5%AD%A6/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%95%B0%E5%AD%A6/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>贪心</title>
+      <link>http://example.org/tags/%E8%B4%AA%E5%BF%83/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E8%B4%AA%E5%BF%83/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>题解合集</title>
+      <link>http://example.org/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E9%A2%98%E8%A7%A3%E5%90%88%E9%9B%86/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>字符串</title>
+      <link>http://example.org/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>组合</title>
+      <link>http://example.org/tags/%E7%BB%84%E5%90%88/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%BB%84%E5%90%88/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>数位DP</title>
+      <link>http://example.org/tags/%E6%95%B0%E4%BD%8Ddp/</link>
+      <pubDate>Wed, 11 May 2022 22:24:35 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%95%B0%E4%BD%8Ddp/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>后缀树</title>
+      <link>http://example.org/tags/%E5%90%8E%E7%BC%80%E6%A0%91/</link>
+      <pubDate>Sat, 07 May 2022 09:07:28 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%90%8E%E7%BC%80%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>优化建图</title>
+      <link>http://example.org/tags/%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/</link>
+      <pubDate>Sat, 07 May 2022 09:07:28 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E4%BC%98%E5%8C%96%E5%BB%BA%E5%9B%BE/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>欧拉回路</title>
+      <link>http://example.org/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/</link>
+      <pubDate>Wed, 20 Apr 2022 19:59:46 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%AC%A7%E6%8B%89%E5%9B%9E%E8%B7%AF/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>图论</title>
+      <link>http://example.org/tags/%E5%9B%BE%E8%AE%BA/</link>
+      <pubDate>Wed, 20 Apr 2022 19:59:46 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%9B%BE%E8%AE%BA/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>网络流</title>
+      <link>http://example.org/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</link>
+      <pubDate>Wed, 20 Apr 2022 19:59:46 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>提交答案</title>
+      <link>http://example.org/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/</link>
+      <pubDate>Sun, 17 Apr 2022 12:42:59 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%8F%90%E4%BA%A4%E7%AD%94%E6%A1%88/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>tarjan</title>
+      <link>http://example.org/tags/tarjan/</link>
+      <pubDate>Sun, 17 Apr 2022 11:25:29 +0000</pubDate>
+      
+      <guid>http://example.org/tags/tarjan/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>割点</title>
+      <link>http://example.org/tags/%E5%89%B2%E7%82%B9/</link>
+      <pubDate>Sun, 17 Apr 2022 11:25:29 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%89%B2%E7%82%B9/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>模拟赛</title>
+      <link>http://example.org/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/</link>
+      <pubDate>Thu, 24 Mar 2022 14:41:17 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>floyd</title>
+      <link>http://example.org/tags/floyd/</link>
+      <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/floyd/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>ST表</title>
+      <link>http://example.org/tags/st%E8%A1%A8/</link>
+      <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/st%E8%A1%A8/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>差分约束</title>
+      <link>http://example.org/tags/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/</link>
+      <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%B7%AE%E5%88%86%E7%BA%A6%E6%9D%9F/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>最短路</title>
+      <link>http://example.org/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
+      <pubDate>Sat, 19 Mar 2022 19:00:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>树</title>
+      <link>http://example.org/tags/%E6%A0%91/</link>
+      <pubDate>Fri, 18 Mar 2022 13:48:34 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>数论</title>
+      <link>http://example.org/tags/%E6%95%B0%E8%AE%BA/</link>
+      <pubDate>Tue, 15 Mar 2022 20:58:33 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%95%B0%E8%AE%BA/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>点分树</title>
+      <link>http://example.org/tags/%E7%82%B9%E5%88%86%E6%A0%91/</link>
+      <pubDate>Mon, 17 Jan 2022 07:22:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%82%B9%E5%88%86%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>平衡树</title>
+      <link>http://example.org/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/</link>
+      <pubDate>Mon, 17 Jan 2022 07:22:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Miller Rabin</title>
+      <link>http://example.org/tags/miller-rabin/</link>
+      <pubDate>Mon, 10 Jan 2022 21:14:13 +0000</pubDate>
+      
+      <guid>http://example.org/tags/miller-rabin/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>莫比乌斯函数</title>
+      <link>http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Mon, 10 Jan 2022 21:14:13 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%87%BD%E6%95%B0/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>原根</title>
+      <link>http://example.org/tags/%E5%8E%9F%E6%A0%B9/</link>
+      <pubDate>Mon, 10 Jan 2022 21:14:13 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%8E%9F%E6%A0%B9/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>莫比乌斯反演</title>
+      <link>http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</link>
+      <pubDate>Wed, 05 Jan 2022 19:20:38 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>交互题</title>
+      <link>http://example.org/tags/%E4%BA%A4%E4%BA%92%E9%A2%98/</link>
+      <pubDate>Fri, 31 Dec 2021 09:46:26 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E4%BA%A4%E4%BA%92%E9%A2%98/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>构造</title>
+      <link>http://example.org/tags/%E6%9E%84%E9%80%A0/</link>
+      <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%9E%84%E9%80%A0/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>扫描线</title>
+      <link>http://example.org/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</link>
+      <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>线段树</title>
+      <link>http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+      <pubDate>Tue, 28 Dec 2021 13:32:13 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>生成树</title>
+      <link>http://example.org/tags/%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <pubDate>Mon, 27 Dec 2021 09:19:11 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>双指针</title>
+      <link>http://example.org/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</link>
+      <pubDate>Mon, 27 Dec 2021 09:19:11 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%8F%8C%E6%8C%87%E9%92%88/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>高斯消元</title>
+      <link>http://example.org/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/</link>
+      <pubDate>Sat, 25 Dec 2021 11:22:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>欧拉路</title>
+      <link>http://example.org/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF/</link>
+      <pubDate>Sat, 25 Dec 2021 11:22:20 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%AC%A7%E6%8B%89%E8%B7%AF/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>二分</title>
+      <link>http://example.org/tags/%E4%BA%8C%E5%88%86/</link>
+      <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E4%BA%8C%E5%88%86/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>二分图</title>
+      <link>http://example.org/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/</link>
+      <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>离线</title>
+      <link>http://example.org/tags/%E7%A6%BB%E7%BA%BF/</link>
+      <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%A6%BB%E7%BA%BF/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>树状数组</title>
+      <link>http://example.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>最大流</title>
+      <link>http://example.org/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/</link>
+      <pubDate>Thu, 23 Dec 2021 21:15:48 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%9C%80%E5%A4%A7%E6%B5%81/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>分块</title>
+      <link>http://example.org/tags/%E5%88%86%E5%9D%97/</link>
+      <pubDate>Tue, 21 Dec 2021 14:36:53 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%88%86%E5%9D%97/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>倍增</title>
+      <link>http://example.org/tags/%E5%80%8D%E5%A2%9E/</link>
+      <pubDate>Thu, 16 Dec 2021 15:23:16 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%80%8D%E5%A2%9E/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>博弈论</title>
+      <link>http://example.org/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/</link>
+      <pubDate>Thu, 16 Dec 2021 15:23:16 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>计算几何</title>
+      <link>http://example.org/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</link>
+      <pubDate>Thu, 16 Dec 2021 15:23:16 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Manacher</title>
+      <link>http://example.org/tags/manacher/</link>
+      <pubDate>Mon, 13 Dec 2021 14:16:04 +0000</pubDate>
+      
+      <guid>http://example.org/tags/manacher/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>主席树</title>
+      <link>http://example.org/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/</link>
+      <pubDate>Mon, 13 Dec 2021 14:16:04 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>KMP</title>
+      <link>http://example.org/tags/kmp/</link>
+      <pubDate>Fri, 10 Dec 2021 15:01:44 +0000</pubDate>
+      
+      <guid>http://example.org/tags/kmp/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>斜率优化</title>
+      <link>http://example.org/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Fri, 10 Dec 2021 15:01:44 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LCT</title>
+      <link>http://example.org/tags/lct/</link>
+      <pubDate>Wed, 08 Dec 2021 22:18:33 +0000</pubDate>
+      
+      <guid>http://example.org/tags/lct/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>哈希</title>
+      <link>http://example.org/tags/%E5%93%88%E5%B8%8C/</link>
+      <pubDate>Wed, 08 Dec 2021 11:49:18 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%93%88%E5%B8%8C/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>哈希表</title>
+      <link>http://example.org/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</link>
+      <pubDate>Wed, 08 Dec 2021 11:49:18 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>DP优化</title>
+      <link>http://example.org/tags/dp%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Tue, 07 Dec 2021 15:32:19 +0000</pubDate>
+      
+      <guid>http://example.org/tags/dp%E4%BC%98%E5%8C%96/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Note</title>
+      <link>http://example.org/tags/note/</link>
+      <pubDate>Sun, 05 Dec 2021 20:36:55 +0000</pubDate>
+      
+      <guid>http://example.org/tags/note/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>模拟退火</title>
+      <link>http://example.org/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/</link>
+      <pubDate>Mon, 22 Nov 2021 22:14:42 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E6%A8%A1%E6%8B%9F%E9%80%80%E7%81%AB/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>启发式合并</title>
+      <link>http://example.org/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/</link>
+      <pubDate>Thu, 18 Nov 2021 09:19:15 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>线段树合并</title>
+      <link>http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6/</link>
+      <pubDate>Thu, 18 Nov 2021 09:19:15 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>二进制</title>
+      <link>http://example.org/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/</link>
+      <pubDate>Wed, 17 Nov 2021 13:18:31 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>状压</title>
+      <link>http://example.org/tags/%E7%8A%B6%E5%8E%8B/</link>
+      <pubDate>Wed, 17 Nov 2021 13:18:31 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%8A%B6%E5%8E%8B/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>DFS</title>
+      <link>http://example.org/tags/dfs/</link>
+      <pubDate>Fri, 12 Nov 2021 17:19:03 +0000</pubDate>
+      
+      <guid>http://example.org/tags/dfs/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>背包</title>
+      <link>http://example.org/tags/%E8%83%8C%E5%8C%85/</link>
+      <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E8%83%8C%E5%8C%85/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>竞赛图</title>
+      <link>http://example.org/tags/%E7%AB%9E%E8%B5%9B%E5%9B%BE/</link>
+      <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%AB%9E%E8%B5%9B%E5%9B%BE/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>完全图</title>
+      <link>http://example.org/tags/%E5%AE%8C%E5%85%A8%E5%9B%BE/</link>
+      <pubDate>Fri, 12 Nov 2021 16:49:34 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%AE%8C%E5%85%A8%E5%9B%BE/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>区间DP</title>
+      <link>http://example.org/tags/%E5%8C%BA%E9%97%B4dp/</link>
+      <pubDate>Fri, 05 Nov 2021 10:07:50 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E5%8C%BA%E9%97%B4dp/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>矩阵</title>
+      <link>http://example.org/tags/%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Fri, 22 Oct 2021 07:22:01 +0000</pubDate>
+      
+      <guid>http://example.org/tags/%E7%9F%A9%E9%98%B5/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>OI</title>
+      <link>http://example.org/tags/oi/</link>
+      <pubDate>Thu, 14 Oct 2021 16:52:02 +0000</pubDate>
+      
+      <guid>http://example.org/tags/oi/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>LCA</title>
+      <link>http://example.org/tags/lca/</link>
+      <pubDate>Mon, 16 Aug 2021 23:00:44 +0000</pubDate>
+      
+      <guid>http://example.org/tags/lca/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Trie树</title>
+      <link>http://example.org/tags/trie%E6%A0%91/</link>
+      <pubDate>Mon, 16 Aug 2021 23:00:44 +0000</pubDate>
+      
+      <guid>http://example.org/tags/trie%E6%A0%91/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

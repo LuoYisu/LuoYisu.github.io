@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on _slb 的博客</title>
+    <link>http://example.org/categories/</link>
+    <description>Recent content in Categories on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sun, 30 Oct 2022 23:16:58 +0000</lastBuildDate><atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Note</title>
+      <link>http://example.org/categories/note/</link>
+      <pubDate>Sun, 30 Oct 2022 23:16:58 +0000</pubDate>
+      
+      <guid>http://example.org/categories/note/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>游记</title>
+      <link>http://example.org/categories/%E6%B8%B8%E8%AE%B0/</link>
+      <pubDate>Mon, 19 Sep 2022 06:51:20 +0000</pubDate>
+      
+      <guid>http://example.org/categories/%E6%B8%B8%E8%AE%B0/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Solutions</title>
+      <link>http://example.org/categories/solutions/</link>
+      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
+      
+      <guid>http://example.org/categories/solutions/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Summary</title>
+      <link>http://example.org/categories/summary/</link>
+      <pubDate>Thu, 26 May 2022 07:01:46 +0000</pubDate>
+      
+      <guid>http://example.org/categories/summary/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>OI</title>
+      <link>http://example.org/categories/oi/</link>
+      <pubDate>Thu, 14 Oct 2021 16:52:02 +0000</pubDate>
+      
+      <guid>http://example.org/categories/oi/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

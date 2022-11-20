@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>210815图论模拟赛心态良好记 | _slb 的博客</title>
+<meta name="keywords" content="模拟赛">
+<meta name="description" content="概述
+今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。
+期望：$0&#43;0&#43;60&#43;100=160$，实际 $0&#43;0&#43;30&#43;90=120$。大家都爆零了所以我名次还行&hellip;">
+<meta name="author" content="">
+<link rel="canonical" href="http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.50186c5f00667894caec5120c9bf6fdd794f30be21c26fd0f275eaebdfde2158.css" integrity="sha256-UBhsXwBmeJTK7FEgyb9v3XlPML4hwm/Q8nXq69/eIVg=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://example.org/favicon.ico">
+<link rel="apple-touch-icon" href="http://example.org/apple-touch-icon.png">
+
+<meta name="twitter:title" content="210815图论模拟赛心态良好记 | _slb 的博客" />
+<meta name="twitter:description" content="概述
+今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。
+期望：$0&#43;0&#43;60&#43;100=160$，实际 $0&#43;0&#43;30&#43;90=120$。大家都爆零了所以我名次还行&hellip;" />
+<meta property="og:title" content="210815图论模拟赛心态良好记 | _slb 的博客" />
+<meta property="og:description" content="概述
+今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。
+期望：$0&#43;0&#43;60&#43;100=160$，实际 $0&#43;0&#43;30&#43;90=120$。大家都爆零了所以我名次还行&hellip;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/" />
+<meta property="article:section" content="posts" />
+  <meta property="article:published_time" content="2021-08-15T22:56:56&#43;00:00" />
+  <meta property="article:modified_time" content="2021-08-15T22:56:56&#43;00:00" />
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "http://example.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "210815图论模拟赛心态良好记",
+      "item": "http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "210815图论模拟赛心态良好记 | _slb 的博客",
+  "name": "210815图论模拟赛心态良好记",
+  "description": "概述 今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。\n期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行\u0026hellip;\n",
+  "keywords": [
+    "模拟赛"
+  ],
+  "wordCount" : "71",
+  "inLanguage": "zh",
+  "datePublished": "2021-08-15T22:56:56Z",
+  "dateModified": "2021-08-15T22:56:56Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://example.org/posts/210815%E5%9B%BE%E8%AE%BA%E6%A8%A1%E6%8B%9F%E8%B5%9B%E5%BF%83%E6%80%81%E8%89%AF%E5%A5%BD%E8%AE%B0/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "_slb 的博客",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://example.org/favicon.ico"
+    }
+  }
+}
+</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.css" integrity="sha384-bYdxxUwYipFNohQlHt0bjN/LCpueqWz13HufFEV1SUatKs1cm4L6fFgCi1jT643X" crossorigin="anonymous">
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.min.js" integrity="sha384-Qsn9KnoKISj6dI8g7p1HBlNpVx0I8p1SvlwOldgi3IorMle61nQy4zEahWYtljaz" crossorigin="anonymous"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+          
+          
+          delimiters: [
+              
+              {left: '$$', right: '$$', display: true},
+              {left: '\\[', right: '\\]', display: true},
+              
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false}
+          ],
+          
+          throwOnError : false,
+      });
+  });
+</script>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary-bg: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list-page {
+                background: var(--theme);
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list-page:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+</head>
+
+<body class=" type-posts kind-page layout-" id="top"><script data-no-instant>
+function switchTheme(theme) {
+  switch (theme) {
+    case 'light':
+      document.body.classList.remove('dark');
+      break;
+    case 'dark':
+      document.body.classList.add('dark');
+      break;
+    
+    default:
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+      }
+  }
+}
+
+function isDarkTheme() {
+  return document.body.className.includes("dark");
+}
+
+function getPrefTheme() {
+  return localStorage.getItem("pref-theme");
+}
+
+function setPrefTheme(theme) {
+  switchTheme(theme)
+  localStorage.setItem("pref-theme", theme);
+}
+
+const toggleThemeCallbacks = {}
+toggleThemeCallbacks['main'] = (isDark) => {
+  
+  if (isDark) {
+    setPrefTheme('light');
+  } else {
+    setPrefTheme('dark');
+  }
+}
+
+
+
+
+window.addEventListener('toggle-theme', function() {
+  
+  const isDark = isDarkTheme()
+  for (const key in toggleThemeCallbacks) {
+    toggleThemeCallbacks[key](isDark)
+  }
+});
+
+
+function toggleThemeListener() {
+  
+  window.dispatchEvent(new CustomEvent('toggle-theme'));
+}
+
+</script>
+<script>
+  
+  (function() {
+    const defaultTheme = 'auto';
+    const prefTheme = getPrefTheme();
+    const theme = prefTheme ? prefTheme : defaultTheme;
+
+    switchTheme(theme);
+  })();
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://example.org/" accesskey="h" title="_slb 的博客 (Alt + H)">_slb 的博客</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://example.org/categories/" title="分类"
+                >分类
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/tags/" title="标签"
+                >标签
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/archives/" title="归档"
+                >归档
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/friends/" title="友链"
+                >友链
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/about/" title="关于"
+                >关于
+                </a>
+            </li>
+            <li>
+                <a href="http://example.org/search/" title="搜索 (Alt &#43; /)"data-no-instant accesskey=/
+                >搜索
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main post">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://example.org/">主页</a>&nbsp;»&nbsp;<a href="http://example.org/posts/">Posts</a></div><h1 class="post-title">210815图论模拟赛心态良好记</h1>
+    <div class="post-meta"><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar" style="user-select: text;"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" style="user-select: text;"></rect><line x1="16" y1="2" x2="16" y2="6" style="user-select: text;"></line><line x1="8" y1="2" x2="8" y2="6" style="user-select: text;"></line><line x1="3" y1="10" x2="21" y2="10" style="user-select: text;"></line></svg>
+  <span>2021 年 8 月 15 日</span></span><span class="meta-item">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon" style="user-select: text;"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" style="user-select: text;"></path><line x1="7" y1="7" x2="7" y2="7" style="user-select: text;"></line></svg>
+  <span class="post-tags"><a href="http://example.org/tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a></span></span>
+
+      
+      
+    </div>
+  </header> <div class="toc side right">
+    <details  open>
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">目录</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#%e6%a6%82%e8%bf%b0" aria-label="概述">概述</a></li>
+                <li>
+                    <a href="#%e8%b5%9b%e6%97%b6" aria-label="赛时">赛时</a></li>
+                <li>
+                    <a href="#%e8%b5%9b%e5%90%8e" aria-label="赛后">赛后</a></li>
+                <li>
+                    <a href="#%e6%80%bb%e7%bb%93" aria-label="总结">总结</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="概述">概述<a hidden class="anchor" aria-hidden="true" href="#概述">¶</a></h2>
+<p>今天是图论，我本来以为会考最小生成树、tarjan 之类，结果没考，考了一些稍生僻（其实就是我不会）的算法以及思维题，所以我挺悲惨的。</p>
+<p>期望：$0+0+60+100=160$，实际 $0+0+30+90=120$。大家都爆零了所以我名次还行&hellip;</p>
+<h2 id="赛时">赛时<a hidden class="anchor" aria-hidden="true" href="#赛时">¶</a></h2>
+<p>一看到题目顺序不定，我就开始随缘开题了。</p>
+<p>首先看 T1，感觉是个字符串，似乎是瞎搞搞连边然后折腾，但我不会，心态良好，先去看 T2 了。</p>
+<p>再看 T2，感觉和 NOIP 有一道分监狱的题类似，用并查集维护和某个人不在同一个集合的人的集合，能判断有没有解，但具体怎么分我不知道。。。不知道和图论有什么关系。行。瞎搞了一波过了样例就溜了。</p>
+<p>看 T3、T4，其实 T3 有点思路，像这种与时间有关的询问都可以考虑离线，但我觉得搞不出来，先放着了。</p>
+<p>又去看 T4，看到一堆符号就溜了。</p>
+<p>滚回去写 T1，用 map 瞎搞了一波，过了样例但跑得贼慢，后来觉得我这个做法有点假，我也就不期望得分了。</p>
+<p>滚回去调 T2，再次瞎搞，做法好像也是假的，希望能骗到分。</p>
+<p>由于我现在已经写完两题了，现在心态十分良好，T3 也有暴力的思路了。</p>
+<p>先看了一波 T4，稍微推了一下，这TM不是大水题吗，删一些点跑最短路就完事了，20min 写完，过了样例。</p>
+<p>这时候还剩 40min，回去写 T3 的暴力，还剩 10min 的时候写完。大概能过 $60$ 分。然后开始摸鱼。</p>
+<h2 id="赛后">赛后<a hidden class="anchor" aria-hidden="true" href="#赛后">¶</a></h2>
+<p>发现 T1、2都挂了，意料之中吧，T3 的 test $4 \sim 6$ WA 了，我也不知道怎么挂的，不应该啊。</p>
+<p>T4 发现我考虑的有点少了，做法有点假，应该把无向边转成有向再跑最短路或 BFS，不过出题人说他没想卡直接跑最短路的假做法，只卡了 $10$​​ 分，谢出题人不杀之恩！</p>
+<p>T1 是个欧拉路题，我不会，有人知道但不会写因此心态爆炸，然而我心态良好，因为我根本就不知道这玩意（</p>
+<p>T2 是个补图+二分图染色，有点意思。</p>
+<p>T3 确实是离线，然后用类似 Floyd 的方法做，有思维难度但似乎不是特别大。</p>
+<h2 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">¶</a></h2>
+<p>首先心态不错确实是今天一大优点（虽然爆零了两道题）</p>
+<p>图论有些知识点不能忽略，得抓紧时间补一补了。</p>
+<p>当一道题假了，是应该放弃，去做别的题，还是应该接着尝试搞？这确实是需要反复尝试，找出最优解的。</p>
+<p>明天树上问题 <code>RP++</code>。</p>
+<p>早上复习一下 LCA、直径、重心、树上DP吧。</p>
+
+  </div>
+
+  <footer class="post-footer">
+<nav class="paginav">
+  <a class="prev" href="http://example.org/posts/210816%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98%E6%A8%A1%E6%8B%9F%E8%B5%9B/">
+    <span class="title">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left" style="user-select: text;"><line x1="19" y1="12" x2="5" y2="12" style="user-select: text;"></line><polyline points="12 19 5 12 12 5" style="user-select: text;"></polyline></svg>&nbsp;上一页</span>
+    <br>
+    <span>210816树上问题模拟赛</span>
+  </a>
+  <a class="next" href="http://example.org/posts/210814%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A8%A1%E6%8B%9F%E8%B5%9B%E6%8C%82%E5%88%86%E8%AE%B0/">
+    <span class="title">下一页&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right" style="user-select: text;"><line x1="5" y1="12" x2="19" y2="12" style="user-select: text;"></line><polyline points="12 5 19 12 12 19" style="user-select: text;"></polyline></svg>
+    </span>
+    <br>
+    <span>210814字符串模拟赛挂分记</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+  <span>&copy; 2022 <a href="http://example.org/">_slb 的博客</a></span><span style="display: inline-block; margin-left: 1em;">
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+  </span>
+  <span style="display: inline-block; margin-left: 1em;">
+    Powered by
+    <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+    <a href="https://github.com/reorx/hugo-PaperModX/" rel="noopener" target="_blank">PaperModX</a>
+  </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+    <path d="M12 6H0l6-6z" />
+  </svg>
+</a>
+
+<script>
+  (function() {
+     
+    const disableThemeToggle = '' == '1';
+    if (disableThemeToggle) {
+      return;
+    }
+
+    let button = document.getElementById("theme-toggle")
+    
+    button.removeEventListener('click', toggleThemeListener)
+    
+    button.addEventListener('click', toggleThemeListener)
+  })();
+</script>
+
+<script>
+  (function () {
+    let menu = document.getElementById('menu')
+    if (menu) {
+      menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+      menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+      }
+    }
+
+    const disableSmoothScroll = '' == '1';
+    const enableInstantClick = '' == '1';
+    
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || disableSmoothScroll || enableInstantClick) {
+      return;
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = this.getAttribute("href").substr(1);
+        document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+          behavior: "smooth"
+        });
+        if (id === "top") {
+          history.replaceState(null, null, " ");
+        } else {
+          history.pushState(null, null, `#${id}`);
+        }
+      });
+    });
+  })();
+</script>
+<script>
+  var mybutton = document.getElementById("top-link");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+      mybutton.style.visibility = "visible";
+      mybutton.style.opacity = "1";
+    } else {
+      mybutton.style.visibility = "hidden";
+      mybutton.style.opacity = "0";
+    }
+  };
+</script>
+<script>
+  if (window.scrollListeners) {
+    
+    for (const listener of scrollListeners) {
+      window.removeEventListener('scroll', listener)
+    }
+  }
+  window.scrollListeners = []
+</script>
+
+
+
+<script src="/js/medium-zoom.min.js" data-no-instant
+></script>
+<script>
+  document.querySelectorAll('pre > code').forEach((codeblock) => {
+    const container = codeblock.parentNode.parentNode;
+
+    const copybutton = document.createElement('button');
+    copybutton.classList.add('copy-code');
+    copybutton.innerText = '复制';
+
+    function copyingDone() {
+      copybutton.innerText = '已复制！';
+      setTimeout(() => {
+        copybutton.innerText = '复制';
+      }, 2000);
+    }
+
+    copybutton.addEventListener('click', (cb) => {
+      if ('clipboard' in navigator) {
+        navigator.clipboard.writeText(codeblock.textContent);
+        copyingDone();
+        return;
+      }
+
+      const range = document.createRange();
+      range.selectNodeContents(codeblock);
+      const selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      try {
+        document.execCommand('copy');
+        copyingDone();
+      } catch (e) { };
+      selection.removeRange(range);
+    });
+
+    if (container.classList.contains("highlight")) {
+      container.appendChild(copybutton);
+    } else if (container.parentNode.firstChild == container) {
+      
+    } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+      
+      codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+    } else {
+      
+      codeblock.parentNode.appendChild(copybutton);
+    }
+  });
+</script>
+
+
+
+
+<script>
+  
+  
+  (function() {
+    const enableTocScroll = '1' == '1'
+    if (!enableTocScroll) {
+      return
+    }
+    if (!document.querySelector('.toc')) {
+      console.log('no toc found, ignore toc scroll')
+      return
+    }
+    
+
+    
+    const scrollListeners = window.scrollListeners
+    const headings = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id]');
+    const activeClass = 'active';
+
+    
+    let activeHeading = headings[0];
+    getLinkByHeading(activeHeading).classList.add(activeClass);
+
+    const onScroll = () => {
+      const passedHeadings = [];
+      for (const h of headings) {
+        
+        if (getOffsetTop(h) < 5) {
+          passedHeadings.push(h)
+        } else {
+          break;
+        }
+      }
+      if (passedHeadings.length > 0) {
+        newActiveHeading = passedHeadings[passedHeadings.length - 1];
+      } else {
+        newActiveHeading = headings[0];
+      }
+      if (activeHeading != newActiveHeading) {
+        getLinkByHeading(activeHeading).classList.remove(activeClass);
+        activeHeading = newActiveHeading;
+        getLinkByHeading(activeHeading).classList.add(activeClass);
+      }
+    }
+
+    let timer = null;
+    const scrollListener = () => {
+      if (timer !== null) {
+        clearTimeout(timer)
+      }
+      timer = setTimeout(onScroll, 50)
+    }
+    window.addEventListener('scroll', scrollListener, false);
+    scrollListeners.push(scrollListener)
+
+    function getLinkByHeading(heading) {
+      const id = encodeURI(heading.getAttribute('id')).toLowerCase();
+      return document.querySelector(`.toc ul li a[href="#${id}"]`);
+    }
+
+    function getOffsetTop(heading) {
+      if (!heading.getClientRects().length) {
+        return 0;
+      }
+      let rect = heading.getBoundingClientRect();
+      return rect.top
+    }
+  })();
+  </script>
+
+</body>
+
+</html>
