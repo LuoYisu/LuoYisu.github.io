@@ -6,7 +6,33 @@
     <description>Recent content in 游记 on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 19 Sep 2022 06:51:20 +0000</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/%E6%B8%B8%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Nov 2022 21:12:02 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/%E6%B8%B8%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NOIP2022 VP</title>
+      <link>https://luoyisu.github.io/posts/noip2022/</link>
+      <pubDate>Tue, 29 Nov 2022 21:12:02 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/posts/noip2022/</guid>
+      <description>&lt;p&gt;有人让我写，那我就写一下。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>有人让我写，那我就写一下。</p>
+<h2 id="一点题外话">一点题外话</h2>
+<p>本来打算把vp过程录个屏发到b站上的，但发现视频里有个人信息，就做罢了。</p>
+<p>要是还有下次用虚拟机打吧。</p>
+<h2 id="赛时">”赛时“</h2>
+<p>周日下午想着打一下吧，就开始娱乐了。</p>
+<p>其实之前已经有一些剧透了，所以就是个娱乐局，打的ioi赛制，在infoj上交的。</p>
+<p>看T1，想了10多分钟，好像对每一列记录一个 $\Gamma$ 形状的数量，和二阶 $\Gamma$ 形状（其实就是F）的数量就好了，利用行后缀转移，写了会就搞定了，交了一发过了。</p>
+<p>然后看T2，我听说这个题挺难的。</p>
+<p>想了一会也没啥头绪，只猜出来一个性质。然后觉得数据范围的 $k=2n-1$ 必有玄机，但还是没搞出来啥。</p>
+<p>又想了一会，感觉 $k=2n-2$ 好像很有玄机啊，想了几分钟会做了，每个栈都放两个就好了，然后就试图同样用空一列的思路做 $k=2n-1$，这下顺着想就做出来了，好像保证当前栈中元素没有多于 $3$ 个的，来一个新的时候就优先放已经有两个元素的栈（这两个元素要保证下面的在后面的队列里先出现，事实上，我们希望尽量多（或者说存在）两个元素的栈满足这个性质），因为如果有一个栈能放三个，就转成上一种情况，赢了。找不到就找一个下一个元素出现最晚的只有一个元素的栈放，这样出现早的不容易被盖住，如果还找不到就找一个空的放。（有很多地方是蒙的，进行感性理解）</p>
+<p>然后写了一会过了样例（用assert测试的），交了一发过了。</p>
+<p>然后T3，显然边双，然后树形dp。之前已经被剧透在虚树根处统计答案了，就 $f_i$ 表示 $i$ 为根子树各种选的方案数。考虑在最后乘上 $2^m$，转移 $f$ 和答案的时候没选一条边就要除以一个 $2$，硬转移，也就过了。</p>
+<p>不剩多少时间了（半个多小时？），想了想 T4 $O(qn)$ 怎么做，想了一会明白了 $O(qn\log n)$ 的做法，就是枚举一个端点，线段树维护各个左端点的极值，然后更改哪些部分可以用单调栈找出来。没想清楚就开始狂写了，最后也没过（悲），还不清楚那里写挂了，应该不是区间赋值的简单线段树吧（</p>
+<p>最后 $100+100+100+0=300$，显然不是正式考试中会出现的分数。</p>
+<h2 id="总结">总结</h2>
+<p>真的很娱乐，考场上不一定会死磕前三题，能得多少分确实不好说。</p>]]></content:encoded>
+    </item>
+    
     <item>
       <title>CSP-S2022</title>
       <link>https://luoyisu.github.io/posts/csp-s2022/</link>
