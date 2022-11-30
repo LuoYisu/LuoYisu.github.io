@@ -436,7 +436,7 @@
 <p>想了一会也没啥头绪，只猜出来一个性质。然后觉得数据范围的 $k=2n-1$ 必有玄机，但还是没搞出来啥。</p>
 <p>又想了一会，感觉 $k=2n-2$ 好像很有玄机啊，想了几分钟会做了，每个栈都放两个就好了，然后就试图同样用空一列的思路做 $k=2n-1$，这下顺着想就做出来了，好像保证当前栈中元素没有多于 $3$ 个的，来一个新的时候就优先放已经有两个元素的栈（这两个元素要保证下面的在后面的队列里先出现，事实上，我们希望尽量多（或者说存在）两个元素的栈满足这个性质），因为如果有一个栈能放三个，就转成上一种情况，赢了。找不到就找一个下一个元素出现最晚的只有一个元素的栈放，这样出现早的不容易被盖住，如果还找不到就找一个空的放。（有很多地方是蒙的，进行感性理解）</p>
 <p>然后写了一会过了样例（用assert测试的），交了一发过了。</p>
-<p>然后T3，显然边双，然后树形dp。之前已经被剧透在虚树根处统计答案了，就 $f_i$ 表示 $i$ 为根子树各种选的方案数。考虑在最后乘上 $2^m$，转移 $f$ 和答案的时候没选一条边就要除以一个 $2$，硬转移，也就过了。</p>
+<p>然后T3，显然边双，然后树形dp。之前已经被剧透在虚树根处统计答案了，就 $f_i$ 表示 $i$ 为根子树各种选的方案数。考虑在最后乘上 $2^m$，转移 $f$ 和答案的时候每选一条边就要除以一个 $2$，硬转移，也就过了。</p>
 <p>不剩多少时间了（半个多小时？），想了想 T4 $O(qn)$ 怎么做，想了一会明白了 $O(qn\log n)$ 的做法，就是枚举一个端点，线段树维护各个左端点的极值，然后更改哪些部分可以用单调栈找出来。没想清楚就开始狂写了，最后也没过（悲），还不清楚那里写挂了，应该不是区间赋值的简单线段树吧（</p>
 <p>最后 $100+100+100+0=300$，显然不是正式考试中会出现的分数。</p>
 <h2 id="总结">总结</h2>
@@ -487,8 +487,46 @@
 <p>01trie可以维护不少有关异或的信息。</p>
 <p>从低位到高位插入到trie中，通过维护一个点到其父亲这条边上被经过了几次可以轻松得到子树异或和，删除也可以这么做，还可以做到全局+/-1，以+1为例，只需要交换两个儿子，然后向0的那个儿子接着递归做即可。</p>
 <h2 id="kmp前缀函数">kmp（前缀函数）</h2>
+<p>前缀函数 $nxt_i$ 定义为前缀 $i$ 最长的相等的前后缀长度。</p>
+<p>求法就根据移动到下一个字符的时候，前缀函数要么不变、要么减小、要么增加 $1$，然后就往前跳求就可以了，因为总的增加是 $O(n)$，复杂度也就是 $O(n)$。</p>
+<h3 id="代码-1">代码</h3>
+<p>下标从 $1$ 开始。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a90d91">void</span> <span style="color:#000">get_nxt</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>, <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">m</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">while</span> (<span style="color:#000">j</span> <span style="color:#000">&gt;</span> <span style="color:#1c01ce">0</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">s</span>[<span style="color:#000">i</span>] <span style="color:#000">!=</span> <span style="color:#000">s</span>[<span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#000">nxt</span>[<span style="color:#000">j</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> ([<span style="color:#000">i</span>] <span style="color:#000">==</span> <span style="color:#000">sj</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>])
+</span></span><span style="display:flex;"><span>            <span style="color:#000">j</span><span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">nxt</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">j</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="应用-1">应用</h3>
+<p>主要应用还是这个定义。</p>
+<p>这里说一个方法：把字符串拼起来，可以正着拼、倒着拼、一个一个拼、中间加特殊字符等等，各种地方都能用的到。</p>
+<h3 id="应用字符串匹配">应用——字符串匹配</h3>
+<p>讲一个无脑的方法，假如要求 $t$ 在 $s$ 中的匹配，那么可以把 $s$ 和 $t$ 拼起来，构造一个 $str=t+\#+s$，然后求前缀函数，$\#$ 后面前缀函数等于 $|t|$ 就是一个匹配。</p>
+<h3 id="最长周期">最长周期</h3>
+<p>border：对字符串 $s$ 和 $0&lt;r&lt; |s|$，若 $s$ 长度为 $r$ 的前缀和长度为 $r$ 的后缀相等，就称 $s$ 长度为 $r$ 的前缀是 $s$ 的 border。</p>
+<p>由 $s$ 有长度为 $r$ 的 border 可以推导出 $|s| - r$ 是 $s$ 的周期。</p>
+<p>故最长周期长度是 $|s| - nxt_n$</p>
 <h2 id="manacher">manacher</h2>
-<h2 id="z函数">z函数</h2>]]></content:encoded>
+<p>如果要求回文串，可以求 $d_i$ 表示以 $i$ 为中心，最长的回文半径。</p>
+<p>显然二分+哈希可以做到 $O(n\log n)$ 求解，但 manacher 算法让我们可以在线性时间内快速求出 $d$。</p>
+<p>具体方法就是：维护当前右端点最靠右的回文串 $[l,r]$，对于一个新的点 $i$， 如果 $i\leq r$，那么把 $d_i$ 直接设置成 $\min\{r-i+1,d_{l+r-i}\}$，这样显然是正确的，而每次这么处理完之后，都暴力扩展 $d_i$ 并更新 $l,r$。复杂度是对的，$r$ 从不减小。</p>
+<p>奇数回文串有中心，偶数没有，在相邻两个字符间加一个其他字符，就能让偶数也有中心。</p>
+<h3 id="代码-2">代码</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">r</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">l</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">r</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">d</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">min</span>(<span style="color:#000">r</span> <span style="color:#000">-</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">d</span>[<span style="color:#000">l</span> <span style="color:#000">+</span> <span style="color:#000">r</span> <span style="color:#000">-</span> <span style="color:#000">i</span>]);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">while</span> (<span style="color:#000">s</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#000">d</span>[<span style="color:#000">i</span>]] <span style="color:#000">==</span> <span style="color:#000">s</span>[<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#000">d</span>[<span style="color:#000">i</span>]])
+</span></span><span style="display:flex;"><span>        <span style="color:#000">d</span>[<span style="color:#000">i</span>]<span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">if</span> (<span style="color:#000">d</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span> <span style="color:#000">&gt;=</span> <span style="color:#000">r</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">r</span> <span style="color:#000">=</span> <span style="color:#000">d</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">l</span> <span style="color:#000">=</span> <span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#000">d</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="z函数">z函数</h2>]]></content:encoded>
     </item>
     
     <item>

@@ -319,7 +319,7 @@ function toggleThemeListener() {
 <p>想了一会也没啥头绪，只猜出来一个性质。然后觉得数据范围的 $k=2n-1$ 必有玄机，但还是没搞出来啥。</p>
 <p>又想了一会，感觉 $k=2n-2$ 好像很有玄机啊，想了几分钟会做了，每个栈都放两个就好了，然后就试图同样用空一列的思路做 $k=2n-1$，这下顺着想就做出来了，好像保证当前栈中元素没有多于 $3$ 个的，来一个新的时候就优先放已经有两个元素的栈（这两个元素要保证下面的在后面的队列里先出现，事实上，我们希望尽量多（或者说存在）两个元素的栈满足这个性质），因为如果有一个栈能放三个，就转成上一种情况，赢了。找不到就找一个下一个元素出现最晚的只有一个元素的栈放，这样出现早的不容易被盖住，如果还找不到就找一个空的放。（有很多地方是蒙的，进行感性理解）</p>
 <p>然后写了一会过了样例（用assert测试的），交了一发过了。</p>
-<p>然后T3，显然边双，然后树形dp。之前已经被剧透在虚树根处统计答案了，就 $f_i$ 表示 $i$ 为根子树各种选的方案数。考虑在最后乘上 $2^m$，转移 $f$ 和答案的时候没选一条边就要除以一个 $2$，硬转移，也就过了。</p>
+<p>然后T3，显然边双，然后树形dp。之前已经被剧透在虚树根处统计答案了，就 $f_i$ 表示 $i$ 为根子树各种选的方案数。考虑在最后乘上 $2^m$，转移 $f$ 和答案的时候每选一条边就要除以一个 $2$，硬转移，也就过了。</p>
 <p>不剩多少时间了（半个多小时？），想了想 T4 $O(qn)$ 怎么做，想了一会明白了 $O(qn\log n)$ 的做法，就是枚举一个端点，线段树维护各个左端点的极值，然后更改哪些部分可以用单调栈找出来。没想清楚就开始狂写了，最后也没过（悲），还不清楚那里写挂了，应该不是区间赋值的简单线段树吧（</p>
 <p>最后 $100+100+100+0=300$，显然不是正式考试中会出现的分数。</p>
 <h2 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">¶</a></h2>
@@ -347,6 +347,14 @@ function toggleThemeListener() {
 </article>
     </main>
     
+<script src="https://utteranc.es/client.js"
+repo="LuoYisu/blog_comment"
+issue-term="pathname"
+theme="github-light"
+crossorigin="anonymous"
+async>
+</script>
+
 <footer class="footer">
   <span>&copy; 2022 <a href="https://luoyisu.github.io/">_slb 的博客</a></span><span style="display: inline-block; margin-left: 1em;">
     <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
