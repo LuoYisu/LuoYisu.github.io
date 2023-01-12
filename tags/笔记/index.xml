@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>笔记 on _slb 的博客</title>
+    <link>https://luoyisu.github.io/tags/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on _slb 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 12 Jan 2023 16:17:38 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>容斥</title>
+      <link>https://luoyisu.github.io/posts/inclusion-exclusion-principle/</link>
+      <pubDate>Thu, 12 Jan 2023 16:17:38 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/posts/inclusion-exclusion-principle/</guid>
+      <description>&lt;p&gt;各种容斥。&lt;/p&gt;
+&lt;p&gt;本人水平有限，若有错误请务必提出。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>各种容斥。</p>
+<p>本人水平有限，若有错误请务必提出。</p>
+<h2 id="知识">知识</h2>
+<h3 id="容斥原理">容斥原理</h3>
+<p>对于集合 $A_1,A_2,A_3,\dots,A_n$，</p>
+<p>$$
+\left| \bigcup_{i = 1}^n A_i \right| = \sum_{\varnothing \neq S \subseteq \{1,2,\dots,n\}} (-1)^{|S| - 1} \left| \bigcap_{i \in S} A_i \right|
+$$</p>
+<p>使用二项式定理计算一个元素在右边式子的出现次数可以证明上面公式。</p>
+<p>推论： 对于一个全集 $U$ 的子集 $A_1,A_2,A_3,\dots,A_n$，</p>
+<p>$$
+\left| \bigcap_{i = 1}^n \overline A_i \right| = \sum_{S \subseteq \{1,2,\dots,n\}} (-1)^{|S|} \left| \bigcap_{i\in S} A_i \right|
+$$</p>
+<p>这里 $\cap_{i \in \varnothing} A_i=U$。</p>
+<p>证明：补集的交等于全集减去并集，并集使用第一个公式计算。</p>
+<p>第一个公式：或转化为全部；</p>
+<p>第二个公式：全都不转化为全部。</p>
+<h3 id="min-max-容斥">min-max 容斥</h3>
+<p>$$
+\max_{i = 1}^n a_i = \sum_{\varnothing \neq S \subseteq \{1,2,\dots,n\}} (-1)^{|S| - 1} \min_{i \in S} a_i
+$$</p>
+<p>一个大概的证明：把 $x$ 看成 $(-\infty,x)$，则 $A \cup B = \max\{a,b\}$，$A \cap B = \min\{a,b\}$</p>
+<p>看起来很蠢，但重要的是这个式子对期望也成立。</p>
+<p>对两个数的质因数质数进行 min-max 容斥可得：</p>
+<p>$$
+\underset{i\in S}{\operatorname{lcm}}{x_i}=\prod_{T\subseteq S}{\left(\gcd_{j\in T}{x_j} \right)^{(-1)^{|T|-1}}}
+$$</p>
+<h3 id="二项式反演">二项式反演</h3>
+<p>先给出两个最常用的形式：</p>
+<p>$$
+g(k) = \sum_{i = 0}^k \binom{k}{i} f(i) \Leftrightarrow f(k) = \sum_{i = 0}^k (-1)^{k - i} \binom{k}{i} g(i)
+$$</p>
+<p>$$
+g(k) = \sum_{i = k}^n \binom{i}{k} f(i) \Leftrightarrow f(k) = \sum_{i = k}^n (-1)^{i - k} \binom{i}{k} g(i)
+$$</p>
+<p>先来证明第一个形式。</p>
+<p>证明当然可以用代数推导，这里给一个用上面容斥原理的方法。</p>
+<p>假设全集 $U$ 中有 $n$ 个集合，其中任意若干个元素的并集、交集的大小仅与进行运算的集合个数有关，设 $g(x)$ 是任意 $x$ 个集合的交集，$f(x)$ 是任意 $x$ 个集合的并集，对所有集合的交集和所有集合补集的交集（并集）分别使用上面容斥原理的第二个公式可得：</p>
+<p>$$
+g(n) = \sum_{i = 0}^n (-1)^i \binom{n}{i} f(i) \Leftrightarrow f(n) = \sum_{i = 0}^b (-1)^i \binom{n}{i} g(i)
+$$</p>
+<p>设 $h(x) = (-1)^n g(x)$ 稍加整理即可得到上面的第一个形式。</p>
+<p>后一个形式也可以用代数推导。</p>
+<p>下面是反演两个形式对应的组合意义：</p>
+<p>第一个形式：可以将“恰好 $k$ 个”转化为“除了 $k$ 个都不”，或者说“至多 $k$ 个”满足，即选取一些地方可以满足也可以不满足，其余地方一定不满足。</p>
+<p>第二个形式：可以将“恰好 $k$ 个”转化为“选取 $k$ 个”，或者说“至少 $k$ 个”满足，即选取一些地方一定满足，其他无所谓。</p>
+<p>实际运用中第二个形式较为常见。组合意义可以帮助理解二项式反演（或者说可以当成一个证明？）</p>
+<h2 id="例题">例题</h2>
+<h3 id="loj3119-cts2019-随机立方体">loj3119 CTS2019 随机立方体</h3>
+<p><a href="https://loj.ac/p/3119">链接</a></p>
+<p>首先把恰好 $k$ 个用二项式反演变为选取 $k$ 个。很显然任意两个极大点都不会共面，那么选取 $k$ 个点的方案数就是 $n^{\underline k}m^{\underline k}l^{\underline k}$。</p>
+<p>设有 $i$ 个极大值，被限制住的点数是 $f_i=nml-(n-i)(m-i)(l-i)$。</p>
+<p>选取一些点被极大值限制的方案数是 $\binom{nml}{f_i}$ 剩下的点可以随便排，就是再乘一个 $(n-k)(m-k)(l-k)!$ 都是显然的。</p>
+<p>然后考虑有限制内部怎么算，设 $i$ 个极大值的方案数是 $g_i$，我们从小到大加入极大值，可以写出递推式：$g_i=g_{i - 1} \times \dfrac{(f_i - 1)!}{f_{i - 1}!}$，算一下可以解出来 $g_i=f_i!\prod_{j = 1}^i \dfrac{1}{f_j}$。</p>
+<p>这里还有一个巧妙的计算方法：考虑树的拓扑序，一个有 $n$ 个点的有根树的拓扑序怎么求呢？其充要条件是：对于每个 $i$，$i$ 子树中的点都出现在其后面，子树之间是独立的，故总方案数为：$n!\prod_{i = 1}^n \dfrac{1}{siz_i}$。回到原题，我们发现把一个点连向需要比其大的点就可以转化为一个树上的拓扑序模型，可以直接得到答案。</p>
+<p>以上都乘起来，再除以总方案数，得到 $n^{\underline k}m^{\underline k}l^{\underline k}\prod_{j = 1}^i \dfrac{1}{f_j}$，最后再反演一下即可。</p>
+<p>复杂度线性或者带一个快速幂的 $\log$</p>]]></content:encoded>
+    </item>
+    
+  </channel>
+</rss>

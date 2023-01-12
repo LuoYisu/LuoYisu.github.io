@@ -212,7 +212,7 @@
 <p>$n\leq5\times10^5,m\leq10^6$。</p>
 <h3 id="solution-2">Solution</h3>
 <p>对于一个边双，摧毁是没用的，启发我们边双缩点成一个树。</p>
-<p>然后考虑树形dp，每种方案在若干个要建兵营的点的点双处贡献答案。计算的时候保护一次边答案就记得除以 $2$，最后再乘上总边数即可得到最终答案。</p>
+<p>然后考虑树形dp，每种方案在若干个要建兵营的点的边双处贡献答案。计算的时候保护一次边答案就记得除以 $2$，最后再乘上 $2^m$ 即可得到最终答案。</p>
 <h3 id="code-2">Code</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
 </span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
