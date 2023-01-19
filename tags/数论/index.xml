@@ -25,16 +25,16 @@
 <p>然后对于任意一个积性函数 $g(x)$，都有：
 $$
 \begin{aligned}
-\sum\limits_{i=1}^n(f<em>g)(i)
+\sum\limits_{i=1}^n(f*g)(i)
 =&amp;\sum\limits_{i=1}^n\sum\limits_{d\mid i}g(d)f(i/d)\\
 =&amp;\sum\limits_{d=1}^ng(d)\sum\limits_{d\mid i}^nf(i/d)\\
 =&amp;\sum\limits_{d=1}^ng(d)S(\lfloor n/d\rfloor)\\
 =&amp;\sum\limits_{i=1}^ng(i)S(\lfloor n/i\rfloor)
 \end{aligned}
-$$
-接下来有：
-$$
-g(1)S(n)=\sum\limits_{i=1}^n(f</em>g)(i)-\sum_{i=2}^ng(i)S(\lfloor n/i\rfloor)
+$$</p>
+<p>接下来有：</p>
+<p>$$
+g(1)S(n)=\sum\limits_{i=1}^n(f*g)(i)-\sum_{i=2}^ng(i)S(\lfloor n/i\rfloor)
 $$
 需要构造合适的函数 $g(x)$ 来快速求解前一项，同时用整除分块计算后一项。</p>
 <p>实现方式是先筛出来这个函数的前 $n^{\frac{2}{3}}$ 项，然后比这个数大的采用递归计算。用哈希表记忆化后的复杂度是 $O(n^{\frac{2}{3}})$，我不会证明。</p>
@@ -157,7 +157,7 @@ $$
 ans=\sum_{T=1}^nf(\lfloor\dfrac{n}{T}\rfloor)T^2\varphi(T)
 $$
 设 $g(x)=x^2\varphi(x)$，我们需要求出它的前缀和，开始杜教筛。</p>
-<p>设 $h(x)=x^2$，那么 $(h<em>g)(n)=n^2\sum_{d|n}\varphi(d)$，又由于 $\varphi</em>1=id$，有 $(h*g)(x)=x^3$，这玩意的前缀和很好算。</p>
+<p>设 $h(x)=x^2$，那么 $(h\ast g)(n)=n^2\sum_{d|n}\varphi(d)$，又由于 $\varphi\ast 1=id$，有 $(h\ast g)(x)=x^3$，这玩意的前缀和很好算。</p>
 <p>然后就做完了。</p>
 <h3 id="code-1">Code</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a90d91">namespace</span> <span style="color:#000">solve</span>
@@ -259,7 +259,7 @@ $$
 <p>很明显：功能开头是 $1$ 还是 $2$ 区别很大，我们分开来看。</p>
 <h3 id="input17">input1~7</h3>
 <h4 id="input13">input1~3</h4>
-<p>这三个点都是 $\text{1\\_998244353}$，我们看一下数据。</p>
+<p>这三个点都是 $\text{1\_998244353}$，我们看一下数据。</p>
 <p>input：<code>0 1 2 3</code></p>
 <p>output：<code>1 19 361 6859</code></p>
 <p>很明显是要求 $19^n$。</p>

@@ -62,6 +62,14 @@ $$</p>
 <p>第一个形式：可以将“恰好 $k$ 个”转化为“除了 $k$ 个都不”，或者说“至多 $k$ 个”满足，即选取一些地方可以满足也可以不满足，其余地方一定不满足。</p>
 <p>第二个形式：可以将“恰好 $k$ 个”转化为“选取 $k$ 个”，或者说“至少 $k$ 个”满足，即选取一些地方一定满足，其他无所谓。</p>
 <p>实际运用中第二个形式较为常见。组合意义可以帮助理解二项式反演（或者说可以当成一个证明？）</p>
+<h3 id="莫比乌斯反演">莫比乌斯反演</h3>
+<p>也是一种容斥。</p>
+<p>两个形式：</p>
+<p>$$
+g(n) = \sum_{d \mid n}f(d) \Leftrightarrow f(n) = \sum_{d \mid n}\mu(d)g(\frac{n}{d})\\
+g(n) = \sum_{k = 1}^\infty f(kn) \Leftrightarrow f(n) = \sum_{k = 1}^\infty \mu(k)g(kn)
+$$</p>
+<p>一个是枚举约数，一个是枚举倍数，第一种形式还可以从狄雷克雷卷积的形式理解：$g = 1 * f \Leftrightarrow f = \mu * g$。</p>
 <h2 id="例题">例题</h2>
 <h3 id="loj3119-cts2019-随机立方体">loj3119 CTS2019 随机立方体</h3>
 <p><a href="https://loj.ac/p/3119">链接</a></p>
@@ -70,8 +78,11 @@ $$</p>
 <p>选取一些点被极大值限制的方案数是 $\binom{nml}{f_i}$ 剩下的点可以随便排，就是再乘一个 $(n-k)(m-k)(l-k)!$ 都是显然的。</p>
 <p>然后考虑有限制内部怎么算，设 $i$ 个极大值的方案数是 $g_i$，我们从小到大加入极大值，可以写出递推式：$g_i=g_{i - 1} \times \dfrac{(f_i - 1)!}{f_{i - 1}!}$，算一下可以解出来 $g_i=f_i!\prod_{j = 1}^i \dfrac{1}{f_j}$。</p>
 <p>这里还有一个巧妙的计算方法：考虑树的拓扑序，一个有 $n$ 个点的有根树的拓扑序怎么求呢？其充要条件是：对于每个 $i$，$i$ 子树中的点都出现在其后面，子树之间是独立的，故总方案数为：$n!\prod_{i = 1}^n \dfrac{1}{siz_i}$。回到原题，我们发现把一个点连向需要比其大的点就可以转化为一个树上的拓扑序模型，可以直接得到答案。</p>
-<p>以上都乘起来，再除以总方案数，得到 $n^{\underline k}m^{\underline k}l^{\underline k}\prod_{j = 1}^i \dfrac{1}{f_j}$，最后再反演一下即可。</p>
-<p>复杂度线性或者带一个快速幂的 $\log$</p>]]></content:encoded>
+<p>以上都乘起来，再除以总方案数，得到 $n^{\underline k}m^{\underline k}l^{\underline k}\prod_{j = 1}^k \dfrac{1}{f_j}$，最后再反演一下即可。</p>
+<p>复杂度线性或者带一个快速幂的 $\log$</p>
+<h3 id="cf990g-gcd-counting">CF990G GCD Counting</h3>
+<p><a href="https://codeforces.com/problemset/problem/990/G">链接</a></p>
+<p>把 $k = g(x, y)$ 用上面莫比乌斯反演的第二个形式变为 $k \mid g(x, y)$，就很好做了。只需要对于每个约数，把点权是其倍数的点加入图中，算出所有连通块大小，一个连通块的贡献就是 $siz * (siz + 1) / 2$。</p>]]></content:encoded>
     </item>
     
     <item>
@@ -287,16 +298,16 @@ $$</p>
 <p>然后对于任意一个积性函数 $g(x)$，都有：
 $$
 \begin{aligned}
-\sum\limits_{i=1}^n(f<em>g)(i)
+\sum\limits_{i=1}^n(f*g)(i)
 =&amp;\sum\limits_{i=1}^n\sum\limits_{d\mid i}g(d)f(i/d)\\
 =&amp;\sum\limits_{d=1}^ng(d)\sum\limits_{d\mid i}^nf(i/d)\\
 =&amp;\sum\limits_{d=1}^ng(d)S(\lfloor n/d\rfloor)\\
 =&amp;\sum\limits_{i=1}^ng(i)S(\lfloor n/i\rfloor)
 \end{aligned}
-$$
-接下来有：
-$$
-g(1)S(n)=\sum\limits_{i=1}^n(f</em>g)(i)-\sum_{i=2}^ng(i)S(\lfloor n/i\rfloor)
+$$</p>
+<p>接下来有：</p>
+<p>$$
+g(1)S(n)=\sum\limits_{i=1}^n(f*g)(i)-\sum_{i=2}^ng(i)S(\lfloor n/i\rfloor)
 $$
 需要构造合适的函数 $g(x)$ 来快速求解前一项，同时用整除分块计算后一项。</p>
 <p>实现方式是先筛出来这个函数的前 $n^{\frac{2}{3}}$ 项，然后比这个数大的采用递归计算。用哈希表记忆化后的复杂度是 $O(n^{\frac{2}{3}})$，我不会证明。</p>
@@ -419,7 +430,7 @@ $$
 ans=\sum_{T=1}^nf(\lfloor\dfrac{n}{T}\rfloor)T^2\varphi(T)
 $$
 设 $g(x)=x^2\varphi(x)$，我们需要求出它的前缀和，开始杜教筛。</p>
-<p>设 $h(x)=x^2$，那么 $(h<em>g)(n)=n^2\sum_{d|n}\varphi(d)$，又由于 $\varphi</em>1=id$，有 $(h*g)(x)=x^3$，这玩意的前缀和很好算。</p>
+<p>设 $h(x)=x^2$，那么 $(h\ast g)(n)=n^2\sum_{d|n}\varphi(d)$，又由于 $\varphi\ast 1=id$，有 $(h\ast g)(x)=x^3$，这玩意的前缀和很好算。</p>
 <p>然后就做完了。</p>
 <h3 id="code-1">Code</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a90d91">namespace</span> <span style="color:#000">solve</span>
