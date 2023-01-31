@@ -70,6 +70,13 @@ g(n) = \sum_{d \mid n}f(d) \Leftrightarrow f(n) = \sum_{d \mid n}\mu(d)g(\frac{n
 g(n) = \sum_{k = 1}^\infty f(kn) \Leftrightarrow f(n) = \sum_{k = 1}^\infty \mu(k)g(kn)
 $$</p>
 <p>一个是枚举约数，一个是枚举倍数，第一种形式还可以从狄雷克雷卷积的形式理解：$g = 1 * f \Leftrightarrow f = \mu * g$。</p>
+<h3 id="高维前缀和差分">高维前缀和/差分</h3>
+<p>也许可以看作“子集反演”。</p>
+<p>$$
+f(S) = \sum_{T \subseteq S}g(T) \Leftrightarrow g(S) = \sum_{T \subseteq S}(-1)^{|S| - |T|}f(S)
+$$</p>
+<p>左半部分是高维前缀和，那么后半部分就是其逆运算，即高维差分。计算时候无需枚举子集计算，使用 FMT，复杂度 $O(n2^n)$。</p>
+<p>当然如果把公式里每个集合取补集，那也可以变成“超集反演”。</p>
 <h2 id="例题">例题</h2>
 <h3 id="loj3119-cts2019-随机立方体">loj3119 CTS2019 随机立方体</h3>
 <p><a href="https://loj.ac/p/3119">链接</a></p>
@@ -82,7 +89,32 @@ $$</p>
 <p>复杂度线性或者带一个快速幂的 $\log$</p>
 <h3 id="cf990g-gcd-counting">CF990G GCD Counting</h3>
 <p><a href="https://codeforces.com/problemset/problem/990/G">链接</a></p>
-<p>把 $k = g(x, y)$ 用上面莫比乌斯反演的第二个形式变为 $k \mid g(x, y)$，就很好做了。只需要对于每个约数，把点权是其倍数的点加入图中，算出所有连通块大小，一个连通块的贡献就是 $siz * (siz + 1) / 2$。</p>]]></content:encoded>
+<p>把 $k = g(x, y)$ 用上面莫比乌斯反演的第二个形式变为 $k \mid g(x, y)$，就很好做了。只需要对于每个约数，把点权是其倍数的点加入图中，算出所有连通块大小，一个连通块的贡献就是 $siz * (siz + 1) / 2$。</p>
+<h3 id="uoj422-小z的礼物">uoj422 小Z的礼物</h3>
+<p>直接使用min-max容斥：</p>
+<p>$$
+ans = \sum_{\varnothing \neq T \subseteq S} (-1)^{|T| - 1}\frac{all}{cnt_T}
+$$</p>
+<p>$S$ 是所有喜欢物品的集合，$all$ 指的是所有相邻格子的数量，$cnt_T$ 是对于一个喜欢的物品集合，有多少种选法能至少一个选到喜欢的物品。</p>
+<p>直接枚举子集是不能接受的，我们把 $cnt_T$ 放到状态里，容斥的系数当成 dp 的值，使用插头dp（还是轮廓线dp？），时间复杂度 $O(n^2m^22^n)$。</p>
+<h3 id="agc028d-chords">agc028d Chords</h3>
+<p><a href="https://atcoder.jp/contests/agc028/tasks/agc028_d">链接</a></p>
+<p>圆没有用，直接变成一个链，两条弦有交叉则在同一个连通块内。</p>
+<p>考虑求出每个连通块在所有方案中的出现次数来计算贡献，使用（最小值，最大值）来代表一个连通块。注意到 $[l,r]$ 代表的连通块在 $[l+1,r-1]$ 不能有边向外连，这是很好的性质。</p>
+<p>设 $g(n)=(n-1)\times (n-3)\times &hellip;\times 3\times 1$ 表示 $n$ 个点内部随便连的方案数（$n$ 是偶数则方案数为 $0$）。$f_{i, j}$ 表示 $[i,j]$ 在同一个连通块内，且中间的点没有向外连边的方案数。中间的点没有向外连边是好满足的，在这里使用容斥原理，用所有的减去 $[i,j]$ 不在同一个连通块内的。</p>
+<p>$$
+f_{i,j}=g(cnt1) - \sum\limits_{k = i}^{j - 1}f_{i,k}\times g(cnt2)\\
+ans=\sum f_{i,j}\times g(n - 2K - cnt)
+$$</p>
+<p>$cnt$ 表示区间内可以自由连边的点数。</p>
+<h3 id="agc036f-square-constriants">agc036f Square Constriants</h3>
+<p><a href="https://atcoder.jp/contests/agc036/tasks/agc036_f">链接</a></p>
+<p>预处理出上界 $L_i\leq p_i &lt; R_i$，对于 $i\geq n$，$L_i=0$。</p>
+<p>没有下界的情况是简单的，按照上界排序后，$ans=\prod_{0\leq i &lt;2n} (R_i-i)$。</p>
+<p>不知道为什么（是因为不满足条件的是一段前缀吗）考虑容斥原理。</p>
+<p>枚举有下界的有几个不满足限制（即上界为 $L_i-1$），$ans=\sum_{i = 0}^n (-1)^i f(i)$</p>
+<p>对于小于 $n$ 的数排序关键字为 $(L_i,R_i)$，其余的为 $(R_i,0)$ 排序。</p>
+<p>然后设 $f_{i,j}$ 表示前 $i$ 个数，选了 $j$ 个取下界为上界的方案数，转移的时候考虑有几个数排序后在这个数的前面转移。因为对于 $i&lt;n$，最大的 $L$ 比最小的 $R$ 要小，因此转移的时候是可以排出顺序的。</p>]]></content:encoded>
     </item>
     
     <item>
