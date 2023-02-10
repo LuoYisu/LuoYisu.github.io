@@ -1189,46 +1189,6 @@ $$
     </item>
     
     <item>
-      <title>数位统计问题练习记录</title>
-      <link>https://luoyisu.github.io/posts/number-dp/</link>
-      <pubDate>Wed, 11 May 2022 22:24:35 +0000</pubDate>
-      
-      <guid>https://luoyisu.github.io/posts/number-dp/</guid>
-      <description>&lt;p&gt;不给出题目链接了，网上可以找到（推荐vjudge）。&lt;/p&gt;</description>
-      <content:encoded><![CDATA[<p>不给出题目链接了，网上可以找到（推荐vjudge）。</p>
-<h2 id="bzoj4292-rownanie">BZOJ4292 Rownanie</h2>
-<h3 id="description">Description</h3>
-<p>对于一个正整数 $n$，定义 $f(n)$ 为它十进制下每一位数字的平方的和。
-现在给定三个正整数 $k$, $a$, b，请求出满足 $a\leq n\leq b$ 且 $k\times f(n) = n$ 的 $n$ 的个数。</p>
-<h3 id="solution">Solution</h3>
-<p>$k$ 是给定的，那么对于一个 $f(n)$，只至多一个 $n$ 是合法的。我们直接枚举 $f(n)$ 即可。</p>
-<h3 id="code">Code</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a90d91">namespace</span> <span style="color:#000">solve</span>
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">void</span> <span style="color:#000">main</span>()
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">long</span> <span style="color:#a90d91">long</span> <span style="color:#000">k</span>, <span style="color:#000">a</span>, <span style="color:#000">b</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">k</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">a</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">b</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">long</span> <span style="color:#a90d91">long</span> <span style="color:#000">ans</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
-</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#1c01ce">1500</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#000">__int128_t</span> <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">__int128_t</span>(<span style="color:#000">k</span>) <span style="color:#000">*</span> <span style="color:#000">i</span>;
-</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">x</span> <span style="color:#000">&gt;=</span> <span style="color:#000">a</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">x</span> <span style="color:#000">&lt;=</span> <span style="color:#000">b</span>)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
-</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">while</span> (<span style="color:#000">x</span>)
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">j</span> <span style="color:#000">+=</span> (<span style="color:#000">x</span> <span style="color:#000">%</span> <span style="color:#1c01ce">10</span>) <span style="color:#000">*</span> (<span style="color:#000">x</span> <span style="color:#000">%</span> <span style="color:#1c01ce">10</span>), <span style="color:#000">x</span> <span style="color:#000">/=</span> <span style="color:#1c01ce">10</span>;
-</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">j</span> <span style="color:#000">==</span> <span style="color:#000">i</span>)
-</span></span><span style="display:flex;"><span>                    <span style="color:#000">ans</span><span style="color:#000">++</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>        <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">ans</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">endl</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>]]></content:encoded>
-    </item>
-    
-    <item>
       <title>loj3049 「十二省联考 2019」字符串问题</title>
       <link>https://luoyisu.github.io/posts/loj3049/</link>
       <pubDate>Sat, 07 May 2022 09:07:28 +0000</pubDate>
