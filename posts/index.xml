@@ -6,7 +6,7 @@
     <description>Recent content in Posts on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 30 Jan 2023 09:29:41 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 16:28:21 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>_slb&#39;s Code Style</title>
       <link>https://luoyisu.github.io/posts/code-style/</link>
@@ -418,13 +418,170 @@
     </item>
     
     <item>
-      <title>笔记</title>
+      <title>O(v)-O(1) gcd</title>
+      <link>https://luoyisu.github.io/posts/fast-gcd/</link>
+      <pubDate>Wed, 22 Mar 2023 16:28:21 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/posts/fast-gcd/</guid>
+      <description>&lt;p&gt;不知道有没有用的科技。&lt;/p&gt;
+&lt;p&gt;$O(v)-O(1)\gcd$，其中 $v$ 是值域。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>不知道有没有用的科技。</p>
+<p>$O(v)-O(1)\gcd$，其中 $v$ 是值域。</p>
+<h2 id="预处理">预处理</h2>
+<p>对于一个数 $n$，我们把它分解为 $(x,y,z)$，满足 $xyz=n,x\leq y\leq z$，且 $z\leq\sqrt n$ 或 $z$ 是质数。</p>
+<p>下面证明其存在性：</p>
+<p>若 $z&gt;\sqrt n$ 且 $z$ 是合数，那么 $z$ 存在一个质因数 $\leq\sqrt n$，可以接着分解。</p>
+<p>构造方法：</p>
+<p>使用递归构造。</p>
+<ul>
+<li>
+<p>若 $n=1$，构造 $(1,1,1)$；</p>
+</li>
+<li>
+<p>若 $n$ 是质数，构造 $(1,1,n)$；</p>
+</li>
+<li>
+<p>若 $n$ 是合数，找到 $n$ 的最小质因子，$p$，找到 $m=n/p$ 的一个分解方法 $(x,y,z)$，那么 $n$ 的合法分解即为 $(px,y,z)$ 的升序排序。</p>
+</li>
+</ul>
+<p>证明：</p>
+<p>易得 $x\leq\sqrt[3]m$。</p>
+<ul>
+<li>
+<p>若 $p\leq\sqrt[4]{n}$，则 $px\leq\sqrt[3]{np^2}\leq\sqrt n$。</p>
+</li>
+<li>
+<p>否则 $p&gt;\sqrt[4]n$</p>
+<ul>
+<li>
+<p>若 $x=1$，显然成立。</p>
+</li>
+<li>
+<p>否则 $m$ 不是质数，可以得到 $x,y,z\ge p$，那么 $pxyz&gt;\sqrt[4]{n}=n$，矛盾，不存在此情况。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="询问">询问</h2>
+<p>要求 $\gcd(a,b)$，分别枚举 $b$ 的三个因子，求出和 $a$ 的 $\gcd$，然后把 $a$ 除以这个 $\gcd$，三个因子的计算结果乘起来就是答案。</p>
+<p>然后具体求法：</p>
+<ul>
+<li>
+<p>$x\leq\sqrt n$：预处理。</p>
+</li>
+<li>
+<p>$x&gt;\sqrt n,b\bmod x=0$：结果为 $x$。</p>
+</li>
+<li>
+<p>$x&gt;\sqrt n,b\bmod x\neq0$：结果为 $1$。</p>
+</li>
+</ul>
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;algorithm&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;vector&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstring&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#a90d91">namespace</span> <span style="color:#000">std</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">namespace</span> <span style="color:#000">solve</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e6</span> <span style="color:#000">+</span> <span style="color:#1c01ce">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">lim</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1000</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">mod</span> <span style="color:#000">=</span> <span style="color:#1c01ce">998244353</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">vis</span>[<span style="color:#000">maxn</span>], <span style="color:#000">pri</span>[<span style="color:#000">maxn</span>], <span style="color:#000">tot</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">div</span>[<span style="color:#000">maxn</span>][<span style="color:#1c01ce">3</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">table</span>[<span style="color:#000">lim</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>][<span style="color:#000">lim</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">void</span> <span style="color:#000">init</span>(<span style="color:#a90d91">int</span> <span style="color:#000">n</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e6</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">div</span>[<span style="color:#1c01ce">1</span>][<span style="color:#1c01ce">1</span>] <span style="color:#000">=</span> <span style="color:#000">div</span>[<span style="color:#1c01ce">1</span>][<span style="color:#1c01ce">2</span>] <span style="color:#000">=</span> <span style="color:#000">div</span>[<span style="color:#1c01ce">1</span>][<span style="color:#1c01ce">0</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">!</span><span style="color:#000">vis</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#000">pri</span>[<span style="color:#000">++</span><span style="color:#000">tot</span>] <span style="color:#000">=</span> <span style="color:#000">i</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#000">div</span>[<span style="color:#000">i</span>][<span style="color:#1c01ce">0</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">div</span>[<span style="color:#000">i</span>][<span style="color:#1c01ce">1</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">div</span>[<span style="color:#000">i</span>][<span style="color:#1c01ce">2</span>] <span style="color:#000">=</span> <span style="color:#000">i</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">tot</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">int</span> <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>];
+</span></span><span style="display:flex;"><span>                <span style="color:#000">vis</span>[<span style="color:#000">x</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#000">memcpy</span>(<span style="color:#000">div</span>[<span style="color:#000">x</span>], <span style="color:#000">div</span>[<span style="color:#000">i</span>], <span style="color:#a90d91">sizeof</span>(<span style="color:#000">div</span>[<span style="color:#000">i</span>]));
+</span></span><span style="display:flex;"><span>                <span style="color:#000">div</span>[<span style="color:#000">x</span>][<span style="color:#1c01ce">0</span>] <span style="color:#000">*=</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>];
+</span></span><span style="display:flex;"><span>                <span style="color:#000">sort</span>(<span style="color:#000">div</span>[<span style="color:#000">x</span>], <span style="color:#000">div</span>[<span style="color:#000">x</span>] <span style="color:#000">+</span> <span style="color:#1c01ce">3</span>);
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">lim</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">lim</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">table</span>[<span style="color:#000">i</span>][<span style="color:#000">j</span>] <span style="color:#000">=</span> <span style="color:#000">__gcd</span>(<span style="color:#000">i</span>, <span style="color:#000">j</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">get</span>(<span style="color:#a90d91">int</span> <span style="color:#000">a</span>, <span style="color:#a90d91">int</span> <span style="color:#000">b</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">a</span> <span style="color:#000">&lt;=</span> <span style="color:#000">lim</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">b</span> <span style="color:#000">&lt;=</span> <span style="color:#000">lim</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">return</span> <span style="color:#000">table</span>[<span style="color:#000">a</span>][<span style="color:#000">b</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">int</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;</span> <span style="color:#1c01ce">3</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">int</span> <span style="color:#000">x</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">div</span>[<span style="color:#000">b</span>][<span style="color:#000">i</span>] <span style="color:#000">&lt;=</span> <span style="color:#000">lim</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">table</span>[<span style="color:#000">div</span>[<span style="color:#000">b</span>][<span style="color:#000">i</span>]][<span style="color:#000">a</span> <span style="color:#000">%</span> <span style="color:#000">div</span>[<span style="color:#000">b</span>][<span style="color:#000">i</span>]];
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">else</span> <span style="color:#a90d91">if</span> (<span style="color:#000">a</span> <span style="color:#000">%</span> <span style="color:#000">div</span>[<span style="color:#000">b</span>][<span style="color:#000">i</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#000">div</span>[<span style="color:#000">b</span>][<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">else</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#000">x</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#000">res</span> <span style="color:#000">*=</span> <span style="color:#000">x</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#000">a</span> <span style="color:#000">/=</span> <span style="color:#000">x</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">n</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">a</span>[<span style="color:#000">maxn</span>], <span style="color:#000">b</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">void</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">init</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">n</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">a</span>[<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">b</span>[<span style="color:#000">i</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">long</span> <span style="color:#a90d91">long</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">val</span> <span style="color:#000">=</span> <span style="color:#000">i</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">j</span><span style="color:#000">++</span>, <span style="color:#000">val</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1ll</span> <span style="color:#000">*</span> <span style="color:#000">val</span> <span style="color:#000">*</span> <span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#000">mod</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">res</span> <span style="color:#000">+=</span> <span style="color:#1c01ce">1ll</span> <span style="color:#000">*</span> <span style="color:#000">val</span> <span style="color:#000">*</span> <span style="color:#000">get</span>(<span style="color:#000">a</span>[<span style="color:#000">i</span>], <span style="color:#000">b</span>[<span style="color:#000">j</span>]) <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">res</span> <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#2300ce">&#39;\n&#39;</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ios</span><span style="color:#000">::</span><span style="color:#000">sync_with_stdio</span>(<span style="color:#a90d91">false</span>), <span style="color:#000">cin</span>.<span style="color:#000">tie</span>(<span style="color:#1c01ce">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">T</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#177500">// cin &gt;&gt; T;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#a90d91">while</span> (<span style="color:#000">T</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">solve</span><span style="color:#000">::</span><span style="color:#000">main</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>备忘录</title>
       <link>https://luoyisu.github.io/posts/note/</link>
       <pubDate>Mon, 30 Jan 2023 09:29:41 +0800</pubDate>
       
       <guid>https://luoyisu.github.io/posts/note/</guid>
       <description></description>
-      <content:encoded><![CDATA[<p>遇到限制就要考虑容斥原理。</p>]]></content:encoded>
+      <content:encoded><![CDATA[<p>遇到限制就要考虑容斥原理。</p>
+<p>互不相同的数 $a_1,\dots a_m$，如果 $\sum_{i=1}a_i=n$，则 $m=\sqrt n$。</p>
+<p>设 $n=abc$，其中 $a,b,c$ 两两互质，求证：存在$x=a^{k_1},y=b^{k_2},z=c^{k_3}$，满足 $x\leq n,y\leq n,z\leq n$，且 $x+y+z\geq n$</p>]]></content:encoded>
     </item>
     
     <item>
@@ -437,27 +594,27 @@
 &lt;p&gt;本人水平有限，若有错误请务必提出。&lt;/p&gt;</description>
       <content:encoded><![CDATA[<p>各种容斥。</p>
 <p>本人水平有限，若有错误请务必提出。</p>
-<h2 id="知识">知识</h2>
+<h2 id="理论知识">理论知识</h2>
 <h3 id="容斥原理">容斥原理</h3>
 <p>对于集合 $A_1,A_2,A_3,\dots,A_n$，</p>
 <p>$$
 \left| \bigcup_{i = 1}^n A_i \right| = \sum_{\varnothing \neq S \subseteq \{1,2,\dots,n\}} (-1)^{|S| - 1} \left| \bigcap_{i \in S} A_i \right|
 $$</p>
 <p>使用二项式定理计算一个元素在右边式子的出现次数可以证明上面公式。</p>
-<p>推论： 对于一个全集 $U$ 的子集 $A_1,A_2,A_3,\dots,A_n$，</p>
+<p>推论：对于一个全集 $U$ 的子集 $A_1,A_2,A_3,\dots,A_n$，</p>
 <p>$$
 \left| \bigcap_{i = 1}^n \overline A_i \right| = \sum_{S \subseteq \{1,2,\dots,n\}} (-1)^{|S|} \left| \bigcap_{i\in S} A_i \right|
 $$</p>
 <p>这里 $\cap_{i \in \varnothing} A_i=U$。</p>
 <p>证明：补集的交等于全集减去并集，并集使用第一个公式计算。</p>
-<p>第一个公式：或转化为全部；</p>
-<p>第二个公式：全都不转化为全部。</p>
+<p>第一个公式的作用：或转化为全部；</p>
+<p>第二个公式的作用：全都不转化为全部。</p>
 <h3 id="min-max-容斥">min-max 容斥</h3>
 <p>$$
 \max_{i = 1}^n a_i = \sum_{\varnothing \neq S \subseteq \{1,2,\dots,n\}} (-1)^{|S| - 1} \min_{i \in S} a_i
 $$</p>
 <p>一个大概的证明：把 $x$ 看成 $(-\infty,x)$，则 $A \cup B = \max\{a,b\}$，$A \cap B = \min\{a,b\}$</p>
-<p>看起来很蠢，但重要的是这个式子对期望也成立。</p>
+<p>看起来很没什么用，但重要的是这个式子对期望也成立。</p>
 <p>对两个数的质因数质数进行 min-max 容斥可得：</p>
 <p>$$
 \underset{i\in S}{\operatorname{lcm}}{x_i}=\prod_{T\subseteq S}{\left(\gcd_{j\in T}{x_j} \right)^{(-1)^{|T|-1}}}
@@ -484,14 +641,14 @@ $$</p>
 <p>实际运用中第二个形式较为常见。组合意义可以帮助理解二项式反演（或者说可以当成一个证明？）</p>
 <h3 id="莫比乌斯反演">莫比乌斯反演</h3>
 <p>也是一种容斥。</p>
-<p>两个形式：</p>
+<p>两个形式（这里不作证明）：</p>
 <p>$$
 g(n) = \sum_{d \mid n}f(d) \Leftrightarrow f(n) = \sum_{d \mid n}\mu(d)g(\frac{n}{d})\\
 g(n) = \sum_{k = 1}^\infty f(kn) \Leftrightarrow f(n) = \sum_{k = 1}^\infty \mu(k)g(kn)
 $$</p>
 <p>一个是枚举约数，一个是枚举倍数，第一种形式还可以从狄雷克雷卷积的形式理解：$g = 1 * f \Leftrightarrow f = \mu * g$。</p>
 <h3 id="高维前缀和差分">高维前缀和/差分</h3>
-<p>也许可以看作“子集反演”。</p>
+<p>也许可以看作“子集反演”（同样不作证明）。</p>
 <p>$$
 f(S) = \sum_{T \subseteq S}g(T) \Leftrightarrow g(S) = \sum_{T \subseteq S}(-1)^{|S| - |T|}f(S)
 $$</p>
@@ -506,7 +663,7 @@ $$</p>
 <p>然后考虑有限制内部怎么算，设 $i$ 个极大值的方案数是 $g_i$，我们从小到大加入极大值，可以写出递推式：$g_i=g_{i - 1} \times \dfrac{(f_i - 1)!}{f_{i - 1}!}$，算一下可以解出来 $g_i=f_i!\prod_{j = 1}^i \dfrac{1}{f_j}$。</p>
 <p>这里还有一个巧妙的计算方法：考虑树的拓扑序，一个有 $n$ 个点的有根树的拓扑序怎么求呢？其充要条件是：对于每个 $i$，$i$ 子树中的点都出现在其后面，子树之间是独立的，故总方案数为：$n!\prod_{i = 1}^n \dfrac{1}{siz_i}$。回到原题，我们发现把一个点连向需要比其大的点就可以转化为一个树上的拓扑序模型，可以直接得到答案。</p>
 <p>以上都乘起来，再除以总方案数，得到 $n^{\underline k}m^{\underline k}l^{\underline k}\prod_{j = 1}^k \dfrac{1}{f_j}$，最后再反演一下即可。</p>
-<p>复杂度线性或者带一个快速幂的 $\log$</p>
+<p>复杂度线性或者带一个快速幂的 $\log p$</p>
 <h3 id="cf990g-gcd-counting">CF990G GCD Counting</h3>
 <p><a href="https://codeforces.com/problemset/problem/990/G">链接</a></p>
 <p>把 $k = g(x, y)$ 用上面莫比乌斯反演的第二个形式变为 $k \mid g(x, y)$，就很好做了。只需要对于每个约数，把点权是其倍数的点加入图中，算出所有连通块大小，一个连通块的贡献就是 $siz * (siz + 1) / 2$。</p>
@@ -516,12 +673,12 @@ $$</p>
 ans = \sum_{\varnothing \neq T \subseteq S} (-1)^{|T| - 1}\frac{all}{cnt_T}
 $$</p>
 <p>$S$ 是所有喜欢物品的集合，$all$ 指的是所有相邻格子的数量，$cnt_T$ 是对于一个喜欢的物品集合，有多少种选法能至少一个选到喜欢的物品。</p>
-<p>直接枚举子集是不能接受的，我们把 $cnt_T$ 放到状态里，容斥的系数当成 dp 的值，使用插头dp（还是轮廓线dp？），时间复杂度 $O(n^2m^22^n)$。</p>
+<p>直接枚举子集是不能接受的，我们把 $cnt_T$ 放到状态里，容斥的系数当成 dp 的值，使用插头dp（轮廓线dp），时间复杂度 $O(n^2m^22^n)$。</p>
 <h3 id="agc028d-chords">agc028d Chords</h3>
 <p><a href="https://atcoder.jp/contests/agc028/tasks/agc028_d">链接</a></p>
 <p>圆没有用，直接变成一个链，两条弦有交叉则在同一个连通块内。</p>
 <p>考虑求出每个连通块在所有方案中的出现次数来计算贡献，使用（最小值，最大值）来代表一个连通块。注意到 $[l,r]$ 代表的连通块在 $[l+1,r-1]$ 不能有边向外连，这是很好的性质。</p>
-<p>设 $g(n)=(n-1)\times (n-3)\times &hellip;\times 3\times 1$ 表示 $n$ 个点内部随便连的方案数（$n$ 是偶数则方案数为 $0$）。$f_{i, j}$ 表示 $[i,j]$ 在同一个连通块内，且中间的点没有向外连边的方案数。中间的点没有向外连边是好满足的，在这里使用容斥原理，用所有的减去 $[i,j]$ 不在同一个连通块内的。</p>
+<p>设 $g(n)=(n-1)\times (n-3)\times &hellip;\times 3\times 1$ 表示 $n$ 个点内部随便连的方案数（$n$ 是偶数则方案数为 $0$）。$f_{i, j}$ 表示 $[i,j]$ 在同一个连通块内，且中间的点没有向外连边的方案数。中间的点没有向外连边是好满足的，对于在同一个连通块内的要求，使用容斥原理，用所有的减去 $[i,j]$ 不在同一个连通块内的。</p>
 <p>$$
 f_{i,j}=g(cnt1) - \sum\limits_{k = i}^{j - 1}f_{i,k}\times g(cnt2)\\
 ans=\sum f_{i,j}\times g(n - 2K - cnt)
@@ -742,7 +899,7 @@ $$</p>
 <p>$n\leq5\times10^5,m\leq10^6$。</p>
 <h3 id="solution-2">Solution</h3>
 <p>对于一个边双，摧毁是没用的，启发我们边双缩点成一个树。</p>
-<p>然后考虑树形dp，每种方案在若干个要建兵营的点的边双处贡献答案。计算的时候保护一次边答案就记得除以 $2$，最后再乘上 $2^m$ 即可得到最终答案。</p>
+<p>然后考虑树形dp，每种方案在若干个要建兵营的点的lca处贡献答案。计算的时候保护一次边答案就记得除以 $2$，最后再乘上 $2^m$ 即可得到最终答案。</p>
 <h3 id="code-2">Code</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
 </span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
@@ -805,7 +962,8 @@ $$</p>
 </span></span><span style="display:flex;"><span>                <span style="color:#000">dfs</span>(<span style="color:#000">v</span>, <span style="color:#000">x</span>);
 </span></span><span style="display:flex;"><span>                (<span style="color:#000">ans</span> <span style="color:#000">+=</span> <span style="color:#000">f</span>[<span style="color:#000">x</span>] <span style="color:#000">*</span> <span style="color:#000">f</span>[<span style="color:#000">v</span>] <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">inv2</span> <span style="color:#000">%</span> <span style="color:#000">mod</span>) <span style="color:#000">%=</span> <span style="color:#000">mod</span>;
 </span></span><span style="display:flex;"><span>                (<span style="color:#000">f</span>[<span style="color:#000">x</span>] <span style="color:#000">+=</span> <span style="color:#000">f</span>[<span style="color:#000">v</span>] <span style="color:#000">*</span> (<span style="color:#000">f</span>[<span style="color:#000">x</span>] <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">inv2</span> <span style="color:#000">%</span> <span style="color:#000">mod</span>) <span style="color:#000">%=</span> <span style="color:#000">mod</span>;
-</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>                <span style="color:#177500">// 这里只在子树里的情况已经在儿子处统计过了，因此f[x]要加上的是f[v]/2而不是f[v]
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>            }
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a90d91">void</span> <span style="color:#000">main</span>()
@@ -1290,7 +1448,7 @@ $$</p>
 <p>字符串哈希一般使用多项式哈希，选定一个底数 $b$ 和一个模数 $p$，$f(s)=\sum_{i=1}^{len}s_i\times b^{len-i}\pmod p$</p>
 <p>底数一般选择大于值域的任意数，可以认为 $f(s),f(t)$ 冲突的概率大概为 $\dfrac{len-1}{p}$。</p>
 <p>计算总哈希冲突概率是很简单的，如果发现冲突概率不低，可以对两个质数分别取模，相当于值域扩大到两者之积，大大减少冲突概率。</p>
-<p>因为取模常数较大，如果条件允许，也可以使用自然溢出，不取模。</p>
+<p>因为取模常数较大，如果条件允许，也可以使用自然溢出（即对 $2^{64}$ 取模），可以减小常数。</p>
 <h3 id="子串哈希">子串哈希</h3>
 <p>类似前缀和的思想，不难得到：$f(l&hellip;r)=f(r)-f(l-1)\times b^{r-l+1}$，可以做到 $O(1)$ 回答子串哈希。</p>
 <h3 id="代码">代码</h3>
@@ -1317,7 +1475,7 @@ $$</p>
 </span></span><span style="display:flex;"><span>    {
 </span></span><span style="display:flex;"><span>        <span style="color:#a90d91">while</span> (<span style="color:#000">j</span> <span style="color:#000">&gt;</span> <span style="color:#1c01ce">0</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">s</span>[<span style="color:#000">i</span>] <span style="color:#000">!=</span> <span style="color:#000">s</span>[<span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>])
 </span></span><span style="display:flex;"><span>            <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#000">nxt</span>[<span style="color:#000">j</span>];
-</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> ([<span style="color:#000">i</span>] <span style="color:#000">==</span> <span style="color:#000">sj</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>])
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">s</span>[<span style="color:#000">i</span>] <span style="color:#000">==</span> <span style="color:#000">s</span>[<span style="color:#000">j</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>])
 </span></span><span style="display:flex;"><span>            <span style="color:#000">j</span><span style="color:#000">++</span>;
 </span></span><span style="display:flex;"><span>        <span style="color:#000">nxt</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">j</span>;
 </span></span><span style="display:flex;"><span>    }
@@ -1326,16 +1484,16 @@ $$</p>
 <p>主要应用还是这个定义。</p>
 <p>这里说一个方法：把字符串拼起来，可以正着拼、倒着拼、一个一个拼、中间加特殊字符等等，各种地方都能用的到。</p>
 <h3 id="应用字符串匹配">应用——字符串匹配</h3>
-<p>讲一个无脑的方法，假如要求 $t$ 在 $s$ 中的匹配，那么可以把 $s$ 和 $t$ 拼起来，构造一个 $str=t+\#+s$，然后求前缀函数，$\#$ 后面前缀函数等于 $|t|$ 就是一个匹配。</p>
+<p>讲一个无脑的方法，假如要求 $t$ 在 $s$ 中的匹配，那么可以把 $s$ 和 $t$ 拼起来，构造一个 $str=t+\#+s$，然后求 $str$ 的前缀函数，$\#$ 后面前缀函数等于 $|t|$ 就是一个匹配。</p>
 <h3 id="最长周期">最长周期</h3>
 <p>border：对字符串 $s$ 和 $0&lt;r&lt; |s|$，若 $s$ 长度为 $r$ 的前缀和长度为 $r$ 的后缀相等，就称 $s$ 长度为 $r$ 的前缀是 $s$ 的 border。</p>
 <p>由 $s$ 有长度为 $r$ 的 border 可以推导出 $|s| - r$ 是 $s$ 的周期。</p>
 <p>故最长周期长度是 $|s| - nxt_n$</p>
 <h2 id="manacher">manacher</h2>
-<p>如果要求回文串，可以求 $d_i$ 表示以 $i$ 为中心，最长的回文半径。</p>
+<p>假如我们要求 $d_i$ 表示以 $i$ 为中心，最长的回文半径（这里暂不考虑一个回文串长度是偶数的情况）。</p>
 <p>显然二分+哈希可以做到 $O(n\log n)$ 求解，但 manacher 算法让我们可以在线性时间内快速求出 $d$。</p>
-<p>具体方法就是：维护当前右端点最靠右的回文串 $[l,r]$，对于一个新的点 $i$， 如果 $i\leq r$，那么把 $d_i$ 直接设置成 $\min\{r-i+1,d_{l+r-i}\}$，这样显然是正确的，而每次这么处理完之后，都暴力扩展 $d_i$ 并更新 $l,r$。复杂度是对的，$r$ 从不减小。</p>
-<p>奇数回文串有中心，偶数没有，在相邻两个字符间加一个其他字符，就能让偶数也有中心。</p>
+<p>具体方法就是：维护当前右端点最靠右的回文串 $[l,r]$，对于一个新的点 $i$， 如果 $i\leq r$，那么把 $d_i$ 直接设置成 $\min\{r-i+1,d_{l+r-i}\}$，这样显然是正确的，而每次这么处理完之后，都暴力扩展 $d_i$ 并更新 $l,r$。复杂度为 $O(n)$，因为$r$ 从不减小。</p>
+<p>对于长度为偶数的回文串，我们考虑在相邻两个字符间加一个其他字符，这样原串的一个偶回文串一定对应新串的一个奇回文串，问题得到解决。</p>
 <h3 id="代码-2">代码</h3>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">r</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>, <span style="color:#000">l</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">n</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
 </span></span><span style="display:flex;"><span>{
