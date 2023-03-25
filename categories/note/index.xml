@@ -6,7 +6,137 @@
     <description>Recent content in Note on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 22 Mar 2023 16:28:21 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Mar 2023 08:59:33 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/categories/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>拉格朗日插值</title>
+      <link>https://luoyisu.github.io/posts/lagrange/</link>
+      <pubDate>Sat, 25 Mar 2023 08:59:33 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/posts/lagrange/</guid>
+      <description>&lt;p&gt;复习一下。&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<p>复习一下。</p>
+<h2 id="介绍">介绍</h2>
+<p>对于一个 $k$ 次多项式，已知 $k+1$ 个点值就能确定这个多项式，使用待定系数法，高斯消元求解多项式的时间复杂度是 $O(k^3)$ 而拉格朗日插值允许我们在 $O(k^2)$ 的时间内求出另一个点值、</p>
+<p>考虑构造 $n$ 个函数 $f_1(x), f_2(x), \cdots, f_n(x)$，使得对于第 $i$ 个函数 $f_i(x)$，其图像过 $\begin{cases}(x_j,0),j\neq i\\(x_i,y_i),j=i\end{cases}$，则可知所求的函数 $f(x)=\sum\limits_{i=1}^nf_i(x)$。</p>
+<p>这是很显然的，可以发现我们构造出来的函数可以恰好过所有给出的点。</p>
+<p>下面给出每个函数的构造：</p>
+<p>$$
+f_i(x)=y_i\prod_{j\neq i}\dfrac{x-x_j}{x_i-x_j}
+$$</p>
+<p>正确性很显然，首先这是个 $k$ 次多项式，而且当 $x\neq x_i$ 时分子为 $0$，当 $x=x_i$ 时分子分母相等。</p>
+<p>故</p>
+<p>$$
+f(x)=\sum_{i=1}^ny_i\prod_{j\neq i}\dfrac{x-x_j}{x_i-x_j}
+$$</p>
+<p>代码没有，因为没啥东西，代入式子算就行。<strong>别忘了乘上 $y_i$。</strong></p>
+<h2 id="横坐标连续时线性做法">横坐标连续时线性做法</h2>
+<p>假设我们已知 $(1,y_1),\dots,(k+1,y_{k+1})$</p>
+<p>$$
+\begin{aligned}
+f(x)&amp;=\sum\limits_{i=1}^{k+1}y_i\prod\limits_{j\ne i}\frac{x-x_j}{x_i-x_j}\\
+&amp;=\sum\limits_{i=1}^{k+1}y_i\prod\limits_{j\ne i}\frac{x-j}{i-j}
+\end{aligned}
+$$</p>
+<p>分子</p>
+<p>$$
+\prod_{j=1}^{i-1}(x-j)\prod_{j=i+1}^{k+1}(x-j)
+$$</p>
+<p>分母</p>
+<p>$$
+(-1)^{k+1-i}(i-1)!(k+1-i)!
+$$</p>
+<p>预处理阶乘、阶乘逆元、$(x-j)$ 的前缀积、后缀积即可。<strong>别忘了乘上 $y_i$。</strong></p>
+<h2 id="自然数幂和">自然数幂和</h2>
+<p>求</p>
+<p>$$
+\sum_{i=0}^ni^k
+$$</p>
+<p>这是一个 $k+1$ 次多项式（这里没有证明）。</p>
+<p>因为 $i^k$ 是完全积性函数，所以用线性筛可以 $O(k)$ 求出点值。再使用上面的线性插值，即可做到 $O(k)$ 的时间复杂度。</p>
+<p>例题：<a href="https://codeforces.com/contest/622/problem/F">CF622F</a></p>
+<p>代码</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;iostream&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstdio&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;algorithm&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;vector&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820">#include</span> <span style="color:#633820">&lt;cstring&gt;</span><span style="color:#633820">
+</span></span></span><span style="display:flex;"><span><span style="color:#633820"></span><span style="color:#a90d91">using</span> <span style="color:#a90d91">namespace</span> <span style="color:#000">std</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">namespace</span> <span style="color:#000">solve</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">maxn</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e6</span> <span style="color:#000">+</span> <span style="color:#1c01ce">10</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">typedef</span> <span style="color:#a90d91">long</span> <span style="color:#a90d91">long</span> <span style="color:#000">ll</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">const</span> <span style="color:#a90d91">int</span> <span style="color:#000">mod</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1e9</span> <span style="color:#000">+</span> <span style="color:#1c01ce">7</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ll</span> <span style="color:#000">qpow</span>(<span style="color:#000">ll</span> <span style="color:#000">a</span>, <span style="color:#000">ll</span> <span style="color:#000">x</span>, <span style="color:#000">ll</span> <span style="color:#000">p</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#000">ll</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (; <span style="color:#000">x</span>; <span style="color:#000">x</span> <span style="color:#000">&gt;&gt;=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">a</span> <span style="color:#000">=</span> <span style="color:#000">a</span> <span style="color:#000">*</span> <span style="color:#000">a</span> <span style="color:#000">%</span> <span style="color:#000">p</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">x</span> <span style="color:#000">&amp;</span> <span style="color:#1c01ce">1</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#000">res</span> <span style="color:#000">*</span> <span style="color:#000">a</span> <span style="color:#000">%</span> <span style="color:#000">p</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> <span style="color:#000">res</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ll</span> <span style="color:#000">calc</span>(<span style="color:#a90d91">int</span> <span style="color:#000">n</span>, <span style="color:#a90d91">int</span> <span style="color:#000">k</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">static</span> <span style="color:#000">ll</span> <span style="color:#000">y</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">static</span> <span style="color:#000">ll</span> <span style="color:#000">fac</span>[<span style="color:#000">maxn</span>], <span style="color:#000">ifac</span>[<span style="color:#000">maxn</span>], <span style="color:#000">pre</span>[<span style="color:#000">maxn</span>], <span style="color:#000">suf</span>[<span style="color:#000">maxn</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">static</span> <span style="color:#a90d91">int</span> <span style="color:#000">pri</span>[<span style="color:#000">maxn</span>], <span style="color:#000">vis</span>[<span style="color:#000">maxn</span>], <span style="color:#000">tot</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">y</span>[<span style="color:#1c01ce">1</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">if</span> (<span style="color:#000">!</span><span style="color:#000">vis</span>[<span style="color:#000">i</span>])
+</span></span><span style="display:flex;"><span>                <span style="color:#000">pri</span>[<span style="color:#000">++</span><span style="color:#000">tot</span>] <span style="color:#000">=</span> <span style="color:#000">i</span>, <span style="color:#000">y</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">qpow</span>(<span style="color:#000">i</span>, <span style="color:#000">k</span>, <span style="color:#000">mod</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">j</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">j</span> <span style="color:#000">&lt;=</span> <span style="color:#000">tot</span> <span style="color:#000">&amp;&amp;</span> <span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">j</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#000">vis</span>[<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>]] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#000">y</span>[<span style="color:#000">i</span> <span style="color:#000">*</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>]] <span style="color:#000">=</span> <span style="color:#000">y</span>[<span style="color:#000">i</span>] <span style="color:#000">*</span> <span style="color:#000">y</span>[<span style="color:#000">pri</span>[<span style="color:#000">j</span>]] <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>                <span style="color:#a90d91">if</span> (<span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#000">pri</span>[<span style="color:#000">j</span>] <span style="color:#000">==</span> <span style="color:#1c01ce">0</span>)
+</span></span><span style="display:flex;"><span>                    <span style="color:#a90d91">break</span>;
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">y</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> (<span style="color:#000">y</span>[<span style="color:#000">i</span>] <span style="color:#000">+</span> <span style="color:#000">y</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>]) <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">if</span> (<span style="color:#000">n</span> <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#a90d91">return</span> <span style="color:#000">y</span>[<span style="color:#000">n</span>];
+</span></span><span style="display:flex;"><span>        <span style="color:#000">fac</span>[<span style="color:#1c01ce">0</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">fac</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">fac</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">*</span> <span style="color:#000">i</span> <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">ifac</span>[<span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>] <span style="color:#000">=</span> <span style="color:#000">qpow</span>(<span style="color:#000">fac</span>[<span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>], <span style="color:#000">mod</span> <span style="color:#000">-</span> <span style="color:#1c01ce">2</span>, <span style="color:#000">mod</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">0</span>; <span style="color:#000">i</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">ifac</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">ifac</span>[<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">*</span> (<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">pre</span>[<span style="color:#1c01ce">0</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>, <span style="color:#000">suf</span>[<span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">3</span>] <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">pre</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">pre</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">*</span> (<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">suf</span>[<span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>] <span style="color:#000">=</span> <span style="color:#000">n</span> <span style="color:#000">-</span> (<span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">2</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&gt;=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">suf</span>[<span style="color:#000">i</span>] <span style="color:#000">=</span> <span style="color:#000">suf</span>[<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">*</span> (<span style="color:#000">n</span> <span style="color:#000">-</span> <span style="color:#000">i</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">ll</span> <span style="color:#000">res</span> <span style="color:#000">=</span> <span style="color:#1c01ce">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">k</span><span style="color:#000">++</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">for</span> (<span style="color:#a90d91">int</span> <span style="color:#000">i</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span> <span style="color:#000">&lt;=</span> <span style="color:#000">k</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>; <span style="color:#000">i</span><span style="color:#000">++</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#000">res</span> <span style="color:#000">+=</span> ((<span style="color:#000">k</span> <span style="color:#000">-</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">%</span> <span style="color:#1c01ce">2</span> <span style="color:#000">?</span> <span style="color:#000">-</span><span style="color:#1c01ce">1</span> <span style="color:#000">:</span> <span style="color:#1c01ce">1</span>) <span style="color:#000">*</span> <span style="color:#000">ifac</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">*</span> <span style="color:#000">ifac</span>[<span style="color:#000">k</span> <span style="color:#000">-</span> <span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">pre</span>[<span style="color:#000">i</span> <span style="color:#000">-</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">suf</span>[<span style="color:#000">i</span> <span style="color:#000">+</span> <span style="color:#1c01ce">1</span>] <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">*</span> <span style="color:#000">y</span>[<span style="color:#000">i</span>] <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">return</span> (<span style="color:#000">res</span> <span style="color:#000">%</span> <span style="color:#000">mod</span> <span style="color:#000">+</span> <span style="color:#000">mod</span>) <span style="color:#000">%</span> <span style="color:#000">mod</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">void</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a90d91">int</span> <span style="color:#000">n</span>, <span style="color:#000">k</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">cin</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">n</span> <span style="color:#000">&gt;&gt;</span> <span style="color:#000">k</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#000">cout</span> <span style="color:#000">&lt;&lt;</span> <span style="color:#000">calc</span>(<span style="color:#000">n</span>, <span style="color:#000">k</span>) <span style="color:#000">&lt;&lt;</span> <span style="color:#000">endl</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a90d91">int</span> <span style="color:#000">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#000">ios</span><span style="color:#000">::</span><span style="color:#000">sync_with_stdio</span>(<span style="color:#a90d91">false</span>), <span style="color:#000">cin</span>.<span style="color:#000">tie</span>(<span style="color:#1c01ce">0</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a90d91">int</span> <span style="color:#000">T</span> <span style="color:#000">=</span> <span style="color:#1c01ce">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#177500">// cin &gt;&gt; T;
+</span></span></span><span style="display:flex;"><span><span style="color:#177500"></span>    <span style="color:#a90d91">while</span> (<span style="color:#000">T</span><span style="color:#000">--</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#000">solve</span><span style="color:#000">::</span><span style="color:#000">main</span>();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>]]></content:encoded>
+    </item>
+    
     <item>
       <title>O(v)-O(1) gcd</title>
       <link>https://luoyisu.github.io/posts/fast-gcd/</link>
@@ -269,7 +399,9 @@ $$</p>
 <p>不知道为什么（是因为不满足条件的是一段前缀吗）考虑容斥原理。</p>
 <p>枚举有下界的有几个不满足限制（即上界为 $L_i-1$），$ans=\sum_{i = 0}^n (-1)^i f(i)$</p>
 <p>对于小于 $n$ 的数排序关键字为 $(L_i,R_i)$，其余的为 $(R_i,0)$ 排序。</p>
-<p>然后设 $f_{i,j}$ 表示前 $i$ 个数，选了 $j$ 个取下界为上界的方案数，转移的时候考虑有几个数排序后在这个数的前面转移。因为对于 $i&lt;n$，最大的 $L$ 比最小的 $R$ 要小，因此转移的时候是可以排出顺序的。</p>]]></content:encoded>
+<p>然后设 $f_{i,j}$ 表示前 $i$ 个数，选了 $j$ 个取下界为上界的方案数，转移的时候考虑有几个数排序后在这个数的前面转移。因为对于 $i&lt;n$，最大的 $L$ 比最小的 $R$ 要小，因此转移的时候是可以排出顺序的。</p>
+<h3 id="loj2026-成绩比较">loj2026 成绩比较</h3>
+<p>见单独题解： <a href="https://luoyisu.github.io/posts/loj2026/">loj2026 JLOI/SHOI2016 成绩比较</a></p>]]></content:encoded>
     </item>
     
     <item>

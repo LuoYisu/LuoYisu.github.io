@@ -6,13 +6,43 @@
     <description>Recent content in Tags on _slb 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 22 Mar 2023 16:28:21 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Mar 2023 08:59:33 +0800</lastBuildDate><atom:link href="https://luoyisu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>插值</title>
+      <link>https://luoyisu.github.io/tags/%E6%8F%92%E5%80%BC/</link>
+      <pubDate>Sat, 25 Mar 2023 08:59:33 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/tags/%E6%8F%92%E5%80%BC/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
     <item>
       <title>数学</title>
       <link>https://luoyisu.github.io/tags/%E6%95%B0%E5%AD%A6/</link>
-      <pubDate>Wed, 22 Mar 2023 16:28:21 +0800</pubDate>
+      <pubDate>Sat, 25 Mar 2023 08:59:33 +0800</pubDate>
       
       <guid>https://luoyisu.github.io/tags/%E6%95%B0%E5%AD%A6/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>计数</title>
+      <link>https://luoyisu.github.io/tags/%E8%AE%A1%E6%95%B0/</link>
+      <pubDate>Fri, 24 Mar 2023 20:22:02 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/tags/%E8%AE%A1%E6%95%B0/</guid>
+      <description></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>容斥</title>
+      <link>https://luoyisu.github.io/tags/%E5%AE%B9%E6%96%A5/</link>
+      <pubDate>Fri, 24 Mar 2023 20:22:02 +0800</pubDate>
+      
+      <guid>https://luoyisu.github.io/tags/%E5%AE%B9%E6%96%A5/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -23,16 +53,6 @@
       <pubDate>Thu, 12 Jan 2023 16:17:38 +0800</pubDate>
       
       <guid>https://luoyisu.github.io/tags/%E7%AC%94%E8%AE%B0/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>容斥</title>
-      <link>https://luoyisu.github.io/tags/%E5%AE%B9%E6%96%A5/</link>
-      <pubDate>Thu, 12 Jan 2023 16:17:38 +0800</pubDate>
-      
-      <guid>https://luoyisu.github.io/tags/%E5%AE%B9%E6%96%A5/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
@@ -113,16 +133,6 @@
       <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
       
       <guid>https://luoyisu.github.io/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
-      <description></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-    </item>
-    
-    <item>
-      <title>组合</title>
-      <link>https://luoyisu.github.io/tags/%E7%BB%84%E5%90%88/</link>
-      <pubDate>Thu, 26 May 2022 09:46:01 +0000</pubDate>
-      
-      <guid>https://luoyisu.github.io/tags/%E7%BB%84%E5%90%88/</guid>
       <description></description>
       <content:encoded><![CDATA[]]></content:encoded>
     </item>
